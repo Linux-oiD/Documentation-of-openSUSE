@@ -1,0 +1,1763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+   <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+   <!ENTITY % entities SYSTEM "entity-decl.ent">
+   %entities;
+]>
+<!--
+ Ideas:
+ * Exchanging data on a Mac
+ * csync: http://www.csync.org
+-->
+<chapter id="cha.filetrans">
+ <title>Copying and Sharing Files</title><indexterm role="range">
+ <primary>transferring files</primary></indexterm><indexterm>
+ <primary>files</primary>
+ <secondary>transferring</secondary></indexterm><indexterm role="range">
+ <primary>file sharing</primary></indexterm><indexterm>
+ <primary>files</primary>
+ <secondary>sharing</secondary></indexterm>
+ <abstract>
+  <para>
+   If using multiple operating systems (OS) simultaneously, it is often
+   necessary to exchange files among them. Different systems may reside on
+   different partitions on the same machine or on different machines across
+   your network. There are various approaches to file exchange with
+   different basic instructions and possible pitfalls.
+  </para>
+ </abstract>
+ <warning>
+  <title>Scenarios for Private Home Networks Only</title>
+  <para>
+   Do not use the following scenarios in networks other than your own
+   private and trusted home network that is protected by a firewall.
+   Implementing high security measures for the configurations featured in
+   the following sections is beyond the scope of this document.
+  </para>
+ </warning>
+ <para>
+  Exchanging data may encompass either one of the following tasks:
+ </para>
+ <variablelist>
+  <varlistentry>
+   <term>Copying</term>
+   <listitem>
+    <para>
+     To copy your data means to transfer your data from one system to the
+     other. This results in identical objects on both the source and the
+     target system.
+    </para>
+    <para>
+     Synchronizing data is a special way to copy data. If you change a file
+     on one computer, it is automatically changed on the other computer
+     after the synchronization. For example, think of a laptop that contains
+     your modified files and you want to have the same contents on your
+     desktop computer.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Sharing</term>
+   <listitem>
+    <para>
+     Sharing your files means establishing a client/server relationship. The
+     server provides files that can be accessed by the client. When changing
+     a file, you modify it on the server, not locally on the client. File
+     servers typically serve a large number of clients simultaneously.
+    </para>
+   </listitem>
+  </varlistentry>
+ </variablelist>
+ <sect1 id="sec.filetrans.scenarios">
+  <title>Scenarios</title>
+
+  <para>
+   The following list provides a number of possible scenarios involving file
+   transfer:
+  </para>
+
+  <variablelist>
+   <varlistentry id="vl.filetrans.scen1">
+    <term>Different OS on the Same Computer</term>
+    <listitem>
+     <para>
+      Many users have an operating system preinstalled by their vendor and
+      run Linux in a separate partition. Refer to
+      <xref linkend="sec.filetrans.winlincomp"/> for more information.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry id="vl.filetrans.scen2">
+    <term>Different Computers Not Connected by a Network</term>
+    <listitem>
+     <para>
+      Save the data to any media (CD, DVD, USB flash drive, or external hard
+      disk) and connect these to the target machine to copy your files. This
+      solution is inexpensive, intuitive, and straightforward. However, you
+      need the appropriate drives or ports on both computers. Additionally
+      the operating systems have to understand the filesystem.
+     </para>
+     <para>
+      Media are suited to occasional file transfers with limited file size.
+      If you need a more permanent solution, consider connecting them with a
+      network.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry id="vl.filetrans.scen3">
+    <term>Different Computers Connected to the Same Network</term>
+    <listitem>
+     <para>
+      Set up a server of any kind on one computer, connect the server and
+      the client, and transfer the files from server to client. Choose from
+      various protocols available and pick the one that best matches your
+      needs and expertise.
+     </para>
+     <para>
+      The client/server setup requires more expertise and maintenance
+      efforts, but is better suited to routine transfer needs and exchange
+      with multiple systems. If you are looking for a permanent file
+      exchange, choose a client/server-based method. This method does not
+      impose any limits on the amount of data that can be transferred. See
+      <xref linkend="sec.filetrans.accessmethod"/>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry id="vl.filetrans.scen4">
+    <term>Different Computers on Different Networks</term>
+    <listitem>
+     <para>
+      This scenario requires connection of different networks and is beyond
+      the scope of this document. Transfer files as if the computers were
+      not connected to a network.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </sect1>
+ <sect1 id="sec.filetrans.accessmethod">
+  <title>Access Methods</title>
+
+  <para>
+   The following methods and protocols are well-suited to file transfer and
+   sharing.
+  </para>
+
+  <variablelist>
+   <varlistentry>
+    <term>FTP</term>
+    <listitem>
+     <para>
+      Use FTP (File Transfer Protocol) if you need to exchange files very
+      often and with different users. Set up an FTP server on one system and
+      access it with clients. There are many graphical client applications
+      available for FTP on Windows&thrdmrk;, MacOS, and Linux. Depending on
+      how your FTP server is used, enable read and write permissions. See
+      <xref linkend="sec.filetrans.ftp"/> for more details on FTP.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>NFS</term>
+    <listitem>
+     <para>
+      NFS (Network File System) is a client/server system. A server exports
+      one or more directories that can be imported by a client. For more
+      information, see <xref linkend="cha.nfs"/>.
+     </para>
+     <para>
+      Use NFS if you share files very often and for different users.
+      Generally, this protocol is more common in the Linux world than in the
+      Windows world. An NFS export integrates well into your Linux system
+      and you can browse the imported directory structure like any other
+      folder on your local machine. Depending on your configuration, enable
+      either read or write permissions or both on the server. In general,
+      for a home user it makes sense to allow read and write access.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>rsync</term>
+    <listitem>
+     <para>
+      Use rsync to transfer regularly large volumes of data that does not
+      change considerably. It is available on Linux and Windows. A typical
+      use case for rsync is managing data backups. Refer to the manual page
+      of the <command>rsync</command> command and
+      <xref linkend="sec.filetrans.rsync"/> for more information.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Unison</term>
+    <listitem>
+     <para>
+      Unison is an alternative to rsync. It is used to regularly synchronize
+      files between different computers but has the advantage to behave
+      bidirectionally. Refer to the manual page of the Unison command and
+      <xref linkend="sec.filetrans.unison"/> for more information. Unison is
+      available on Linux and Windows.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>CSync</term>
+    <listitem>
+     <para>
+      CSync is an alternative to Unison. Just like Unison it synchronizes
+      files bidirectionally. However, its architecture is modular so it can
+      be extended with plug-ins. See <ulink url="http://www.csync.org"/> for
+      more details.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>SMB</term>
+    <listitem>
+     <para>
+      Samba is a client/server system and an implementation of the SMB
+      protocol. It is usually used in Windows networks, but is supported by
+      several operating systems. Refer to <xref linkend="cha.samba"/> for
+      more information about Samba.
+     </para>
+     <para>
+      Use Samba if you need to share files very often and with different
+      users, especially to Windows systems. Samba as a Linux-only solution
+      is uncommon, use NFS instead. For more information about setting up a
+      Samba server, refer to <xref linkend="sec.filetrans.linux2win" />.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>SSH</term>
+    <listitem>
+     <para>
+      SSH (Secure Shell) enables a secure connection between computer. The
+      SSH suite consists of several commands and uses public key encryption
+      to authenticate users. For more information, see
+      <xref linkend="cha.ssh"/>.
+     </para>
+     <para>
+      Use SSH if you copy files occasionally over an untrusted network and
+      if you are the only user doing so. Although there are graphical user
+      interfaces available, SSH is mainly considered a command line utility
+      and is available on Linux and Windows.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </sect1>
+ <sect1 id="sec.filetrans.crossover">
+  <title>Accessing Files Using a Direct Connection</title>
+
+  <para>
+   This section describes one way to exchange files between two computers
+   using an Ethernet crossover cable.
+  </para>
+
+  <para>
+   You need:
+  </para>
+
+  <itemizedlist>
+   <listitem>
+    <para>
+     Ethernet crossover cable. For further information see:
+     <ulink url="http://en.wikipedia.org/wiki/Ethernet_crossover_cable"/>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     &opensuse; on both computers
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     An established connection. <phrase os="sled">See
+     <xref
+       linkend="sec.network.general"/>.</phrase>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     The SSH daemon running on both machines. To start the service, run the
+     command <command>rcsshd start</command> as &rootuser;.
+    </para>
+   </listitem>
+  </itemizedlist>
+
+  <para>
+   Proceed as follows:
+  </para>
+
+<!-- GNOME -->
+
+  <procedure>
+   <title>GNOME</title>
+   <step>
+    <para>
+     Start Nautilus.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click on <menuchoice> <guimenu>File</guimenu> <guimenu>Connect to
+     Server</guimenu> </menuchoice>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Set the <guimenu>Service Type</guimenu> to <guimenu>ssh</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Enter the IP address and port of the remote computer (default is 22).
+    </para>
+   </step>
+   <step>
+    <para>
+     Specify the folder you want to open on the remote Computer.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click <guimenu>Connect</guimenu>.
+    </para>
+   </step>
+  </procedure>
+
+<!-- KDE -->
+
+  <procedure>
+   <title>KDE</title>
+   <step>
+    <para>
+     Start Dolphin.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click on <guimenu>Network</guimenu>, <guimenu>Add Network</guimenu>.
+     Re-attach the pane if it is not available with <menuchoice>
+     <guimenu>View</guimenu> <guimenu>Panels</guimenu>
+     <guimenu>Places</guimenu> </menuchoice>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Set the type of network to <guimenu>Secure shell (ssh)</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Enter any name and the correct user, IP address, port (default is 22)
+     and folder of the remote Computer. It is also possible to create an
+     icon for this connection by enabling the checkbox below. This
+     connection icon appears in the <guimenu>Network</guimenu> tab in
+     Dolphin.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click on <guimenu>Save &amp; Connect</guimenu> a dialog box opens and
+     requests the password.
+    </para>
+   </step>
+  </procedure>
+
+  <para>
+   A new window containing the files of the remote computer will be opened.
+  </para>
+ </sect1>
+ <sect1 id="sec.filetrans.winlincomp">
+  <title>Accessing Files on Different OS on the Same Computer</title><indexterm role="range">
+
+  <primary>files</primary>
+
+  <secondary>accessing</secondary></indexterm><indexterm>
+
+  <primary>files</primary>
+
+  <secondary>Windows</secondary></indexterm>
+
+  <para>
+   New computers generally ship with a preinstalled operating system,
+   usually Windows. If you have installed Linux on a different partition,
+   you might want to exchange files between the different operating systems.
+  </para>
+
+  <para>
+   Windows cannot read Linux partitions by default. If you want to exchange
+   files between these two operating systems, you have to create an
+   <quote>exchange partition</quote>. For a more direct approach, see
+   <ulink url="http://www.fs-driver.org/"/> to get a driver supporting an
+   ext2 filesystem on Windows. The following file systems are used by
+   Windows and can be accessed from a Linux machine:
+  </para>
+
+  <variablelist>
+   <varlistentry>
+    <term>FAT</term>
+    <listitem>
+     <para>
+      Various flavors of this file system are used by MS-DOS and Windows 95
+      and 98. You can create this type of file system with &yast;. It is
+      possible to read and write files on FAT partitions from Linux. The
+      size of a FAT partition (and even the maximum size of a single file)
+      is subject to restrictions, depending on the FAT version. See
+      <ulink url="http://en.wikipedia.org/wiki/VFAT"/> for more information
+      about FAT file systems.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>NTFS</term>
+    <listitem>
+<!-- Fate #303339: YaST2: Use NTFS-3g instead of kernel module -->
+     <para>
+      The NTFS file system is used by Windows. &productname; includes write
+      access support to the NTFS file system. See
+      <ulink
+       url="http://en.opensuse.org/SDB:NTFS"/> for more
+      information about NTFS-3g.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+
+  <para>
+   During the installation of &productname;, your Windows partitions are
+   detected. After starting your Linux system, the Windows partitions
+   usually are mounted. These are possible ways of accessing your Windows
+   data:
+  </para>
+
+  <variablelist>
+   <varlistentry>
+    <term>KDE</term>
+    <listitem>
+     <para>
+      Press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+      </keycombo> and enter <literal>sysinfo:/</literal>. A new window opens
+      displaying the characteristics of your machine. <guimenu>Disk
+      Information</guimenu> lists your partitions. Look at those that are of
+      the file system type <systemitem class="filesystem" >ntfs</systemitem>
+      or <systemitem class="filesystem">vfat</systemitem> and click these
+      entries. If the partition is not already mounted, KDE mounts the
+      partition now and displays the contents.
+     </para>
+    </listitem>
+   </varlistentry>
+<!--<varlistentry>
+   <term>GNOME</term>
+   <listitem>
+   <para>FIXME</para>
+  </listitem>
+    </varlistentry>-->
+   <varlistentry>
+    <term>Command Line</term>
+    <listitem>
+     <para>
+      Just list the contents of <filename>/windows</filename> to see one or
+      more directories containing your Windows drives. The directory
+      <filename>/windows/c</filename> maps to the Windows
+      <filename>C:\</filename> drive, for example.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+
+  <note>
+   <title>Changing the Accessibility of Windows Partitions</title>
+   <para>
+    Initially, Windows partitions are mounted read-only for normal users to
+    avoid accidental damage to the file system. To grant normal users full
+    access to a mounted Windows partition, change the mount behavior of this
+    Windows partition. Refer to the manual page of the
+    <command>mount</command> command for more information on mount options
+    for vfat and to the manual page of <systemitem>ntfs-3g</systemitem> on
+    mount options for NTFS.
+   </para>
+  </note>
+ </sect1>
+ <sect1 id="sec.filetrans.copy">
+  <title>Copying Files between Linux Computers</title>
+
+  <para>
+   Linux offers a rich set of protocols you can use to copy files between
+   computers. Which protocol you use depends on how much effort you want to
+   invest and whether it needs to be compatible with future Windows
+   installations. The following sections feature various methods to transfer
+   files from and to Linux computers. Make sure that you have a working
+   network connection, because otherwise they will not work. All scenarios
+   rely on working name resolution in the network. If your network does not
+   include a name service, use IP addresses directly or add the IP addresses
+   along with respective hostnames to <filename>/etc/hosts</filename> on all
+   clients.
+  </para>
+
+  <para>
+   The following example IP addresses and hostnames are used across this
+   section:
+  </para>
+
+  <informaltable>
+   <tgroup cols="2">
+    <tbody>
+     <row>
+      <entry>
+       <para>
+        Target Hostname
+       </para>
+      </entry>
+      <entry>
+       <para>
+        <systemitem class="domainname">&wsIname;</systemitem>
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        Target IP
+       </para>
+      </entry>
+      <entry>
+       <para>
+        <systemitem class="domainname">&wsIip;</systemitem>
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        Source Hostname
+       </para>
+      </entry>
+      <entry>
+       <para>
+        <systemitem class="domainname">&wsIIname;</systemitem>
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        Source IP
+       </para>
+      </entry>
+      <entry>
+       <para>
+        <systemitem class="domainname">&wsIIip;</systemitem>
+       </para>
+      </entry>
+     </row>
+     <row>
+      <entry>
+       <para>
+        User
+       </para>
+      </entry>
+      <entry>
+       <para>
+        <systemitem class="username">&exampleuser;</systemitem>
+       </para>
+      </entry>
+     </row>
+    </tbody>
+   </tgroup>
+  </informaltable>
+
+  <sect2 id="sec.filetrans.ssh">
+   <title>Copying Files with SSH</title><indexterm>
+   <primary>files</primary>
+   <secondary>copying with SSH</secondary></indexterm><indexterm>
+   <primary>protocols</primary>
+   <secondary>SSH</secondary></indexterm><indexterm>
+   <primary>SSH</primary></indexterm>
+<!--<para>SSH (Secure Shell) allows a secure channel between a local and a remote computer.
+				The SSH suites operates on public key encryption to authenticate users. For more
+				information see <xref linkend="cha.ssh"/>.</para>
+				<para>Use SSH, if you exchange files from time to time and you are the only person.
+				Although there are graphical user interfaces available, it is more a command line
+				utility. By default, you have to enter your -->
+<!--passphrase.</para>-->
+   <para>
+    The following requirements must be met on both computers that are
+    accessed via SSH:
+   </para>
+   <orderedlist>
+    <listitem>
+     <para>
+      If you use a hostname, make sure each hostname is listed in
+      <filename>/etc/hosts</filename> on both computers (see
+      <xref linkend="sec.basicnet.manconf.hosts"/>.) If you use SSH with IP
+      addresses, you do not need to change anything.
+     </para>
+    </listitem>
+<!--<listitem>
+    <para>The user(s) on your server.</para>
+   </listitem>-->
+    <listitem>
+     <para>
+      If you use a firewall, open the SSH port. To do so, start &yast;, and
+      select <menuchoice> <guimenu>Security and Users</guimenu>
+      <guimenu>Firewall</guimenu> </menuchoice>. Go to <guimenu>Allowed
+      Services</guimenu> and check whether <guimenu>SSH</guimenu> is
+      displayed as part of the list. If this is not the case, select SSH
+      from <guimenu>Service to Allow</guimenu> and click
+      <guimenu>Add</guimenu>. Apply your changes and leave &yast; with
+      <guimenu>Next</guimenu> and <guimenu>Finish</guimenu>.
+     </para>
+    </listitem>
+   </orderedlist>
+   <para>
+    To copy files from one computer to another, you need to know where the
+    files are located. For example, to copy the single file
+    <filename>/srv/foo_file</filename> from computer
+    <systemitem>&wsIname;</systemitem> to the current directory, use the
+    following <command>scp</command> command (the dot represents the current
+    directory as the copy target location):
+   </para>
+<screen>scp &exampleuser;@&wsIname;:/srv/foo_file .</screen>
+   <para>
+    To copy a whole directory structure, use the recursive mode of
+    <command>scp</command>:
+   </para>
+<screen>scp -r &exampleuser;@&wsIname;:/srv/foo_directory .</screen>
+   <para>
+    If your network does not provide name resolution, use the server's IP
+    address directly:
+   </para>
+<screen>scp &exampleuser;@&wsIip;:/srv/foo_file .</screen>
+   <para>
+    If you do not know exactly where your files are, use the
+    <command>sftp</command> command. <indexterm>
+    <primary>files</primary>
+    <secondary>copying with SFTP</secondary>
+    </indexterm> <indexterm>
+    <primary>protocols</primary>
+    <secondary>SFTP</secondary>
+    </indexterm> <indexterm>
+    <primary>SFTP</primary>
+    </indexterm> Copying files in KDE or GNOME with SFTP is very simple.
+    Proceed as follows:
+   </para>
+   <procedure>
+    <step>
+     <para>
+      Press <keycombo> <keycap function="alt">Alt</keycap>
+      <keycap>F2</keycap> </keycombo>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Enter the following at the address prompt (correct it to your own
+      values):
+     </para>
+<screen>sftp://&exampleuser;@&wsIname;</screen>
+    </step>
+    <step>
+     <para>
+      Confirm the question regarding of authenticity and enter the password
+      of <literal>&exampleuser;</literal> on
+      <systemitem class="domainname">&wsIname;</systemitem>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Drag and drop the desired files or directories to your desktop or a
+      local directory.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    KDE provides another protocol called <literal>fish</literal> that can be
+    used if <literal>sftp</literal> is not available. The use of this
+    protocol is similar to <literal>sftp</literal>. Just replace the
+    <literal>sftp</literal> protocol prefix of the URL with
+    <literal>fish</literal>:
+   </para>
+<screen>fish://&exampleuser;@&wsIname;</screen>
+  </sect2>
+
+  <sect2 id="sec.filetrans.rsync">
+   <title>Transferring Files with rsync</title><indexterm>
+   <primary>files</primary>
+   <secondary>synchronizing with rsync</secondary></indexterm><indexterm>
+   <primary>file synchronization</primary></indexterm><indexterm>
+   <primary>file transfer</primary></indexterm><indexterm>
+   <primary>protocols</primary>
+   <secondary>rsync</secondary></indexterm><indexterm>
+   <primary>rsync</primary></indexterm>
+   <para>
+    rsync is useful for archiving or copying data and can also be used as a
+    daemon to provide directories to the network (see
+    <xref linkend="proc.filetrans.rsyncd"/>).
+   </para>
+   <para>
+    Before using rsync to synchronize files and directories between
+    different computers, make sure that the following requirements are met:
+   </para>
+   <orderedlist>
+    <listitem>
+     <para>
+      The package <systemitem class="resource">rsync</systemitem> is
+      installed.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Identical users are available on both systems.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Enough disk space is available on the server.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      If you want to benefit from rsync's full potential, make sure that
+      rsyncd is installed on the system to use as the server.
+     </para>
+    </listitem>
+   </orderedlist>
+   <sect3>
+    <title>rsync Basic Mode</title>
+    <para>
+     The basic mode of operation of rsync does not require any special
+     configuration. rsync mirrors complete directories onto another system.
+     Its usage is not much different from a regular copying tool, such as
+     scp. The following command creates a backup of the home directory of
+     <systemitem class="username">&exampleuser;</systemitem> on a backup
+     server called <systemitem>&wsI;</systemitem>:
+    </para>
+<screen>rsync -Hbaz -e ssh /home/&exampleuser;/ &exampleuser;@&wsI;:backup</screen>
+    <para>
+     Use the following command to restore your backup (without option
+     <option>-b</option>):
+    </para>
+<screen>rsync -Haz -e ssh &exampleuser;@&wsI;:backup /home/&exampleuser;/</screen>
+   </sect3>
+   <sect3>
+    <title>rsync Daemon Mode</title>
+    <para>
+     Start the rsyncd daemon on one of your systems to make use of the full
+     functionality of rsync. In this mode, it is possible to create
+     synchronization points (modules) that can be accessed without an
+     account. To use the rsyncd daemon, proceed as follows:
+    </para>
+    <procedure id="proc.filetrans.rsyncd">
+     <title>Advanced Setup for rsync Synchronization</title>
+     <step>
+      <para>
+       Log in as &rootuser; and install the
+       <systemitem class="resource">rsync</systemitem> package.
+      </para>
+     </step>
+     <step>
+      <para>
+       Configure your synchronization points in
+       <filename>/etc/rsyncd.conf</filename>. Add a point with its name in
+       brackets and add the <literal>path</literal> keyword like in the
+       following example:
+      </para>
+<screen>
+						
+[FTP]
+ path = /srv/ftp
+ comment = An Example</screen>
+     </step>
+     <step>
+      <para>
+       Start the rsyncd daemon as &rootuser; with <command>rcrsyncd
+       start</command>. To start the rsync service automatically during each
+       system boot, run <command>insserv rsyncd</command>.
+      </para>
+     </step>
+     <step>
+      <para>
+       List all files located in the <filename>/srv/ftp</filename> directory
+       (note the double colon):
+      </para>
+<screen>rsync -avz &wsI;::FTP</screen>
+     </step>
+     <step>
+      <para>
+       Initiate the transfer by providing a target directory (in this
+       example, the current directory is represented by a dot):
+      </para>
+<screen>rsync -avz &wsI;::FTP .</screen>
+     </step>
+    </procedure>
+    <para>
+     By default, files are not deleted while synchronizing with rsync. To
+     force file deletion, add the <option>--delete</option> option. To make
+     sure that <option>--delete</option> does not accidentally remove newer
+     files, use the <option>--update</option> option instead. Any conflicts
+     that arise must be resolved manually.
+    </para>
+   </sect3>
+  </sect2>
+
+  <sect2 id="sec.filetrans.unison">
+   <title>Transferring Files with Unison</title>
+   <para>
+    Before using Unison to synchronize files and directories between
+    different computers, make sure that the following requirements are met:
+   </para>
+   <orderedlist>
+    <listitem>
+     <para>
+      The package <systemitem>unison</systemitem> is installed.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Enough disk space is available on your local and remote computer.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      If you want to benefit from Unison's full potential, make sure that
+      Unison is also installed and running on the remote computer.
+     </para>
+    </listitem>
+   </orderedlist>
+   <para>
+    In case you need help, run Unison with the <option>-doc topics</option>
+    option to get a full list of available sections.
+   </para>
+   <para>
+    For permanent settings, Unison allows the creation of
+    <emphasis>profiles</emphasis> that specify Unison preferences such as
+    the directories (roots) to synchronize, which types of files to ignore,
+    and other options. The profiles are stored as text files in
+    <filename>~/.unison</filename> with the file extension
+    <literal>*.prf</literal>.
+   </para>
+   <sect3>
+    <title>Using the GUI</title>
+    <para>
+     To synchronize different directories with Unison's GUI, proceed as
+     follows:
+    </para>
+    <procedure>
+     <step>
+      <para>
+       Start Unison by pressing <keycombo>
+       <keycap function="alt">Alt</keycap> <keycap>F2</keycap> </keycombo>
+       and entering <command>unison</command>.
+      </para>
+     </step>
+     <step>
+      <para>
+       If you run Unison for the first time and without any further options,
+       you are prompted for a source directory. Enter the source directory
+       you want to synchronize and click <guimenu>OK</guimenu>.
+      </para>
+     </step>
+     <step>
+      <para>
+       Enter the target directory. It can be either local or remote. If you
+       want to synchronize to a remote directory, choose the method (SSH,
+       RSH or Socket) and enter the hostname and an optional user.
+      </para>
+     </step>
+     <step>
+      <para>
+       If you have not synchronized these two directories before, a warning
+       dialog appears, informing you that Unison will now compare the
+       contents of those directories. Close the warning with
+       <guimenu>OK</guimenu> and wait until Unison has collected the
+       information from both directories and displays the differences in the
+       main window.
+      </para>
+      <para>
+       The left column shows the source directory you have selected, the
+       third column shows the target directory. If there are differences
+       between the directories, the <guimenu>Action</guimenu> column shows a
+       symbol, proposing an action. A green arrow indicates that a file has
+       been modified, added or deleted in the source or the target
+       directory. The direction of the arrow indicates the direction that
+       the change would be propagated if you performed the synchronization
+       now. A question mark indicates a conflict (both files have been
+       changed and Unison cannot decide which one to overwrite).
+      </para>
+      <figure id="fig.">
+       <title>File Synchronization Proposal</title>
+       <mediaobject>
+        <imageobject role="html">
+         <imagedata fileref="unison.png" width="100%"/>
+        </imageobject>
+        <imageobject role="fo">
+         <imagedata fileref="unison.png" width="80%"/>
+        </imageobject>
+       </mediaobject>
+      </figure>
+     </step>
+     <step>
+      <para>
+       To modify the proposals Unison shows for each file (for example, if
+       you want to change the direction), select the file and click
+       <guimenu>Right to Left</guimenu> or <guimenu>Left to Right</guimenu>.
+       With <guimenu>Skip</guimenu>, exclude a file from synchronization.
+       The symbol in the <guimenu>Action</guimenu> column changes
+       accordingly.
+      </para>
+     </step>
+     <step>
+      <para>
+       To start the synchronization, click <guimenu>Go</guimenu>.
+      </para>
+     </step>
+    </procedure>
+    <para>
+     The next time you start Unison, a dialog box shows the existing
+     profiles, each specifying a pair of directories to be synchronized.
+     Select a profile or create a new profile (for another pair of
+     directories) and perform the synchronization as described above.
+    </para>
+   </sect3>
+   <sect3>
+    <title>Using the Command Line</title>
+    <para>
+     Unison can also be operated through the command line. To synchronize a
+     local directory to a remote computer, proceed as follows:
+    </para>
+    <procedure>
+     <step>
+      <para>
+       Open a shell and enter the following command:
+      </para>
+<screen>unison -ui text <replaceable>DIR</replaceable>
+         ssh://&exampleuser;@&wsIname;//<replaceable>PATH</replaceable></screen>
+      <para>
+       Replace the placeholders with the respective values.
+      </para>
+     </step>
+     <step>
+      <para>
+       Unison asks you what to do with your files and directories, for
+       example:
+      </para>
+<screen>local                  &wsI;
+           &lt;----  new file   dir [f]</screen>
+     </step>
+     <step>
+      <para>
+       Press <keycap>F</keycap> if you want to follow Unison's
+       recommendation. For other commands, press <keycap>?</keycap>.
+      </para>
+     </step>
+     <step>
+      <para>
+       Proceed with <keycap>y</keycap>, if you want to propagate your
+       updates.
+      </para>
+     </step>
+    </procedure>
+   </sect3>
+  </sect2>
+
+<!--
+    <sect2 id="sec.filetrans.csync">
+     <title>Transfering Files with CSync</title>
+     <para></para>
+   </sect2>
+  -->
+
+  <sect2 id="sec.filetrans.ftp">
+   <title>Copying Files with FTP</title><indexterm>
+   <primary>files</primary>
+   <secondary>copying with FTP</secondary></indexterm><indexterm>
+   <primary>protocols</primary>
+   <secondary>FTP</secondary></indexterm><indexterm>
+   <primary>FTP</primary></indexterm>
+   <para>
+    Before configuring your FTP server, make sure that the following
+    requirements are met:
+   </para>
+   <orderedlist>
+    <listitem>
+     <para>
+      The package <systemitem class="resource">vsftp</systemitem> is
+      installed.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      You have &rootuser; access to your FTP server.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Enough disk space is available on your computer.
+     </para>
+    </listitem>
+   </orderedlist>
+   <warning>
+    <title>For Home Networks Only</title>
+    <para>
+     This setup is suited for use in home networks only. Do not deploy it to
+     sites unprotected by firewalls and do not enable world wide access.
+    </para>
+   </warning>
+   <para>
+    To configure an FTP server, proceed as follows:
+   </para>
+   <procedure>
+    <step>
+     <para>
+      Prepare the FTP server:
+     </para>
+     <substeps>
+      <step>
+       <para>
+        Open a shell, log in as &rootuser;, and save a backup copy of
+        <filename>/etc/vsftpd.conf</filename>:
+       </para>
+<screen>cp /etc/vsftpd.conf /etc/vsftpd.conf.bak</screen>
+      </step>
+      <step>
+       <para>
+        Create an access point for anonymous FTP
+       </para>
+<screen>
+mkdir ~ftp/incoming
+chown -R ftp:ftp ~ftp/incoming</screen>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Replace the configuration files according to the preferred scenario
+      (refer to the manual page of <command>vsftpd.conf</command> for
+      advanced configuration options):
+     </para>
+     <variablelist>
+      <varlistentry>
+       <term>Allowing Anonymous Read and Write Access</term>
+       <listitem>
+<screen>#
+listen=YES
+									
+# Enable anonymous access to FTP server
+anonymous_enable=YES
+									
+#
+local_enable=YES
+# Enable write access
+write_enable=YES
+anon_upload_enable=YES
+anon_mkdir_write_enable=YES
+dirmessage_enable=YES
+# Write log file 
+xferlog_enable=YES
+connect_from_port_20=YES
+chown_uploads=YES
+chown_username=ftp
+ftpd_banner=Welcome to FTP service.
+anon_root=/srv/ftp</screen>
+       </listitem>
+      </varlistentry>
+      <varlistentry>
+       <term>Grant Restricted Permissions to FTP Users (Home Only)</term>
+       <listitem>
+<screen>chroot_local_users=YES</screen>
+       </listitem>
+      </varlistentry>
+     </variablelist>
+    </step>
+    <step>
+     <para>
+      Restart the FTP server:
+     </para>
+<screen>rcvsftp start</screen>
+    </step>
+   </procedure>
+   <para>
+    On the client, just enter the URL
+    <literal>ftp://<replaceable>HOST</replaceable></literal> in your browser
+    or FTP client. Replace <replaceable>HOST</replaceable> with the hostname
+    or IP address of your server. There are many graphical user interfaces
+    available that are suited to browsing the contents of your FTP server.
+    For a list of them, just enter FTP at the search prompt of the &yast;
+    package manager.
+   </para>
+  </sect2>
+ </sect1>
+<!-- Add subsections, if there are more methods to describe than SSH -->
+<!-- only -->
+ <sect1 id="sec.filetrans.winssh">
+  <title>Copying Files between Linux and Windows Computers with SSH</title><indexterm>
+
+  <primary>files</primary>
+
+  <secondary>copying</secondary>
+
+  <tertiary>Windows</tertiary></indexterm><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>Windows</secondary></indexterm><indexterm>
+
+  <primary>PuTTY</primary></indexterm><indexterm>
+
+  <primary>WinSCP</primary></indexterm>
+
+  <para>
+   To transfer files from Linux to Windows using SSH, choose one of the
+   following applications:
+  </para>
+
+  <variablelist>
+   <varlistentry>
+    <term>PuTTY</term>
+    <listitem>
+     <para>
+      PuTTY is a suite of different command line tools for working with an
+      SSH daemon. Download it from
+      <ulink url="http://www.chiark.greenend.org.uk/~sgtatham/putty.html"/>.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>WinSCP</term>
+    <listitem>
+     <para>
+      WinSCP is very similar to PuTTY, but includes a graphical user
+      interface. Choose from an Explorer or Norton Commander style. Download
+      it from <ulink url="http://winscp.net"/>.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+
+<?dbfo-need height="20em"?>
+
+  <para>
+   To copy a file from Windows to Linux with PuTTY, proceed as follows (on
+   the Windows machine):
+  </para>
+
+  <procedure>
+   <step>
+    <para>
+     Start PSCP.
+    </para>
+   </step>
+   <step>
+    <para>
+     Enter the hostname of your SSH server.
+    </para>
+   </step>
+   <step>
+    <para>
+     Enter your login and password to the SSH server.
+    </para>
+   </step>
+  </procedure>
+
+  <para>
+   To connect from Windows to Linux with WinSCP, proceed as follows (on the
+   Windows machine):
+  </para>
+
+  <procedure>
+   <step>
+    <para>
+     Start WinSCP.
+    </para>
+   </step>
+   <step>
+    <para>
+     Enter the hostname of the SSH server and username.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click <guimenu>Login</guimenu> and acknowledge the resulting warning.
+    </para>
+   </step>
+   <step>
+    <para>
+     Drag and drop any files or directories from or to your WinSCP window.
+    </para>
+   </step>
+  </procedure>
+
+  <note>
+   <title>SSH Fingerprint</title>
+   <para>
+    With both PuTTY and WinSCP, you must accept the SSH fingerprint when you
+    log in for the first time.
+   </para>
+  </note>
+ </sect1>
+ <sect1 id="sec.filetrans.share">
+  <title>Sharing Files between Linux Computers</title><indexterm>
+
+  <primary>files</primary>
+
+  <secondary>sharing, Linux</secondary></indexterm>
+
+  <para>
+   The following sections feature various methods for sharing data. Use one
+   of these if you are looking for a permanent solution for data sharing.
+  </para>
+
+<?dbfo-need height="20em"?>
+
+  <sect2 id="sec.filetrans.nfs">
+   <title>Transferring Files with NFS</title><indexterm>
+   <primary>file sharing</primary>
+   <secondary>NFS</secondary></indexterm><indexterm>
+   <primary>protocols</primary>
+   <secondary>NFS</secondary></indexterm><indexterm>
+   <primary>NFS</primary></indexterm>
+   <para>
+    To configure the server, proceed as follows:
+   </para>
+   <procedure>
+    <step>
+     <para>
+      Prepare the system:
+     </para>
+     <substeps>
+      <step>
+       <para>
+        Open a shell, log in as &rootuser;, and grant write permissions to
+        all users:
+       </para>
+<screen>mkdir /srv/nfs&#10;chgrp users /srv/nfs&#10;chmod g+w /srv/nfs</screen>
+      </step>
+      <step>
+       <para>
+        Make sure that your user name and user ID is known on the client as
+        well as on the server. Refer to <xref linkend="cha.y2.userman"/> for
+        detailed instructions about how to create and manage user accounts.
+       </para>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Prepare the NFS server:
+     </para>
+     <substeps>
+      <step>
+       <para>
+        Start &yast; as &rootuser;.
+       </para>
+      </step>
+      <step>
+       <para>
+        Select <menuchoice> <guimenu>Network Services</guimenu> <guimenu>NFS
+        Server</guimenu> </menuchoice> (this module is not installed by
+        default. If it is missing in &yast;, install the package
+        <systemitem>yast2-nfs-server</systemitem>).
+       </para>
+      </step>
+      <step>
+       <para>
+        Enable NFS services with <guimenu>Start</guimenu>.
+       </para>
+      </step>
+      <step>
+       <para>
+        Open the appropriate firewall port with <guimenu>Open Port in
+        Firewall</guimenu> if you are using a firewall.
+       </para>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Export the directories:
+     </para>
+     <substeps>
+      <step>
+       <para>
+        Click <guimenu>Add directory</guimenu> and select
+        <filename>/srv/nfs</filename>.
+       </para>
+      </step>
+      <step>
+       <para>
+        Set the export options to:
+       </para>
+<screen>rw,root_squash,async</screen>
+      </step>
+      <step>
+       <para>
+        Repeat these steps, if you need to export more than one directory.
+       </para>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Apply your settings and leave &yast;. Your NFS server is ready to use.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    To manually start the NFS server, enter <command>rcnfsserver
+    start</command> as &rootuser;. To stop the server, enter
+    <command>rcnfsserver stop</command>. By default, &yast; takes care of
+    starting this service at boot time.
+   </para>
+   <para>
+    To configure the client, proceed as follows:
+   </para>
+   <procedure>
+    <step>
+     <para>
+      Prepare the NFS client:
+     </para>
+     <substeps>
+      <step>
+       <para>
+        Start &yast; as &rootuser;.
+       </para>
+      </step>
+      <step>
+       <para>
+        Select <menuchoice> <guimenu>Network Services</guimenu> <guimenu>NFS
+        Client</guimenu> </menuchoice>.
+       </para>
+      </step>
+      <step>
+       <para>
+        Activate <guimenu>Open Port in Firewall</guimenu> if using a
+        firewall.
+       </para>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Import the remote file system:
+     </para>
+     <substeps>
+      <step>
+       <para>
+        Click <guimenu>Add</guimenu>.
+       </para>
+      </step>
+      <step>
+       <para>
+        Enter the name or IP address of the NFS server or click
+        <guimenu>Choose</guimenu> to automatically scan the network for NFS
+        servers.
+       </para>
+      </step>
+      <step>
+       <para>
+        Enter the name of your remote file system or automatically choose it
+        with <guimenu>Select</guimenu>.
+       </para>
+      </step>
+      <step>
+       <para>
+        Enter an appropriate mount point, for example
+        <filename>/mnt</filename>. If you repeat this step with another
+        exported file system, make sure you choose another mount point than
+        <filename>/mnt</filename>.
+       </para>
+      </step>
+      <step>
+       <para>
+        Repeat these steps if you need to import more than one external
+        directory.
+       </para>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Apply your settings and leave &yast;. Your NFS client is ready to use.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    To start the NFS client manually, enter <command>rcnfs start</command>.
+   </para>
+   <note>
+    <title>Consistent User Names</title>
+    <para>
+     If your home network is used by just a small number of users, set up
+     identical users manually on all machines. If, however, you need a
+     larger consistent user base across a larger home network, consider
+     using NIS or LDAP to manage user data. For further information, refer
+     to <xref linkend="cha.nis"/> and <xref linkend="cha.security.ldap"/>.
+    </para>
+   </note>
+  </sect2>
+
+  <sect2 id="sec.filetrans.smb">
+   <title>Sharing Files with Samba</title><indexterm>
+   <primary>files</primary>
+   <secondary>sharing, Samba</secondary></indexterm><indexterm>
+   <primary>file sharing</primary>
+   <secondary>Samba</secondary></indexterm><indexterm>
+   <primary>protocols</primary>
+   <secondary>Samba</secondary></indexterm><indexterm>
+   <primary>Samba</primary></indexterm>
+   <para>
+    This sections introduces various methods to access files on a Samba
+    server. Both KDE and GNOME ship with graphical tools for working with
+    Samba shares. There is also a command line tool for accessing Samba
+    servers.
+   </para>
+   <sect3 id="sec.filetrans.kdegnomesmb">
+    <title>Accessing Shares with KDE and GNOME</title>
+    <para>
+     Both the KDE and GNOME desktops can access Samba shares through their
+     file browsers. To access your share, proceed as follows:
+    </para>
+    <procedure>
+     <step>
+      <para>
+       Press <keycombo> <keycap function="alt">Alt</keycap>
+       <keycap>F2</keycap> </keycombo> and enter
+       <literal>smb://&wsIname;/<replaceable>share</replaceable></literal>.
+      </para>
+      <para>
+       The syntax of this URL is
+       <literal>smb://<replaceable>HOST</replaceable>/<replaceable>SHARENAME</replaceable></literal>
+       with <replaceable>HOST</replaceable> representing the hostname
+       (<systemitem class="domainname">&wsIname;</systemitem>) or IP address
+       and <replaceable>SHARENAME</replaceable> representing the share. See
+       <xref linkend="st.filetrans.share"/>.
+      </para>
+     </step>
+     <step>
+      <para>
+       Log in with the username and password. The password is set in
+       <xref linkend="st.filetrans.smbpasswd"/> or just hit
+       <keycap function="enter">Enter</keycap> if no password is needed.
+      </para>
+     </step>
+     <step>
+      <para>
+       Drag and drop any files or directories from or to your window.
+      </para>
+     </step>
+    </procedure>
+    <para>
+     If you do not know your workgroup, enter <ulink url="smb:/"/> to list
+     all workgroups available in your network. The Smb4K tool (package
+     <systemitem class="resource" >smb4k</systemitem>) can also be used to
+     display all workgroups in your network and mount them on demand.
+    </para>
+   </sect3>
+   <sect3 id="sec.filetrans.smb.cmd">
+    <title>Accessing Shares from the Command Line</title>
+    <para>
+     If you prefer using the command line, use the
+     <command>smbclient</command> command. To log in to your Samba server,
+     run:
+    </para>
+<screen>smbclient //&wsI;/share -U &exampleuser;</screen>
+    <para>
+     Omit the <option>-U</option> option if you are the current user
+     <systemitem class="username">&exampleuser;</systemitem>. After logging
+     in successfully, use some basic commands like <command>ls</command>
+     (list contents), <command>mkdir</command> (create directory),
+     <command>get</command> (download file), and <command>put</command>
+     (upload file). Use <command>help</command> to display all commands.
+     Refer to the manual page of <command>smbclient</command> for more
+     information.
+    </para>
+   </sect3>
+<!-- Should we really insert this? Is this useful?
+      <sect3 id="sec.filetrans.mountsmb">
+        <title>Mounting SMB File Systems on Linux</title>
+        <para>FIXME</para>
+      </sect3>
+      -->
+  </sect2>
+ </sect1>
+ <sect1 id="sec.filetrans.linux2win">
+  <title>Sharing Files between Linux and Windows with Samba</title>
+
+  <para>
+   Samba is the first choice for transferring files between Windows and
+   Linux machines. These are the most common use cases for Samba:
+  </para>
+
+  <variablelist>
+   <varlistentry>
+    <term>Transferring Files from Linux to Windows with the SMB Scheme</term>
+    <listitem>
+     <para>
+      In the easiest case you do not have to configure a Linux server. Use
+      the <literal>smb:/</literal> scheme. For more information, see
+      <xref linkend="sec.filetrans.kdegnomesmb"/>. Make sure that your
+      workgroup is identical on both systems and that your directories are
+      shared.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Transferring Files from Windows to Linux Using a Server</term>
+    <listitem>
+     <para>
+      Configure a Samba server on your Linux computer. See
+      <xref linkend="proc.filetrans.sambaserv"/>.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+
+  <tip>
+   <title>Using Default Registry Entries for Your Windows System</title>
+   <para>
+    Some Windows versions (95, 98) require a small change in the registry
+    for enabling a different password authentication method. Simplify this
+    step by installing the
+    <systemitem class="resource">samba-doc</systemitem> package and copy the
+    file <filename>/usr/share/doc/packages/samba/registry</filename> to your
+    Windows drive. Start Windows and incorporate the changes by
+    double-clicking on this file.
+   </para>
+  </tip>
+
+  <procedure id="proc.filetrans.sambaserv">
+   <title>Setting Up a Samba Server</title>
+   <para>
+    To set up a Samba server, do the following:
+   </para>
+   <step>
+    <para>
+     Prepare the Samba server:
+    </para>
+    <substeps>
+     <step>
+      <para>
+       Start &yast; as &rootuser;.
+      </para>
+     </step>
+     <step>
+      <para>
+       Install the <systemitem>samba</systemitem> package.
+      </para>
+     </step>
+     <step>
+      <para>
+       Create a directory (for example, <filename>/srv/share</filename>).
+      </para>
+     </step>
+<!-- smbpassword here? -->
+    </substeps>
+   </step>
+   <step>
+    <para>
+     Create the server configuration:
+    </para>
+    <substeps>
+     <step>
+      <para>
+       Select <menuchoice> <guimenu>Network Services</guimenu>
+       <guimenu>Samba Server</guimenu> </menuchoice>.
+      </para>
+     </step>
+     <step id="st.filetrans.workgroup">
+      <para>
+       Select one of the workgroups or enter a new one (for example,
+       <systemitem class="service">Penguin</systemitem>).
+      </para>
+     </step>
+     <step>
+      <para>
+       Check <guimenu>Primary Domain Controller (PDC)</guimenu>
+      </para>
+     </step>
+     <step>
+      <para>
+       Select <guimenu>During Boot</guimenu> if the Samba service should be
+       started every time your computer boots. Otherwise select
+       <guimenu>Manually</guimenu>.
+      </para>
+     </step>
+     <step>
+      <para>
+       Activate <guimenu>Open Port in Firewall</guimenu> if you use a
+       firewall.
+      </para>
+     </step>
+    </substeps>
+   </step>
+   <step>
+    <para>
+     Create your Windows share:
+    </para>
+    <substeps>
+     <step>
+      <para>
+       Change to the <guimenu>Shares</guimenu> tab and click
+       <guimenu>Add</guimenu>.
+      </para>
+     </step>
+     <step id="st.filetrans.share">
+      <para>
+       Enter a name and description. The <guimenu>Share Name</guimenu> is
+       used for accessing the share from your clients. <guimenu>Share
+       Description</guimenu> describes the purpose of the share.
+      </para>
+     </step>
+     <step>
+      <para>
+       Select your path (for example, <filename>/src/share</filename>).
+      </para>
+     </step>
+     <step>
+      <para>
+       Proceed with <guimenu>OK</guimenu>.
+      </para>
+     </step>
+     <step>
+      <para>
+       Activate <guimenu>Allow Users to Share Their Directories</guimenu>.
+      </para>
+     </step>
+    </substeps>
+   </step>
+   <step id="st.filetrans.smbpasswd">
+    <para>
+     Provide a password for all users that are allowed to use this service:
+    </para>
+<screen>smbpasswd -a &exampleuser;</screen>
+    <para>
+     For easier configuration, just hit
+     <keycap function="enter">Enter</keycap> to leave the password empty.
+     Take into account that the usernames on your Windows and Linux
+     computers are probably different. Configuring a consistent user base
+     for both Windows and Linux is beyond the scope of this document.
+    </para>
+   </step>
+<!-- Another  -->
+<!--
+   <step>
+   <para>Create <filename>/etc/samba/smb.conf</filename> with the
+   following contents:</para>
+          <screen>; /etc/samba/smb.conf
+          [global]
+          workgroup = TUX-NET <co id="co.ft.smb.workgroup"/>
+          comment = My Samba Server
+          security = share
+          
+          [share]
+          path = /srv/share <co id="co.ft.smb.path"/>
+          comment = 
+          inherit acls = Yes
+          writeable = true
+          browseable = true</screen>
+          <calloutlist>
+          <callout arearefs="co.ft.smb.workgroup">
+          <para>Change this entry, if you want a different workgroup.</para>
+          </callout>
+          <callout arearefs="co.ft.smb.path">
+          <para>Change your path</para>
+          </callout>
+          </calloutlist>
+          </step>
+        -->
+   <step>
+    <para>
+     Start the Samba server:
+    </para>
+<screen>rcnmb start&#10;rcsmb start</screen>
+   </step>
+  </procedure>
+
+  <para>
+   To check if everything has been successfully configured, enter:
+  </para>
+
+<screen>smbclient -L localhost</screen>
+
+  <para>
+   After you hit <keycap function="enter">Enter</keycap>, you should get
+   something like the following:
+  </para>
+
+<screen>Anonymous login successful
+Domain=[PENGUIN] OS=[Unix] Server=[Samba 3.0.22-11-SUSE-CODE10]
+        
+    Sharename       Type      Comment
+    ---------       ----      -------
+    share           Disk      Shared directory
+    netlogon        Disk      Network Logon Service
+    IPC$            IPC       IPC Service (Samba 3.0.22-11-SUSE-CODE10)
+    ADMIN$          IPC       IPC Service (Samba 3.0.22-11-SUSE-CODE10)
+Anonymous login successful
+Domain=[PENGUIN] OS=[Unix] Server=[Samba 3.0.22-11-SUSE-CODE10]
+        
+    Server               Comment
+    ---------            -------
+    SUSE-DESKTOP         Samba 3.0.22-11-SUSE-CODE10
+        
+    Workgroup            Master
+    ---------            -------
+    TUX-NET              &wsI;</screen>
+ </sect1>
+<!-- What about Mac?
+  <sect1 id="sec.filetrans.linux2mac">
+    <title>Transferring Files between Linux and Macintosh Computers</title>
+    <para>FIXME</para>
+  </sect1>
+   -->
+<?dbfo-need height="20em"?>
+ <sect1 id="sec.filetransfer.moreinformation">
+  <title>For More Information</title>
+
+  <itemizedlist>
+   <listitem>
+    <para>
+     <ulink url="http://en.wikipedia.org/wiki/VFAT"/>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <ulink url="http://en.wikipedia.org/wiki/NTFS"/>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <ulink url="http://en.wikipedia.org/wiki/Fstab"/>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <ulink url="http://en.wikipedia.org/wiki/Network_File_System"/>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <ulink url="http://en.wikipedia.org/wiki/File_Transfer_Protocol"/>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <ulink url="http://en.wikipedia.org/wiki/SSH"/>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <ulink url="http://en.wikipedia.org/wiki/Rsync"/>
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     <ulink url="http://en.wikipedia.org/wiki/Samba_software"/>
+    </para>
+   </listitem>
+  </itemizedlist>
+ </sect1>
+</chapter>

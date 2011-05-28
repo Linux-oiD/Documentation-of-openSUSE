@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<chapter id="cha.boot">
+ <title>Booting and Configuring a Linux System</title><indexterm>
+ <primary>booting</primary></indexterm>
+ <abstract>
+  <para>
+   Booting a Linux system involves different components. The hardware itself
+   is initialized by the BIOS, which starts the Kernel by means of a boot
+   loader. After this point, the boot process with init and the runlevels is
+   completely controlled by the operating system. The runlevel concept
+   enables you to maintain setups for everyday usage as well as to perform
+   maintenance tasks on the system.
+  </para>
+ </abstract>
+ <sect1 id="sec.boot.proc">
+  <title>The Linux Boot Process</title>
+
+  <para>
+   The Linux boot process consists of several stages, each represented by a
+   different component. The following list briefly summarizes the boot
+   process and features all the major components involved.
+  </para>
+
+  <orderedlist>
+   <listitem>
+    <formalpara>
+     <title>BIOS</title>
+     <para>
+      After turning on the computer, the BIOS initializes the screen and
+      keyboard and tests the main memory. Up to this stage, the machine does
+      not access any mass storage media. Subsequently, the information about
+      the current date, time, and the most important peripherals are loaded
+      from the CMOS values. When the first hard disk and its geometry are
+      recognized, the system control passes from the BIOS to the boot
+      loader. <phrase os="sles"> If the BIOS supports network booting, it is
+      also possible to configure a boot server that provides the boot
+      loader. On &x86; systems, PXE boot is needed. Other architectures
+      commonly use the BOOTP protocol to get the boot loader.</phrase>
+     </para>
+    </formalpara>
+   </listitem>
+   <listitem>
+    <formalpara>
+     <title>Boot Loader</title>
+     <para>
+      The first physical 512-byte data sector of the first hard disk is
+      loaded into the main memory and the <emphasis>boot loader</emphasis>
+      that resides at the beginning of this sector takes over. The commands
+      executed by the boot loader determine the remaining part of the boot
+      process. Therefore, the first 512&nbsp;bytes on the first hard disk
+      are referred to as the <emphasis>Master Boot Record</emphasis> (MBR).
+      The boot loader then passes control to the actual operating system, in
+      this case, the Linux Kernel. More information about &grub;, the Linux
+      boot loader, can be found in <xref linkend="cha.grub"/>.
+      <phrase os="sles"> For a network boot, the BIOS acts as the boot
+      loader. It gets the image to start from the boot server and starts the
+      system. This is completely independent of local hard disks.</phrase>
+     </para>
+    </formalpara>
+   </listitem>
+   <listitem>
+    <formalpara>
+     <title>Kernel and <filename>initramfs</filename></title>
+     <para>
+      To pass system control, the boot loader loads both the Kernel and an
+      initial RAM&ndash;based file system (<filename>initramfs</filename>)
+      into memory. The contents of the <filename>initramfs</filename> can be
+      used by the Kernel directly. <filename>initramfs</filename> contains a
+      small executable called init that handles the mounting of the real
+      root file system. If special hardware drivers are needed before the
+      mass storage can be accessed, they must be in
+      <filename>initramfs</filename>. For more information about
+      <filename>initramfs</filename>, refer to
+      <xref linkend="sec.boot.initrd"/>. <phrase os="sles"> If the system
+      does not have a local hard disk, the <filename>initramfs</filename>
+      must provide the root file system to the Kernel. This can be done with
+      the help of a network block device like iSCSI or SAN, but it is also
+      possible to use NFS as the root device.</phrase>
+     </para>
+    </formalpara>
+   </listitem>
+   <listitem>
+    <formalpara>
+     <title>init on <filename>initramfs</filename></title>
+     <para>
+      This program performs all actions needed to mount the proper root file
+      system, like providing Kernel functionality for the needed file system
+      and device drivers for mass storage controllers with
+      <systemitem class="service">udev</systemitem>. After the root file
+      system has been found, it is checked for errors and mounted. If this
+      is successful, the <filename>initramfs</filename> is cleaned and the
+      init program on the root file system is executed. For more information
+      about init, refer to <xref linkend="sec.boot.linuxrc"
+      />. Find
+      more information about <systemitem class="service">udev</systemitem>
+      in <xref linkend="cha.udev"/>.
+     </para>
+    </formalpara>
+   </listitem>
+   <listitem>
+    <formalpara>
+     <title>init</title>
+     <para>
+      init handles the actual booting of the system through several
+      different levels providing different functionality. init is described
+      in <xref linkend="sec.boot.init"/>.
+     </para>
+    </formalpara>
+   </listitem>
+  </orderedlist>
+
+  <sect2 id="sec.boot.initrd">
+   <title><filename>initramfs</filename></title>
+   <para>
+    <filename>initramfs</filename> is a small cpio archive that the Kernel
+    can load to a RAM disk. It provides a minimal Linux environment that
+    enables the execution of programs before the actual root file system is
+    mounted. This minimal Linux environment is loaded into memory by BIOS
+    routines and does not have specific hardware requirements other than
+    sufficient memory. <filename>initramfs</filename> must always provide an
+    executable named init that should execute the actual init program on the
+    root file system for the boot process to proceed.
+   </para>
+   <para>
+    Before the root file system can be mounted and the operating system can
+    be started, the Kernel needs the corresponding drivers to access the
+    device on which the root file system is located. These drivers may
+    include special drivers for certain kinds of hard drives or even network
+    drivers to access a network file system. The needed modules for the root
+    file system may be loaded by init on <filename>initramfs</filename>.
+    After the modules are loaded,
+    <systemitem class="service">udev</systemitem> provides the
+    <filename>initramfs</filename> with the needed devices. Later in the
+    boot process, after changing the root file system, it is necessary to
+    regenerate the devices. This is done by <filename>boot.udev</filename>
+    with the command <command>udevtrigger</command>.
+   </para><indexterm>
+   <primary>booting</primary>
+   <secondary>initramfs</secondary></indexterm><indexterm>
+   <primary>booting</primary>
+   <secondary>initrd</secondary></indexterm><indexterm>
+   <primary>scripts</primary>
+   <secondary>mkinitrd</secondary></indexterm>
+   <para>
+    If you need to change hardware (for example, hard disks) in an installed
+    system and this hardware requires different drivers to be present in the
+    Kernel at boot time, you must update <filename>initramfs</filename>.
+    This is done in the same way as with its predecessor,
+    <filename>initrd</filename>&mdash;by calling
+    <command>mkinitrd</command>. Calling <command>mkinitrd</command> without
+    any argument creates an <filename>initramfs</filename>. Calling
+    <command>mkinitrd <option>-R</option></command> creates an
+    <filename>initrd</filename>. In &productnamereg;, the modules to load
+    are specified by the variable <systemitem>INITRD_MODULES</systemitem> in
+    <filename>/etc/sysconfig/kernel</filename>. <indexterm>
+    <primary>configuration files</primary>
+    <secondary>kernel</secondary>
+    </indexterm> After installation, this variable is automatically set to
+    the correct value. The modules are loaded in exactly the order in which
+    they appear in <systemitem>INITRD_MODULES</systemitem>. This is only
+    important if you rely on the correct setting of the device files
+    <filename>/dev/sd?</filename>. However, in current systems you also may
+    use the device files below <filename>/dev/disk/</filename> that are
+    sorted in several subdirectories, named <filename>by-id</filename>,
+    <filename>by-path</filename> and <filename>by-uuid</filename>, and
+    always represent the same disk. This is also possible at install time by
+    specifying the respective mount option.
+   </para>
+   <important>
+    <title>Updating <filename>initramfs</filename> or <filename>initrd</filename></title>
+    <para>
+     The boot loader loads <filename>initramfs</filename> or
+     <filename>initrd</filename> in the same way as the Kernel. It is not
+     necessary to reinstall &grub; after updating
+     <filename>initramfs</filename> or <filename>initrd</filename>, because
+     &grub; searches the directory for the right file when booting.
+    </para>
+   </important>
+  </sect2>
+
+  <sect2 id="sec.boot.linuxrc">
+   <title>init on <filename>initramfs</filename></title>
+   <para>
+    The main purpose of init on <filename>initramfs</filename> is to prepare
+    the mounting of and access to the real root file system. Depending on
+    your system configuration, init is responsible for the following tasks.
+   </para>
+   <variablelist>
+    <varlistentry>
+     <term>Loading Kernel Modules</term>
+     <listitem>
+      <para>
+       Depending on your hardware configuration, special drivers may be
+       needed to access the hardware components of your computer (the most
+       important component being your hard drive). To access the final root
+       file system, the Kernel needs to load the proper file system drivers.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Providing Block Special Files</term>
+     <listitem>
+<?dbfo-need height="10em"?>
+      <para>
+       For each loaded module, the Kernel generates device events.
+       <systemitem class="service">udev</systemitem> handles these events
+       and generates the required block special files on a RAM file system
+       in <filename>/dev</filename>. Without those special files, the file
+       system and other devices would not be accessible.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Managing RAID and LVM Setups</term>
+     <listitem>
+      <para>
+       If you configured your system to hold the root file system under RAID
+       or LVM, init sets up LVM or RAID to enable access to the root file
+       system later. Find information about RAID and LVM in
+       <xref linkend="cha.advdisk"/>.
+<!--
+  FIXME: link to storage guide <xref linkend="sec.yast2.i_y2_part_expert"/>
+       <phrase os="sles">Find
+        information about EVMS and special storage settings in
+       &storage;.</phrase> 
+-->
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry id="ve.net">
+     <term>Managing Network Configuration</term>
+     <listitem>
+      <para>
+       If you configured your system to use a network-mounted root file
+       system (mounted via NFS), init must make sure that the proper network
+       drivers are loaded and that they are set up to allow access to the
+       root file system.
+      </para>
+      <para os="sles">
+       If the file system resides on a networked block device like iSCSI or
+       SAN, the connection to the storage server is also set up by the
+       <filename>initramfs</filename>.
+      </para>
+      <remark role="clarity"> 2004-10-21 - jjaeger: make sure this stuff is true ... </remark>
+      <remark>that is true. I don't know if we support it out of the box, but it is in fact possible
+       to create an <filename>initrd</filename> and linuxrc that behave as described. -bg</remark>
+      <remark>We do support it, at least for SLES. It might work on other versions, but don't
+       complain if it doesn't. -hare</remark>
+      <remark>I remember that I had some problems setting up root on iSCSI on SLES10, but we finally
+       solved that. -bg</remark>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+   <para>
+    When init is called during the initial boot as part of the installation
+    process, its tasks differ from those mentioned above:
+   </para>
+   <variablelist>
+    <varlistentry>
+     <term>Finding the Installation Medium</term>
+     <listitem>
+      <para>
+       As you start the installation process, your machine loads an
+       installation Kernel and a special <filename>initrd</filename> with
+       the &yast; installer on the installation medium. The &yast;
+       installer, which is run in a RAM file system, needs to have
+       information about the location of the installation medium to access
+       it and install the operating system.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Initiating Hardware Recognition and Loading Appropriate Kernel Modules</term>
+     <listitem>
+      <para>
+       As mentioned in <xref linkend="sec.boot.initrd"/>, the boot process
+       starts with a minimum set of drivers that can be used with most
+       hardware configurations. init starts an initial hardware scanning
+       process that determines the set of drivers suitable for your hardware
+       configuration. The names of the modules needed for the boot process
+       are written to <systemitem>INITRD_MODULES</systemitem> in
+       <filename>/etc/sysconfig/kernel</filename>. These names are used to
+       generate a custom <filename>initramfs</filename> that is needed to
+       boot the system. If the modules are not needed for boot but for
+       coldplug, the modules are written to
+       <filename>/etc/sysconfig/hardware/hwconfig-*</filename>. All devices
+       that are described with configuration files in this directory are
+       initialized in the boot process.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Loading the Installation System or Rescue System</term>
+     <listitem>
+      <para>
+       As soon as the hardware is properly recognized, the appropriate
+       drivers are loaded, and <systemitem class="service">udev</systemitem>
+       creates the special device files, init starts the installation system
+       with the actual &yast; installer, or the rescue system.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Starting &yast;</term>
+     <listitem>
+      <para>
+       Finally, init starts &yast;, which starts package installation and
+       system configuration.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.boot.init">
+  <title>The init Process</title><indexterm id="idx.init" class="startofrange">
+
+  <primary>init</primary></indexterm><indexterm>
+
+  <primary>configuration files</primary>
+
+  <secondary>inittab</secondary></indexterm><indexterm>
+
+  <primary>init</primary>
+
+  <secondary>inittab</secondary></indexterm>
+
+  <para>
+   The program init is the process with process ID 1. It is responsible for
+   initializing the system in the required way. init is started directly by
+   the Kernel and resists signal&nbsp;9, which normally kills processes. All
+   other programs are either started directly by init or by one of its child
+   processes.
+  </para>
+
+  <para>
+   init is centrally configured in the <filename>/etc/inittab</filename>
+   file where the <emphasis>runlevels</emphasis> are defined (see
+   <xref linkend="sec.boot.runlevel"/>). The file also specifies which
+   services and daemons are available in each of the runlevels. Depending on
+   the entries in <filename>/etc/inittab</filename>, several scripts are run
+   by init. By default, the first script that is started after booting is
+   <filename>/etc/init.d/boot</filename>. Once the system initialization
+   phase is finished, the system changes the runlevel to its default
+   runlevel with the <filename>/etc/init.d/rc</filename> script. For reasons
+   of clarity, these scripts, called <emphasis>init scripts</emphasis>, all
+   reside in the directory <filename>/etc/init.d</filename> (see
+   <xref linkend="sec.boot.init.skripte"/>). <indexterm>
+   <primary>scripts</primary>
+   <secondary>init.d</secondary>
+   </indexterm>
+  </para>
+
+  <para>
+   The entire process of starting the system and shutting it down is
+   maintained by init. From this point of view, the Kernel can be considered
+   a background process to maintain all other processes and adjust CPU time
+   and hardware access according to requests from other programs.
+  </para><indexterm class="endofrange" startref="idx.init"/>
+
+  <sect2 id="sec.boot.runlevel">
+   <title>Runlevels</title><indexterm id="idx.runlevels" class="startofrange">
+   <primary>runlevels</primary></indexterm><indexterm>
+   <primary>configuration files</primary>
+   <secondary>inittab</secondary></indexterm>
+   <para>
+    In Linux, <emphasis>runlevels</emphasis> define how the system is
+    started and what services are available in the running system. After
+    booting, the system starts as defined in
+    <filename>/etc/inittab</filename> in the line
+    <literal>initdefault</literal>. Usually this is <literal>3</literal> or
+    <literal>5</literal>. See <xref linkend="tab.boot.runlevel"/>. As an
+    alternative, the runlevel can be specified at boot time (by adding the
+    runlevel number at the boot prompt, for instance). Any parameters that
+    are not directly evaluated by the Kernel itself are passed to init. To
+    boot into runlevel 3, just add the single number 3 to the boot prompt.
+   </para>
+   <table id="tab.boot.runlevel">
+    <title>Available Runlevels</title>
+    <tgroup cols="2">
+     <thead>
+      <row>
+       <entry>
+        <para>
+         Runlevel
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Description
+        </para>
+       </entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>
+        <para>
+         0
+        </para>
+       </entry>
+       <entry>
+        <para>
+         System halt
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         S or 1
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Single user mode
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         2
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Local multiuser mode without remote network (NFS, etc.)
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         3
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Full multiuser mode with network
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         4
+        </para>
+       </entry>
+       <entry>
+        <para>
+         <guimenu>User Defined</guimenu>, this is not used unless the
+         administrator configures this runlevel.
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         5
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Full multiuser mode with network and X display manager&mdash;KDM,
+         GDM, or XDM
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         6
+        </para>
+       </entry>
+       <entry>
+        <para>
+         System reboot
+        </para>
+       </entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </table>
+   <important>
+    <title>Avoid Runlevel&nbsp;2 with a Partition Mounted via NFS</title>
+    <para>
+     You should not use runlevel&nbsp;2 if your system mounts a partition
+     like <filename>/usr</filename> via NFS. The system might behave
+     unexpectedly if program files or libraries are missing because the NFS
+     service is not available in runlevel&nbsp;2 (local multiuser mode
+     without remote network).
+    </para>
+   </important>
+   <para>
+    To change runlevels while the system is running, enter
+    <command>telinit</command> and the corresponding number as an argument.
+    Only the system administrator is allowed to do this. The following list
+    summarizes the most important commands in the runlevel area.
+   </para>
+   <variablelist>
+    <varlistentry>
+     <term><command>telinit 1</command> or <command>shutdown now</command>
+     </term>
+     <listitem>
+      <para>
+       The system changes to <emphasis>single user mode</emphasis>. This
+       mode is used for system maintenance and administration tasks.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><command>telinit 3</command>
+     </term>
+     <listitem>
+      <para>
+       All essential programs and services (including network) are started
+       and regular users are allowed to log in and work with the system
+       without a graphical environment.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><command>telinit 5</command>
+     </term>
+     <listitem>
+      <para>
+       The graphical environment is enabled. Usually a display manager like
+       XDM, GDM or KDM is started. If autologin is enabled, the local user
+       is logged in to the preselected window manager (GNOME or KDE or any
+       other window manager).
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><command>telinit 0</command> or <command>shutdown -h now</command>
+     </term>
+     <listitem>
+      <para>
+       The system halts.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><command>telinit 6</command> or <command>shutdown -r now</command>
+     </term>
+     <listitem>
+      <para>
+       The system halts then reboots.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+   <para>
+    Runlevel <literal>5</literal> is the default runlevel in all
+    &productname; standard installations. Users are prompted for login with
+    a graphical interface or the default user is logged in automatically.
+   </para>
+   <warning>
+    <title>Errors in /etc/inittab May Result in a Faulty System Boot</title>
+    <para>
+     <indexterm>
+     <primary>configuration files</primary>
+     <secondary>inittab</secondary>
+     </indexterm> If <filename>/etc/inittab</filename> is damaged, the
+     system may not boot properly. Therefore, be extremely careful while
+     editing <filename>/etc/inittab</filename>. Always let init reread
+     <filename>/etc/inittab</filename> with the command <command>telinit
+     <option>q</option></command> before rebooting the machine.
+    </para>
+   </warning><indexterm id="idx.runlevels_changing" class="startofrange">
+   <primary>runlevels</primary>
+   <secondary>changing</secondary></indexterm>
+   <para>
+    Generally, two things happen when you change runlevels. First, stop
+    scripts of the current runlevel are launched, closing down some programs
+    essential for the current runlevel. Then start scripts of the new
+    runlevel are started. Here, in most cases, a number of programs are
+    started. For example, the following occurs when changing from runlevel 3
+    to 5:
+   </para>
+   <orderedlist>
+    <listitem>
+     <para>
+      The administrator (<systemitem class="username">root</systemitem>)
+      requests init to change to a different runlevel by entering
+      <command>telinit <option>5</option></command>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      <indexterm>
+      <primary>configuration files</primary>
+      <secondary>inittab</secondary>
+      </indexterm> <indexterm>
+      <primary>scripts</primary>
+      <secondary>init.d</secondary>
+      <tertiary>rc</tertiary>
+      </indexterm> init checks the current runlevel
+      (<command>runlevel</command>) and determines it should start
+      <filename>/etc/init.d/rc</filename> with the new runlevel as a
+      parameter.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Now <command>rc</command> calls the stop scripts of the current
+      runlevel for which there is no start script in the new runlevel. In
+      this example, these are all the scripts that reside in
+      <filename>/etc/init.d/rc3.d</filename> (the old runlevel was 3) and
+      start with a <literal>K</literal>. The number following
+      <literal>K</literal> specifies the order to run the scripts with the
+      <systemitem>stop</systemitem> parameter, because there are some
+      dependencies to consider.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      The last things to start are the start scripts of the new runlevel. In
+      this example, these are in <filename>/etc/init.d/rc5.d</filename> and
+      begin with an <literal>S</literal>. Again, the number that follows the
+      <literal>S</literal> determines the sequence in which the scripts are
+      started.
+     </para>
+    </listitem>
+   </orderedlist>
+   <para>
+    When changing into the same runlevel as the current runlevel, init only
+    checks <filename>/etc/inittab</filename> for changes and starts the
+    appropriate steps, for example, for starting a <command>getty</command>
+    on another interface. The same functionality may be achieved with the
+    command <command>telinit q</command>.
+   </para><indexterm class="endofrange" startref="idx.runlevels_changing"/><indexterm class="endofrange" startref="idx.runlevels"/>
+  </sect2>
+
+  <sect2 id="sec.boot.init.skripte">
+   <title>Init Scripts</title><indexterm id="idx.init_scripts" class="startofrange">
+   <primary>init</primary>
+   <secondary>scripts</secondary></indexterm><indexterm id="idx.scripts_init.d" class="startofrange">
+   <primary>scripts</primary>
+   <secondary>init.d</secondary></indexterm>
+   <para>
+    There are two types of scripts in <filename>/etc/init.d</filename>:
+   </para>
+   <variablelist>
+    <varlistentry>
+     <term>Scripts Executed Directly by init </term>
+     <listitem>
+      <para>
+       <remark role="clarity"> 2006-10-20 - jjaeger: use em64t until we reset the PROFARCH
+        stuff in ENV to watch out for intel64 </remark>
+       <phrase arch="x86;ipf;amd64;em64t;ipseries;ppc"> This is the case
+       only during the boot process or if an immediate system shutdown is
+       initiated (power failure or a user pressing <keycombo>
+       <keycap>Ctrl</keycap> <keycap>Alt</keycap> <keycap>Del</keycap>
+       </keycombo>).</phrase> <phrase arch="zseries" os="sles"> For IBM
+       &zseries; systems, this is the case only during the boot process or
+       if an immediate system shutdown is initiated (power failure or via
+       <quote>signal quiesce</quote>). </phrase> The execution of these
+       scripts is defined in <filename>/etc/inittab</filename>.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Scripts Executed Indirectly by init </term>
+     <listitem>
+      <para>
+       <indexterm>
+       <primary>scripts</primary>
+       <secondary>init.d</secondary>
+       <tertiary>rc</tertiary>
+       </indexterm> These are run when changing the runlevel and always call
+       the master script <command>/etc/init.d/rc</command>, which guarantees
+       the correct order of the relevant scripts.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+   <para>
+    All scripts are located in <filename>/etc/init.d</filename>. Scripts
+    that are run at boot time are called through symbolic links from
+    <filename>/etc/init.d/boot.d</filename>. Scripts for changing the
+    runlevel are called through symbolic links from one of the
+    subdirectories (<filename>/etc/init.d/rc0.d</filename> to
+    <filename>/etc/init.d/rc6.d</filename>). This is just for reasons of
+    clarity and avoids duplicate scripts if they are used in several
+    runlevels. Because every script can be executed as both a start and a
+    stop script, these scripts must understand the parameters
+    <option>start</option> and <option>stop</option>. The scripts also
+    understand the <option>restart</option>, <option>reload</option>,
+    <option>force-reload</option>, and <option>status</option> options.
+    These different options are explained in
+    <xref
+     linkend="tab.boot.initscript.opt"/>. Scripts that are run
+    directly by init do not have these links. They are run independently
+    from the runlevel when needed.
+   </para>
+<!--   <?dbfo-need height="10em"?> -->
+   <table id="tab.boot.initscript.opt">
+    <title>Possible init Script Options</title>
+    <tgroup cols="2">
+     <thead>
+      <row>
+       <entry>
+        <para>
+         Option
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Description
+        </para>
+       </entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>
+        <para>
+         <option>start</option>
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Start service.
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         <option>stop</option>
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Stop service.
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         <option>restart</option>
+        </para>
+       </entry>
+       <entry>
+        <para>
+         If the service is running, stop it then restart it. If it is not
+         running, start it.
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         <option>reload</option>
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Reload the configuration without stopping and restarting the
+         service.
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         <option>force-reload</option>
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Reload the configuration if the service supports this. Otherwise,
+         do the same as if <option>restart</option> had been given.
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         <option>status</option>
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Show the current status of service.
+        </para>
+       </entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </table>
+   <para>
+    Links in each runlevel-specific subdirectory make it possible to
+    associate scripts with different runlevels. When installing or
+    uninstalling packages, these links are added and removed with the help
+    of the program insserv (or using
+    <filename>/usr/lib/lsb/install_initd</filename>, which is a script
+    calling this program). See the insserv(8) man page for details.
+   </para>
+   <para>
+    All of these settings may also be changed with the help of the &yast;
+    module. If you need to check the status on the command line, use the
+    tool <systemitem>chkconfig</systemitem>, described in the chkconfig(8)
+    man page.
+   </para>
+   <para>
+    A short introduction to the boot and stop scripts launched first or
+    last, respectively, follows as well as an explanation of the maintaining
+    script.
+   </para>
+   <variablelist>
+    <varlistentry>
+     <term><filename>boot</filename>
+     </term>
+     <listitem>
+      <para>
+       <indexterm>
+       <primary>scripts</primary>
+       <secondary>init.d</secondary>
+       <tertiary>boot</tertiary>
+       </indexterm> Executed while starting the system directly using init.
+       It is independent of the chosen runlevel and is only executed once.
+       Here, the <filename>/proc</filename> and
+       <filename>/dev/pts</filename> file systems are mounted and blogd
+       (boot logging daemon) is activated. If the system is booted for the
+       first time after an update or an installation, the initial system
+       configuration is started.
+      </para>
+      <para>
+       The blogd daemon is a service started by boot and rc before any other
+       one. It is stopped after the actions triggered by these scripts
+       (running a number of subscripts, for example, making block special
+       files available) are completed. blogd writes any screen output to the
+       log file <filename>/var/log/boot.msg</filename>, but only if and when
+       <filename>/var</filename> is mounted read-write. Otherwise, blogd
+       buffers all screen data until <filename>/var</filename> becomes
+       available. Get further information about blogd on the blogd(8) man
+       page.
+      </para>
+      <para>
+       The <filename>boot</filename> script is also responsible for starting
+       all the scripts in <filename>/etc/init.d/boot.d</filename> with names
+       that start with <literal>S</literal>. There, the file systems are
+       checked and loop devices are configured if needed. The system time is
+       also set. If an error occurs while automatically checking and
+       repairing the file system, the system administrator can intervene
+       after first entering the root password. The last executed script is
+       <command>boot.local</command>.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><filename>boot.local</filename>
+     </term>
+     <listitem>
+      <para>
+       <indexterm>
+       <primary>scripts</primary>
+       <secondary>init.d</secondary>
+       <tertiary>boot.local</tertiary>
+       </indexterm> Here, enter additional commands to execute at boot
+       before changing into a runlevel. It can be compared to
+       <filename>AUTOEXEC.BAT</filename> on DOS systems.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><filename>halt</filename>
+     </term>
+     <listitem>
+      <para>
+       <indexterm>
+       <primary>scripts</primary>
+       <secondary>init.d</secondary>
+       <tertiary>halt</tertiary>
+       </indexterm> This script is only executed while changing into
+       runlevel&nbsp;0 or 6. Here, it is executed either as
+       <literal>halt</literal> or as <literal>reboot</literal>. Whether the
+       system shuts down or reboots depends on how <filename>halt</filename>
+       is called. If special commands are needed during the shutdown, add
+       these to the <literal>halt.local</literal> script.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><filename>rc</filename>
+     </term>
+     <listitem>
+      <para>
+       <indexterm>
+       <primary>scripts</primary>
+       <secondary>init.d</secondary>
+       <tertiary>rc</tertiary>
+       </indexterm> This script calls the appropriate stop scripts of the
+       current runlevel and the start scripts of the newly selected
+       runlevel. Like the <filename>/etc/init.d/boot</filename> script, this
+       script is called from <filename>/etc/inittab</filename> with the
+       desired runlevel as parameter.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist><indexterm>
+   <primary>init</primary>
+   <secondary>adding scripts</secondary></indexterm>
+   <para>
+    You can create your own scripts and easily integrate them into the
+    scheme described above. For instructions about formatting, naming and
+    organizing custom scripts, refer to the specifications of the LSB and to
+    the man pages of <systemitem>init</systemitem>,
+    <systemitem>init.d</systemitem>, <systemitem>chkconfig</systemitem>, and
+    <systemitem>insserv</systemitem>. Additionally consult the man pages of
+    <systemitem>startproc</systemitem> and
+    <systemitem>killproc</systemitem>.
+   </para>
+   <warning>
+    <title>Faulty init Scripts May Halt Your System</title>
+    <para>
+     Faulty init scripts may hang your machine up. Edit such scripts with
+     great care and, if possible, subject them to heavy testing in the
+     multiuser environment. Find useful information about init scripts in
+     <xref linkend="sec.boot.runlevel"/>.
+    </para>
+   </warning>
+   <para>
+    To create a custom init script for a given program or service, use the
+    file <filename>/etc/init.d/skeleton</filename> as a template. Save a
+    copy of this file under the new name and edit the relevant program and
+    filenames, paths and other details as needed. You may also need to
+    enhance the script with your own parts, so the correct actions are
+    triggered by the init procedure.
+   </para>
+   <para>
+    The <literal>INIT INFO</literal> block at the top is a required part of
+    the script and must be edited. See
+    <xref linkend="aus.boot.init.skripte.add.initinfo"/>.
+   </para>
+   <example id="aus.boot.init.skripte.add.initinfo">
+    <title>A Minimal INIT INFO Block</title>
+<screen>### BEGIN INIT INFO
+# Provides:          FOO
+# Required-Start:    $syslog $remote_fs
+# Required-Stop:     $syslog $remote_fs
+# Default-Start:     3 5
+# Default-Stop:      0 1 2 6
+# Description:       Start FOO to allow XY and provide YZ
+### END INIT INFO</screen>
+   </example>
+   <para>
+    In the first line of the <literal>INFO</literal> block, after
+    <literal>Provides:</literal>, specify the name of the program or service
+    controlled by this init script. In the
+    <literal>Required-Start:</literal> and <literal>Required-Stop:</literal>
+    lines, specify all services that need to be still running when the
+    service itself is stopped. This information is used later to generate
+    the numbering of script names, as found in the runlevel directories.
+    After <literal>Default-Start:</literal> and
+    <literal>Default-Stop:</literal>, specify the runlevels in which the
+    service should automatically be started or stopped. Finally, for
+    <literal>Description:</literal>, provide a short description of the
+    service in question.
+   </para>
+   <para>
+    To create the links from the runlevel directories
+    (<filename>/etc/init.d/rc?.d/</filename>) to the corresponding scripts
+    in <filename>/etc/init.d/</filename>, enter the command <command>insserv
+    <replaceable>new-script-name</replaceable></command>. The insserv
+    program evaluates the <literal>INIT INFO</literal> header to create the
+    necessary links for start and stop scripts in the runlevel directories
+    (<filename>/etc/init.d/rc?.d/</filename>). The program also takes care
+    of the correct start and stop order for each runlevel by including the
+    necessary numbers in the names of these links. If you prefer a graphical
+    tool to create such links, use the runlevel editor provided by &yast;,
+    as described in <xref linkend="sec.boot.runlevel.edit"/>.
+   </para>
+   <para>
+    If a script already present in <filename>/etc/init.d/</filename> should
+    be integrated into the existing runlevel scheme, create the links in the
+    runlevel directories right away with insserv or by enabling the
+    corresponding service in the runlevel editor of &yast;. Your changes are
+    applied during the next reboot&mdash;the new service is started
+    automatically.
+   </para>
+   <para>
+    Do not set these links manually. If something is wrong in the
+    <literal>INFO</literal> block, problems will arise when
+    <command>insserv</command> is run later for some other service. The
+    manually added service will be removed with the next run of
+    <command>insserv</command> for this script.
+   </para><indexterm class="endofrange" startref="idx.init_scripts"/><indexterm class="endofrange" startref="idx.scripts_init.d"/>
+  </sect2>
+
+  <sect2 id="sec.boot.runlevel.edit">
+   <title>Configuring &ycc_runlevel; with &yast;</title><indexterm>
+   <primary>YaST</primary>
+   <secondary>runlevels</secondary></indexterm><indexterm>
+   <primary>runlevels</primary>
+   <secondary>editing in YaST</secondary></indexterm>
+   <para>
+    After starting this &yast; module with <menuchoice>
+    <guimenu>&yast;</guimenu> <guimenu>System</guimenu>
+    <guimenu>&ycc_runlevel;</guimenu> </menuchoice>, it displays an overview
+    listing all the available services and the current status of each
+    service (disabled or enabled). Decide whether to use the module in
+    <guimenu>Simple Mode</guimenu> or in <guimenu>Expert Mode</guimenu>. The
+    default <guimenu>Simple Mode</guimenu> should be sufficient for most
+    purposes. The left column shows the name of the service, the center
+    column indicates its current status and the right column gives a short
+    description. For the selected service, a more detailed description is
+    provided in the lower part of the window. To enable a service, select it
+    in the table then select <guimenu>Enable</guimenu>. The same steps apply
+    to disable a service.
+   </para>
+   <para>
+    For detailed control over the runlevels in which a service is started or
+    stopped or to change the default runlevel, first select <guimenu>Expert
+    Mode</guimenu>. The current default runlevel or
+    <quote>initdefault</quote> (the runlevel into which the system boots by
+    default) is displayed at the top. Normally, the default runlevel of a
+    &productname; system is runlevel&nbsp;5 (full multiuser mode with
+    network and X). A suitable alternative might be runlevel&nbsp;3 (full
+    multiuser mode with network).
+   </para>
+   <para>
+    This &yast; dialog allows the selection of one of the runlevels (as
+    listed in <xref
+     linkend="tab.boot.runlevel"/>) as the new default.
+    Additionally, use the table in this window to enable or disable
+    individual services and daemons. The table lists the services and
+    daemons available, shows whether they are currently enabled on your
+    system and, if so, for which runlevels. After selecting one of the rows
+    with the mouse, click the check boxes representing the runlevels
+    (<guimenu>B</guimenu>, <guimenu>0</guimenu>, <guimenu>1</guimenu>,
+    <guimenu>2</guimenu>, <guimenu>3</guimenu>, <guimenu>5</guimenu>,
+    <guimenu>6</guimenu>, and <guimenu>S</guimenu>) to define the runlevels
+    in which the selected service or daemon should be running.
+    Runlevel&nbsp;4 is undefined to allow creation of a custom runlevel. A
+    brief description of the currently selected service or daemon is
+    provided below the table overview.
+   </para>
+   <warning>
+    <title>Faulty Runlevel Settings May Damage Your System</title>
+    <para>
+     Faulty runlevel settings may make your system unusable. Before applying
+     your changes, make absolutely sure that you know their consequences.
+    </para>
+   </warning>
+   <figure id="fig.yast2.runlevel">
+    <title>&ycc_runlevel;</title>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="yast2_runlevel.png" width="75%" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="yast2_runlevel.png" width="75%" format="PNG"/>
+     </imageobject>
+    </mediaobject>
+   </figure>
+   <para>
+    With <guimenu>Start, Stop, or Refresh</guimenu>, decide whether a
+    service should be activated. <guimenu>Refresh status</guimenu> checks
+    the current status. <guimenu>Set or Reset</guimenu> lets you select
+    whether to apply your changes to the system or to restore the settings
+    that existed before starting the runlevel editor. Selecting
+    <guimenu>OK</guimenu> saves the changed settings to disk.
+   </para>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.boot.sysconfig"
+   >
+  <title>System Configuration via /etc/sysconfig</title><indexterm>
+
+  <primary>configuring</primary></indexterm><indexterm id="idx.scripts_SuSEconfig" class="startofrange">
+
+  <primary>scripts</primary>
+
+  <secondary>SuSEconfig</secondary></indexterm><indexterm id="idx.configuration_files_sysconfig" class="startofrange">
+
+  <primary>configuration files</primary>
+
+  <secondary>sysconfig</secondary></indexterm>
+
+  <para>
+   The main configuration of &productname; is controlled by the
+   configuration files in <filename>/etc/sysconfig</filename>. The
+   individual files in <filename>/etc/sysconfig</filename> are only read by
+   the scripts to which they are relevant. This ensures that network
+   settings, for example, only need to be parsed by network-related scripts.
+  </para>
+
+  <para>
+   There are two ways to edit the system configuration. Either use the
+   &yast; sysconfig Editor or edit the configuration files manually.
+  </para>
+
+  <sect2 id="sec.boot.sysconfig.edit">
+   <title>Changing the System Configuration Using the &yast; sysconfig Editor</title><indexterm>
+   <primary>&yast;</primary>
+   <secondary>sysconfig editor</secondary></indexterm>
+   <para>
+    The &yast; sysconfig editor provides an easy-to-use front-end for system
+    configuration. Without any knowledge of the actual location of the
+    configuration variable you need to change, you can just use the built-in
+    search function of this module, change the value of the configuration
+    variable as needed and let &yast; take care of applying these changes,
+    updating configurations that depend on the values set in
+    <filename>sysconfig</filename> and restarting services.
+   </para>
+   <warning>
+    <title>Modifying <filename>/etc/sysconfig/*</filename> Files Can Damage Your Installation</title>
+    <para>
+     Do not modify the <filename>/etc/sysconfig</filename> files if you lack
+     previous experience and knowledge. It could do considerable damage to
+     your system. The files in <filename>/etc/sysconfig</filename> include a
+     short comment for each variable to explain what effect they actually
+     have.
+    </para>
+   </warning>
+   <figure id="fig.yast2.sysconfig">
+    <title>System Configuration Using the sysconfig Editor</title>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata width="75%" fileref="yast2_sysconfig.png" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata width="75%" fileref="yast2_sysconfig.png" format="PNG"/>
+     </imageobject>
+    </mediaobject>
+   </figure>
+   <para>
+    The &yast; sysconfig dialog is split into three parts. The left part of
+    the dialog shows a tree view of all configurable variables. When you
+    select a variable, the right part displays both the current selection
+    and the current setting of this variable. Below, a third window displays
+    a short description of the variable's purpose, possible values, the
+    default value and the actual configuration file from which this variable
+    originates. The dialog also provides information about which
+    configuration script is executed after changing the variable and which
+    new service is started as a result of the change. &yast; prompts you to
+    confirm your changes and informs you which scripts will be executed
+    after you leave the dialog by selecting <guimenu>Finish</guimenu>. Also
+    select the services and scripts to skip for now, so they are started
+    later. &yast; applies all changes automatically and restarts any
+    services involved for your changes to take an effect.
+   </para>
+  </sect2>
+
+<?dbfo-need height="20em"?>
+
+  <sect2 id="sec.boot.sysconfig.man">
+   <title>Changing the System Configuration Manually</title>
+   <para>
+    To manually change the system configuration, proceed as follows
+   </para>
+   <procedure>
+    <step>
+     <para>
+      Become <systemitem class="username">root</systemitem>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Bring the system into single user mode (runlevel&nbsp;1) with
+      <command>telinit <option>1</option></command>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Change the configuration files as needed with an editor of your
+      choice.
+     </para>
+     <para>
+      If you do not use &yast; to change the configuration files in
+      <filename>/etc/sysconfig</filename>, make sure that empty variable
+      values are represented by two quotation marks
+      (<systemitem>KEYTABLE=</systemitem><literal>""</literal>) and that
+      values with blanks in them are enclosed in quotation marks. Values
+      consisting of one word only do not need to be quoted.
+     </para>
+    </step>
+    <step>
+     <para>
+      Execute <command>SuSEconfig</command> to make sure that the changes
+      take effect.
+     </para>
+    </step>
+    <step>
+     <para>
+      Bring your system back to the previous runlevel with a command like
+      <command>telinit
+      <replaceable>default_runlevel</replaceable></command>. Replace
+      <replaceable>default_runlevel</replaceable> with the default runlevel
+      of the system. Choose <literal>5</literal> if you want to return to
+      full multiuser with network and X or choose <literal>3</literal> if
+      you prefer to work in full multiuser with network.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    This procedure is mainly relevant when changing systemwide settings,
+    such as the network configuration. Small changes should not require
+    going into single user mode, but you may still do so to make absolutely
+    sure that all the programs concerned are correctly restarted.
+   </para>
+   <tip>
+    <title>Configuring Automated System Configuration</title>
+    <para>
+     <indexterm>
+     <primary>scripts</primary>
+     <secondary>SuSEconfig</secondary>
+     <tertiary>disabling</tertiary>
+     </indexterm> <indexterm>
+     <primary>configuration files</primary>
+     <secondary>suseconfig</secondary>
+     </indexterm> To disable the automated system configuration by
+     SuSEconfig, set the variable <systemitem>ENABLE_SUSECONFIG</systemitem>
+     in <filename>/etc/sysconfig/suseconfig</filename> to
+     <literal>no</literal>. Do not disable &suseconfig; if you want to use
+     the &suse; installation support. It is also possible to disable the
+     autoconfiguration partially.
+    </para>
+   </tip><indexterm class="endofrange" startref="idx.scripts_SuSEconfig"/><indexterm class="endofrange" startref="idx.configuration_files_sysconfig"/>
+  </sect2>
+ </sect1>
+</chapter>

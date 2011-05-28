@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl"
+ type="text/xml" 
+ title="Profiling step"?>
+<!DOCTYPE book PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
+ "novdocx.dtd"
+[
+ <!ENTITY % NOVDOC.DEACTIVATE.IDREF "IGNORE">
+ <!ENTITY % entities SYSTEM "entity-decl.ent">
+ %entities;
+]>
+<!-- ##################################################################### -->
+<!-- openSUSE Start-Up                                                     -->
+<!-- ##################################################################### -->
+<?provo dirname="startup/"?>
+<book lang="en" id="book.opensuse.startup" role="print">
+ <bookinfo>
+  <title>&startup;</title><productname>&productname;</productname>
+  <productnumber>&productnumber;</productnumber><date>
+<?dbtimestamp format="B d, Y"?></date>
+  <xi:include href="common_copyright_opensuse.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ </bookinfo>
+ <xi:include href="opensuse_startup_intro.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<!-- ============================================================= -->
+<!--	Quickstarts                                                -->
+<!-- ============================================================= -->
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="art_opensuse_install_quick.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="art_kde_quick.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="art_gnome_quick.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="art_ooffice_quick.xml"/>
+<!-- ===================================================================== -->
+<!-- Appendices                                                            -->
+<!-- ===================================================================== -->
+ <appendix>
+  <title>Help and Troubleshooting</title>
+  <para></para>
+  <xi:include href="help_admin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<!-- fs 2010-12-27: Added from Start-Up -->
+  <xi:include href="troubleshooting.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="common_copyright_quick.xml"/>
+  <xi:include os="osuse" xmlns:xi="http://www.w3.org/2001/XInclude" href="common_gfdl_i.xml"/>
+ </appendix>
+<!-- ============================================================= -->
+<!--	Index                                                        -->
+<!-- ============================================================= -->
+<!-- <index/> -->
+<!-- MUST be an empty element! -->
+</book>

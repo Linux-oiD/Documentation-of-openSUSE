@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+<!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+ <!ENTITY % entities SYSTEM "entity-decl.ent">
+ %entities;
+ ]>
+<sect1 id="sec.nm.kde">
+ <title>Using K&nm;</title>
+
+ <para>
+  <indexterm>
+  <primary>&nm;</primary>
+  <secondary>K&nm;</secondary>
+  </indexterm>
+  <remark condition="clarity">
+   2011-02-17 - fs: 
+   plasmoid-networkmanagement is the default on 11.4; ignoring k&nm; for now
+   since there is no time to describe both.
+   If k&nm; documentation is added again, nm.xml needs to be adjusted, too.
+
+   In sections that apply to both programs I am using "&nm; front-end" or
+   the "&nm; icon".
+
+  </remark>
+<!-- fs 2011-02-17: 
+   commenting k&nm;
+
+  The KDE front-end for &nm; is the K&nm; applet.
+-->
+  The KDE front-end for &nm; is the &nm; plasmoid. If the network has been
+  set up for &nm; control, the plasmoid usually starts automatically with
+  the desktop environment and is shown as an icon in the system tray.
+ </para>
+
+<!-- fs 2011-02-17: 
+   commenting k&nm;
+ <para>
+  If your system tray does not show any network connection icon, the applet
+  is probably not started. Press <keycombo><keycap function="alt"/>
+  <keycap>F2</keycap> </keycombo> and enter
+  <command>knetworkmanager</command> to start it manually.
+ </para>
+-->
+
+ <para>
+  If your system tray does not show any network connection icon, the
+  plasmoid is probably not started. Click on the <guimenu>Panel Tool
+  Box</guimenu> and choose <guimenu>Add Widgets</guimenu>. Double-click on
+  the <guimenu>Network Management</guimenu> entry and click on the
+  <guimenu>Panel Tool Box</guimenu> again.
+ </para>
+
+ <para>
+  The &nm; front-end only shows wireless networks for which you have
+  configured a connection. It hides connections when you are out of range of
+  a wireless network, or when the network cable is disconnected, thus always
+  giving you a clear view of which connections may be used.
+ </para>
+
+<!-- fs 2011-02-17: 
+     No time to screenshot the icons and couldn't find them in the filesystem
+     ask wstephenson to provide them
+
+  <variablelist>
+ <varlistentry>
+  <term>
+  <inlinemediaobject>
+  <imageobject role="html">
+  <imagedata width="5%" fileref="nm_device_wired.png"/>
+  </imageobject>
+  <imageobject role="fo">
+  <imagedata width="5%" fileref="nm_device_wired.png" format="PNG"/>
+  </imageobject>
+  </inlinemediaobject>
+  </term>
+  <listitem>
+  <para>A wired connection has been established.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>
+  <inlinemediaobject>
+  <imageobject role="html">
+  <imagedata width="5%" fileref="nm_no_connection.png"/>
+  </imageobject>
+  <imageobject role="fo">
+  <imagedata width="5%" fileref="nm_no_connection.png" format="PNG"/>
+  </imageobject>
+  </inlinemediaobject>
+  </term>
+  <listitem>
+  <para>Currently there is no connection to the Internet.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>
+  <inlinemediaobject>
+  <imageobject role="html">
+  <imagedata width="5%" fileref="nm_signal_75.png"/>
+  </imageobject>
+  <imageobject role="fo">
+  <imagedata width="5%" fileref="nm_signal_75.png" format="PNG"/>
+  </imageobject>
+  </inlinemediaobject>
+  </term>
+  <listitem>
+  <para>A wireless connection has been established. Blue bars show
+  the strength of the signal. The more blue bars, the better the signal
+  strength.</para>
+  </listitem>
+  </varlistentry>
+  <varlistentry>
+  <term>
+  <inlinemediaobject>
+  <imageobject role="html">
+  <imagedata width="5%" fileref="nm_connecting.png"/>
+  </imageobject>
+  <imageobject role="fo">
+  <imagedata width="5%" fileref="nm_connecting.png" format="PNG"/>
+  </imageobject>
+  </inlinemediaobject>
+  </term>
+  <listitem>
+  <para>A connection is being established or terminated.</para>
+  </listitem>
+  </varlistentry>
+  </variablelist>
+-->
+
+ <sect2 id="sec.nm.kde.applet.wired">
+  <title>Managing Wired Network Connections</title>
+  <para>
+   If your computer is connected to an existing network with a network
+   cable, use the &nm; front-end to manage the network connection(s).
+  </para>
+  <procedure>
+   <step>
+    <para>
+     Left-click the &nm; icon to show a menu with available
+     <guimenu>Connections</guimenu> and <guimenu>Interfaces</guimenu>.
+     Connections are being displayed in the right half of the plasmoid
+     window, while interfaces show up in the left half. The connection and
+     interface currently being used is marked with a blue globe.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click on <guimenu>Networking Interface</guimenu> listed in the right
+     half of the plasmoid window to get detailed information and statistics
+     for that interface. Switch back to the interface overview by clicking
+     on the blue arrow icon.
+    </para>
+   </step>
+   <step>
+    <para>
+     To disconnect an active connection, click on the red icon for the
+     <guimenu>Networking Interface</guimenu> in the right half of the
+     plasmoid window.
+    </para>
+   </step>
+   <step>
+    <para>
+     If you want to use a different configuration with the wired network,
+     click <guimenu>Manage Connections</guimenu> and add another wired
+     connection as described in <xref linkend="pro.nm.configure"/>. Click
+     the &nm; icon and select the newly configured connection to activate
+     it.
+    </para>
+   </step>
+   <step>
+    <para>
+     To switch off all network connections, both wired and wireless, click
+     the &nm; icon and uncheck <guimenu>Enable Networking</guimenu>.
+    </para>
+   </step>
+<!--taroth 2010-06-29: information by bin li <bili@novell.com> -check and
+    integrate for next revision: 
+    some small thing need to be noted in user's UI, which is different to 11.2.
+
+    2) The state (networking, wireless, ...) is now remembered after reboots, right click the applet icon, 
+    from the pop menu, select the checkbox to determine enable or not.-->
+  </procedure>
+ </sect2>
+
+ <sect2 id="sec.nm.kde.applet.wireless">
+  <title>Managing Wireless Network Connections</title>
+  <para>
+   By default the &nm; frontend only lists connections that are already
+   configured. The signal strength of each network is indicated by a series
+   of bars, each one representing 10%. Encrypted wireless networks are
+   marked with a green (WPA) or yellow (WEP)
+<!-- fs 2011-02-17: is that true?
+   -->
+   shield, while open networks are marked with a red shield.
+  </para>
+  <procedure>
+   <title>Connecting to a Wireless Network</title>
+   <step>
+    <para>
+     Click <guimenu>Show More</guimenu> to display all visible wireless
+     networks available.
+    </para>
+   </step>
+   <step>
+    <para>
+     Left-click on the network of your choice to open the network connection
+     dialog. To connect to a network that does not broadcast its service set
+     identifier ((E)SSID), click on <guimenu>hidden network</guimenu> and
+     press <keycap function="enter"/>. Fill in the connection details and
+     proceed with <guimenu>OK</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Based on your security settings for &nm; (see
+     <xref
+      linkend="sec.nm.sec.store"/> for details), you may have to
+     provide your KWallet password.
+    </para>
+   </step>
+   <step>
+    <para>
+     &nm; automatically connects to the configured network.
+    </para>
+   </step>
+  </procedure>
+  <procedure>
+   <title>Managing Active Wireless Connections</title>
+   <step>
+    <para>
+     Click on <guimenu>WLAN Interface</guimenu> listed in the right half of
+     the plasmoid window to get detailed information and statistics for that
+     interface. Switch back to the interface overview by clicking on the
+     blue arrow icon.
+    </para>
+   </step>
+   <step>
+    <para>
+     To disconnect an active connection, click on the red icon for the
+     <guimenu>WLAN Interface</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     To completely disable wireless networking, uncheck <guimenu>Enable
+     Wireless</guimenu>. This can be useful if you are on a plane or in any
+     other environment where wireless networking is not allowed.
+    </para>
+   </step>
+  </procedure>
+<!-- fs 2011-02-17: 
+     Commenting K&nm;
+
+  <para>
+   Available visible wireless networks are listed in the applet
+   menu under <guimenu>Wireless Networks</guimenu>. The signal strength of
+   each network is also shown in the menu. Encrypted wireless networks are
+   marked with a shield icon.
+   </para>
+  <para>
+   By default, K&nm; only shows wireless networks that you have configured a
+   connection for&mdash;provided they are both available and visible. To
+   connect to a wireless network for the first time, proceed as follows:
+  </para>
+  <procedure>
+   <step>
+    <para>
+     Left-click the applet icon and select <guimenu>Wireless 802.11 (Create
+     Network Connection)</guimenu>. K&nm; shows a list of available visible
+     wireless networks, including details about signal strength and
+     security.
+    </para>
+   </step>
+   <step>
+    <para>
+     To connect to a visible network, select the network from the list and
+     click <guimenu>Connect</guimenu>. If the network is encrypted, a dialog
+     opens. Choose the type of <guimenu>Security</guimenu> the network uses
+     and enter the appropriate credentials.
+    </para>
+   </step>
+   <step>
+    <para>
+     To connect to a network that does not broadcast its service set
+     identifier ((E)SSID) and therefore cannot be detected automatically,
+     select <guimenu>Connect to Other Network</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     In the dialog that opens, enter the ESSID and set encryption
+     parameters, if necessary.
+    </para>
+   </step>
+   <step>
+    <para>
+     Confirm your changes and click <guimenu>OK</guimenu>. &nm; now
+     activates the new connection.
+    </para>
+   </step>
+   <step>
+    <para>
+     To terminate a connection and to disable wireless networking, click the
+     applet icon and uncheck <guimenu>Enable Wireless</guimenu>. This can be
+     useful if you are on a plane or in any other environment where wireless
+     networking is not allowed.
+    </para>
+   </step>
+  </procedure>
+  <remark>
+   taroth 2010-06-29: information by bin li (bili@novell.com) -check and
+   integrate for next revision: 
+   some small thing need to be noted in user's UI, which is different to 11.2.
+   1) The applet of NetworkManager have 'Disconnect' item, so you can disconnect your network connection.
+   2) The state (networking, wireless, ...) is now remembered after reboots, right click the applet icon, 
+   from the pop menu, select the checkbox to determine enable or not.
+  </remark>
+-->
+  <para>
+   A wireless network that has been chosen explicitly will remain connected
+   as long as possible. If a network cable is plugged in during that time,
+   any connections that have been set to <guimenu>Connect
+   Automatically</guimenu> will be connected, while the wireless connection
+   remains up.
+  </para>
+ </sect2>
+
+ <sect2 id="sec.nm.kde.applet.accesspoint">
+  <title>Configuring Your Wireless Card as an Access Point</title>
+  <para>
+   If your wireless card supports access point mode, you can use &nm; for
+   configuration.
+  </para>
+  <note>
+   <title>Availability of Options</title>
+   <para>
+    Depending on your system set-up, you may not be allowed to configure
+    connections. In a secured environment, some options might be locked or
+    require &rootuser; permission. Ask your system administrator for
+    details.
+   </para>
+  </note>
+  <procedure>
+   <step>
+    <para>
+     Start the dialog for configuring network connections as described in
+     <xref linkend="sec.nm.configure"/> and <guimenu>Add</guimenu> a
+     <guimenu>Wireless</guimenu> connection.
+    </para>
+   </step>
+   <step>
+    <para>
+     On the <guimenu>Wireless</guimenu> tab provide a <guimenu>Connection
+     name</guimenu> and an <guimenu>SSID</guimenu>. Set <menuchoice>
+     <guimenu>Method</guimenu> <guimenu>Ad-hoc</guimenu> </menuchoice>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Set the encryption on the <guimenu>Wireless Security</guimenu> tab.
+    </para>
+    <important>
+     <title>Unprotected Wireless Networks Are a Security Risk</title>
+     <para>
+      If you set <guimenu>Security</guimenu> to <option>None</option>,
+      everybody can connect to your network, reuse your connectivity and
+      intercept your network connection. To restrict access to your access
+      point and to secure your connection, use encryption. You can choose
+      between various WEP and WPA&ndash;based encryptions. If you are not
+      sure which technology is best for you, read
+      <xref linkend="sec.wireless.wlan.func.auth"/>.
+     </para>
+    </important>
+   </step>
+   <step>
+    <para>
+     On the <guimenu>IP Address</guimenu> tab, make sure the
+     <guimenu>Method</guimenu> option is set to <guimenu>Shared</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Confirm your configuration with <guimenu>OK</guimenu>.
+    </para>
+   </step>
+  </procedure>
+ </sect2>
+
+<!-- fs 2011-02-17: 
+     commenting K&nm;
+     Customizing is not available for the applet
+
+ <remark>
+  taroth 2010-03-05: as I just learned from Will, the customization options are
+  still available, but only if opened from the tray icon
+ </remark>
+ <sect2 id="sec.nm.kde.applet.custom">
+  <title>Customizing K&nm;</title>
+  <para>
+   You can customize some aspects of K&nm;: the number of icons displayed in
+   the system tray, which tool tips to show and how to store your password
+   and credentials for network connections. For more information about the
+   last aspect, refer to <xref linkend="sec.nm.sec.store"/>.
+  </para>
+  <para>
+  <remark>
+   FIXME: SLE11 SP1 variant: checkit!
+   To explore the options available, right-click the &nm; system tray icon
+   and click <guimenu>Other</guimenu> on the left-hand side of the
+   configuration dialog.
+  </remark> 
+   To explore the options available, start the <guimenu>Personal
+   Settings</guimenu> from the main menu, select <guimenu>Network
+   Connections</guimenu> on the <guimenu>General</guimenu> tab and click
+   <guimenu>Other</guimenu> on the left-hand side of the configuration
+   dialog.
+  </para>
+  <procedure>
+   <title>Configuring Multiple Tray Icons for K&nm;</title>
+   <para>
+    As K&nm; can keep multiple connections active at once, you might wish to
+    be informed about the connection status for several connections at one
+    glance. You can do so by using multiple &nm; icons in your system tray,
+    each representing a different group of connection types (for example,
+    one icon for wired connections, another icon for wireless connections).
+   </para>
+   <step>
+    <para>
+     In the configuration dialog, switch to the <guimenu>Tray Icon</guimenu>
+     tab.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click <guimenu>More Icons</guimenu>. A new icon entry appears in the
+     list.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select the network connection types you want to be represented by this
+     icon and group them under the respective icon.
+    </para>
+    <informalfigure>
+     <mediaobject>
+      <imageobject role="fo">
+       <imagedata fileref="kde_knm_custom.png" width="61%" format="PNG"/>
+      </imageobject>
+      <imageobject role="html">
+       <imagedata fileref="kde_knm_custom.png" width="61%" format="png"/>
+      </imageobject>
+     </mediaobject>
+    </informalfigure>
+   </step>
+   <step>
+    <para>
+     Confirm your changes.
+    </para>
+   </step>
+  </procedure>
+  <para>
+   Now the system tray shows multiple &nm; icons from which you then can
+   access the connection types tied to that icon.
+  </para>
+  <para>
+   When configuring a network connection as described in
+   <xref
+    linkend="pro.nm.configure"/>, K&nm; also allows you to
+   customize the icon displayed for this connection. To change the icon,
+   click the icon button next to <guimenu>Connection Name</guimenu> and in
+   the following dialog, select the icon of your choice. After confirming
+   your changes, the new icon is displayed in the list of available
+   connections you get by clicking the K&nm; icon in the system tray.
+  </para>
+ </sect2>
+-->
+</sect1>

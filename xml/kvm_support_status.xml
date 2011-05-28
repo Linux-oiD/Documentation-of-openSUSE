@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<chapter id="cha.kvm.status">
+ <title>&kvm; Support Status</title>
+ <para>
+  The following list contains features and tools as supported by
+  &novell;&mdash;this does not necessarily reflect the support status of the
+  software itself. For a list of <command>qemu-kvm</command> command
+  switches supported by &novell;, refer to
+  <xref
+   linkend="app.kvm.qemu-commands"/>.
+ </para>
+ <sect1 id="sec.kvm.status.supported">
+  <title>Supported Features and Tools</title>
+
+  <variablelist>
+   <varlistentry>
+    <term><command>vm-install</command>
+    </term>
+    <listitem>
+     <para>
+      Define and install &vmguest;s via <command>vm-install</command>
+      including specifying RAM, disk type and location, video type, keyboard
+      mapping, NIC type, binding, MAC address, and boot method.
+     </para>
+     <para>
+      <emphasis>Restrictions:</emphasis> Currently only the
+      <literal>raw</literal> disk format is supported. NIC creation is
+      restricted to using Realtek or Virtio NICs.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>&vmm;</term>
+    <listitem>
+     <para>
+      Manage guests via &vmm; using the following functions: autostart,
+      start, stop, restart, pause, unpause, save, restore, clone, migrate,
+      special key sequence insertion, guest console viewers, performance
+      monitoring, and CPU pinning. Furthermore, static modifications of CPU,
+      RAM, boot method, disk, NIC, mouse, display, video and host PCI
+      assignments are supported.
+     </para>
+     <para>
+      <emphasis>Restrictions:</emphasis> The following features are
+      currently not supported: sound devices, vmvga (vmware), &xen; video,
+      and adding physical USB devices.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><command>virsh</command>
+    </term>
+    <listitem>
+     <para>
+      Manage guests via the command line.
+     </para>
+     <para>
+      <emphasis>Restrictions:</emphasis> Requires XML descriptions as
+      created by <command>vm-install</command> or
+      <command>virt-manager</command>. Altering these descriptions via
+      <command>virsh edit</command> is not supported. The supported
+      <command>virsh</command> functionality is restricted to life cycle
+      functions.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><command>qemu-kvm</command>
+    </term>
+    <listitem>
+     <para>
+      Manage guests via the command line. Although managing via &vmm; should
+      be the preferred option, <command>qemu-kvm</command> may be used for
+      greater flexibility. See
+      <xref
+       linkend="app.kvm.qemu-commands.supported"/> for a list of
+      supported options.
+     </para>
+     <para>
+      <emphasis>Restrictions:</emphasis> See
+      <xref
+       linkend="app.kvm.qemu-commands.unsupported"/> for a list
+      of not supported options.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><command>kvm_stat</command>
+    </term>
+    <listitem>
+     <para>
+      Debugging and monitoring tool.
+     </para>
+     <para>
+      <emphasis>Restrictions:</emphasis> none.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Kernel Samepage Merging (KSM)</term>
+    <listitem>
+     <para>
+      When enabled on the &vmhost; Kernel, KSM allows for automatic sharing
+      of identical memory pages between guests to save host memory.
+     </para>
+     <para>
+      <emphasis>Restrictions:</emphasis> none.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>PCI Passthrough</term>
+    <listitem>
+     <para>
+      PCI Passthrough improves performance of PCI devices. It requires a AMD
+      CPU with IOMMU (I/O Memory Mapping Unit) or an Intel CPU with VT-d
+      (Virtualization Technology for Directed I/O). VT-d requires the Kernel
+      parameter "intel_iommu=on". Many PCIe cards from major vendors should
+      be supportable. Refer to system level certifications for specific
+      details, or contact the vendor for support statements.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Non-Uniform Memory Access (NUMA)</term>
+    <listitem>
+     <para>
+      NUMA machines are supported. Using numactl to pin
+      <command>qemu-kvm</command> processes to specific nodes is
+      recommended.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </sect1>
+ <sect1 id="sec.kvm.status.unsupported">
+  <title>Unsupported Features and Tools</title>
+
+  <variablelist>
+   <varlistentry>
+    <term>CPU hotplugging</term>
+    <listitem>
+     <para>
+      Dynamically changing the number of virtual CPUs assigned to the guest
+      is currently not supported.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Device hotplugging</term>
+    <listitem>
+     <para>
+      Dynamically adding or removing devices in the guest is currently not
+      supported.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>&kvm; Kernel Module Parameters</term>
+    <listitem>
+     <para>
+      Specifying parameters for the &kvm; Kernel modules is currently not
+      supported unless done under the direction of &novell; support
+      personnel.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Using &qemu; without &kvm;</term>
+    <listitem>
+     <para>
+      <command>qemu-kvm</command> can be invoked with the
+      <option>-no-kvm</option> parameter. In this case guest CPU
+      instructions are emulated instead of being executed directly by the
+      processor. This mode is not supported, but may be useful for problem
+      resolution.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </sect1>
+</chapter>

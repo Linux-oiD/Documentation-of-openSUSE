@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+        "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xml:lang="en" font-family="monospace" font-size="8pt" width="12cm" height="7cm">
+<rect id="rect" fill="white" stroke="black" stroke-width="0.4pt" x="0" y="0"
+      width="100%" height="100%"/>
+<text xml:space="preserve" x="10" y="20">                     Work with Configuration Status         SUSE1</text>
+<text xml:space="preserve" x="10" y="35">                                                  12/03/01  17:45:21</text>
+<text xml:space="preserve" x="10" y="50">Position to  . . . . .   ____   Starting characters</text>
+<text xml:space="preserve" x="10" y="65"></text>
+<text xml:space="preserve" x="10" y="80">Type options, press Enter.</text>
+<text xml:space="preserve" x="10" y="95">  1=Vary on   2=Vary off   5=Work with job   8=Work with description</text>
+<text xml:space="preserve" x="10" y="110">  9=Display mode status    13=Work with APPN status...</text>
+<text xml:space="preserve" x="10" y="125"></text>
+<text xml:space="preserve" x="10" y="140">Opt  Description       Status                ----------Job-------------</text>
+<text xml:space="preserve" x="10" y="155">__   CINST             VARIED OFF</text>
+<text xml:space="preserve" x="10" y="170">__   CURRY             ACTIVE</text>
+<text xml:space="preserve" x="10" y="185">1_   GINGER            VARIED OFF</text>
+<text xml:space="preserve" x="10" y="200">__   PEPPER            VARIED OFF</text>
+<text xml:space="preserve" x="10" y="215">__   PEPPERI           ACTIVE</text>
+<text xml:space="preserve" x="10" y="230">__   TEST              VARIED OFF</text>
+<text xml:space="preserve" x="10" y="245"></text>
+<text xml:space="preserve" x="10" y="260">                                                                 Bottom</text>
+<text xml:space="preserve" x="10" y="275">Parameters or command</text>
+<text xml:space="preserve" x="10" y="290">===&gt; ______________________</text>
+<text xml:space="preserve" x="10" y="305">F3=Exit   F4=Prompt   F12=Cancel   F23=More options   F24=More keys</text>
+</svg>

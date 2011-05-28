@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE preface PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<preface id="preface.reference">
+ <title>About This Guide</title>
+ <para>
+  This manual gives you a general understanding of &productnamereg;. It is
+  intended mainly for system administrators and home users with basic system
+  administration knowledge. Check out the various parts of this manual for a
+  selection of applications needed in everyday life and in-depth
+  descriptions of advanced installation and configuration scenarios.
+ </para>
+ <variablelist>
+  <varlistentry>
+   <term>Advanced Deployment Scenarios</term>
+   <listitem>
+    <para>
+     Learn how to deploy &productname; from a remote location and become
+     acquainted with complex disk setup scenarios.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Managing and Updating Software</term>
+   <listitem>
+    <para>
+     Understand how to install or remove software with either &yast; or
+     using the command line<phrase os="osuse">, how to use the 1-Click
+     Install feature,</phrase> and how to keep your system up-to-date.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Administration</term>
+   <listitem>
+    <para>
+     Learn how to configure and upgrade &productname;, how to administrate
+     your system in text mode, and get to know some important utilities for
+     Linux administrators.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>System</term>
+   <listitem>
+    <para>
+     Get an introduction to the components of your Linux system and a deeper
+     understanding of their interaction.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Services</term>
+   <listitem>
+    <para>
+     Learn how to configure the various network and file services that come
+     with &productname;.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Mobility</term>
+   <listitem>
+    <para>
+     Get an introduction to mobile computing with &productname;, get to know
+     the various options for wireless computing and power management.
+    </para>
+   </listitem>
+  </varlistentry>
+ </variablelist>
+ <para>
+  Many chapters in this manual contain links to additional documentation
+  resources. These include additional documentation that is available on the
+  system, as well as documentation available on the Internet.
+ </para>
+ <para>
+  For an overview of the documentation available for your product and the
+  latest documentation updates, refer to
+  <ulink url="http://www.novell.com/documentation/opensuse114"/> or to the
+  following section.
+ </para>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+  href="common_intro_available_doc_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+  href="common_intro_feedback_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+  href="common_intro_typografie_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="osuse"
+  href="common_intro_making_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="osuse"
+  href="common_intro_source_code_i.xml" />
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="osuse"
+  href="common_intro_acknowl_i.xml" />
+</preface>

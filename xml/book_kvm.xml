@@ -1,0 +1,60 @@
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl"
+                 type="text/xml" 
+                 title="Profiling step"?>
+<!DOCTYPE book PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
+                      "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "IGNORE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<!-- ##################################################################### -->
+<!-- Virtualization with KVM                                               -->
+<!-- ##################################################################### -->
+<?provo dirname="virtualization/"?>
+<book lang="en" id="book.kvm">
+ <bookinfo>
+  <title>&kvmguide;</title><productname>&productname;</productname>
+  <productnumber>&productnumber;</productnumber><date>
+<?dbtimestamp format="B d, Y"?></date>
+  <xi:include os="osuse" href="common_copyright_opensuse.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include os="sles;sled" href="common_copyright_sle.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ </bookinfo>
+ <xi:include href="kvm_intro.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ <part>
+  <title>Requirements, Limitations, and Support Status</title>
+  <xi:include href="kvm_requirements.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="kvm_limitations.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="kvm_support_status.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ </part>
+ <part>
+  <title>Managing Virtual Machines with &libvirt;</title>
+  <xi:include href="libvirt_overview.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="libvirt_guest_installation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="libvirt_managing.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="libvirt_connect.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="libvirt_stor_net.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="libvirt_configuration.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="libvirt_admin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ </part>
+ <part>
+  <title>Managing Virtual Machines with &qemu;</title>
+  <xi:include href="qemu_overview.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="qemu_guest_installation.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="qemu_running_vms_qemukvm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="qemu_monitor.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ </part>
+<!--
+ <part>
+  <title>Advanced Configurations</title>
+ </part>
+ <part>
+  <title>Administration and Best Practices</title>
+ </part>
+-->
+<!-- ===================================================================== -->
+<!-- Appendices                                                            -->
+<!-- ===================================================================== -->
+ <xi:include href="kvm_appendix.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ <xi:include  href="common_legal.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</book>

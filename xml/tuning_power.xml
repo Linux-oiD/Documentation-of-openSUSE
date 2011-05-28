@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<chapter id="cha.tuning.power">
+ <title>Power Management</title>
+<!--
+ power management on the server (not mobile computers)
+ Info Provider: Thomas Renniger <trenn@suse.de>
+-->
+ <abstract>
+  <para>
+   Power management aims at reducing operating costs for energy and cooling
+   systems while at the same time keeping the performance of a system at a
+   level that matches the current requirements. Thus, power management is
+   always a matter of balancing the actual performance needs and power
+   saving options for a system. Power management can be implemented and used
+   at different levels of the system. A set of specifications for power
+   management functions of devices and the operating system interface to
+   them has been defined in the Advanced Configuration and Power Interface
+   (ACPI). As power savings in server environments can primarily be achieved
+   on processor level, this chapter introduces some of the main concepts and
+   highlights some tools for analyzing and influencing relevant parameters.
+  </para>
+ </abstract>
+ <sect1 id="sec.tuning.power.cpu">
+  <title>Power Management at CPU Level</title>
+
+  <para>
+   At CPU level, you can control power usage in various ways: for example,
+   by using idling power states (C-states), changing CPU frequency
+   (P-states), and throttling the CPU (T-states). The following sections
+   give a short introduction to each approach and its significance for power
+   savings. Detailed specifications can be found at
+   <ulink url="http://www.acpi.info/spec.htm"
+   />.
+  </para>
+
+  <sect2 id="sec.tuning.power.cpu.cstates">
+   <title>C-States (Processor Operating States)</title>
+   <para>
+    Modern processors have several power saving modes called
+    <literal>C-states</literal>. They reflect the capability of an idle
+    processor to turn off unused components in order to save power. Whereas
+    C-states have been available for laptops for some time, they are a
+    rather recent trend in the server market (for example, with Intel*
+    processors, C-modes are only available since
+    <productname>Nehalem</productname>).
+   </para>
+   <para>
+    When a processor runs in the <literal>C0</literal> state, it is
+    executing instructions. A processor running in any other C-state is
+    idle. The higher the C number, the deeper the CPU sleep mode: more
+    components are shut down to save power. Deeper sleep states save more
+    power, but the downside is that they have higher latency (the time the
+    CPU needs to go back to <literal>C0</literal>).
+   </para>
+   <para>
+    Some states also have submodes with different power saving latency
+    levels. Which C-states and submodes are supported depends on the
+    respective processor. However, <literal>C1</literal> is always
+    available.
+   </para>
+   <para>
+    <xref linkend="tab.tuning.power.cstates"/> gives an overview of the most
+    common C-states.
+   </para>
+   <table id="tab.tuning.power.cstates">
+    <title>C-States</title>
+    <tgroup cols="2">
+     <thead>
+      <row>
+       <entry>
+        <para>
+         Mode
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Definition
+        </para>
+       </entry>
+      </row>
+     </thead>
+     <tbody>
+      <row>
+       <entry>
+        <para>
+         C0
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Operational state. CPU fully turned on.
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         C1
+        </para>
+       </entry>
+       <entry>
+        <para>
+         First idle state. Stops CPU main internal clocks via software. Bus
+         interface unit and APIC are kept running at full speed.
+         <remark>taroth 2010-04-28: upon request by trenn, do
+          not mention C1E at
+         all</remark>
+<!--Some processors
+         also support an Enhanced C1 state (C1E or Enhanced Halt State) for
+         lower power consumption. -->
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         C2
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Stops CPU main internal clocks via hardware. State where the
+         processor maintains all software-visible states, but may take
+         longer to wake up through interrupts.
+        </para>
+       </entry>
+      </row>
+      <row>
+       <entry>
+        <para>
+         C3
+        </para>
+       </entry>
+       <entry>
+        <para>
+         Stops all CPU internal clocks. The processor does not need to keep
+         its cache coherent, but maintains other states. Some processors
+         have variations of the C3 state that differ in how long it takes to
+         wake the processor through interrupts.
+        </para>
+       </entry>
+      </row>
+     </tbody>
+    </tgroup>
+   </table>
+   <remark>taroth 2010-04-28: upon request by trenn, do not mention C1E at all</remark>
+<!--<para>Whereas states C0 to C3 basically cut clock signals used inside the CPU, there are also
+    C-states that work by reducing the CPU voltage (C4 to C6). <literal>Enhanced</literal> modes can
+    do both at the same time. For example, C1E tries to provide more power savings than the
+    traditional C1 state by also lowering the voltage and frequency. In fact, C1E has the ability to
+    lower the voltage/frequency faster than any of the &cpufreq; governors discussed in <xref
+    linkend="sec.tuning.power.cpufreq"/>. </para>-->
+<!--taroth 2010-08-02: from pcmcia-apm.xml: add for next revision:
+  <para>The current state is displayed in <filename>/proc/acpi/processor/*/power</filename>.</para>-->
+  </sect2>
+
+  <sect2 id="sec.tuning.power.cpu.pstates">
+   <title>P-States (Processor Performance States)</title>
+   <para>
+    While a processor operates (in C0 state), it can be in one of several
+    CPU performance states <literal>(P-states)</literal>. Whereas C-states
+    are idle states (all but C0), <literal>P-states</literal> are
+    operational states that relate to CPU frequency and voltage.
+   </para>
+   <para>
+    The higher the P-state, the lower the frequency and voltage at which the
+    processor runs. The number of P-states is processor-specific and the
+    implementation differs across the various types. However,
+    <literal>P0</literal> is always the highest-performance state. Higher
+    P-state numbers represent slower processor speeds and lower power
+    consumption. For example, a processor in P3 state runs more slowly and
+    uses less power than a processor running at P1 state. To operate at any
+    P-state, the processor must be in the C0 state where the processor is
+    working and not idling. The CPU P-states are also defined in the
+    Advanced Configuration and Power Interface (ACPI) specification, see
+    <ulink url="http://www.acpi.info/spec.htm"/>.
+   </para>
+   <para>
+    C-states and P-states can vary independently of one another.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.tuning.cpu.power.tstates">
+   <title>T-States (Processor Throttling States)</title>
+   <para>
+    T-states refer to throttling the processor clock to lower frequencies in
+    order to reduce thermal effects. This means that the CPU is forced to be
+    idle a fixed percentage of its cycles per second. Throttling states
+    range from <literal>T1</literal> (the CPU has no forced idle cycles) to
+    <literal>T<replaceable>n</replaceable></literal>, with the percentage of
+    idle cycles increasing the greater <replaceable>n</replaceable> is.
+   </para>
+   <para>
+    This differs from changing the frequency (which makes the CPU have fewer
+    cycles per second), and from running in a C-state other than C1. Note
+    that throttling does not reduce voltage and since the CPU is forced to
+    idle part of the time, processes will take longer to finish and will
+    consume more power instead of saving any power.
+   </para>
+   <para>
+    T-states are a concept from the times when dynamic frequency scaling and
+    C-states did not exist. With the implementation of the latter, T-states
+    are only useful if reducing thermal effects is the primary goal. Since
+    T-states can interfere with C-states (preventing the CPU from reaching
+    higher C-states), they can even increase power consumption in a modern
+    CPU capable of C-states.
+   </para>
+<!--taroth 2010-0802: from pcmcia-apm.xml, perhaps add for next revision: 
+   <para>The system interface is <filename>/proc/acpi/processor/*/throttling</filename>.</para>-->
+  </sect2>
+ </sect1>
+ <sect1 id="sec.tuning.power.cpufreq">
+  <title>The Linux Kernel &cpufreq; Infrastructure</title>
+
+<!--relates to P-States-->
+
+  <para>
+   Processor performance states (P-states) and processor operating states
+   (C-states) are the capability of a processor to switch between different
+   supported operating frequencies and voltages to modulate power
+   consumption.
+  </para>
+
+  <para>
+   In order to dynamically scale processor frequencies at runtime, you can
+   use the &cpufreq; infrastructure to set a static or dynamic power policy
+   for the system. Its main components are the &cpufreq; subsystem
+   (providing a common interface to the various low-level technologies and
+   high-level policies) , the in-kernel governors (policy governors that can
+   change the CPU frequency based on different criteria) and CPU-specific
+   drivers that implement the technology for the specific processor. Apart
+   from that, user-space daemons may be available.
+  </para>
+
+  <para>
+   The dynamic scaling of the clock speed helps to consume less power and
+   generate less heat when not operating at full capacity.
+  </para>
+
+  <sect2 id="sec.tuning.power.cpufreq.governors">
+   <title>In-Kernel Governors</title>
+   <para>
+    You can think of the in-kernel governors as a sort of pre-configured
+    power schemes for the CPU. The &cpufreq; governors use P-states to
+    change frequencies and lower power consumption. The dynamic governors
+    can switch between CPU frequencies, based on CPU utilization to allow
+    for power savings while not sacrificing performance. These governors
+    also allow for some tuning so you can customize and change the frequency
+    scaling.
+   </para>
+   <para>
+    The following governors are available with the &cpufreq; subsystem:
+   </para>
+   <variablelist>
+    <varlistentry>
+     <term>Performance Governor</term>
+     <listitem>
+      <para>
+       The CPU frequency is statically set to the highest possible for
+       maximum performance. Consequently, saving power is not the focus of
+       this governor.
+      </para>
+      <para>
+       Tuning options: The range of maximum frequencies available to the
+       governor can be adjusted. For details, see
+       <xref linkend="sec.tuning.power.p-states.options.cpufreq-set"
+       />.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Powersave Governor</term>
+     <listitem>
+      <para>
+       The CPU frequency is statically set to the lowest possible. This can
+       have severe impact on the performance, as the system will never rise
+       above this frequency no matter how busy the processors are.
+      </para>
+      <para>
+       However, using this governor often does not lead to the expected
+       power savings as the highest savings can usually be achieved at idle
+       through entering C-states. Due to running processes at the lowest
+       frequency with the powersave governor, processes will take longer to
+       finish, thus prolonging the time for the system to enter any idle
+       C-states.
+      </para>
+      <para>
+       Tuning options: The range of minimum frequencies available to the
+       governor can be adjusted. For details, see
+       <xref linkend="sec.tuning.power.p-states.options.cpufreq-set"
+       />.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>On-demand Governor</term>
+     <listitem>
+      <para>
+       The kernel implementation of a dynamic CPU frequency policy: The
+       governor monitors the processor utilization. As soon as it exceeds a
+       certain threshold, the governor will set the frequency to the highest
+       available. If the utilization is less than the threshold, the next
+       lowest frequency is used. If the system continues to be
+       underutilized, the frequency is again reduced until the lowest
+       available frequency is set.
+      </para>
+      <para>
+       Tuning options: The range of available frequencies, the rate at which
+       the governor checks utilization, and the utilization threshold can be
+       adjusted.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term>Conservative Governor</term>
+     <listitem>
+      <para>
+       Similar to the on-demand implementation, this governor also
+       dynamically adjusts frequencies based on processor utilization,
+       except that it allows for a more gradual increase in power. If
+       processor utilization exceeds a certain threshold, the governor does
+       not immediately switch to the highest available frequency (as the
+       on-demand governor does), but only to next higher frequency
+       available.
+      </para>
+      <para>
+       Tuning options: The range of available frequencies, the rate at which
+       the governor checks utilization, the utilization thresholds, and the
+       frequency step rate can be adjusted.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+   <remark>taroth 2010-04-16: userspace governor is no longer supported by us, according to
+    trenn</remark>
+  </sect2>
+
+  <sect2 id="sec.tuning.power.cpufreq.files">
+   <title>Related Files and Directories</title>
+   <para>
+    If the &cpufreq; subsystem in enabled on your system (which it is by
+    default with &sls;), you can find the relevant files and directories
+    under <filename>/sys/devices/system/cpu/</filename>. If you list the
+    contents of this directory, you will find a
+    <filename>cpu{0..x}</filename> subdirectory for each processor, and
+    several other files and directories. You will find a
+    <filename>cpufreq</filename> subdirectory in each processor directory,
+    holding a number of files and directories that define the parameters for
+    &cpufreq;. Some of them are writable (for &rootuser;), some of them are
+    read-only. If your system currently uses the on-demand or conservative
+    governor, you will see a separate subdirectory for those governors in
+    <filename>cpufreq</filename>, containing the parameters for the
+    governors.
+   </para>
+   <note>
+    <title>Different Processor Settings</title>
+    <para>
+     The settings under the <filename>cpufreq</filename> directory can be
+     different for each processor. If you want to use the same policies
+     across all processors, you need to adjust the parameters for each
+     processor.
+    </para>
+   </note>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.tuning.power.p-states.options">
+  <title>Tuning Options for P-states</title>
+
+  <para>
+   The &cpufreq; subsystem offers several tuning options for P-states: You
+   can switch between the different governors or change individual governor
+   parameters.
+  </para>
+
+  <para>
+   Though you can view or adjust the current settings manually (in
+   <filename>/sys/devices/system/cpu/cpufreq</filename> or in
+   <filename>/sys/devices/system/cpu/cpu*/cpufreq</filename> for machines
+   with multiple cores), we advise to use the tools provided by
+   <systemitem class="resource">cpufrequtils</systemitem> for that. After
+   you have installed the
+   <systemitem class="resource">cpufrequtils</systemitem> package, you can
+   make use of the <command>cpufreq-info</command> and
+   <command>cpufreq-set</command> command line tools as described below.
+  </para>
+
+  <sect2 id="sec.tuning.power.p-states.options.cpufreq-info">
+   <title>Viewing Current Settings with <command>cpufreq-info</command></title>
+   <para>
+    The <command>cpufreq-info</command> command helps you to retrieve
+    &cpufreq; kernel information. Run without any options, it collects the
+    information available for your system and shows an output similar to the
+    following:
+   </para>
+<screen> <?dbsuse-fo font-size="0.63em"?>
+cpufrequtils 004: cpufreq-info (C) Dominik Brodowski 2004-2006
+Report errors and bugs to http://bugs.opensuse.org, please.    
+analyzing CPU 0:
+  driver: acpi-cpufreq
+  CPUs which need to switch frequency at the same time: 0
+  hardware limits: 2.80 GHz - 3.40 GHz
+  available frequency steps: 3.40 GHz, 2.80 GHz
+  available cpufreq governors: conservative, userspace, powersave, ondemand, performance
+  current policy: frequency should be within 2.80 GHz and 3.40 GHz.
+                  The governor "performance" may decide which speed to use
+                  within this range.
+  current CPU frequency is 3.40 GHz.
+analyzing CPU 1:
+  driver: acpi-cpufreq
+  CPUs which need to switch frequency at the same time: 1
+  hardware limits: 2.80 GHz - 3.40 GHz
+  available frequency steps: 3.40 GHz, 2.80 GHz
+  available cpufreq governors: conservative, userspace, powersave, ondemand, performance
+  current policy: frequency should be within 2.80 GHz and 3.40 GHz.
+                  The governor "performance" may decide which speed to use
+                  within this range.
+  current CPU frequency is 3.40 GHz.
+    </screen>
+   <para>
+    Using the appropriate options, you can view the current CPU frequency,
+    the minimum and maximum CPU frequency allowed, show the currently used
+    &cpufreq; policy, the available &cpufreq; governors, or determine the
+    &cpufreq; kernel driver used. For more details and the available
+    options, refer to the <command>cpufreq-info</command> man page or run
+    <command>cpufreq-info <option>--help</option></command>.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.tuning.power.p-states.options.cpufreq-set">
+   <title>Modifying Current Settings with <command>cpufreq-set</command></title>
+   <para>
+    To modify &cpufreq; settings, use the <command>cpufreq-set</command>
+    command as &rootuser;. It allows you set values for the minimum or
+    maximum CPU frequency the governor may select or to create a new
+    governor. With the <option>-c</option> option, you can also specify for
+    which of the processors the settings should be modified. That makes it
+    easy to use a consistent policy across all processors without adjusting
+    the settings for each processor individually. For more details and the
+    available options, refer to the <command>cpufreq-set</command> man page
+    or run <command>cpufreq-set <option>--help</option></command>.
+   </para>
+   <para>
+    You can switch to another governor at runtime with the
+    <option>-g</option> option. For example, the following command will
+    activate the on-demand governor:
+   </para>
+<screen>cpufreq-set -g ondemand</screen>
+   <para>
+    If you want the change in the governor to persist after a reboot or
+    shutdown, use the pm-profiler as described in
+    <xref linkend="sec.tuning.power.pm-profiler"/>.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.tuning.power.p-states.options.further">
+   <title>Modifying Further Settings</title>
+   <para>
+    Apart from the governor settings that can be influenced with
+    <command>cpufreq-set</command> (like minimum or maximum CPU frequency to
+    be used), you can also tune further governor parameters manually, for
+    example,
+    <xref
+     linkend="pro.tuning.power.t-states.ignore.nice" xrefstyle="select:title"/>.
+   </para>
+   <para>
+    Another parameter that significantly impacts the performance loss caused
+    by dynamic frequency scaling is the sampling rate (rate at which the
+    governor checks the current CPU load and adjusts the processor's
+    frequency accordingly). Its default value depends on a BIOS value and it
+    should be as low as possible. However, in modern systems, an appropriate
+    sampling rate is set by default and does not need manual intervention.
+   </para>
+   <procedure id="pro.tuning.power.t-states.ignore.nice">
+    <title>Ignoring Nice Values in Processor Utilization</title>
+    <para>
+     One parameter you might want to change for the on-demand or
+     conservative governor is <literal>ignore_nice_load</literal>.
+    </para>
+    <para>
+     Each process has a niceness value associated with it. This value is
+     used by the kernel to determine which processes require more processor
+     time than others. The higher the nice value, the lower the priority of
+     the process. Or: the <quote>nicer</quote> a process, the less CPU it
+     will try to take from other processes.
+    </para>
+    <para>
+<!--If the <literal>ignore_nice_load</literal> parameter for the on-demand
+     or conservative governor is set to <literal>1,</literal> any processes
+     with a <literal>nice</literal> value will not be counted toward the
+     overall processor utilization. When <literal>ignore_nice_load</literal>
+     is set to <literal>0</literal> (default value), all processes are
+     counted toward the utilization.-->
+     If the <literal>ignore_nice_load</literal> parameter for the on-demand
+     or conservative governor is set to <literal>1</literal>, any processes
+     with a <literal>nice</literal> value will not be counted toward the
+     overall processor utilization. When <literal>ignore_nice_load</literal>
+     is set to <literal>0</literal> (default value), all processes are
+     counted toward the utilization. Adjusting this parameter can be useful
+     if you are running something that requires a lot of processor capacity
+     but you do not care about the runtime.
+    </para>
+    <step>
+     <para>
+      Change to the subdirectory of the governor whose settings you want to
+      modify, for example:
+     </para>
+<screen>cd /sys/devices/system/cpu/cpu0/cpufreq/conservative/</screen>
+    </step>
+    <step>
+     <para>
+      Show the current value of <filename>ignore_nice_load</filename> with:
+     </para>
+<screen>cat ignore_nice_load</screen>
+    </step>
+    <step>
+     <para>
+      To set the value to <literal>1</literal>, execute:
+     </para>
+<screen>echo 1 > ignore_nice_load</screen>
+    </step>
+   </procedure>
+   <para>
+    When setting the <literal>ignore_nice_load</literal> value for
+    <literal>cpu0</literal>, the same value is automatically used for all
+    cores. In this case, you do not need to repeat the steps above for each
+    of the processors where you want to modify this governor parameter.
+   </para>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.tuning.power.c-states.options">
+  <title>Tuning Options for C-states</title>
+
+  <para>
+   By default, &productname; uses C-states appropriately. The only parameter
+   you might want to touch for optimization is the
+   <literal>sched_mc_power_savings</literal> scheduler. Instead of
+   distributing a work load across all cores with the effect that all cores
+   are utilized only at a minimum level, the kernel can try to schedule
+   processes on as few cores as possible so that the others can go idle.
+   This helps to save power as it allows some processors to be idle for a
+   longer time so they can reach a higher C-state. However, the actual
+   savings depend on a number of factors, for example how many processors
+   are available and which C-states are supported by them (especially deeper
+   ones such as C3 to C6).
+  </para>
+
+  <para>
+   If <literal>sched_mc_power_savings</literal> is set to
+   <literal>0</literal> (default value), no special scheduling is done. If
+   it is set to <literal>1</literal>, the scheduler tries to consolidate the
+   work onto the fewest number of processors possible in the case that all
+   processors are a little busy.
+   <remark>taroth 2010-04-28: according to trenn, a value of 2 is also
+    supported, but not documented anywhere, therefore not mentioning for now</remark>
+   To modify this parameter, proceed as follows:
+  </para>
+
+  <procedure id="pro.tuning.power.c-states.ignore.scheduler">
+   <title>Scheduling Processes on Cores</title>
+   <step>
+    <para>
+     Change to the subdirectory where the scheduler is located:
+    </para>
+<screen>cd /sys/devices/system/cpu/</screen>
+   </step>
+   <step>
+    <para>
+     Show the current value of <filename>sched_mc_power_savings</filename>
+     with:
+    </para>
+<screen>cat sched_mc_power_savings</screen>
+   </step>
+   <step>
+    <para>
+     To set the value to <literal>1</literal>, execute:
+    </para>
+<screen>echo 1 > sched_mc_power_savings</screen>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 id="sec.tuning.power.pm-profiler">
+  <title>Creating and Using Power Management Profiles</title>
+
+  <para>
+   &productname; includes pm-profiler, intended for server use. It is a
+   script infrastructure to enable or disable certain power management
+   functions via configuration files. It allows you to define different
+   profiles, each having a specific configuration file for defining
+   different settings. A configuration template for new profiles can be
+   found at
+   <filename>/usr/share/doc/packages/pm-profiler/config.template</filename>.
+   The template contains a number of parameters you can use for your
+   profile, including comments on usage and links to further documentation.
+   The individual profiles are stored in
+   <filename>/etc/pm-profiler/</filename>. The profile that will be
+   activated on system start, is defined in
+   <filename>/etc/pm-profiler.conf</filename>.
+  </para>
+
+  <procedure id="pro.tuning.power.pm-profile">
+   <title>Creating and Switching Power Profiles</title>
+   <para>
+    To create a new profile, proceed as follows:
+   </para>
+   <step>
+    <para>
+     Create a directory in <filename>/etc/pm-profiler/</filename>,
+     containing the profile name, for example:
+    </para>
+<screen> mkdir /etc/pm-profiler/testprofile</screen>
+   </step>
+   <step>
+    <para>
+     To create the configuration file for the new profile, copy the profile
+     template to the newly created directory:
+    </para>
+<screen>cp /usr/share/doc/packages/pm-profiler/config.template \
+     /etc/pm-profiler/testprofile/config</screen>
+   </step>
+   <step>
+    <para>
+     Edit the settings in
+     <filename>/etc/pm-profiler/testprofile/config</filename> and save the
+     file. You can also remove variables that you do not need&mdash;they
+     will be handled like empty variables, the settings will not be touched
+     at all.
+    </para>
+   </step>
+   <step>
+    <para>
+     Edit <filename>/etc/pm-profiler.conf</filename>. The
+     <systemitem>PM_PROFILER_PROFILE</systemitem> variable defines which
+     profile will be activated on system start. If it has no value, the
+     default system or kernel settings will be used. To set the newly
+     created profile:
+    </para>
+<screen>PM_PROFILER_PROFILE="<replaceable>testprofile</replaceable>"
+</screen>
+    <para>
+     The profile name you enter here must match the name you used in the
+     path to the profile configuration file
+     (<filename>/etc/pm-profiler/testprofile/config</filename>), not
+     necessarily the <literal>NAME</literal> you used for the profile in the
+     <filename>/etc/pm-profiler/testprofile/config</filename>.
+    </para>
+   </step>
+   <step>
+    <para>
+     To activate the profile, run
+    </para>
+<screen>rcpm-profiler start</screen>
+    <para>
+     or
+    </para>
+<screen>/usr/lib/pm-profiler/enable-profile testprofile </screen>
+   </step>
+  </procedure>
+
+  <para>
+   Though you have to manually create or modify a profile by editing the
+   respective profile configuration file, you can use &yast; to switch
+   between different profiles. Start &yast; and select <menuchoice>
+   <guimenu>System</guimenu> <guimenu>Power Management</guimenu>
+   </menuchoice> to open the <guimenu>Power Management Settings</guimenu>.
+   Alternatively, become &rootuser; and execute <command>yast2
+   power-management</command> on a command line. The drop-down list shows
+   the available profiles. <literal>Default</literal> means that the system
+   default settings will be kept. Select the profile to use and click
+   <guimenu>Finish</guimenu>.
+  </para>
+ </sect1>
+ <sect1 id="sec.tuning.power.powertop">
+  <title>Monitoring Power Consumption with &powertop;</title>
+
+  <para>
+   A useful tool for monitoring system power consumption is &powertop;. It
+   helps you to identify the reasons for unnecessary high power consumption
+   (for example, processes that are mainly responsible for waking up a
+   processor from its idle state) and to optimize your system settings to
+   avoid these. It supports both Intel and AMD processors. The
+   <systemitem
+    class="resource">powertop</systemitem> package is
+   available from the &sle; SDK. For information how to access the SDK,
+   refer to <xref linkend="preface.tuning"/>.
+  </para>
+
+  <para>
+   &powertop; combines various sources of information (analysis of programs,
+   device drivers, kernel options, amounts and sources of interrupts waking
+   up processors from sleep states) and shows them in one screen.
+   <xref linkend="ex.tuning.power.powertop"/> shows which information
+   categories are available:
+  </para>
+
+  <example id="ex.tuning.power.powertop">
+   <title>Example &powertop; Output</title>
+<screen>Cn               Avg  residency       P-states   (frequencies) 
+<co id="co.powertop.cstates"/>                <co id="co.powertop.avg"/>        <co id="co.powertop.residency"/>             <co id="co.powertop.pstates"/>           <co id="co.powertop.freq"/>
+C0 (cpu running)        (11.6%)       2.00 Ghz       0.1%
+polling         0.0ms   ( 0.0%)       2.00 Ghz       0.0%
+C1              4.4ms   (57.3%)       1.87 Ghz       0.0%
+C2             10.0ms   (31.1%)       1064 Mhz      99.9%
+   
+   
+Wakeups-from-idle per second : 11.2     interval: 5.0s <co id="co.powertop.wakeups"/>
+no ACPI power usage estimate available <co id="co.powertop.power"/>
+<?dbsuse-fo font-size="0.7em"?>
+Top causes for wakeups: <co id="co.powertop.culprits"/>
+96.2% (826.0)       &lt;interrupt&gt; : extra timer interrupt
+ 0.9% (  8.0)     &lt;kernel core&gt; : usb_hcd_poll_rh_status (rh_timer_func)
+ 0.3% (  2.4)       &lt;interrupt&gt; : megasas
+ 0.2% (  2.0)     &lt;kernel core&gt; : clocksource_watchdog (clocksource_watchdog)
+ 0.2% (  1.6)       &lt;interrupt&gt; : eth1-TxRx-0
+ 0.1% (  1.0)       &lt;interrupt&gt; : eth1-TxRx-4
+
+[...]
+
+Suggestion: <co id="co.powertop.suggestions"/> Enable SATA ALPM link power management via:
+echo min_power > /sys/class/scsi_host/host0/link_power_management_policy
+or press the S key.</screen>
+   <calloutlist>
+    <callout arearefs="co.powertop.cstates">
+     <para>
+      The column shows the C-states. When working, the CPU is in state
+      <literal>0</literal>, when resting it is in some state greater than
+      <literal>0</literal>, depending on which C-states are available and
+      how deep the CPU is sleeping.
+     </para>
+    </callout>
+    <callout arearefs="co.powertop.avg">
+     <para>
+      The column shows average time in milliseconds spent in the particular
+      C-state.
+     </para>
+    </callout>
+    <callout arearefs="co.powertop.residency">
+     <para>
+      The column shows the percentages of time spent in various C-states.
+      For considerable power savings during idle, the CPU should be in
+      deeper C-states most of the time. In addition, the longer the average
+      time spent in these C-states, the more power is saved.
+     </para>
+    </callout>
+    <callout arearefs="co.powertop.pstates">
+     <para>
+      The column shows the frequencies the processor and kernel driver
+      support on your system.
+     </para>
+    </callout>
+    <callout arearefs="co.powertop.freq">
+     <para>
+      The column shows the amount of time the CPU cores stayed in different
+      frequencies during the measuring period.
+     </para>
+    </callout>
+    <callout arearefs="co.powertop.wakeups">
+     <para>
+      Shows how often the CPU is awoken per second (number of interrupts).
+      The lower the number the better. The <literal>interval</literal> value
+      is the &powertop; refresh interval which can be controlled with the
+      <option>-t</option> option. The default time to gather data is 5
+      seconds.
+     </para>
+    </callout>
+    <callout arearefs="co.powertop.power">
+     <para>
+      When running &powertop; on a laptop, this line displays the ACPI
+      information on how much power is currently being used and the
+      estimated time until discharge of the battery. On servers, this
+      information is not available.
+     </para>
+    </callout>
+    <callout arearefs="co.powertop.culprits">
+     <para>
+      Shows what is causing the system to be more active than needed.
+      &powertop; displays the top items causing your CPU to awake during the
+      sampling period.
+     </para>
+    </callout>
+    <callout arearefs="co.powertop.suggestions">
+     <para>
+      Suggestions on how to improve power usage for this machine.
+     </para>
+    </callout>
+   </calloutlist>
+  </example>
+
+  <para>
+   For more information, refer to the &powertop; project page at
+   <ulink
+    url="http://www.lesswatts.org/projects/powertop/"/>. It also
+   provides tips and tricks and an informative FAQ section.
+  </para>
+ </sect1>
+ <sect1 id="sec.tuning.power.trouble">
+  <title>Troubleshooting</title>
+
+  <variablelist>
+   <varlistentry>
+    <term>BIOS options enabled?</term>
+    <listitem>
+     <para>
+      In order to make use of C-states or P-states, check your BIOS options:
+     </para>
+     <itemizedlist>
+      <listitem>
+       <para>
+        To use C-states, make sure to enable <literal>CPU C State</literal>
+        or similar options to benefit from power savings at idle.
+       </para>
+      </listitem>
+      <listitem>
+       <para>
+        To use P-states and the &cpufreq; governors, make sure to enable
+        <literal>Processor Performance States</literal> options or similar.
+       </para>
+      </listitem>
+     </itemizedlist>
+     <para>
+      In case of a CPU upgrade, make sure to upgrade your BIOS, too. The
+      BIOS needs to know the new CPU and its valid frequencies steps in
+      order to pass this information on to the operating system.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>&cpufreq; subsystem enabled?</term>
+    <listitem>
+     <para>
+      In &productname;, the &cpufreq; subsystem is enabled by default. To
+      find out if the subsystem is currently enabled, check for the
+      following path in your system:
+      <filename>/sys/devices/system/cpu/cpufreq</filename> (or
+      <filename>/sys/devices/system/cpu/cpu*/cpufreq</filename> for machines
+      with multiple cores). If the <filename>cpufreq</filename> subdirectory
+      exists, the subsystem is enabled.
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term>Log file information?</term>
+    <listitem>
+     <para>
+      Check syslog (usually <filename>/var/log/messages</filename>) for any
+      output regrading the &cpufreq; subsystem. Only severe errors are
+      reported there.
+     </para>
+     <para>
+      If you suspect problems with the &cpufreq; subsystem on your machine,
+      you can also enable additional debug output. To do so, either use
+      <command>cpufreq.debug=7</command> as boot parameter or execute the
+      following command as &rootuser;:
+     </para>
+<screen>echo 7 > /sys/module/cpufreq/parameters/debug</screen>
+     <para>
+      This will cause &cpufreq; to log more information to
+      <command>dmesg</command> on state transitions, which is useful for
+      diagnosis. But as this additional output of kernel messages can be
+      rather comprehensive, use it only if you are fairly sure that a
+      problem exists.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </sect1>
+ <sect1 id="sec.tuning.power.more">
+  <title>For More Information</title>
+
+  <itemizedlist>
+   <listitem>
+    <para>
+     A threepart, comprehensive article about tuning components with regards
+     to power efficiency is available at the following URLs:
+    </para>
+    <itemizedlist>
+     <listitem>
+      <para>
+       <citetitle>Reduce Linux power consumption, Part 1: The CPUfreq
+       subsystem</citetitle>, available at
+       <ulink
+        url="http://www.ibm.com/developerworks/linux/library/l-cpufreq-1/?ca=dgr-lnxw03ReduceLXPWR-P1dth-LX&amp;S_TACT=105AGX59&amp;S_CMP=grlnxw03"
+       />
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       <citetitle>Reduce Linux power consumption, Part 2: General and
+       governor-specific settings</citetitle>, available at
+       <ulink
+        url="http://www.ibm.com/developerworks/linux/library/l-cpufreq-2/?ca=dgr-lnxw03ReduceLXPWR-P1dth-LX&amp;S_TACT=105AGX59&amp;S_CMP=grlnxw03"
+       />
+      </para>
+     </listitem>
+     <listitem>
+      <para>
+       <citetitle>Reduce Linux power consumption, Part 3: Tuning
+       results</citetitle>, available
+       at<ulink
+        url="http://www.ibm.com/developerworks/linux/library/l-cpufreq-3/?ca=dgr-lnxw03ReduceLXPWR-P1dth-LX&amp;S_TACT=105AGX59&amp;S_CMP=grlnxw03"
+       />
+      </para>
+     </listitem>
+    </itemizedlist>
+   </listitem>
+   <listitem>
+    <para>
+     The LessWatts.org project deals with how to save power, reduce costs
+     and increase efficiency on Linux systems. Find the project home page at
+     <ulink
+      url="http://www.lesswatts.org/"/>. The project page also
+     holds an informative FAQs section at
+     <ulink url="http://www.lesswatts.org/documentation/faq/index.php"/> and
+     provides useful tips and tricks. For tips dealing with the CPU level,
+     refer to <ulink
+      url="http://www.lesswatts.org/tips/cpu.php"/>.
+     For more information about &powertop;, refer to
+     <ulink url="http://www.lesswatts.org/projects/powertop/"/>.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     There is also platform-specific power saving information available, for
+     example: <citetitle>HP ProLiant Server Power Management on SUSE Linux
+     Enterprise Server 11&mdash;Integration Note </citetitle>, available
+     from
+     <ulink
+      url="http://h18004.www1.hp.com/products/servers/technology/whitepapers/os-techwp.html"
+     />
+    </para>
+   </listitem>
+  </itemizedlist>
+ </sect1>
+</chapter>

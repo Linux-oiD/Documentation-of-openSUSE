@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<chapter id="cha.y2.sw.inst_pkg_internet">
+ <title>Installing Packages From the Internet</title>
+ <abstract>
+  <para>
+   By default, it is only possible to install packages from configured and
+   enabled repositories. Apart from the official repositories that are
+   configured during the installation, numerous other repositories exist.
+   The &opensusereg; Build Service hosts several hundred ones and a lot of
+   third party repositories exist, too&mdash;see
+   <ulink
+    url="http://en.opensuse.org/Additional_package_repositories"/>.
+  </para>
+
+  <para>
+   &productname; offers two easy ways to install from these repositories
+   without the need to first subscribe to them. The <literal>1-Click
+   Install</literal> method allows you to install packages directly from a
+   Web browser, while the &yast; Package Search lets you query almost all
+   known repositories for &productname;. You can directly install any
+   package found by the package search module.
+  </para>
+ </abstract>
+ <warning>
+  <title>Trusting External Software Sources</title>
+  <para>
+   Before installing from any external software repository, make sure it can
+   be trusted. &productname; is not responsible for any potential problems
+   arising from software installed from third-party software repositories.
+  </para>
+ </warning>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="1_click_install_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="yast2_webpin.xml"/>
+</chapter>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+        "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xml:lang="en" font-family="monospace" font-size="8pt" width="12cm"
+ height="7cm">
+ <rect id="rect" fill="white" stroke="black" stroke-width="0.4pt" x="0" y="0"
+ width="100%" height="100%"/>
+ <text xml:space="preserve" x="10" y="20">
+                       Create New Partition</text>
+ <text xml:space="preserve" x="10"  y="35">                                                   System:   SUSE1</text>
+ <text xml:space="preserve" x="10"  y="50">Complete blanks, press Enter.</text>
+ <text xml:space="preserve" x="10"  y="65"></text>
+ <text xml:space="preserve" x="10"  y="80"> Partition identifier and name  . . . . . . . .  3__  GINGER__</text>
+ <text xml:space="preserve" x="10"  y="95"></text>
+ <text xml:space="preserve" x="10" y="110"> Number of available system processors  . . . :  1</text>
+ <text xml:space="preserve" x="10" y="125"> Number of partition processors . . . . . . . .  1__</text>
+ <text xml:space="preserve" x="10" y="140"> Minimum / maximum number of processors ... . .  0__ / 1__</text>
+ <text xml:space="preserve" x="10" y="155"> Use shared processor pool  . . . . . . . . . .  2  1=Yes, 2=No</text>
+ <text xml:space="preserve" x="10" y="170"></text>
+ <text xml:space="preserve" x="10" y="185"> Size of available system main storage (MB) . :  256      / 44</text>
+ <text xml:space="preserve" x="10" y="200"> Size of partition main storage (MB)  . . . . .  256___</text>
+ <text xml:space="preserve" x="10" y="215"> Minimum / maximum size of main storage (MB)  .  0___ / 752___</text>
+ <text xml:space="preserve" x="10" y="230"></text>
+ <text xml:space="preserve" x="10" y="245"></text>
+ <text xml:space="preserve" x="10" y="260"></text>
+ <text xml:space="preserve" x="10" y="275">F3=Exit   F9=Exclude limits   F10=Work with shared processor pool</text>
+ <text xml:space="preserve" x="10" y="290">F11=Display partition processing configuration   F12=Cancel</text>
+
+</svg>

@@ -1,0 +1,14 @@
+# -*- shell-script -*-
+# $Id: ENV-SLE-audit 33596 2008-07-29 15:33:13Z fs $
+
+. .env-profile
+
+export MAIN="MAIN.opensuse.xml"
+export ROOTID="book.security"
+export PROFOS="osuse"
+export PROFARCH="x86;amd64;em64t"
+export DISTVER="11.4"
+export HTMLROOT="opensuse114"
+export PRODUCTNAME="&opensuse;"
+export PRODUCTNAMEREG="&opensusereg;"
+

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<sect1 id="sec.y2.sw.webpin">
+ <title>&yast; Package Search</title>
+
+ <para>
+  Provided you are connected to the internet, you can also search and
+  install packages from almost all known repositories for &productname;
+  directly via &yast;'s Package Search. This module is a &yast; frontend for
+  the Webpin package search available at
+  <ulink
+   url="http://packages.opensuse-community.org/"/>. The &yast;
+  module is not available by default&mdash;you need to install the package
+  <systemitem
+   class="resource">yast2-packager-webpin</systemitem> first.
+ </para>
+
+ <procedure>
+  <title>Installing Packages Using the &yast; Package Search</title>
+  <step>
+   <para>
+    Start the Package Search from the &yast; Control Center via <menuchoice>
+    <guimenu>Software</guimenu> <guimenu>Package Search</guimenu>
+    </menuchoice>.
+   </para>
+  </step>
+  <step>
+   <para>
+    Search for a software package by entering it's name into the
+    <guimenu>Search Expression</guimenu> field and clicking
+    <guimenu>Search</guimenu>.
+   </para>
+  </step>
+  <step>
+   <para>
+    The search result is listed on the <guimenu>Found Packages</guimenu>
+    tab. Click on a package name to see the repository URL, the package
+    version number and the architecture in the <guimenu>Package
+    Description</guimenu> pane.
+   </para>
+   <warning>
+    <title>Double Check the Package Information</title>
+    <para>
+     Make sure to double check whether the software is hosted on a
+     repository you trust before you install it. Also check if the
+     architecture complies with your system (x86_64 packages can only be
+     installed on 64bit systems).
+    </para>
+   </warning>
+  </step>
+  <step>
+   <para>
+    Mark a package for installation by activating its checkbox. You can mark
+    several packages at once. You can even start a new search for other
+    packages without losing your current selection, which is always
+    available on the <guimenu>All Selected Packages</guimenu>. Once you have
+    finished the package selection, proceed with <guimenu>Next</guimenu>.
+   </para>
+   <para>
+    The <guimenu>Additional Software Repositories</guimenu> dialog shows the
+    repositories providing the packages you want to install. They are
+    activated per default. To proceed with the installation, keep the
+    repository selection. By default, you remain subscribed to these
+    repositories after the installation has finished, so you will receive
+    updates from them in the future.
+   </para>
+  </step>
+  <step>
+   <para>
+    If instead you want to use the new repositories only once, uncheck
+    <guimenu>Remain Subscribed to These Repositories after
+    Installation</guimenu>. Click <guimenu>Next</guimenu> to proceed.
+   </para>
+  </step>
+  <step>
+   <para>
+    Now select the software packages that should be installed. Normally
+    there is no need to change the default selection. Click
+    <guimenu>Next</guimenu> to proceed.
+   </para>
+  </step>
+  <step>
+   <para>
+    The <guimenu>Proposal</guimenu> screen summarizes the choices you made.
+    Click <guimenu>Customize</guimenu> to restart the configuration steps
+    from above. Click <guimenu>Next</guimenu> and <guimenu>Yes</guimenu> to
+    proceed with the installation.
+   </para>
+  </step>
+  <step>
+   <para>
+    Confirm the next dialog. In case a new repository is used, you will also
+    need to confirm the import of the repository's GnuPG key. During the
+    installation several progress pop-ups appear that do not need any
+    interaction. After reading the <quote>Installation was
+    successful</quote> message, click <guimenu>Finish</guimenu>.
+   </para>
+  </step>
+ </procedure>
+</sect1>

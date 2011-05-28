@@ -1,0 +1,2142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl"
+                 type="text/xml" 
+                 title="Profiling step"?>
+<!DOCTYPE article PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
+                      "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "IGNORE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<!-- 
+  Future Ideas:
+   * Marble
+   * Nepomuk?
+-->
+<?provo dirname="kdequick/"?>
+<article lang="en" id="art.kdequick">
+<!-- color needs to be "novell" for all non-openSUSE products -->
+<?suse-quickstart color="suse"?>
+ <title>&kdequick;</title>
+ <subtitle><productname>&productname; &productnumber;</productname>
+ </subtitle>
+ <articleinfo>
+  <productnumber>&productnumber;</productnumber><productname>&productname;</productname>
+ </articleinfo>
+ <abstract>
+  <para>
+   &productnamereg; provides the tools that Linux* users require in their
+   daily activities. It comes with an easy-to-use graphical environment, the
+   KDE* desktop, that communicates with the underlying Linux system to
+   access and manage files, folders, and programs.
+   <phrase os="sled;sles" >&productname; provides an integrated suite of
+   applications that meet all professional requirements to perform tasks in
+   a business environment.</phrase> <phrase os="osuse">&productname;
+   provides an integrated suite of applications for a wide range of purposes
+   (office, multimedia, Internet).</phrase> The &libo; suite is also
+   included, which allows you to edit and save files in a number of formats.
+   Because the office suite is available for several operating systems, you
+   can use the same data across different computing platforms.
+  </para>
+ </abstract>
+ <sect1 id="sec.kdequick.start">
+  <title>Getting Started</title>
+
+  <para>
+   When you start your system, you are usually prompted to enter your
+   username and password. If you did not install the system yourself, check
+   with the system administrator for your username and password.
+  </para>
+
+  <para>
+   After logging in to KDE for the first time, you see the KDE desktop,
+   which shows the following basic elements:
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="kde_desktop_menus.png" width="80%"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="kde_desktop_menus.png" width="80%"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <formalpara>
+   <title>Desktop Folder:</title>
+   <para>
+    By default, the desktop folder shows the contents of its
+    <filename>~/Desktop</filename> directory. Whenever you insert a file
+    into this directory, it appears in this view too.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Desktop Context Menu:</title>
+   <para>
+    Right-click an empty area on the desktop to access the context menu for
+    configuring the appearance of the desktop, adding panels or widgets to
+    the desktop, configuring desktop settings, locking the widgets in their
+    current position, leaving the current session, or for locking the
+    screen.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Desktop Toolbox:</title>
+   <para>
+    Move your mouse pointer to the icon in the upper right corner of the
+    desktop to access the menu that lets you add or lock widgets.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>KDE Panel:</title>
+   <para>
+    By default, the panel of your KDE desktop consists of the <guimenu>Main
+    Menu</guimenu> icon on the left, further widgets and program icons, and
+    the panel settings icon on the right. If you hover the mouse pointer
+    over an icon in the panel, a short description is displayed.
+   </para>
+  </formalpara>
+
+<?dbfo-need height="20em"?>
+ </sect1>
+ <sect1 id="sec.kdequick.startprogr">
+  <title>Starting Programs</title>
+
+  <para>
+   Start programs from the <guimenu>Main Menu</guimenu> or from the command
+   line, using a shell or the <guimenu>Run Command</guimenu>. Additionally,
+   you can start programs from the desktop or the panel by left-clicking the
+   program icon once.
+  </para>
+
+  <sect2 id="sec.kdequick.startprogr.menu">
+   <title>Using the Main Menu</title>
+   <para>
+    To open the <guimenu>Main Menu</guimenu>, click the <guimenu>Main
+    Menu</guimenu> icon in the panel or press <keycombo>
+    <keycap function="alt"/> <keycap>F1</keycap> </keycombo>. The
+    <guimenu>Main Menu</guimenu> consists of the following elements: a
+    search function at the top and several tabs at the bottom, providing
+    quick access to the key functions of the menu. Additionally, the menu
+    displays your login name and the hostname of your computer.
+   </para>
+   <para>
+    <guimenu>Favorites</guimenu> shows a default selection of key programs
+    for quick access, whereas <guimenu>Applications</guimenu> shows all
+    applications installed on your system. To navigate through the menu
+    structure, click an entry and use the arrow icons at the right or the
+    left to switch back and forth. <guimenu>Computer</guimenu> and
+    <guimenu>Recently Used</guimenu> provide quick access to some frequently
+    used places, applications, or documents. <guimenu>Leave</guimenu> shows
+    several options for leaving the session such as logging out, locking the
+    screen (access can only be regained with a password), shutting down or
+    restarting the computer. Some computers offer to suspend your session to
+    RAM or disc.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="kde_main_menu.png" width="65%"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="kde_main_menu.png" width="50%"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    If you often need a program and do not want to dig into the menu
+    structure, you can integrate the icon into the
+    <guimenu>Favorites</guimenu> tab. Right-click the icon on any of the
+    other tabs and choose <guimenu>Add to Favorites</guimenu>.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.kdequick.startprogr.krunner">
+   <title>Using the Run Command Dialog</title>
+   <para>
+    KRunner is a helper application that lets you quickly start programs.
+    Apart from that, it offers a search function for finding applications or
+    locations.
+   </para>
+   <para>
+    Press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+    </keycombo> to open the <guimenu>Run Command</guimenu> dialog. Type a
+    command, for example, <command>dolphin</command>. While you are typing,
+    the dialog shows a list of applications or actions that match your
+    input. Select one of the results or press <keycap function="enter"/> to
+    start the highlighted application or action. The command to start the
+    application is often (but not always) the application name written in
+    lowercase.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="kde_krunner.png" width="75%"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="kde_krunner.png" width="60%"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    KRunner's abilities can also be extended by a huge number of plug-ins
+    that provide additional functionality. Click the wrench symbol on the
+    left of the input field to explore the full range of available plug-ins.
+    For example, you can use so-called <emphasis>Web shortcuts</emphasis>
+    defined in Konqueror to send search requests directly to a search engine
+    without first opening the browser. For details, refer to
+    <xref linkend="sec.kdequick.browser.conf"/>.
+<!--taroth 2010-08-04: focus on "bare bones", therefore
+    commenting the additional info below-->
+<!--   <remark>2009-01-14 toms:  Links: 
+     * http://agateau.wordpress.com/2008/12/16/krunner-is-more-powerful-than-it-looks/
+     * http://userbase.kde.org/Tutorials/Krunner </remark>
+     The <guimenu>Run
+     Command</guimenu> dialog allows you also to use different features. Click
+    on the question mark icon to see a list of active features. To configure or
+    get a list of all features, click on the wrench icon. You can use so-called
+     <emphasis>Web shortcuts</emphasis> defined in Konqueror to send search
+    requests directly to a search engine without first opening the browser.
+    Another interesting feature is to calculate a mathematical expression like
+     <literal>=2+2^4-sin(2)</literal>. Very useful is to convert units, for
+    example, from miles per hour into kilometers per hour. Just insert the
+    expression <literal>60 mph in km/h</literal> to get the converted value.-->
+   </para>
+  </sect2>
+
+  <sect2 id="sec.kdequick.startprogr.search">
+   <title>Searching for Programs</title>
+   <para>
+    Both the <guimenu>Main Menu</guimenu> and the <guimenu>Run
+    Command</guimenu> dialog offer a search function that lets you quickly
+    start programs even if you do not already know the exact application
+    name or command. To search for an application, start typing a command or
+    part of the application name in the <guimenu>Main Menu</guimenu>
+    <guimenu>Search</guimenu> field or the input field in the <guimenu>Run
+    Command</guimenu> dialog. Each character you enter narrows down the
+    search.
+   </para>
+   <para>
+    From the list below the input field, choose the application matching
+    your query.
+   </para>
+  </sect2>
+ </sect1>
+<!--taroth 2010-08-04: updated until here-->
+ <sect1 id="sec.kdequick.mediahandling">
+  <title>Handling Media</title>
+
+  <para>
+   If you insert a CD or DVD into your drive or plug in a pluggable device
+   (for example, a USB stick or removable hard disk), the device notifier
+   widget opens a small window alerting you to this. It also proposes
+   possible actions, depending on the type of the device.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata width="40%" fileref="kde_devicenotifier.png"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata width="25%" fileref="kde_devicenotifier.png"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   For example, if you plugged in a digital camera, the actions allow you to
+   download your photos with Gwenview or &digikam;. Click the device entry
+   in the widget to access the available actions. To safely remove the
+   device from your computer, use the icon on the right side of the device
+   entry.
+  </para>
+ </sect1>
+ <sect1 id="sec.kdequick.custom">
+  <title>Customizing Your Desktop</title>
+
+  <para>
+   You can change the way your KDE desktop looks and behaves to suit your
+   personal preferences.
+  </para>
+
+  <sect2 id="sec.kdequick.custom.lock">
+   <title>Locking and Unlocking Desktop Objects</title>
+   <para>
+    Desktop elements can be locked in their current position to prevent them
+    from being moved around on the desktop. As long as the desktop elements
+    are locked you cannot add, move, or remove any objects to or from your
+    desktop.
+   </para>
+   <para>
+    To lock or unlock the desktop elements, click the cashew icon (desktop
+    toolbox) at the upper right corner of the desktop and select
+    <guimenu>Lock Widgets</guimenu> or <guimenu>Unlock Widgets</guimenu>.
+   </para>
+   <para>
+    Alternatively, right-click an empty patch on the desktop and select
+    <guimenu>Lock Widgets</guimenu> or <guimenu>Unlock Widgets</guimenu>.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.kdequick.custom.indiv">
+   <title>Changing Individual Desktop Elements</title>
+   <para>
+    In the following, you can find some examples of how to change individual
+    desktops elements.
+   </para>
+   <procedure id="proc.kdequick.conf.icons">
+    <title>Adding Program Icons to the Desktop</title>
+    <para>
+     To create a link to an application and place it on the desktop or the
+     panel, proceed as follows:
+    </para>
+    <step>
+     <para>
+      Click the <guimenu>Main Menu</guimenu> button and browse to the
+      desired application.
+     </para>
+    </step>
+    <step>
+     <para>
+      Right-click and select <guimenu>Add to Desktop</guimenu> from the
+      context menu that appears. If this menu item is not available, your
+      desktop elements are probably locked. Unlock them first as described
+      in <xref linkend="sec.kdequick.custom.lock"/>.
+     </para>
+    </step>
+    <step>
+     <para>
+      To change the icon position on the desktop, left-click the icon and
+      drag it to the desired position.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    To delete an icon from your desktop, right-click the program icon and
+    select <guimenu>Remove this Icon</guimenu>.
+   </para>
+   <procedure id="proc.kdequick.widgets.add">
+    <title>Adding Widgets to the Desktop or to the Panel</title>
+    <step>
+     <para>
+      To add widgets to you desktop, right-click an empty patch on your
+      desktop and select <guimenu>Add Widgets</guimenu>.
+     </para>
+     <para>
+      To add a widget to the panel, right-click an empty patch on the panel,
+      and select <menuchoice> <guimenu>Panel Options</guimenu> <guimenu>Add
+      Widgets</guimenu> </menuchoice>.
+     </para>
+     <para>
+      If these menu items are not available, your desktop elements are
+      probably locked. In this case, right-click and select <guimenu>Unlock
+      Widgets</guimenu> first.
+     </para>
+    </step>
+    <step>
+     <para>
+      In the list that appears, select a widget. Use the scrollbar to browse
+      through the available widgets. To limit the selection of widgets,
+      either enter a search term in the input field or choose a Category.
+     </para>
+    </step>
+    <step>
+     <para>
+      To make the selected widget appear on the desktop or in the panel,
+      double-click it and close the dialog box.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    To remove a widget from your desktop or panel, right-click the widget
+    and select the
+    <remark>taroth 080507: added dots again on purpose because
+     the menu item also contains the widgets name, e.g. "Remove this Analog
+     Clock"</remark>
+    <guimenu>Remove...</guimenu> entry.
+   </para>
+   <procedure id="proc.kdequick.widgets.conf">
+    <title>Configuring Desktop Widgets</title>
+    <step>
+     <para>
+      Hover your mouse pointer over the widget until a translucent frame
+      appears around the widget, showing a number of symbols:
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="kde_widget_frame.png" width="45%"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="kde_widget_frame.png" width="40%"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>
+     <para>
+      If the frame does not appear, your widgets are probably locked. Unlock
+      them first as described in
+      <xref linkend="sec.kdequick.custom.lock" />.
+     </para>
+    </step>
+    <step>
+     <para>
+      To change the widget size, left-click the scale symbol in the frame
+      and keep the mouse button pressed while slowly moving your cursor
+      across the desktop.
+     </para>
+    </step>
+    <step>
+     <para>
+      To rotate the widget in any direction, left-click the arrow symbol in
+      the frame and keep the mouse button pressed while moving your cursor
+      in a circle across the desktop. There is a sticky boundary in the
+      horizontal and vertical positions where you can <quote>clamp</quote>
+      the widget, if you like. Of course, you can also arrange it in any
+      tilted position.
+     </para>
+    </step>
+    <step>
+     <para>
+      To change the contents, settings, or properties of a widget,
+      left-click the wrench symbol in the frame. In the configuration dialog
+      box that appears, set the options according to your wishes.
+     </para>
+    </step>
+   </procedure>
+   <procedure id="proc.kdequick.panel.add">
+    <title>Adding and Removing Panels</title>
+    <step>
+     <para>
+      If you want multiple panels on the desktop, right-click an empty area
+      on the desktop, select <guimenu>Add Panel</guimenu> and choose a panel
+      type from the list.
+     </para>
+     <para>
+      If these menu items are not available, your desktop objects are
+      probably locked. In this case, right-click and select <guimenu>Unlock
+      Widgets</guimenu> first.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click the cashew icon at the end of the new panel to access the
+      configuration options and customize the panel as described in
+      <xref linkend="proc.kdequick.panel.conf"/>.
+     </para>
+    </step>
+    <step>
+     <para>
+      To delete a panel, right-click a blank space in the panel you want to
+      delete and select <menuchoice> <guimenu>Panel Options</guimenu>
+      <guimenu>Remove this Panel</guimenu> </menuchoice>. &productname;
+      requires that at least one panel is left on the desktop.
+     </para>
+    </step>
+   </procedure>
+   <procedure id="proc.kdequick.panel.conf">
+    <title>Configuring Panels</title>
+    <para>
+     You can customize all KDE panels according to your preferences.
+     Applications and widgets can be added to the quick launch area or the
+     system tray in the main panel or to additional panels. Panel elements
+     and additional panels can be moved to different places or be completely
+     removed at any time.
+    </para>
+    <step>
+     <para>
+      To access any options for the current panel, right-click an empty
+      patch in the panel (or click the cashew icon at the end of the panel)
+      and select <menuchoice> <guimenu>Panel Options</guimenu>
+      <guimenu>Panel Settings</guimenu> </menuchoice>. The panel changes
+      view and shows its configurations options.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="kde_move_panel.png" width="85%" format="PNG"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="kde_move_panel.png" width="50%" format="png"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>
+     <para>
+      If the menu item and the icon are not available, your desktop objects
+      are probably locked. To unlock, right-click and select <guimenu>Unlock
+      Widgets</guimenu> first.
+     </para>
+    </step>
+    <step>
+     <para>
+      To move panel objects to a different place within the panel, hover the
+      mouse cursor over the respective panel object (for example, program
+      icon, pager, task manager, system tray). The mouse cursor turns into a
+      crosslines-like form. Click the object and move the cursor to the
+      desired position in the panel. Click again to fix it at this place.
+     </para>
+    </step>
+    <step>
+     <para>
+      To enlarge the distance between two widgets, use <guimenu>Add
+      Spacer...</guimenu>. A spacer widget appears on the right side. Drag
+      and drop it to the preferred place.
+     </para>
+    </step>
+    <step>
+     <para>
+      To change the panel width, click and drag the small arrow icons at the
+      left and right end of the settings panel. Use the arrow on the left
+      side to set the panel's position and the arrows at the left side to
+      set the maximum and minimum size.
+     </para>
+    </step>
+    <step>
+     <para>
+      To change the panel height, click the <guimenu>Height</guimenu> button
+      and move the mouse cursor to the desired end location.
+     </para>
+    </step>
+    <step>
+     <para>
+      To place the panel at different sides of the screen use the
+      <guimenu>Screen Edge</guimenu> button. Drag and drop the panel to the
+      preferred location.
+     </para>
+    </step>
+    <step>
+     <para>
+      If you need additional widgets on your panel, add them with the
+      <guimenu>Add Widgets...</guimenu> button as described in
+      <xref linkend="proc.kdequick.widgets.add"/>.
+     </para>
+    </step>
+    <step>
+     <para>
+      To remove program icons or widgets from the panel, right-click the
+      unwanted object and select the menu item to remove the icon or widget.
+     </para>
+     <para>
+      The icons in the system tray usually belong to applications running in
+      the background. Therefore you can only remove those icons if you close
+      those applications (right-click the icon and select
+      <guimenu>Quit</guimenu>).
+     </para>
+    </step>
+    <step>
+     <para>
+      To prevent the panel and widgets from being moved accidentally, use
+      <guimenu>Lock Widgets</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      For additional configurations options like alignment and functions
+      (like auto hide), click <guimenu>More Settings...</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      If all panel changes are according to your wishes, close the panel
+      settings with the red close button on the right side.
+     </para>
+    </step>
+   </procedure>
+   <procedure id="proc.kdequick.conf.deskback">
+    <title>Changing the Desktop Background</title>
+    <para>
+     You can change the desktop background to display images, a slideshow,
+     patterns or colors. It is even possible to use a map of the globe or
+     the weather report as desktop background.
+    </para>
+    <step>
+     <para>
+      Right-click an empty patch of the desktop and select <guimenu>Desktop
+      Settings</guimenu>. A configuration dialog appears.
+     </para>
+    </step>
+    <step>
+     <para>
+      In the <guimenu>View</guimenu> section, choose a type from the
+      <guimenu>Wallpaper</guimenu> drop-down list. The further configuration
+      options depend on the choice of the object to use as background.
+     </para>
+    </step>
+    <step>
+     <para>
+      For example, to use an image wallpaper:
+     </para>
+     <substeps>
+      <step>
+       <para>
+        Set <guimenu>Wallpaper</guimenu> to <guimenu>Image</guimenu>.
+       </para>
+      </step>
+      <step>
+       <para>
+        Define the <guimenu>Positioning</guimenu> of the image.
+       </para>
+      </step>
+      <step>
+       <para>
+        To use one of the available wallpapers, either choose a wallpaper
+        from the list or click <guimenu>Get New Wallpapers</guimenu> to
+        download additional wallpapers.
+       </para>
+      </step>
+      <step>
+       <para>
+        To use a custom picture, click <guimenu>Open</guimenu> and select an
+        image file from the file system.
+       </para>
+       <informalfigure>
+        <mediaobject>
+         <imageobject role="fo">
+          <imagedata fileref="kde_conf_deskback.png" width="75%"/>
+         </imageobject>
+         <imageobject role="html">
+          <imagedata fileref="kde_conf_deskback.png" width="60%"/>
+         </imageobject>
+        </mediaobject>
+       </informalfigure>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Set the other options in the configuration dialog according to your
+      wishes, and click <guimenu>OK</guimenu> to save your changes and leave
+      the configuration dialog.
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+
+  <sect2 id="sec.kdequick.custom.kcontrol">
+   <title>Modifying System Settings</title>
+   <para>
+    The <guimenu>System Settings</guimenu> are the central place for users
+    to change the overall appearance and behavior of many components of the
+    KDE desktop. Start them from the <guimenu>Main Menu</guimenu> by
+    selecting <menuchoice> <guimenu>Favorites</guimenu> <guimenu>System
+    Settings</guimenu> </menuchoice>.
+    <remark>taroth 080428: do not mention the command here because it does not
+     correspond to title</remark>
+<!-- or press <keycombo>
+     <keycap function="alt"/>
+     <keycap>F2</keycap>
+    </keycombo> and enter <command>systemsettings</command>-->
+   </para>
+   <para>
+    The settings are grouped into different categories. Hover over an icon
+    to see more details. Performing tasks in some areas of the personal
+    settings requires system administrator (&rootuser;) permissions.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="kde_kcontrol_main.png" width="80%" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="kde_kcontrol_main.png" width="75%" format="png"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    Change the settings as desired. No changes take effect until you click
+    <guimenu>Apply</guimenu>. To discard changes in the recent view that you
+    have not yet applied, click <guimenu>Reset</guimenu>. To reset all items
+    in the recent view to the default values, click
+    <guimenu>Defaults</guimenu>.
+   </para>
+   <para>
+    To get back to the start-up view (showing all categories) again, click
+    <guimenu>Overview</guimenu> at the top left corner of the dialog. You
+    can also enter a search string at the top of the window (for example,
+    <guimenu>Screen Saver</guimenu>) to find the category which holds
+    options related to the search string. Each character you enter in the
+    <guimenu>Search</guimenu> field further narrows the search.
+   </para>
+   <para>
+    For easier overview of all categories, you can also switch to a tree
+    view by clicking <guimenu>Configure</guimenu> and selecting another
+    <guimenu>View Style</guimenu>.
+   </para>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.kdequick.desktopeffects">
+  <title>Applying Desktop Effects</title>
+
+  <para>
+   If your computer supports a 3D graphics card with Xgl, you can use
+   graphical effects like turning your desktop into a rotating 3D cube,
+   enabling translucent or transparent windows, and zooming in and out of
+   the desktop screen. You can also use other window effects such as
+   shadows, fading, and transformations. If you do not have a 3D graphics
+   card, some effects may be disabled or reduce the performance of your
+   system. If the performance of your system is too low, disable the effects
+   for your current session with <keycombo> <keycap function="alt"/>
+   <keycap function="shift"/> <keycap>F12</keycap> </keycombo>.
+  </para>
+
+  <para>
+   To configure effects on your desktop, proceed as follows:
+  </para>
+
+  <procedure>
+   <step>
+    <para>
+     Start the <guimenu>System Settings</guimenu> as described in
+     <xref linkend="sec.kdequick.custom.kcontrol"/>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select <guimenu>Desktop Effects</guimenu> from the <guimenu>Workspace
+     Appearance and Behavior</guimenu> category and choose <guimenu>Enable
+     Desktop Effects</guimenu>. If your graphic card does not support 3D,
+     you will be notified.
+    </para>
+   </step>
+   <step>
+    <para>
+     Optionally, change some options below <guimenu>Common
+     Settings</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     On the <guimenu>All Effects</guimenu> tab, select the effects you want
+     to activate. Click the information icon for a short explanation of the
+     respective effect. If an effect is activated, the wrench icon on the
+     right gives access to further configuration options like assigning
+     keyboard shortcuts to the effect.
+    </para>
+   </step>
+   <step>
+    <para>
+     Use <guimenu>Apply</guimenu> to enable the effects permanently.
+    </para>
+   </step>
+  </procedure>
+
+<!--taroth 2010-08-05: no use mentioning any keyboard shortcuts as they are
+ subject to change, instead mentioned in the procedure above where they can be configured-->
+ </sect1>
+ <sect1 id="sec.kdequick.virtdesk">
+  <title>Using Virtual Desktops</title>
+
+  <para>
+   The desktop environment allows you to organize your programs and tasks on
+   several virtual desktops. If you often run a lot of programs
+   simultaneously, this minimizes the number of windows to arrange on your
+   screen. You might, for example, use one desktop for e-mailing and
+   calendaring and another for word processing and graphics applications.
+  </para>
+
+  <procedure id="proc.kdequick.virtdesk.move">
+   <title>Moving an Application to Another Virtual Desktop</title>
+   <para>
+    You can display a running application on one or all virtual desktops, or
+    move it to other desktops.
+   </para>
+   <step>
+    <para>
+     Open the application.
+    </para>
+   </step>
+   <step>
+    <para>
+     Right-click the title bar of the application.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click <guimenu>To Desktop</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select the desktop on which to place the application.
+    </para>
+   </step>
+   <step>
+    <para>
+     To switch to a certain desktop, click the desired desktop in the pager
+     in the panel. Switch to the next or previous desktop by placing the
+     mouse cursor on an empty patch on the desktop and move the mouse wheel.
+    </para>
+   </step>
+  </procedure>
+
+  <procedure id="proc.kdequick.virtdesk.add">
+   <title>Configuring Virtual Desktops</title>
+   <para>
+    You can increase the number of virtual desktops, change the default
+    names, assign activities, configure effect animations or assign keyboard
+    shortcuts for switching virtual desktops.
+   </para>
+   <step>
+    <para>
+     To add additional desktops, right-click the pager in the panel and
+     select <guimenu>Add Virtual Desktop</guimenu>. A new desktop is shown
+     in the pager.
+    </para>
+   </step>
+   <step>
+    <para>
+     For any configuration options, right-click the pager and select
+     <guimenu>Pager Settings</guimenu>.
+    </para>
+    <informalfigure>
+     <mediaobject>
+      <imageobject role="fo">
+       <imagedata fileref="kde_add_virtdesk.png" width="85%"/>
+      </imageobject>
+      <imageobject role="html">
+       <imagedata fileref="kde_add_virtdesk.png" width="60%"/>
+      </imageobject>
+     </mediaobject>
+    </informalfigure>
+   </step>
+   <step>
+    <para>
+     Use the options on the <guimenu>General</guimenu> screen to configure
+     the appearance of the pager in the panel.
+    </para>
+   </step>
+   <step>
+    <para>
+     Desktop names, keyboard shortcuts for switching desktops and the
+     switching type can be configured on the <guimenu>Virtual
+     Desktops</guimenu> screen.
+    </para>
+   </step>
+   <step>
+    <para>
+     Set the options according to your wishes and click
+     <guimenu>OK</guimenu> to apply the changes and to close the
+     configuration dialog.
+    </para>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 id="sec.kdequick.dolphin">
+  <title>Using the File Manager</title>
+
+  <para>
+   With KDE 4, Dolphin has replaced Konqueror as the default file manager.
+   Konqueror remains a Web browser (refer to
+   <xref linkend="sec.kdequick.browser"/>). Start Dolphin, from the Main
+   Menu by selecting <menuchoice> <guimenu>Favorites</guimenu> <guimenu>File
+   Manager</guimenu></menuchoice> or press <keycombo>
+   <keycap function="alt"/> <keycap>F2</keycap> </keycombo> and enter
+   <command>dolphin</command>.
+  </para>
+
+  <sect2 id="sec.kdequick.dolphin.oview">
+   <title>Dolphin Main Window</title>
+   <para>
+    The Dolphin main window consists of the following elements:
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="dolphin_main.png" width="80%"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="dolphin_main.png" width="70%"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <formalpara>
+    <title>Menu Bar:</title>
+    <para>
+     The menu bar holds menu items for actions like copying, moving, or
+     deleting files, changing views, starting additional tools, defining
+     your settings, and getting help.
+    </para>
+   </formalpara>
+   <formalpara>
+    <title>Toolbar:</title>
+    <para>
+     The toolbar provides quick access to frequently used functions that can
+     also be accessed via the menu. If you hover the mouse pointer over an
+     icon, a short description is displayed.
+    </para>
+   </formalpara>
+   <formalpara>
+    <title>Location Bar:</title>
+    <para>
+     The location bar displays the path to the current directory. It is
+     available in two versions: one shows the path to the current directory
+     with icons for every parent folder in a <quote>bread crumb</quote>
+     view. Click any icon in the bread crumb view to change to that
+     directory. The second version of the location bar shows the path to the
+     current directory as a string of text you can edit.
+    </para>
+   </formalpara>
+   <formalpara>
+    <title>Panels:</title>
+    <para>
+<!-- ke, 2010-06-22: background on root dir (/), see bnc#555362) -->
+     By default, Dolphin shows the <guimenu>Places</guimenu> panel. It
+     allows quick access to some often-used places like your home directory,
+     the root directory of the file system (<filename>/</filename>), the
+     trash bin, and removable media. There are several other panels you can
+     add to the main window by clicking <menuchoice> <guimenu>View</guimenu>
+     <guimenu>Panels</guimenu> </menuchoice>.
+    </para>
+   </formalpara>
+   <formalpara>
+    <title>Display Field (Working Space):</title>
+    <para>
+     The display field shows the contents of the selected directory or file.
+     By default, Dolphin displays the contents of your home directory on
+     start-up. By default, clicking a folder or file in Dolphin directly
+     starts an action: Dolphin loads the file into an application for
+     further processing or opens the folder.
+    </para>
+   </formalpara>
+   <formalpara>
+    <title>Status Bar:</title>
+    <para>
+     Shows the file type and size of the currently selected object and
+     allows you to enlarge or diminish the size of the icons or entries
+     shown in the display field.
+    </para>
+   </formalpara>
+  </sect2>
+
+  <sect2 id="sec.kdequick.dolphin.files">
+   <title>Managing Files and Folders with Dolphin</title>
+   <para>
+    To perform actions like copying, moving, creating or deleting files, you
+    need appropriate permissions to the folders and files involved in your
+    action.
+   </para>
+   <procedure>
+    <para>
+     To copy, move, or delete a file or folder, proceed as follows:
+    </para>
+    <step>
+     <para>
+      In order to select one or multiple files and folders in Dolphin, move
+      your mouse pointer over the file or folder but do not click. A green
+      cross appears on the upper-left edge. If you click it, the object is
+      selected. To deselect again, click the red minus icon that appears if
+      the object is currently selected.
+     </para>
+     <para>
+      Alternatively, press <keycap function="control"></keycap> and click
+      the objects you want to select or deselect.
+     </para>
+    </step>
+    <step id="step.dophin.cut">
+     <para>
+      Right-click and select <guimenu>Copy</guimenu> or <guimenu>Cut
+      </guimenu> from the context menu.
+     </para>
+    </step>
+    <step>
+     <para>
+      Navigate to the destination folder in which to insert the object.
+     </para>
+    </step>
+    <step>
+     <para>
+      To create a new folder at the current location, select <menuchoice>
+      <guimenu>File</guimenu> <guimenu>Create New</guimenu>
+      <guimenu>Folder</guimenu> </menuchoice> or press <keycap>F10</keycap>.
+      Enter a folder name in the new window and press
+      <keycap function="enter"/>.
+     </para>
+    </step>
+    <step>
+     <para>
+      To insert the object you copied or cut in
+      <xref linkend="step.dophin.cut"/>, right-click the destination folder
+      in the main display field and select <guimenu>Paste</guimenu>. The
+      object is copied or moved there.
+     </para>
+    </step>
+    <step>
+     <para>
+      To delete a file or folder, right-click the object in the main display
+      field and select <guimenu>Move to Trash</guimenu> from the context
+      menu. The object is moved to the trash bin. From there, you can
+      restore it if necessary or delete the object permanently.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    To quickly filter for certain filenames in the current directory, press
+    <keycombo> <keycap function="control"/> <keycap>I</keycap> </keycombo>
+<!-- or select <menuchoice>
+     <guimenu>Tools</guimenu>
+     <guimenu>Show Filter Bar</guimenu>
+     </menuchoice>-->
+    to add the <guimenu>Filter</guimenu> input field to the bottom of the
+    Dolphin main window. Type any part of the filename you are searching for
+    to see all files in the current directory containing the search string.
+    For more detailed and advanced searches, press <keycombo>
+    <keycap function="control"/> <keycap>F</keycap> </keycombo> to use the
+    desktop search. For more information, refer to
+    <xref linkend="sec.kdequick.find.nepomuk" />.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.kdequick.dolphin.conf">
+   <title>Configuring Dolphin</title>
+   <para>
+    Dolphin offers many options for adjusting the view and the overall
+    settings according to your preferences.
+   </para>
+   <procedure>
+    <title>Changing the View</title>
+    <step>
+     <para>
+      To switch from the bread crumb view to the editable version of the
+      location bar, press <keycap>F6</keycap>. Enter a path to a directory
+      by typing it in. After typing an address, press
+      <keycap function="enter"/> or click on the background of the bread
+      crumb view.
+     </para>
+     <para>
+      To delete the contents of the location bar click the black
+      <literal>X</literal> symbol on the left. To switch back to bread crumb
+      view, press <keycombo> <keycap function="control"/> <keycap>L</keycap>
+      </keycombo>.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="dolphin_location_bar.png" width="80%"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="dolphin_location_bar.png" width="70%"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>
+    </step>
+    <step>
+     <para>
+      To change the view of the currently displayed folder, either click
+      <guimenu>Icons</guimenu>, <guimenu>Details</guimenu>, or
+      <guimenu>Columns</guimenu> in the toolbar. Dolphin remembers the
+      selected view for each folder.
+<!--Alternatively, press <keycombo>
+       <keycap function="control"/>
+       <keycap>1</keycap>
+      </keycombo>, <keycombo>
+       <keycap function="control"/>
+       <keycap>2</keycap>
+      </keycombo>, or <keycombo>
+       <keycap function="control"/>
+       <keycap>3</keycap>
+      </keycombo> to switch between the view modes.-->
+      Click <guimenu>Split</guimenu> or press <keycap>F3</keycap> to view
+      the contents of the current folder in two separate columns. Now you
+      can navigate to a different directory in each column and easily drag
+      or drop objects or compare the contents of directories. Press
+      <keycap>F3</keycap> again to leave the split view.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="kde_dolphin_splitview.png" width="90%"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="kde_dolphin_splitview.png" width="90%"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>
+    </step>
+    <step>
+     <para>
+      To make Dolphin also show hidden files, select <menuchoice>
+      <guimenu>View</guimenu> <guimenu>Show Hidden Files</guimenu>
+      </menuchoice>.
+<!-- or press <keycombo> <keycap function="alt"/>
+       <keycap>.</keycap> </keycombo>-->
+     </para>
+    </step>
+    <step>
+     <para>
+      To view more details about the files (like access permissions or
+      ownership) in the working space, select <menuchoice>
+      <guimenu>View</guimenu> <guimenu>Additional Information</guimenu>
+      </menuchoice> and enable the corresponding options.
+     </para>
+<!--<informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="dolphin_hiddenfiles.png" width="75%"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="dolphin_hiddenfiles.png" width="50%"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>
+    -->
+    </step>
+    <step>
+     <para>
+      To add further directories to the <guimenu>Places</guimenu> panel,
+      drag a folder from the working space to the <guimenu>Places</guimenu>
+      panel and drop it there. Right-click and use the context menu to hide,
+      edit or remove entries from <guimenu>Places</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      To add more panels to the main window, select <menuchoice>
+      <guimenu>View</guimenu> <guimenu>Panels</guimenu> </menuchoice> and
+      select additional panels such as <guimenu>Folders</guimenu>, or
+      <guimenu>Terminal</guimenu>.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    Detach the panels from the main Dolphin window by clicking the left icon
+    at the top of each panel. Click the panel's title bar and drag it to
+    another place on the desktop. To reintegrate the panel into the Dolphin
+    window, click the left symbol at the top of the panel again.
+   </para>
+   <procedure>
+    <title>Changing Dolphin's Overall Behavior</title>
+    <para>
+     If you want to change Dolphin's overall behavior or view, select
+     <menuchoice> <guimenu>Settings</guimenu> <guimenu>Configure
+     Dolphin</guimenu> </menuchoice> and explore the options offered in the
+     Dolphin configuration dialog.
+    </para>
+    <step>
+     <para>
+      To use the same view mode for all folders, click
+      <guimenu>General</guimenu> in the left sidebar and activate
+      <guimenu>Use Common View Properties for All Folders</guimenu>. Click
+      <guimenu>View Modes</guimenu> in the left sidebar and adjust the
+      options for the individual view modes. Click <guimenu>Apply</guimenu>
+      to save the changes.
+     </para>
+    </step>
+    <step>
+     <para>
+      If you want Dolphin to show a different directory on start-up, or if
+      you want to permanently use the editable location bar instead of the
+      bread crumb view, click <guimenu>Startup</guimenu> in the left sidebar
+      and change the relevant options.
+     </para>
+    </step>
+    <step>
+     <para>
+      To configure which entries and services to show in the Dolphin context
+      menu, click <guimenu>General</guimenu>. On the <guimenu>Context
+      Menu</guimenu> tab, activate the entries to show. Click
+      <guimenu>Services</guimenu> in the left sidebar and activate or
+      deactivate the respective services to appear in the context menu.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click <guimenu>OK</guimenu> to save the changes and to close the
+      Dolphin configuration dialog.
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+ </sect1>
+<!-- fs 2011-01-18: Go on witth 11.4 review from here -->
+ <sect1 id="sec.kdequick.browser">
+  <title>Browsing the Internet</title>
+
+  <para>
+   Apart from Konqueror (KDE's default Web browser), &productname; also
+   includes the default Firefox Web browser. To start Konqueror or Firefox,
+   press <keycombo> <keycap function="alt"/> <keycap>F2</keycap> </keycombo>
+   and enter <command>konqueror</command> or <command>firefox</command>.
+  </para>
+
+  <para>
+   With features like tabbed browsing, pop-up window blocking, and download
+   and image management, both browsers combine the latest Web technologies.
+   Their easy access to different search engines helps you find the
+   information you need.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="firefox_main.png" width="85%"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="firefox_main.png" width="75%"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   Enter a URL in the location bar to start browsing. To open a new, empty
+   tab, press <keycombo> <keycap function="control"/> <keycap>T</keycap>
+   </keycombo>. To open a link in a new tab, click the link with your middle
+   mouse button. Right-click the tab itself to access more tab options. You
+   can create a new tab, reload one or all existing tabs, or close them. You
+   can also change the sequence of the tabs by dragging and dropping them to
+   the desired position.
+  </para>
+
+  <sect2 id="sec.kdequick.browser.search">
+   <title>Finding Information</title>
+   <para>
+    Both browsers offer different kinds of search options: you can find
+    information on the Web or you can search the current Web page for
+    keywords.
+   </para>
+<?dbfo-need height="20em"?>
+   <procedure>
+    <title>Searching the Web</title>
+    <step>
+     <para>
+      To start a search on the Web, click the left icon in the search bar
+      (located next to the location bar) to open a list of search engines.
+     </para>
+    </step>
+    <step>
+     <para>
+      Select the desired engine and type your search keywords into the input
+      field.
+     </para>
+    </step>
+    <step>
+     <para>
+      Press <keycap function="enter"/> to start the search.
+     </para>
+    </step>
+    <step>
+     <para>
+      To search the current Web page with Firefox or Konqueror, press
+      <keycombo> <keycap function="control"/> <keycap>F</keycap> </keycombo>
+      to open a find bar at the bottom of the window. Enter your search
+      keyword there and use the buttons beneath the bar to search in
+      different directions or to configure search options such as
+      <guimenu>Match Case</guimenu>.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    Konqueror offers predefined Web shortcuts for quickly searching the Web.
+    For example, to search the Web for <literal>yast</literal> using the
+    Google search engine, just type <literal>gg: yast</literal> into the
+    Konqueror location bar (or the <guimenu>Run Command</guimenu> dialog)
+    and press <keycap function="enter"/>.
+   </para>
+<!--
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="konqui_webshortcuts.png" width="80%"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="konqui_webshortcuts.png" width="75%"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+-->
+   <para>
+    You can also define individual Web shortcuts in Konqueror and Firefox as
+    described in <xref linkend="sec.kdequick.browser.conf"/>.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.kdequick.browser.download">
+   <title>Downloading Files from the Web</title>
+   <para>
+    If you download a file with Firefox or Konqueror, a dialog window
+    appears asking you if you want to save the file or to open it with a
+    specific application. Also choose if to remember the action you selected
+    for this type of file. By default, Firefox saves the file to the folder
+    configured in the <guimenu>Firefox Preferences</guimenu> and shows your
+    finished downloads in the <guimenu>Downloads</guimenu> dialog.
+   </para>
+   <para>
+    To open the downloaded files directly from there, right-click and select
+    <guimenu>Open</guimenu>. To clean up the history of downloaded files,
+    click <guimenu>Clear List</guimenu>.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.kdequick.browser.conf">
+   <title>Configuring Preferences</title>
+   <para>
+    Adjust preferences in Konqueror or Firefox. In Konqueror, access the
+    configuration dialog with <menuchoice> <guimenu>Settings</guimenu>
+    <guimenu>Configure Konqueror</guimenu> </menuchoice>. To change the
+    behavior of Konqueror as Web browser, select one of the <guimenu>Web
+    Browsing</guimenu> sub categories in the left sidebar to show the
+    options for the relevant category. For example, you can
+    <quote>hide</quote> Konqueror's real identity and make Konqueror
+    identify as a different browser (for example, Internet Explorer*) for
+    certain Web sites you visit. To do so, select <guimenu>Browser
+    Identification</guimenu>, and click <guimenu>New</guimenu> to add a new,
+    site-specific identification.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="konqui_pref.png" width="80%"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="konqui_pref.png" width="70%"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    You might also want to configure the Web shortcuts you can use with
+    Konqueror (and the <guimenu>Run Command</guimenu> dialog). In the
+    Konqueror configuration dialog, click <guimenu>Web Shortcuts</guimenu>
+    to see which shortcuts are already defined. Click <guimenu>New</guimenu>
+    to define new shortcuts. Leave the Konqueror configuration dialog with
+    <guimenu>OK</guimenu> to apply your changes.
+   </para>
+   <para>
+    In Firefox, select <menuchoice> <guimenu>Edit</guimenu>
+    <guimenu>Preferences</guimenu> </menuchoice> to open the
+    <guimenu>Firefox Preferences</guimenu>. Click the icons in the upper
+    display field to access the options for the relevant category. For
+    example, change the default download folder on the
+    <guimenu>General</guimenu> page, or adjust the pop-up blocking feature
+    on the <guimenu>Content</guimenu> page. Click <guimenu>OK</guimenu> to
+    apply the changes.
+   </para>
+   <para>
+    To configure a Web shortcut for a search in Firefox, browse to the Web
+    page with the desired search field. Right-click the search field and
+    choose <guimenu>Add a Keyword for this Search...</guimenu>. Enter a
+    <guimenu>Keyword</guimenu> and leave the dialog with
+    <guimenu>OK</guimenu>.
+   </para>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.kdequick.kwallet">
+  <title>Managing Passwords</title>
+
+  <para>
+   When you enter a password in a KDE application for the first time (in
+   KMail or Konqueror, for example), you are asked if you want to store the
+   password. If you click <guimenu>Yes</guimenu>, KWallet wizard starts by
+   default. KWallet is a password management tool that can collect all
+   passwords and store them in one or more encrypted files (called
+   <literal>wallets</literal>).
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="kwallet_welcome.png" width="70%"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="kwallet_welcome.png" width="65%"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   To activate KWallet, select <guimenu>Basic Setup</guimenu> and click
+   <guimenu>Next</guimenu>. Select <guimenu>Yes, I wish to use the KDE
+   wallet to store my personal information</guimenu> and enter a password.
+   This is your master password for the default wallet (named
+   <literal>kdewallet</literal>) that is created during the next step.
+  </para>
+
+  <warning>
+   <title>Protect Your KWallet Password</title>
+   <para>
+    If you forget your master password for any wallet, it cannot be
+    recovered. Furthermore, anyone who knows your master password can obtain
+    all information contained in the respective wallet.
+   </para>
+  </warning>
+
+  <para>
+   Click <guimenu>Finish</guimenu> to close the wizard. If you started the
+   KWallet wizard initially from another application like Konqueror or
+   KMail, KWallet will prompt you to enter the password once again in order
+   to store the password for this application in the newly created wallet.
+   After initial configuration you can open your wallet at any time to view,
+   search, delete, or create entries. Normally you do not need to insert an
+   entry manually. KDE recognizes if a resource requires authentication and
+   KWallet starts automatically, prompting you for the KWallet password.
+   However, you can add additional data if you wish. To configure any
+   KWallet options, press <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo> and enter
+   <command>kwalletmanager</command>. In the <guimenu>KDE Wallet
+   Manager</guimenu> that opens select <menuchoice>
+   <guimenu>Settings</guimenu> <guimenu>Configure Wallet</guimenu>
+   </menuchoice>.
+  </para>
+
+  <para>
+   Whereas KWallet is designed to centrally manage passwords for several KDE
+   applications, Firefox also offers the ability to store data when you
+   enter a username and a password on a Web site. If you accept by clicking
+   <guimenu>Remember</guimenu>, the password will be stored on your hard
+   disk in an encrypted format. The next time you access this site, Firefox
+   will automatically populate the login fields.
+  </para>
+
+  <para>
+   Firefox does not use KWallet to store passwords, but rather uses it's own
+   password store. To review or manage your passwords in Firefox, click
+   <menuchoice> <guimenu>Edit</guimenu> <guimenu>Preferences</guimenu>
+   <guimenu>Security</guimenu> <guimenu>Saved Passwords...</guimenu>
+   </menuchoice>.
+  </para>
+ </sect1>
+ <sect1 id="sec.kdequick.mail">
+  <title>E-Mailing and Calendaring</title>
+
+  <para>
+   For reading and managing your mails and appointments, you can use Kontact
+   as your personal information management tool (PIM). Kontact combines KDE
+   applications like KMail, KOrganizer, and KAddressBook into a single
+   interface. This gives you easy access to your e-mails, calendar, address
+   book, and other PIM functionality. Kontact can also manage multiple
+   e-mail accounts.
+  </para>
+
+  <sect2 id="sec.kdequick.mail.kontact">
+   <title>Starting Kontact for the First Time</title>
+   <para>
+    To start Kontact, press <keycombo> <keycap function="alt">Alt</keycap>
+    <keycap>F2</keycap> </keycombo> and enter <command>kontact</command>. To
+    access one of its components like KMail, click the corresponding icon in
+    the left sidebar.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="kontact_kmail.png" width="70%"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="kontact_kmail.png" width="65%"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    Before you can send or receive mails, you must configure an e-mail
+    identity and account:
+   </para>
+   <procedure>
+    <step>
+     <para>
+      From the menu, select <menuchoice> <guimenu>Settings</guimenu>
+      <guimenu>Configure Kontact...</guimenu> </menuchoice>.
+     </para>
+    </step>
+    <step>
+     <para>
+      In the left side pane under <guimenu>Mail</guimenu>, click
+      <guimenu>Identities</guimenu> and select the identity that KMail has
+      automatically created for you. <guimenu>Modify</guimenu> it by
+      entering your full name and e-mail address and confirming your
+      changes.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click <guimenu>Accounts</guimenu> in the left side pane under
+      <guimenu>Mail</guimenu> and <guimenu>Add</guimenu> at least one
+      account on the tabs for <guimenu>Receiving</guimenu> and
+      <guimenu>Sending</guimenu> mails. (Optionally, you can configure
+      multiple mail accounts).
+     </para>
+     <para>
+      Usually, the following information is required for both incoming and
+      outgoing mail: <guimenu>Account Type</guimenu>, <guimenu>Server
+      Name</guimenu> and <guimenu>Port</guimenu>. Depending on the account,
+      you may also need to set encryption or authentication options. If you
+      are not sure about the settings or items to select, consult your
+      Internet Service Provider or system administrator.
+     </para>
+    </step>
+    <step>
+     <para>
+      Confirm the setup and leave the configuration dialog with
+      <guimenu>OK</guimenu>.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    To write a new mail, click the <guimenu>Mail</guimenu> icon in the
+    Kontact main window and press <keycombo> <keycap function="control"/>
+    <keycap>N</keycap> </keycombo> to open the mail composer. After you have
+    finished your mail, click <guimenu>Send</guimenu> to send it
+    immediately. In case you have configured multiple e-mail accounts, keep
+    the <guimenu>Send</guimenu> button pressed, then select the account from
+    which you want to send the mail.
+   </para>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.kdequick.kopete">
+  <title>Instant Messaging with Kopete</title>
+
+  <para>
+   Kopete is an online messenger application that allows multiple partners
+   connected to the Internet to chat with each other. Kopete currently
+   supports a number of common messenger protocols, such as AOL* Instant
+   Messenger (AIM), Gadu-Gadu, GroupWise&reg; Messenger, ICQ, Jabber*, SMS,
+   and Yahoo!*. To be able to use instant messaging (IM), you must register
+   with a provider offering IM services and configure a Kopete account.
+  </para>
+
+  <para>
+   To start Kopete, press <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo> and enter <command>kopete</command>. If
+   started for the first time, click the wrench icon at the bottom of the
+   Kopete window to create an account. Kopete guides you through the setup
+   steps like selecting the messaging service, and entering the respective
+   account information like user name or ID, server name and port and any
+   authentication details like passwords. If you have not registered with
+   the provider for the selected messaging service yet, click
+   <guimenu>Register New Account</guimenu>. In the browser window that
+   opens, enter your user data to register. Switch back to Kopete and enter
+   the data received on registration. Complete the configuration of your
+   account by clicking <guimenu>Finish</guimenu>.
+  </para>
+
+<!--taroth 2010-08-06: as Kopete has a wizard-like setup again, commenting the
+ detailed procedure below for space reasons-->
+
+<!--<procedure>
+   <step>
+    <para>To add an account, select <menuchoice> <guimenu>Settings</guimenu>
+     <guimenu>Configure</guimenu> </menuchoice>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Choose <guimenu>Accounts</guimenu> and click <guimenu>Add
+     Account</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select your messaging service.
+    </para>
+   </step>
+   <step>
+    <para>
+     Enter your account information. If the messaging service requires
+     registration but you do not have an account for this service yet,
+     proceed as follows:
+    </para>
+    <substeps>
+     <step>
+      <para>
+       Click <guimenu>Register New Account</guimenu>. In the browser window
+       that opens, enter your user data to register.
+      </para>
+     </step>
+     <step>
+      <para>
+       Switch back to Kopete and enter the data received on registration
+       with the messaging service. This usually consists of the nickname or
+       e-mail address and a password. Complete the configuration of your
+       account by clicking <guimenu>Finish</guimenu>.
+      </para>
+     </step>
+    </substeps>
+   </step>
+   <step>
+    <para>
+     Create a new identity with <guimenu>Add Identity...</guimenu>. Usually
+     this is not really necessary, but sometimes you want to distinguish
+     between private and business contacts. A new identity helps to separate
+     these two areas. In the dialog box that opens, enter your nickname and
+     e-mail address. Close with <guimenu>Ok</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Drag and drop your account to the newly created identity. It is now
+     listed under the identity.
+    </para>
+   </step>
+   <step>
+    <para>
+     Finish with <guimenu>Ok</guimenu>.
+    </para>
+   </step>
+  </procedure>-->
+
+  <para>
+   If you decided to go online after configuring your account, you can now
+   add contacts in the main Kopete window. If the Kopete window shows
+   <literal>offline </literal>, first click <menuchoice>
+   <guimenu>File</guimenu> <guimenu>Set Status</guimenu>
+   <guimenu>Online</guimenu> </menuchoice> and enter your password if you
+   are prompted for it. After connecting, click <menuchoice>
+   <guimenu>File</guimenu> <guimenu>Add Contact</guimenu> </menuchoice> and
+   select the Kopete account for which you want to add contacts. Enter the
+   contact data or search for a contact and click <guimenu>OK</guimenu>.
+  </para>
+
+  <para>
+   To view all your contacts, even if they are offline at the moment, select
+   <menuchoice> <guimenu>Settings</guimenu> <guimenu>Show Offline
+   Users</guimenu> </menuchoice>.
+  </para>
+
+  <para>
+   To start a chat with someone, click the desired contact and type your
+   message in the lower part of the chat window. Press
+   <keycap function="enter"/> to send the message. The upper part of the
+   window displays the messages you have sent and received.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="kopete_chat.png" width="55%"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="kopete_chat.png" width="50%"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+ </sect1>
+ <sect1 id="sec.kdequick.ooo">
+  <title>Starting &libo;</title>
+
+  <para>
+   The office suite &libo; offers a complete set of office tools, including
+   word processor, spreadsheet, presentation, vector drawing, and database
+   components. Because &libo; is available for a number of operating
+   systems, you can use the same data across different computing platforms.
+  </para>
+
+  <para>
+   To start &libo; press <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo> and enter <command>ooffice</command>. In
+   the window that appears, select the &libo; module you want to open. To
+   create a new document, select <menuchoice> <guimenu>File</guimenu>
+   <guimenu>New</guimenu> </menuchoice> and choose the type of document to
+   create. To open an existing document, select <guimenu>Open</guimenu> and
+   choose the appropriate file from the file system.
+  </para>
+ </sect1>
+ <sect1 id="sec.kdequick.docview">
+  <title>Viewing PDF Files and Other Documents</title>
+
+  <para>
+   Documents that need to be shared or printed across multiple platforms can
+   be saved as PDF (Portable Document Format) files, for example, in the
+   &libo; suite. View them with Okular, the default KDE document viewer.
+  </para>
+
+  <sect2 id="sec.kdequick.docview.okular">
+   <title>Using Okular Document Viewer</title>
+   <para>
+    Apart from PDF files, Okular allows you to view a great number of file
+    formats, such as PostScript, several image formats, OpenDocument format
+    (ODF), OpenDocument text (ODT), some eBook formats (ePub), and even
+    Microsoft* Compiled HTML Help (CHM). Okular also provides support for
+    bookmarks, annotations, form fields and multimedia content, and the
+    rotation of pages.
+   </para>
+   <para>
+    Start Okular from the <guimenu>Main Menu</guimenu> or press <keycombo>
+    <keycap function="alt"/> <keycap>F2</keycap> </keycombo> and enter
+    <command>okular</command>.
+   </para>
+   <para>
+    To open a document, select <menuchoice> <guimenu>File</guimenu>
+    <guimenu>Open</guimenu> </menuchoice> and choose the desired file from
+    the file system. Navigate through the document by using the navigation
+    icons at the top or bottom of the window. Depending on which icon you
+    click on the navigation panel on the left, the sidebar either shows a
+    table of <guimenu>Contents</guimenu>, a <guimenu>Thumbnail</guimenu>
+    view of each page, the <guimenu>Reviews</guimenu>, or your
+    <guimenu>Bookmarks</guimenu> for this file. To filter for any text
+    listed in the sidebar or the overall document, enter a string into the
+    input field at the top of the sidebar. If you want to select and copy
+    text or images from the file in Okular, click the
+    <guimenu>Selection</guimenu> icon in the toolbar and select one of the
+    options from the context menu. Click the <guimenu>Browse</guimenu> icon
+    to switch back to browsing the document.
+   </para>
+   <procedure>
+    <title>Working with Bookmarks and Annotations</title>
+    <para>
+     With Okular, you can review a document by highlighting certain text
+     parts or adding annotations or bookmarks that Okular then attaches to
+     the file in the form of metadata. Note that the annotations and markers
+     you add are not stored within the document, so you cannot print them or
+     pass them on to other users.
+    </para>
+    <step>
+     <para>
+      To add a bookmark for a page, click the page in the sidebar or in the
+      main display field and press <keycombo> <keycap function="control"/>
+      <keycap>B</keycap> </keycombo>. The page is added to the
+      <guimenu>Bookmarks</guimenu> list on the left sidebar. Right-click the
+      bookmark entry to access a context menu for going to this bookmark or
+      renaming, or removing it.
+     </para>
+    </step>
+    <step>
+     <para>
+      To create an annotation for a page, press <keycap>F6</keycap> and
+      select one of the annotation tools from the toolbar that appears. The
+      annotation is added to the list of <guimenu>Reviews</guimenu> and is
+      flagged with the login name of the user who created it. Use the icons
+      at the bottom of the sidebar to group the annotations by page, by
+      author or to show the annotations for the current page only.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="okular_annotate.png" width="90%"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="okular_annotate.png" width="75%"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>
+    </step>
+    <step>
+     <para>
+      To open a pop-up note and add text for an annotation (or to remove an
+      annotation), right-click the annotation entry in the
+      <guimenu>Reviews</guimenu> list and select the corresponding menu
+      item. The annotations or markers you added are automatically attached
+      to the file, you do not need to save them.
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+
+  <sect2 id="sec.kdequick.docview.acroread" os="osuse">
+   <title>Using Acrobat Reader</title>
+   <para>
+    If Acrobat Reader is not installed by default, install the
+    <systemitem>acroread</systemitem> package with &yast;. To start Acrobat
+    reader, press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+    </keycombo> and enter <command>acroread</command>.. Click <menuchoice>
+    <guimenu>File</guimenu> <guimenu>Open</guimenu> </menuchoice>, locate
+    the desired PDF file and click <guimenu>Open</guimenu> to view the file.
+   </para>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.kdequick.find">
+  <title>Searching for Data</title>
+
+  <para>
+   KDE provides more than one application for finding data on your computer
+   or in the file system. One application is KFind, which is described
+   below.
+  </para>
+
+  <sect2 id="sec.kdequick.find.kfind">
+   <title>Using KFind</title>
+   <para>
+    To perform basic and advanced searches, use KFind. Start it from the
+    <guimenu>Main Menu</guimenu> by clicking <menuchoice>
+    <guimenu>Applications</guimenu> <guimenu>Find Files/Folders</guimenu>
+    </menuchoice> or press <keycombo> <keycap function="alt"/>
+    <keycap>F2</keycap> </keycombo> and enter <command>kfind</command>.
+   </para>
+   <procedure id="proc.kdequick.find.simple">
+    <title>Searching by Name</title>
+    <para>
+     To use a filename (or a part of it) as the search keyword, proceed as
+     follows:
+    </para>
+    <step>
+     <para>
+      Enter the filename or a part of the filename in the
+      <guimenu>Named</guimenu> input field. Use wild cards, such as an
+      asterisk (<literal>*</literal>), to indicate missing characters in the
+      filename.
+     </para>
+    </step>
+    <step>
+     <para>
+      Specify the folder in which to search for the file. Either enter a
+      path to the folder in <guimenu>Look in</guimenu> or click
+      <guimenu>Browse</guimenu> to locate the folder.
+     </para>
+    </step>
+    <step>
+     <para>
+      To search subfolders, check <guimenu>Include Subfolders</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click <guimenu>Find</guimenu> to start the search. The results are
+      displayed in the lower part of the dialog. To directly open the
+      result, just click it. Right-click it to choose one of the options
+      from the context menu.
+     </para>
+<!--   <informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="kfind_simple.png" width="90%"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="kfind_simple.png" width="85%"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>-->
+    </step>
+   </procedure>
+   <procedure id="proc.kdequick.findadv">
+    <title>Searching by Contents or Properties</title>
+    <para>
+     For a more detailed search, you can also specify further options, such
+     as a text the file must contain or the creation or modification date of
+     a file. To search for content or properties, proceed as follows:
+    </para>
+    <step>
+     <para>
+      On the <guimenu>Name/Location</guimenu> tab, specify at least the path
+      to search for the file. You can leave <guimenu>Named</guimenu> empty.
+     </para>
+    </step>
+    <step>
+     <para>
+      To search for certain content in a file, click the
+      <guimenu>Contents</guimenu> tab. In <guimenu>Containing
+      Text</guimenu>, enter the word or phrase the file to find must
+      contain. This option does not work for all types of files.
+     </para>
+    </step>
+    <step>
+     <para>
+      To search for properties such as creation or modification date of the
+      file, click the <guimenu>Properties</guimenu> tab and choose the
+      options you want.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="kfind_advanced.png" width="85%"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="kfind_advanced.png" width="75%"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>
+    </step>
+    <step>
+     <para>
+      Click <guimenu>Find</guimenu> to start the search.
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+
+  <sect2 id="sec.kdequick.find.nepomuk">
+   <title>Using Strigi Desktop Search</title>
+   <para>
+    Strigi Desktop Search offers advanced search capabilities,by
+    additionally searching for metadata such as tags, ratings, and even
+    source URLs for downloads. It requires the services
+    <systemitem
+     class="service">nepomuk</systemitem> and
+    <systemitem
+     class="service">strigi</systemitem> to run. To activate
+    these services, press &altf2; and enter <literal>strigi</literal>.
+    Choose <guimenu>Nepomuk/Strigi server Configuration</guimenu> to start
+    the configuration dialog. Enable the two services on the tab
+    <guimenu>Basic Settings</guimenu>and leave the dialog by clicking
+    <guimenu>Apply</guimenu> and <guimenu>OK</guimenu>.
+   </para>
+   <para>
+    Once activated, you can use KRunner (&altf2;) to search for files by
+    just typing a keyword. A more advanced search interface is available in
+    the Dolphin file manager. Press <keycombo> <keycap function="control"/>
+    <keycap>F</keycap> </keycombo> in Dolphin to activate the desktop
+    search. You can filter the search results for
+    <guimenu>Filename</guimenu>, <guimenu>Content</guimenu> or location.
+   </para>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.kdequick.burn">
+  <title>Creating a CD or DVD</title>
+
+  <para>
+   If you possess a CD or DVD writer, you can burn files to a CD or DVD with
+   K3b. To create a data CD or DVD, proceed as follows:
+  </para>
+
+  <procedure id="proc.kdequick.burn">
+   <step>
+    <para>
+     Press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+     </keycombo> and enter <command>k3b</command>. K3b opens.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select <menuchoice> <guimenu>File</guimenu> <guimenu>New
+     Project</guimenu> <guimenu>New Data Project</guimenu> </menuchoice>
+     from the main menu.
+    </para>
+   </step>
+   <step>
+    <para>
+     Use the tree view in the top left part of the window to search for the
+     files or folders to burn. When they appear in the top right part of the
+     window, drag and drop them into the <guimenu>Current Projects</guimenu>
+     window.
+    </para>
+    <informalfigure>
+     <mediaobject>
+      <imageobject role="fo">
+       <imagedata fileref="k3b_data_cd.png" width="90%"/>
+      </imageobject>
+      <imageobject role="html">
+       <imagedata fileref="k3b_data_cd.png" width="75%"/>
+      </imageobject>
+     </mediaobject>
+    </informalfigure>
+   </step>
+   <step>
+    <para>
+     Insert a writable CD or DVD into the device then click the
+     <guimenu>Burn</guimenu> icon.
+    </para>
+   </step>
+   <step>
+    <para>
+     Check the settings on the <guimenu>Writing</guimenu> tab. Usually the
+     defaults should work well for almost all files. If you wish, you can
+     change more options (for example the <guimenu>Volume Name</guimenu>) on
+     the <guimenu>Filesystem</guimenu> tab.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click <guimenu>Burn</guimenu>.
+    </para>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 id="sec.kdequick.digikam">
+  <title>Managing Your Digital Image Collection</title>
+
+  <para>
+   With &digikam; it is easy to manage your digital images: download your
+   images from the camera, edit and improve them, organize them in albums
+   (or flag them with tags for easy retrieval, independent of folders or
+   albums), archive them on CD or DVD, or export them to a Web image
+   gallery.
+  </para>
+
+  <para>
+   &digikam; also contains a set of useful batch functions and plug-ins,
+   allowing you to convert multiple images to various different formats,
+   rename multiple images, or automatically improve them with functions such
+   as red eye reduction, speck removal, and hot pixel removal. Various
+   filter and effects plug-ins help create works of art from your digital
+   images.
+  </para>
+
+  <para>
+   To start &digikam;, press <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo> and enter <command>digikam</command>. On
+   initial start-up, the first-run wizard appears to guide you through the
+   setup.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="digikam_mainwin.png" width="90%"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="digikam_mainwin.png" width="70%"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   &digikam;'s main window contains a tree view on the left and shows
+   thumbnails of the images on the right. For quick access to your images,
+   use the sidebar on the left, which allows you to switch between different
+   views, for example, sorting the images according to
+   <guimenu>Albums</guimenu>, <guimenu>Dates</guimenu>,
+   <guimenu>Tags</guimenu> or <guimenu>Searches</guimenu>. To enter
+   &digikam;'s viewing and editing mode, double-click an image thumbnail.
+  </para>
+ </sect1>
+ <sect1 id="sec.kdequick.amarok">
+  <title>Managing Your Music Collection</title>
+
+  <para>
+   KDE's &amarok; music player allows you to play various audio formats,
+   create playlists, listen to streaming audio broadcasts of radio stations
+   on the Internet and subscribe to podcasts. The file types supported
+   depend on the engine used for &amarok;.
+  </para>
+
+  <para>
+   To start &amarok;, press <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo> and enter <command>amarok</command>. On
+   first start, &amarok; asks for the folders where to look for your music
+   files.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="amarok_main.png" width="85%" format="PNG"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="amarok_main.png" width="60%" format="PNG"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   &amarok;'s main window shows a sidebar on the left providing different
+   views: your local music collection, some addresses to listen to podcasts
+   or streams from the Internet, your playlists and a file browser. The
+   middle part, the context browser, displays information about the current
+   track, the Wikipedia page of the artist and the song's lyrics by default.
+   The right part of the window shows the current playlist. To play music,
+   just drag and drop items from any of the sidebar browsers to the playlist
+   area. Double-click an item in the playlist to start playback.
+  </para>
+
+  <para>
+   If your music files are properly tagged (containing at least information
+   about the artist and album), you can make use of several nice &amarok;
+   features. To automatically retrieve the album cover images from Amazon,
+   select <menuchoice> <guimenu>Tools</guimenu> <guimenu>Cover
+   Manager</guimenu> </menuchoice> and click <guimenu>Fetch Missing
+   Covers</guimenu>. The next time you play a track from this album, the
+   cover is displayed in the context browser and on the on-screen display.
+   To learn more about the artist, click on the <guimenu>Wikipedia</guimenu>
+   button in the middle area to make &amarok; search for the appropriate
+   Wikipedia article.
+  </para>
+
+  <para>
+   To configure the use of another engine (or various other &amarok;
+   features), select <menuchoice> <guimenu>Settings</guimenu>
+   <guimenu>Configure &amarok;</guimenu> </menuchoice>.
+  </para>
+ </sect1>
+ <sect1 id="sec.kdequick.logout">
+  <title>Logging Out</title>
+
+  <para>
+   Log out (and leave the system running), restart or shut down the
+   computer.
+  </para>
+
+  <sect2 id="sec.kdequick.logout.switch">
+   <title>Logging Out or Switching Users</title>
+   <para>
+    Click the <guimenu>Main Menu</guimenu> button on your panel and select
+    <menuchoice> <guimenu>Leave</guimenu> <guimenu>Logout</guimenu>
+    </menuchoice>. This ends your session but leaves the system running. To
+    start a parallel session as a different user, select <menuchoice>
+    <guimenu>Leave</guimenu> <guimenu>Switch User</guimenu> </menuchoice>
+    instead.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.kdequick.logout.restart">
+   <title>Restarting or Shutting Down the Computer</title>
+   <para>
+    Click <guimenu>Leave</guimenu>, then select one of the following
+    options:
+   </para>
+   <variablelist>
+    <varlistentry>
+     <term><guimenu>Sleep</guimenu>
+     </term>
+     <listitem>
+      <para>
+       Only available if your computer provides power management
+       functionality. Pauses your computer without logging you out. All your
+       data and the session data is saved to RAM.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><guimenu>Hibernate</guimenu>
+     </term>
+     <listitem>
+      <para>
+       Only available if your computer provides power management
+       functionality. Pauses your computer without logging you out. All your
+       data and the session data is saved to disk before the system is laid
+       to rest. It is thus protected against data loss should you lose power
+       in the meantime.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><guimenu>Restart</guimenu>
+     </term>
+     <listitem>
+      <para>
+       Restarts your computer.
+      </para>
+     </listitem>
+    </varlistentry>
+    <varlistentry>
+     <term><guimenu>Shutdown</guimenu>
+     </term>
+     <listitem>
+      <para>
+       Logs you out of the current session, then turns off the computer.
+      </para>
+     </listitem>
+    </varlistentry>
+   </variablelist>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.kdequick.more">
+  <title>For More Information</title>
+
+  <para os="sled">
+   This guide gave you a short introduction to the KDE desktop and some key
+   applications running on it. To discover more, refer to the
+   <xref linkend="book.kdeuser"/>, and the other manuals available for
+   &productname; at
+   <ulink url="http://www.novell.com/documentation/sled11/"/>.
+  </para>
+
+<!-- fs 2010-12-27: 
+     No more KDE User Guide for openSUSE
+  <para os="osuse">
+   This guide gave you a short introduction to the KDE desktop and some key
+   applications running on it. To discover more, refer to the
+   <xref linkend="book.kdeuser"/>, and the other manuals available for
+   &productname;. Find them at
+   <ulink url="http://www.novell.com/documentation/opensuse113"/> or in your
+   installed system under <filename>/usr/share/doc/manual</filename>.
+  </para>
+-->
+
+  <para>
+   To learn more about KDE and KDE applications, also refer to
+   <ulink url="http://www.kde.org/"/> and
+   <ulink url="http://www.kde-apps.org/"/>.
+  </para>
+ </sect1>
+ <xi:include os="sles; sled" xmlns:xi="http://www.w3.org/2001/XInclude" href="common_copyright_quick.xml"/>
+</article>

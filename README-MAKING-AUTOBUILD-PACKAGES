@@ -1,0 +1,220 @@
+Making Autobuild Packages
+*************************
+
+It is a two-step procedure to submit a doc package to the Build Service
+(internal or external):
+
+  . First, create the PDF, HTML, .desktop and source files and write the
+    .spec file using buildbook and book.spec.in coming with the
+    susedoc-buildbook package.  This process it controlled by the book
+    specific DEF-* files.
+
+  . Second, check the .changes file and send a submitreq.
+
+
+Find openSUSE 11.1 and 11.2 related information below.
+For SLE10 SP3 look up the SLE_100 branch.
+For SLE11, SLE11 SP1, and SLEHA11 look up the SLE_110. (Also see below.)
+
+   +---------------------------------------------------------------------+
+   | Prereq: Install susedoc-buildbook from the openSUSE:Factory project |
+   |         (OBS, external BS).                                         |
+   |         Sources:                                                    |
+   |         https://svn.berlios.de/svnroot/repos/opensuse-doc.          |
+   |                                                                     |
+   |         You now need version 0.12 or better.                        |
+   +---------------------------------------------------------------------+
+
+     OBS:    You need an openSUSE Build Service (OBS) account and
+             the osc command-line interface must be working.  Call these
+             commands and save the encrypted OBS password in ~/.obsrc
+             (replace $USERNAME with your account name):
+
+             osc mkpac home:$USERNAME test
+             osc meta pkg -e home:$USERNAME test
+             osc rdelete home:$USERNAME test
+
+     IBS:    See OBS, and address the internal server at
+             https://api.suse.de:
+
+             osc -A https://api.suse.de mkpac home:$USERNAME test
+             etc.
+
+
+openSUSE
+========
+
+The following applies basically for 11.3.
+11.2 stuff is in the OS_112 branch.
+
+
+Building the books
+------------------
+
+Go to the SVN checkout directory, then call:
+
+. ENV-opensuse-all
+svn up
+make update
+
+    buildbook -d DEF-opensuse-manuals -n opensuse-manuals
+
+
+The first time you call it after a fresh checkout, the following error
+message may occur:
+
+tar: html/opensuse-kdeuser/index.html: Cannot stat: No such file or directory
+tar: html/opensuse-kdeuser/index.html: Cannot stat: No such file or directory
+tar: Error exit delayed from previous errors
+make: *** [dist-html] Error 2
+
+Calling it a second time, it succeeds.  Or source any ENV-* file.
+
+
+Background Information
+~~~~~~~~~~~~~~~~~~~~~~
+
+The buildbook script calls special build targets such as "make
+package", "make package-html", or "make package-pdf".  You will find the
+result of these targets in the package directories such as "package-",
+"package-html-", or "package-pdf-" with the book name or product name
+appended: "package-pdf-opensuse-startup".
+
+Depending on the output format, the package directory contains the
+following files or a subset of them:
+
+opensuse-startup_en-desktop.tar.bz2    - desktop files for KDE help center
+opensuse-startup_en-graphics.tar.bz2   - image source files (screen shots)
+opensuse-startup_en-html.tar.bz2       - HTML output
+opensuse-startup_en-pdf-yelp.tar.bz2   - document file for GNOME help
+                                         center (yelp).  Access to the PDF
+opensuse-startup_en-yelp.tar.bz2       - document file for GNOME help
+                                         center (yelp).  Access to HTML
+opensuse-startup_en.pdf                - PDF
+opensuse-startup_en.tar.bz2            - profiled XML sources
+
+
+~ *** Check this!
+The buildbook wrapper script then creates a suitable .spec file.
+
+~Then it copies all this stuff plus the old .changes file to the
+~autobuild directory and finally to a directory with a normalized
+~name matching the book title (for example, opensuse-manuals_en).  All
+~this a driven by a DEF file.
+
+Internally, the script does the following
+
+~ *** Check it!
+OBSUSER=keichwa             # use your BS account!
+PACKAGE=opensuse-manuals_en
+osc branch openSUSE\:Factory $PACKAGE
+osc checkout home:$OBSUSER:branches:openSUSE:Factory/$PACKAGE
+
+# now copy the new stuff into 
+# home:$OBSUSER:branches:openSUSE:Factory/$PACKAGE
+cd home:$OBSUSER:branches:openSUSE:Factory/$PACKAGE
+
+update .changes
+
+# commit it
+
+    osc commit -m "Updated context."
+
+### Manual action required!
+# Send a submitreq to the Factory maintainer:
+
+    osc submitreq -m 'Updated context.' \
+      home:$OBSUSER:branches:openSUSE:Factory \
+      $PACKAGE openSUSE:Factory
+
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=- cut here -=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+Building Localized Manual Packages
+==================================
+
+Use the -e|--extdir option to pull in package files built externally
+(e.g., in Dublin by calling "make package").  If you re-use the English
+infrastructure, specify the wanted language with the -l|--lang option.
+Examples:
+
+opensuse-manuals_de (in the 'de' directory of the SVN):
+
+../../novdoc/bin/buildbook-for-obs.sh -d DEF-opensuse-manuals \
+  -n opensuse-manual -l de
+
+If you want to reuse an external PDF (change to the 'en' directory
+first!):
+
+../../novdoc/bin/buildbook-for-obs.sh -d DEF-SLES-admin -n sles-admin \
+  -l de -e .../sles-admin_de
+
+
+Instead of .../sles-admin_de or .../sled-kde-user_de use the directory
+where the files are stored.
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=- cut here -=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+SLEPOS
+======
+
+svn up
+make update
+
+buildbook -d DEF-SLEPOS-guide -n slepos-guide
+
+Submit to ibs://Devel:SLEPOS:SLE-11-POS-SP1
+
+Old package names: SLEPOS and slepos-united_en-pdf
+slepos-install
+slepos-admin
+
+
+SLMS
+====
+
+buildbook -d DEF-SLE-slms-manual -n sle-slms-manual
+
+and submit with the "osc sr" as printed at the of the buildbook
+process.
+
+
+WebYaST
+=======
+
+GFDL'ed, thus it lives in OBS.
+
+buildbook -d DEF-webyast-vendor -n webyast-vendor
+buildbook -d DEF-webyast-user -n webyast-user
+
+Submit to obs://YaST:Web (where ke is a maintainer) and do a submitreq
+to obs://YaST:Web:STABLE.
+
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=- cut here -=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+
+SLEHA
+=====
+
+Build it from https://svn.suse.de/svn/doc/branches/SLE_11_HAE (for GA)
+or from trunk (ask the writers where to find the files).
+
+../../novdoc/bin/buildbook -d DEF-SLE-ha -n sleha-guide
+
+Submit to /work/src/done/SLE11-PRODUCTS
+
+submitpac -d -r sle11-products sleha-guide_en
+
+For maintenance update (Swamp-ID is 26408, tracker bug is 529124) 
+it was built from trunk.  And submitted it to Devel:HAE:SLE11 (IBS).
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=- cut here -=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+SUSEStudio
+==========
+
+See
+http://svn.berlios.de/svnroot/repos/opensuse-doc/trunk/documents/studio/en

@@ -1,0 +1,1533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl"
+                 type="text/xml" 
+                 title="Profiling step"?>
+<!DOCTYPE article PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
+                      "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "IGNORE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<?provo dirname="gnomequick/"?>
+<article lang="en" id="art.gnomequick">
+<!-- color needs to be "novell" for all non-openSUSE products -->
+<?suse-quickstart color="suse"?>
+ <title>&gnomequick;</title>
+ <subtitle><productname os="sled">&productname; &productnumber;</productname><productname os="osuse">&productname; &productnumber;</productname>
+ </subtitle>
+ <articleinfo>
+  <productnumber>&productnumber;</productnumber><productname>&productname;</productname>
+ </articleinfo>
+ <abstract>
+  <para>
+   &productnamereg; provides the tools that Linux* users require in their
+   daily activities. It comes with an easy-to-use graphical environment, the
+   GNOME* desktop, that communicates with the underlying Linux system, to
+   let you access and manage files, folders, and programs. &productname;
+   provides an integrated suite of applications for a wide range of office,
+   multimedia, and Internet activities. The &libo; suite, which allows you
+   to edit and save files in a number of formats, is also included. The
+   office suite is available for several operating systems. Therefore, you
+   can use the same data across different computing platforms.
+  </para>
+ </abstract>
+ <sect1 id="sec.gnomequick.start">
+  <title>Getting Started</title>
+
+  <para>
+   When you start your system, you are usually prompted to enter your
+   username and password. If someone else installed your system, check with
+   your system administrator for your username and password.
+  </para>
+
+  <para>
+   After logging in to GNOME for the first time, you see the GNOME desktop,
+   offering the following basic elements:
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="gnome_desktop.png" width="80%" format="PNG"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="gnome_desktop.png" width="73%" format="PNG"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <formalpara>
+   <title>Desktop Icons:</title>
+   <para>
+    Access programs and features on your system by double-clicking an icon.
+    Right-click an icon to get additional menus and options. By default, the
+    desktop features several key icons, including your personal
+    <guimenu>Home</guimenu> folder and a trash can for deleted items. Other
+    icons representing devices on your computer, such as CD drives or USB
+    flash disks, may also be present on the desktop, and you can add as many
+    icons on your desktop as you like. If you double-click your
+    <guimenu>Home</guimenu> folder, the Nautilus file manager starts and
+    displays the contents of your home directory.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Bottom Panel:</title>
+   <para>
+    The desktop includes a panel at the bottom of the screen. This panel
+    contains the <guimenu>Computer</guimenu> menu, the Tomboy Notes applet,
+    a taskbar to display buttons for all currently running applications, and
+    the system tray. You can also add applications and applets to the panel
+    for easy access.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Main Menu:</title>
+   <para>
+    Click <guimenu>Computer</guimenu> on the left side of the bottom panel
+    to open the main menu. Commonly used applications appear in the main
+    menu along with recently used applications. Click the
+    <guimenu>Documents</guimenu> button to display your recent documents, or
+    click the <guimenu>Places</guimenu> button to display your favorite
+    places (such as your home directory, your desktop, or available network
+    servers). Click <guimenu>More Applications</guimenu> to access
+    additional applications, listed in categories. Use the options on the
+    right to access help, open the &gnomecc;, run &yast;, install additional
+    software, lock your screen, log out of the desktop, shut down the
+    system, or check the status of your hard drive and network connections.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>System Tray:</title>
+   <para>
+    The right side of the bottom panel shows some smaller icons, including
+    the system clock that displays the current date and time, the Workspace
+    Switcher, the volume control, and icons for several other helper
+    applications.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Taskbar:</title>
+   <para>
+    By default, all applications running on the current desktop are
+    displayed in the taskbar (the area in the middle of the panel between
+    the Computer button and the system tray). You can access these
+    applications by clicking their names in the taskbar. Right-click the
+    application's name to see options for moving, restoring, or minimizing
+    the window.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Desktop Menu:</title>
+   <para>
+    Right-click an empty spot on the desktop to display a menu with various
+    options. Click <guimenu>Create Folder</guimenu> to create a new folder
+    on the desktop. Use <guimenu>Create Launcher</guimenu> to create a
+    launcher icon for an application. Provide the name of the application
+    and the command for starting it, then select an icon to represent it.
+    You can also change the desktop background, open a terminal, create a
+    document, and align desktop icons.
+   </para>
+  </formalpara>
+
+  <sect2 id="sec.gnomequick.start.panel.modify">
+   <title>Modifying Desktop Panels</title>
+   <para>
+    The bottom panel can be customized to meet your individual needs, and
+    additional panels can be added and configured to further personalize
+    your desktop.
+   </para>
+   <para>
+    To add a new panel, right-click a blank space in the bottom panel and
+    select <guimenu>New Panel</guimenu>. To delete a panel, right-click a
+    blank space in the panel and select <guimenu>Delete This
+    Panel</guimenu>. &productname; requires that at least one panel is left
+    on the desktop.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.gnomequick.start.panel.addrm">
+   <title>Adding and Removing Panel Icons</title>
+   <procedure id="proc.gnomequick.start.panel.addrm">
+    <step>
+     <para>
+      Right-click a blank space on the panel and select <guimenu>Add to
+      Panel</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Browse to the desired program and double-click it to add it to the
+      panel.
+     </para>
+    </step>
+    <step>
+     <para>
+      To remove a program icon from a panel, right-click its icon in the
+      panel and select <guimenu>Remove From Panel</guimenu>.
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.gnomequick.startprog">
+  <title>Starting Programs</title>
+
+  <para>
+   Start programs from the <guimenu>Main Menu</guimenu> or from the command
+   line, using a shell or the <guimenu>Run Command</guimenu>. Additionally,
+   you can start programs from the desktop or the panel by left-clicking the
+   program icon once.
+  </para>
+
+  <sect2 id="sec.gnomequick.startprog.menu">
+   <title>Using the Main Menu</title>
+   <para>
+    To run a program in &productname;, click <guimenu>Computer</guimenu> on
+    the panel to open the main menu screen. If the program you want does not
+    appear in the main menu screen, click <guimenu>More
+    Applications</guimenu> to view a list of all available applications
+    grouped in categories. You can also limit the list to show only
+    applications with a specific name by entering all or part of the name
+    into the <guimenu>Filter</guimenu> field. Click an entry in the list to
+    start the corresponding program.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="computermenu.png" width="68%" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="computermenu.png" width="65%" format="PNG"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    You can also add an icon to your panel that opens a more traditional
+    version of the main menu. Right-click a blank space on the panel, select
+    <guimenu>Add to Panel</guimenu>, then double-click <guimenu>Traditional
+    Main Menu</guimenu>.
+   </para>
+   <para>
+    If you already know the name of an application but are not sure how to
+    start it from the main menu, use the <guimenu>Search</guimenu> field in
+    the main menu. Click <guimenu>Computer</guimenu>, type a portion of the
+    application name in the <guimenu>Search</guimenu> field, then press
+    <keycap function="enter"/>. If the application is installed on your
+    system, the name of the application appears in the <guimenu>Needle
+    </guimenu> search dialog box. Click the name to start the program.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.gnomequick.startprog.runappl">
+   <title>Using the Run Application Dialog</title>
+   <para>
+    Press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+    </keycombo> to open the <guimenu>Run Application</guimenu> dialog. Type
+    a command, for example, <command>f-spot</command>, and press
+    <keycap function="enter"/> or click <guimenu>Run</guimenu> to start the
+    application. The command to start the application is often (but not
+    always) the application name written in lowercase.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="gnome-runapplication.png" width="70%"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="gnome-runapplication.png" width="70%"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.gnomequick.mediahandling">
+  <title>Handling Media</title>
+
+  <para>
+   If you insert a CD or DVD into your drive or plug in a pluggable device
+   (for example, a USB stick or removable hard disk), GNOME opens Nautilus
+   and shows the content of the media.
+  </para>
+ </sect1>
+ <sect1 id="sec.gnomequick.custom">
+  <title>Customizing Your Desktop</title>
+
+  <para>
+   Easily add, delete, and create shortcut icons on your desktop. You can
+   also change icon properties and the desktop background to suit your
+   needs.
+  </para>
+
+  <sect2 id="sec.gnomequick.custom.deskicons">
+   <title>Adding Program Icons to Your Desktop</title>
+   <procedure id="proc.gnomequick.custom.deskicons">
+    <step>
+     <para>
+      Click <guimenu>Computer</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Browse to the desired program.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click and drag the icon to the desktop and position it as desired.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    To delete an icon from your desktop, simply click the program icon and
+    press the <keycap>Delete</keycap> key on your keyboard.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.gnomequick.custom.deskback">
+   <title>Changing the Desktop Background</title>
+   <procedure id="proc.gnomequick.custom.deskback">
+    <step>
+     <para>
+      Right-click the background.
+     </para>
+    </step>
+    <step>
+     <para>
+      Select <guimenu>Change Desktop Background</guimenu>.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="desktop_background.png" width="55%" format="PNG"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="desktop_background.png" width="45%" format="PNG"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>
+    </step>
+    <step>
+     <para>
+      To select a wallpaper from the pre-installed images, browse to and
+      select the desired image. After you select it, the background changes
+      automatically.
+     </para>
+    </step>
+    <step>
+     <para>
+      To add an image, select <guimenu>Add</guimenu>, browse to the desired
+      image, then click <guimenu>Open</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      To display a colored background, select the solid color rectangle from
+      the top of the list; then, from <guimenu>Colors</guimenu>, select the
+      fill pattern and the desired colors.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click <guimenu>Close</guimenu>.
+     </para>
+    </step>
+   </procedure>
+  </sect2>
+
+  <sect2 id="sec.gnomequick.custom.cc">
+   <title>Using the &gnomecc;</title>
+   <para>
+    In addition to letting you change individual desktop elements, GNOME
+    lets you extensively personalize your desktop. You can find more
+    settings to adjust the overall appearance and behavior of your desktop
+    in the &gnomecc;. There, you can also change fonts, keyboard and mouse
+    configurations, regional and language settings, parameters for your
+    Internet and network usage, and more.
+   </para>
+   <para>
+    To start the Control Center, click <guimenu>Computer</guimenu>, then
+    click <guimenu>Control Center</guimenu> on the right of the main menu.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="controlcenter.png" width="75%" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="controlcenter.png" width="55%" format="png"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.gnomequick.desktopeffects">
+  <title>Applying Desktop Effects</title>
+
+  <para>
+   If your computer supports a 3D graphics card with Xgl, you can use
+   graphical effects like turning your desktop into a rotating 3D cube,
+   enabling translucent or transparent windows, and zooming in and out of
+   the desktop screen. You can also use other window effects such as
+   shadows, fading, and transformations. If you do not have a 3D graphics
+   card, some effects may be disabled or reduce the performance of your
+   system. If the performance of your system is too low, disable the
+   compositing effect for your current session with <keycombo>
+   <keycap function="alt"/> <keycap function="shift"/> <keycap>F12</keycap>
+   </keycombo>.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="xgl_cube1.png" width="75%" format="PNG"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="xgl_cube1.png" width="50%" format="png"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   To configure the effects on your desktop, proceed as follows:
+  </para>
+
+  <procedure>
+   <step>
+    <para>
+     Start the personal settings window as described in
+     <xref linkend="sec.gnomequick.custom.cc"/>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select <menuchoice> <guimenu>Look and Feel</guimenu> <guimenu>Desktop
+     Effects</guimenu> </menuchoice> and choose <guimenu>Enable Desktop
+     Effects</guimenu>. If your graphic card does not support 3D, you will
+     be notified.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select the effects in one of the tabs.
+    </para>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 id="sec.gnomequick.virtdesk">
+  <title>Using Virtual Desktops</title>
+
+  <para>
+   The desktop environment allows you to organize your programs and tasks on
+   several virtual desktops. If you often run a lot of programs
+   simultaneously, this minimizes the number of windows to arrange on your
+   screen. You might, for example, use one desktop for e-mailing and
+   calendaring and another for word processing and graphics applications.
+  </para>
+
+  <procedure id="proc.gnomequick.virtdesk.move">
+   <title>Moving an Application to Another Virtual Desktop</title>
+   <para>
+    You can display a running application on one or all virtual desktops, or
+    move it to other desktops.
+   </para>
+   <step>
+    <para>
+     Open the application.
+    </para>
+   </step>
+   <step>
+    <para>
+     Right-click the title bar of the application.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click <guimenu>Move to Another Workspace</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select the desktop on which to place the application.
+    </para>
+   </step>
+   <step>
+    <para>
+     To switch between desktops, click the desired desktop in the pager in
+     the panel.
+    </para>
+   </step>
+  </procedure>
+
+  <procedure id="proc.gnomequick.virtdesk.add">
+   <title>Adding Additional Virtual Desktops</title>
+   <para>
+    Some users might need more desktops than are provided by default. To add
+    additional desktops, do the following:
+   </para>
+   <step>
+    <para>
+     Right-click the pager in the panel and select
+     <guimenu>Preferences</guimenu>. A configuration dialog appears:
+    </para>
+    <informalfigure>
+     <mediaobject>
+      <imageobject role="fo">
+       <imagedata fileref="gnome_add_virtdesk.png" width="50%"/>
+      </imageobject>
+      <imageobject role="html">
+       <imagedata fileref="gnome_add_virtdesk.png" width="50%"/>
+      </imageobject>
+     </mediaobject>
+    </informalfigure>
+   </step>
+   <step>
+    <para>
+     Decrease or increase the <guimenu>Number of Workspaces</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     If you want to change the names of the desktops double click on the
+     list entries and enter the new names.
+    </para>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 id="sec.gnomequick.nautilus">
+  <title>Managing Files and Folders</title>
+
+  <para>
+   Use the Nautilus File Manager to create and view folders and documents,
+   run scripts, and create CDs of your data. To open Nautilus, double-click
+   your home directory icon on the desktop. You see the contents of your
+   home directory.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="nautilus.png" width="70%" format="PNG"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="nautilus.png" width="70%" format="PNG"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   The elements of the Nautilus window include the following:
+  </para>
+
+  <formalpara>
+   <title>Menu</title>
+   <para>
+    Lets you perform most tasks.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Toolbar</title>
+   <para>
+    Lets you quickly navigate among files and folders, and provides access
+    to files and folders.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Location Bar</title>
+   <para>
+    Lets you locate files, folders, and URI sites. If you prefer text based
+    location display to the button based one, select
+    <menuchoice><guimenu>Go</guimenu>
+    <guimenu>Location</guimenu></menuchoice>.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Side Pane</title>
+   <para>
+    Lets you navigate or display information about the selected file or
+    folder. Use the drop-down list to customize what is shown in the pane.
+    The list includes ways to view information about files, perform actions
+    on files, attach emblems to files, view a history of recently visited
+    sites, and display your files in the tree system.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>View Pane</title>
+   <para>
+    Displays folders and files. Use the options on the
+    <guimenu>View</guimenu> menu to increase or decrease the size of content
+    in the view pane and to display items as a list or as icons.
+   </para>
+  </formalpara>
+
+  <formalpara>
+   <title>Status Bar</title>
+   <para>
+    Displays the number of items in a folder and gives the available free
+    space. When a file is selected, the status bar displays the filename and
+    size.
+   </para>
+  </formalpara>
+
+  <sect2 id="sec.gnomequick.nautilus.archive">
+   <title>Archiving Folders</title>
+   <para>
+    If you have files you have not used recently but want to keep on your
+    computer, you can compress the files into a tape archive (TAR) format.
+   </para>
+   <procedure id="proc.gnomequick.nautilus.archive">
+    <step>
+     <para>
+      In the Nautilus view pane, right-click the folder you want to archive
+      and select <guimenu>Compress</guimenu>.
+     </para>
+     <informalfigure>
+      <mediaobject>
+       <imageobject role="fo">
+        <imagedata fileref="archive.png" width="60%" format="PNG"/>
+       </imageobject>
+       <imageobject role="html">
+        <imagedata fileref="archive.png" width="50%" format="PNG"/>
+       </imageobject>
+      </mediaobject>
+     </informalfigure>
+    </step>
+    <step performance="required">
+     <para>
+      Accept the default archive filename or provide a new name.
+     </para>
+    </step>
+    <step performance="required">
+     <para>
+      Select a file extension from the drop-down list. Use
+      <filename>tar.gz</filename> for the most common archive form. Use
+      <filename>zip</filename> if you need to protect the archive with a
+      password.
+     </para>
+    </step>
+    <step performance="required">
+     <para>
+      Specify a location for the archive file, then click
+      <guimenu>Create</guimenu>.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    To extract an archived file, right-click the file and select
+    <guimenu>Extract Here</guimenu>.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.gnomequick.nautilus.bookmarks">
+   <title>Using Bookmarks</title>
+   <para>
+    Use the Nautilus bookmarks feature to mark your favorite folders.
+   </para>
+   <procedure id="proc.gnomequick.nautilus.bookmarks">
+    <step>
+     <para>
+      Open the folder you want to create a bookmark for.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click <menuchoice> <guimenu>Bookmarks</guimenu> <guimenu>Add
+      Bookmark</guimenu> </menuchoice>. The bookmark is added to the list,
+      with the folder name as the bookmark name.
+     </para>
+    </step>
+    <step>
+     <para>
+      To select an item from your bookmarks list, click
+      <guimenu>Bookmarks</guimenu>, then click the desired bookmark in the
+      list.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    You can also organize your bookmarks list by clicking <menuchoice>
+    <guimenu>Bookmarks</guimenu> <guimenu>Edit Bookmarks</guimenu>
+    </menuchoice> and making your selections in the dialog box.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="bookmarks_edit.png" width="55%" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="bookmarks_edit.png" width="45%" format="PNG"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    To change the order of your bookmarks, click a bookmark shown in the
+    <guimenu>Edit Bookmarks</guimenu> dialog and drag it to the desired
+    location.
+   </para>
+  </sect2>
+ </sect1>
+<?dbfo-need height="10em"?>
+ <sect1 id="sec.gnomequick.firefox">
+  <title>Browsing the Internet with Firefox</title>
+
+  <para>
+   Firefox* is one of the most popular Web browsers. It has all the
+   familiarity of other browsers, plus added features such as security and
+   privacy tools.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="firefox.png" width="70%" format="PNG"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="firefox.png" width="59%" format="PNG"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   To start Firefox, click <menuchoice> <guimenu>Computer</guimenu>
+   <guimenu>Firefox Web Browser</guimenu> </menuchoice>.
+  </para>
+
+  <para>
+   With features like tabbed browsing, pop-up window blocking, and download
+   and image management, Firefox combines the latest Web technologies. Its
+   easy access to different search engines helps you find the information
+   you need. Enter a URL in the location bar to start browsing.
+  </para>
+
+  <para>
+   To open a new empty tab in Firefox, press <keycombo>
+   <keycap function="control"/> <keycap>T</keycap> </keycombo> or the
+   <quote>+</quote> button next to the last tab . Type a new URL to browse.
+   To open a link in a new tab, click the link with your middle mouse
+   button. Right-click a tab to access more tab options. You can create a
+   new tab, reload one or all existing tabs, or close a single tab or all
+   tabs. You can also change the sequence of the tabs by dragging and
+   dropping them to a new position.
+  </para>
+
+  <sect2 id="sec.gnomequick.firefox.search">
+   <title>Finding Information</title>
+   <procedure id="proc.gnomequick.firefox.search">
+    <step>
+     <para>
+      To start a search on the Web type your search keywords in the
+      integrated search box on the right of the location bar, then press
+      <keycap function="enter"/>. The results are displayed in the active
+      window or tab.
+     </para>
+    </step>
+    <step>
+     <para>
+      To use a different search engine than the default, click the icon in
+      the search box to open a list of other search engines.
+     </para>
+    </step>
+    <step>
+     <para>
+      Click the desired engine, then press <keycap function="enter"/> to
+      start the search.
+     </para>
+    </step>
+   </procedure>
+   <para>
+    To search the current Web page for words, press <keycombo>
+    <keycap function="control"/> <keycap>F</keycap> </keycombo> to open the
+    <guimenu>Find</guimenu> bar at the bottom of the window. Enter your
+    search keyword there and use the buttons to the right of the box to
+    search in different directions or to select all hits in the text.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.gnomequick.firefox.download">
+   <title>Downloading Files from the Web</title>
+   <para>
+    If you download a file with Firefox, the Firefox download manager starts
+    and saves this file to the folder configured in Firefox
+    <guimenu>Preferences</guimenu>. By default, the
+    <filename>Downloads</filename> folder in your home directory is the
+    destination for downloaded files. Firefox shows your finished downloads
+    in the <guimenu>Downloads</guimenu> window.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="firefox_downloads.png" width="50%" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="firefox_downloads.png" width="45%" format="PNG"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    Open the downloaded files directly from the <guimenu>Downloads</guimenu>
+    window or from the destination folder. To clean up the history of
+    downloaded files, click <guimenu>Clean List</guimenu>.
+   </para>
+  </sect2>
+
+  <sect2 id="sec.gnomequick.firefox.conf">
+   <title>Configuring Preferences</title>
+   <para>
+    To adjust the default download folder or to activate or modify the
+    pop-up blocking feature, click <menuchoice> <guimenu>Edit</guimenu>
+    <guimenu>Preferences</guimenu> </menuchoice>.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="firefox_preferences.png" width="55%" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="firefox_preferences.png" width="45%" format="PNG"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    Here also configure many other settings such as appearance, language,
+    privacy, and tab options. Click the icons and set the options on each
+    page according to your preferences. Click <guimenu>Close</guimenu> to
+    apply the changes.
+   </para>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.gnomequick.gnomekeyring">
+  <title>Managing Passwords</title>
+
+  <para>
+   GNOME allows you to store your passwords and encryption keys in a
+   <emphasis>keyring</emphasis>. This is useful if you want to store
+   passwords for different web sites.
+  </para>
+
+  <para>
+   To create a new keyring, proceed as follows:
+  </para>
+
+  <procedure>
+   <step>
+    <para>
+     Press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+     </keycombo> and enter <command>seahorse</command>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select <menuchoice> <guimenu>File</guimenu> <guimenu>New</guimenu>
+     </menuchoice>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Choose <guimenu>Password Keyring</guimenu> and proceed with
+     <guimenu>Continue</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Enter a name for your keyring. Then, a dialog box opens.
+    </para>
+   </step>
+   <step>
+    <para>
+     Enter your password, confirm the password, and click
+     <guimenu>OK</guimenu>.
+    </para>
+   </step>
+  </procedure>
+
+  <para>
+   You can create as many keyrings as you like. For example, you can create
+   one for private and one for business. To store passwords in your keyring,
+   proceed as follows:
+  </para>
+
+  <procedure>
+   <step>
+    <para>
+     Press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+     </keycombo> and enter <command>seahorse</command>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select <menuchoice> <guimenu>File</guimenu> <guimenu>New</guimenu>
+     </menuchoice>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Choose <guimenu>Stored Password</guimenu> and proceed with
+     <guimenu>Continue</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Select your keyring, enter description and password.
+    </para>
+   </step>
+   <step>
+    <para>
+     Finish with <guimenu>Add</guimenu>.
+    </para>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 id="sec.gnomequick.mail">
+  <title>E-Mailing and Calendaring</title>
+
+  <para>
+   For reading and managing your mail and events, &productname; offers you
+<!-- Novell&reg; -->
+   Evolution&trade;, a groupware program that makes it easy to store,
+   organize, and retrieve your personal information.
+  </para>
+
+  <para>
+   Evolution seamlessly combines an e-mail, a calendar, an address book, and
+   a task list in one easy-to-use application. With its extensive support
+   for communications and data interchange standards, Evolution can work
+   with existing corporate networks and applications, including
+   Microsoft&thrdmrk; Exchange.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="evolution.png" width="70%" format="PNG"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="evolution.png" width="55%" format="PNG"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   To start Evolution, click <menuchoice> <guimenu>Computer</guimenu>
+<!-- directly available on openSUSE 11.3
+   <guimenu>More Applications</guimenu> <guimenu>Office</guimenu>
+   -->
+   <guimenu>Evolution Mail and Calendar</guimenu> </menuchoice>.
+  </para>
+
+  <para>
+   The first time you start it, Evolution prompts you with a few questions
+   as it sets up a mail account and helps you import mail from your old mail
+   client. It shows you how many new messages you have and lists upcoming
+   appointments and tasks, as well as the current weather and news from news
+   feeds. The calendar, address book, and mail tools are available in the
+   shortcut bar on the left.
+  </para>
+
+  <para>
+   Press <keycombo> <keycap function="control"/> <keycap>N</keycap>
+   </keycombo> to open a new item for whatever part of Evolution you are
+   working in. In mail, this creates a new message. If you are in the
+   address book, <keycombo> <keycap function="control"/> <keycap>N</keycap>
+   </keycombo> creates a new contact card, and in the calendar, it creates a
+   new appointment.
+  </para>
+
+  <para>
+   For more information on using Evolution, click <menuchoice>
+   <guimenu>Help</guimenu> <guimenu>Contents</guimenu> </menuchoice> in any
+   Evolution window.
+  </para>
+ </sect1>
+ <sect1 id="sec.gnomequick.empathy">
+  <title>Instant Messaging with Empathy</title>
+
+  <para>
+   Empathy is a multiprotocol instant messaging (IM) client. It is
+   compatible with AOL* Instant Messenger (AIM), Google Talk, GroupWise&reg;
+   Messenger, ICQ, IRC, MSN Messenger, Jabber/XMPP, Yahoo!*, and other
+   networks.
+  </para>
+
+  <para>
+   With Empathy, you can log in to multiple accounts on multiple IM networks
+   simultaneously. Empathy also supports many features of the various
+   networks, such as video chat, file transfer, away messages, and typing
+   notification.
+  </para>
+
+  <para>
+   To start Empathy, click <menuchoice> <guimenu>Computer</guimenu>
+   <guimenu>More Applications</guimenu> <guimenu>Internet</guimenu>
+   <guimenu>Empathy</guimenu> </menuchoice>, or press
+   <keycombo><keycap>Alt</keycap><keycap>F2</keycap></keycombo> and enter
+   <command>empathy</command>.
+  </para>
+
+  <para>
+   To add an account to Empathy, either use the initial configuration
+   wizard, or select <menuchoice> <guimenu>Edit</guimenu>
+   <guimenu>Accounts</guimenu> </menuchoice>. Click <guimenu>Add</guimenu>
+   and select the protocol you want to use, and type your login information
+   in the appropriate fields. Click <guimenu>Log in</guimenu> to activate
+   you IM account. Finally click <guimenu>Close</guimenu> to start chatting
+   with your friends.
+  </para>
+
+  <para>
+   Add contacts by clicking <menuchoice> <guimenu>Chat</guimenu>
+   <guimenu>Add Contanct</guimenu> </menuchoice>. Select account, identifier
+   and alias information relevant for the new contact and confirm with
+   <guimenu>Add</guimenu>. However, you must be online and connected to the
+   selected messaging service to add a contact to your list.
+  </para>
+
+  <para>
+   To start a chat, double-click the desired contact and type your message
+   in the lower part of the chatting window. Press
+   <keycap function="enter"/> to send the message. The upper part of the
+   window displays the messages you have sent and received.
+  </para>
+ </sect1>
+<!-- not installed by defaul anymore
+ <sect1 id="sec.gnomequick.pidgin">
+  <title>Instant Messaging with Pidgin</title>
+
+  <para>
+   Pidgin is a multiprotocol instant messaging (IM) client. It is compatible
+   with AOL* Instant Messenger (AIM), Google Talk, GroupWise&reg; Messenger,
+   ICQ, IRC, MSN Messenger, Jabber/XMPP, Yahoo!*, and other networks.
+  </para>
+
+  <para>
+   With Pidgin, you can log in to multiple accounts on multiple IM networks
+   simultaneously. Pidgin also supports many features of the various
+   networks, such as file transfer, away messages, and typing notification.
+  </para>
+
+  <para>
+   To start Pidgin, click <menuchoice> <guimenu>Computer</guimenu>
+   <guimenu>More Applications</guimenu> <guimenu>Internet</guimenu>
+   <guimenu>Pidgin</guimenu> </menuchoice>, or press
+   <keycombo><keycap>Alt</keycap><keycap>F2</keycap></keycombo> and enter
+   <command>pidgin</command>.
+  </para>
+
+  <para>
+   To add an account to Pidgin, either use the initial configuration wizard
+   or select <menuchoice> <guimenu>Accounts</guimenu> <guimenu>Manage
+   Accounts</guimenu> </menuchoice> from the <guimenu>Buddy List</guimenu>.
+   Click <guimenu>Manage Accounts</guimenu>, click <guimenu>Add</guimenu>,
+   select the protocol you want, and type your login information in the
+   appropriate fields. Activate the account by checking the
+   <guimenu>Enabled</guimenu> checkbox in the account list.
+  </para>
+
+  <para>
+   Add contacts by clicking <menuchoice> <guimenu>Buddies</guimenu>
+   <guimenu>Add Buddy</guimenu> </menuchoice>. An assistant appears to help
+   with creation. However, you must be online and connected to the selected
+   messaging service to add a contact to your list.
+  </para>
+
+  <para>
+   To start a chat, double-click the desired contact and type your message
+   in the lower part of the chatting window. Press
+   <keycap function="enter"/> to send the message. The upper part of the
+   window displays the messages you have sent and received.
+  </para>
+ </sect1>
+ -->
+<!-- 2011-01-14, toba: ooo replaced with libreo
+ <sect1 id="sec.gnomequick.ooo">
+  <title>Starting &ooo;</title>
+
+  <para>
+   The &ooo; office suite offers a complete set of office tools, including
+   word processing, spreadsheet, presentation, vector drawing, and database
+   components. Because &ooo; is available for a number of operating systems,
+   you can use the same data across multiple platforms.
+  </para>
+
+  <para>
+   To start &ooo;, click <menuchoice> <guimenu>Computer</guimenu>
+   <guimenu>OpenOffice.org Writer</guimenu> </menuchoice>. To create a new
+   document, click <menuchoice> <guimenu>File</guimenu>
+   <guimenu>New</guimenu> </menuchoice>, then choose the type of document
+   you want to create. To open an existing document, click
+   <guimenu>Open</guimenu>, then select the file you want from the file
+   system.
+  </para>
+ </sect1>
+
+ -->
+ <sect1 id="sec.gnomequick.libo">
+  <title>Starting &libo;</title>
+
+  <para>
+   The &libo; office suite offers a complete set of office tools, including
+   word processing, spreadsheet, presentation, vector drawing, and database
+   components. Because &libo; is available for a number of operating
+   systems, you can use the same data across multiple platforms.
+  </para>
+
+  <para>
+   To start &libo;, click <menuchoice> <guimenu>Computer</guimenu>
+   <guimenu>LibreOffice Writer</guimenu> </menuchoice>. To create a new
+   document, click <menuchoice> <guimenu>File</guimenu>
+   <guimenu>New</guimenu> </menuchoice>, then choose the type of document
+   you want to create. To open an existing document, click
+   <guimenu>Open</guimenu>, then select the file you want from the file
+   system.
+  </para>
+ </sect1>
+ <sect1 id="sec.gnomequick.pdf">
+  <title>Viewing PDF Files and Other Documents</title>
+
+  <para>
+   Documents that need to be shared or printed across platforms are often
+   distributed as PDF (Portable Document Format) files. PDF files can be
+   created using the &libo; suite or other applications. The GNOME PDF
+   viewer is called Evince. It can be used to view PDFs and many other
+   document formats, like PostScript, DjVu, DVI, and multi-page TIFFs.
+  </para>
+
+  <para>
+   To start Evince, press <keycombo>
+   <keycap>Alt</keycap><keycap>F2</keycap></keycombo> and enter
+   <command>evince</command>
+<!-- or click <menuchoice>
+   <guimenu>Computer</guimenu> <guimenu>More Applications</guimenu>
+   <guimenu>Office</guimenu> <guimenu>Evince</guimenu> </menuchoice>-->
+   .
+  </para>
+
+  <procedure id="proc.gnomequick.pdf">
+<!--   <step> -->
+<!-- toba: Evince does not show in More Application menu -->
+<!-- ke 2010-08-04: still the same; see bnc#628318  -->
+<!--
+    <para>
+     Click <menuchoice> <guimenu>Computer</guimenu> <guimenu>More
+     Applications</guimenu> <guimenu>Office</guimenu>
+     <guimenu>Evince</guimenu> </menuchoice> or press <keycombo>
+     <keycap>Ctrl</keycap><keycap>F2</keycap></keycombo> and enter
+     <command>evince</command>.
+    </para>
+    -->
+<!--   </step> -->
+   <step>
+    <para>
+     To view a PDF file, double-click the PDF file.
+    </para>
+    <informalfigure>
+     <mediaobject>
+      <imageobject role="fo">
+       <imagedata fileref="evince.png" width="65%" format="PNG"/>
+      </imageobject>
+      <imageobject role="html">
+       <imagedata fileref="evince.png" width="55%" format="PNG"/>
+      </imageobject>
+     </mediaobject>
+    </informalfigure>
+   </step>
+   <step>
+    <para>
+     Use the navigation icons at the top of the window to navigate through
+     the document. If the PDF document provides bookmarks, you can access
+     them in the left panel of the viewer.
+    </para>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 id="sec.gnomequick.search">
+  <title>Searching for Data</title>
+
+  <para>
+   GNOME provides more than one application for finding data on your
+   computer or in the file system.
+  </para>
+
+  <sect2 id="sec.gnomequick.search.beagle">
+   <title>Using Desktop Search</title>
+   <para>
+    To locate files or programs on your computer, click
+    <guimenu>Computer</guimenu>. Enter a search term in the
+    <guimenu>Search</guimenu> field and press
+    <keycap
+    function="enter"/>. The results are displayed in the
+    <guimenu>Needle</guimenu>.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="tracker_search_tool.png" width="65%" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="tracker_search_tool.png" width="61%" format="PNG"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    You can also start the Needle application by clicking <menuchoice>
+    <guimenu>Computer</guimenu> <guimenu>More Applications</guimenu>
+    <guimenu>Accessories</guimenu> <guimenu>Desktop Search</guimenu>
+    </menuchoice>.
+   </para>
+<!--
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="fo">
+      <imagedata fileref="beagle_search.png" width="65%" format="PNG"/>
+     </imageobject>
+     <imageobject role="html">
+      <imagedata fileref="beagle_search.png" width="61%" format="PNG"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   -->
+<!-- toba 2011-01-18: needle instead of beagle, check this vvvvvvvv later
+   <para>
+    You can use the results lists to open a file, forward it via e-mail, or
+    display it in the file manager. Simply right-click an item in the
+    results list and select the option you want. The options available for
+    an item depend on the type of file it is. Clicking a file in the list
+    displays a preview of the file and information such as the title, path,
+    and date the file was last modified or accessed.
+   </para>
+   <para>
+    Use the <guimenu>Find In</guimenu> menu to limit your search to files in
+    a specific location, such as your address book or Web pages, or to
+    display only a specific type of file in your results list. The
+    <guimenu>View</guimenu> menu lets you sort the items in your results
+    list according to name, relevance, or the date the file was last
+    modified.
+   </para>
+   -->
+  </sect2>
+
+  <sect2 id="sec.gnomequick.search.gnomedo">
+   <title>Using GNOME Do</title>
+   <para>
+    GNOME Do describes itself as an <quote>intelligent launcher that makes
+    performing common tasks on your computer simple and efficient.</quote>
+    It is extensible with plug-ins.
+   </para>
+   <para>
+    Start it by pressing
+    <keycombo><keycap>Super</keycap><keycap>Space</keycap></keycombo>. The
+    <keycap>Super</keycap> is normally located on the left and right
+    <keycap>Windows</keycap> or <keycap>Penguin</keycap> key.
+   </para>
+   <para>
+    GNOME Do allows you to perform specific actions. For example, if you
+    type <literal>b</literal>, it displays a starter button for the Banshee,
+    the music player:
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="html">
+      <imagedata fileref="gnome-do.png" width="60%"/>
+     </imageobject>
+     <imageobject role="fo">
+      <imagedata fileref="gnome-do.png" width="60%"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+   <para>
+    To customize GNOME Do to your needs, select the arrow button on the
+    upper-right corner of the window and select
+    <guimenu>Preferences</guimenu>. It gives you a list of plug-ins to
+    search for mails in Evolution, listen to your music, etc.
+   </para>
+   <informalfigure>
+    <mediaobject>
+     <imageobject role="html">
+      <imagedata fileref="gnome-do-plugins.png" width="70%"/>
+     </imageobject>
+     <imageobject role="fo">
+      <imagedata fileref="gnome-do-plugins.png" width="70%"/>
+     </imageobject>
+    </mediaobject>
+   </informalfigure>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.gnomequick.burn">
+  <title>Creating a CD or DVD</title>
+
+  <para>
+   If your system has a CD or DVD writer, use the Nautilus file manager to
+   burn CDs and DVDs.
+  </para>
+
+  <procedure id="proc.gnomequick.nautilus.burn">
+   <step>
+    <para>
+     Click <menuchoice> <guimenu>Computer</guimenu> <guimenu>More
+     Applications</guimenu> <guimenu>System Tools</guimenu> <guimenu> CD/DVD
+     Creator</guimenu> </menuchoice>, or just insert a blank disk.
+    </para>
+   </step>
+   <step>
+    <para>
+     Copy the files and folders you want to put on the CD or DVD into the
+     Nautilus <guimenu>CD/DVD Creator</guimenu> window.
+    </para>
+    <informalfigure>
+     <mediaobject>
+      <imageobject role="fo">
+       <imagedata fileref="cd_burner.png" width="80%" format="PNG"/>
+      </imageobject>
+      <imageobject role="html">
+       <imagedata fileref="cd_burner.png" width="75%" format="png"/>
+      </imageobject>
+     </mediaobject>
+    </informalfigure>
+   </step>
+   <step>
+    <para>
+     Click <guimenu>Write to Disk</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Modify the relevant information in the <guimenu>Write to Disk</guimenu>
+     dialog box, or accept the default values, then click
+     <guimenu>Write</guimenu>. The files are burned to the disk. This could
+     take a few minutes, depending on the amount of data being burned and
+     the speed of your burner.
+    </para>
+   </step>
+  </procedure>
+
+  <para>
+   You can also use the more advanced burning tool Brasero, or
+   <link linkend="sec.gnomequick.banshee">&musicplayer;</link> to burn data
+   and audio CDs.
+  </para>
+ </sect1>
+ <sect1 id="sec.gnomequick.fspot">
+  <title>Managing Your Digital Image Collection</title>
+
+  <para>
+   F-Spot is a management tool for your collection of digital images,
+   tailored for the GNOME desktop. It allows you to assign different tags to
+   your images in order to categorize them, and offers various image editing
+   options. For example, you can remove red-eye, crop, and adjust brightness
+   and colors. F-Spot supports all important image formats, including JPEG,
+   PNG, TIFF, and several vendor specific RAW formats.
+  </para>
+
+  <para>
+   You can import photos from your hard drive, your digital camera, or your
+   iPod. You can also use F-Spot to create photo CDs, generate a Website
+   gallery, or export your photos to your Flickr, 23, Picasa Web, or SmugMug
+   account.
+  </para>
+
+  <para>
+   To access F-Spot, click <menuchoice> <guimenu>Computer</guimenu>
+<!-- Also possible:
+    <guimenu>More Applications...</guimenu>
+    <guimenu>Images</guimenu>-->
+   <guimenu>F-Spot Photo Browser</guimenu> </menuchoice> or press <keycombo>
+   <keycap function="alt"/> <keycap>F2</keycap> </keycombo> and enter
+   <command>f-spot</command>. The first time you run F-Spot, you must define
+   the location from where you want to import images into your collection.
+   If you already have a collection of images stored on your hard drive,
+   enter the path to the directory and (optionally) include subfolders.
+   F-Spot imports these images into its database.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="fspot_main.png" width="85%" format="PNG"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="fspot_main.png" width="71%" format="PNG"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   Thumbnails of your images are displayed in the right part of the window,
+   and detailed information for a selected image is displayed in a sidebar
+   to the left. By default, your photos are displayed in
+   reverse-chronological order, so your newest photos are always at the top.
+   You can sort your photos in chronological order or reverse-alphabetical
+   order by clicking <menuchoice> <guimenu>View</guimenu> <guimenu>Reverse
+   Order</guimenu> </menuchoice>.
+  </para>
+
+  <para>
+   A menu bar at the top of the window allows you to access the main menus.
+   A toolbar below offers several different functions depicted by a matching
+   icon.
+  </para>
+ </sect1>
+ <sect1 id="sec.gnomequick.banshee">
+  <title>Managing Your Music and Videos</title>
+
+  <para>
+   Use &musicplayer; to import CDs, sync your media collection to a digital
+   media player, play music directly from a digital media player, create
+   playlists with songs or videos from your library, create audio and data
+   CDs from subsets of your library, and subscribe to, download, and listen
+   to your favorite podcasts. &musicplayer; also has an Internet Radio
+   plug-in that allows you to listen to audio streams.
+  </para>
+
+  <para>
+<!-- yes, it is "banshee-1" on 11.3 -->
+   To open &musicplayer;, click <menuchoice> <guimenu>Computer</guimenu>
+   <guimenu>&musicplayer; Media Player</guimenu> </menuchoice> or press
+   <keycombo> <keycap function="alt"/> <keycap>F2</keycap> </keycombo> and
+   enter <command>banshee-1</command>.
+  </para>
+
+  <para>
+   When you start &musicplayer; for the first time, you need to import your
+   media to make them available in the library. To do so, select
+   <menuchoice> <guimenu>Media</guimenu><guimenu>Import
+   Media</guimenu></menuchoice> from the menu. Choose an import source and
+   click <guimenu>Import</guimenu>. After successfully importing your media,
+   you can access them from your library.
+  </para>
+
+  <informalfigure>
+   <mediaobject>
+    <imageobject role="fo">
+     <imagedata fileref="banshee_library.png" width="87%" format="PNG"/>
+    </imageobject>
+    <imageobject role="html">
+     <imagedata fileref="banshee_library.png" width="75%" format="png"/>
+    </imageobject>
+   </mediaobject>
+  </informalfigure>
+
+  <para>
+   To play a song or a movie, simply select it in the library and click the
+   play button. You can also use the buttons in the upper left corner to
+   pause a song or play the next or previous song. Use the loudspeaker
+   button on the right to adjust the volume.
+  </para>
+
+  <para>
+   &musicplayer; also has an integrated CD player. When you insert a music
+   CD, your CD title appears in the left panel. Select the title and click
+   the <guimenu>Play</guimenu> button to play your full CD.
+  </para>
+
+  <para>
+   To create audio and MP3 CDs, select the songs you want, then click the
+   <menuchoice><guimenu>Edit</guimenu><guimenu>Write
+   CD</guimenu></menuchoice> from the menu.
+  </para>
+ </sect1>
+ <sect1 id="sec.gnomequick.logout">
+  <title>Logging Out</title>
+
+  <para>
+   When you are finished using the computer, you can log out and leave the
+   system running, or restart or shut down the computer.
+  </para>
+
+  <sect2 id="sec.gnomequick.logout.switch">
+   <title>Logging Out or Switching Users</title>
+   <para>
+    Click <menuchoice> <guimenu>Computer</guimenu> <guimenu>Logout</guimenu>
+    </menuchoice>, then select one of the following options:
+   </para>
+   <formalpara>
+    <title>Log out</title>
+    <para>
+     Logs you out of the current session and returns you to the login
+     screen.
+    </para>
+   </formalpara>
+   <formalpara>
+    <title>Switch User</title>
+    <para>
+     Suspends your session, allowing another user to log in and use the
+     computer.
+    </para>
+   </formalpara>
+  </sect2>
+
+  <sect2 id="sec.gnomequick.logout.restart">
+   <title>Restarting or Shutting Down the Computer</title>
+   <para>
+    Click <menuchoice> <guimenu>Computer</guimenu>
+    <guimenu>Shutdown</guimenu> </menuchoice>, then select one of the
+    following options:
+   </para>
+   <formalpara>
+    <title>Shutdown</title>
+    <para>
+     Logs you out of the current session, then turns off the computer.
+    </para>
+   </formalpara>
+   <formalpara>
+    <title>Restart</title>
+    <para>
+     Logs you out of the current session, then restarts the computer.
+    </para>
+   </formalpara>
+   <formalpara>
+    <title>Suspend</title>
+    <para>
+     Puts your computer in a temporary state that conserves power. The state
+     of your session is preserved, however, including all applications you
+     have running and all documents you have open.
+    </para>
+   </formalpara>
+   <formalpara>
+    <title>Hibernate</title>
+    <para>
+     Suspends your session, using no power until the computer is restarted.
+     The state of your session is preserved, however, including all
+     applications you have running and all documents you have open.
+    </para>
+   </formalpara>
+  </sect2>
+ </sect1>
+ <sect1 id="sec.gnomequick.more">
+  <title>For More Information</title>
+
+  <para os="sled">
+   This guide gave you a short introduction to the GNOME desktop and some
+   key applications running on it. To discover more, refer to
+   <xref linkend="book.gnomeuser"/> and the other manuals available for
+   &productname; at
+   <ulink url="http://www.novell.com/documentation/sled11/"/>.
+  </para>
+
+<!-- fs 2010-12-27: 
+     No more GNOME User Guide for openSUSE
+  <para os="osuse">
+   This guide gave you a short introduction to the GNOME desktop and some
+   key applications running on it. To discover more, refer to the
+   <xref linkend="book.gnomeuser"/>, and the other manuals available for
+   &productname; (at
+   <ulink
+   url="http://www.novell.com/documentation/opensuse113/"/> or in
+   your installed system under <filename>/usr/share/doc/manual</filename>).
+  </para>
+-->
+
+  <para>
+   To learn more about GNOME and GNOME applications, refer to
+   <ulink url="http://www.gnome.org/"/>.
+  </para>
+ </sect1>
+ <xi:include os="sles; sled" xmlns:xi="http://www.w3.org/2001/XInclude" href="common_copyright_quick.xml"/>
+</article>

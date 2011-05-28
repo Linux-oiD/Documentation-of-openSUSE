@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+        "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xml:lang="en" font-family="monospace" font-size="8pt" width="12cm" height="7cm">
+<rect id="rect" fill="white" stroke="black" stroke-width="0.4pt" x="0" y="0"
+      width="100%" height="100%"/>
+<text xml:space="preserve" x="10" y="20">                  Add Network Server Storage Link (ADDNWSSTGL)</text>
+<text xml:space="preserve" x="10" y="35"></text>
+<text xml:space="preserve" x="10" y="50">Type choices, press Enter.</text>
+<text xml:space="preserve" x="10" y="65"></text>
+<text xml:space="preserve" x="10" y="80">Network server storage space . . &gt; GINGER0       Name</text>
+<text xml:space="preserve" x="10" y="95">Network server description . . . &gt; GINGER        Name</text>
+<text xml:space="preserve" x="10" y="110">Drive letter . . . . . . . . . .   *FIRSTAVAIL   K-Z</text>
+<text xml:space="preserve" x="10" y="125">Dynamic storage link . . . . . .   *yes          *NO, *YES</text>
+<text xml:space="preserve" x="10" y="140">Network server type  . . . . . .   *NWSD         Character value</text>
+<text xml:space="preserve" x="10" y="155">Drive sequence number  . . . . .   *CALC         3-18, *CALC</text>
+<text xml:space="preserve" x="10" y="170"></text>
+<text xml:space="preserve" x="10" y="185">                           Additional Parameters</text>
+<text xml:space="preserve" x="10" y="200"></text>
+<text xml:space="preserve" x="10" y="215">Access . . . . . . . . . . . . .   *UPDATE       *UPDATE, *READ</text>
+<text xml:space="preserve" x="10" y="230"></text>
+<text xml:space="preserve" x="10" y="245"></text>
+<text xml:space="preserve" x="10" y="260"></text>
+<text xml:space="preserve" x="10" y="275"></text>
+<text xml:space="preserve" x="10" y="290">                                                                 Bottom</text>
+<text xml:space="preserve" x="10" y="305">F3=Exit   F4=Prompt   F5=Refresh   F12=Cancel   F13=How to use this dis</text>
+<text xml:space="preserve" x="10" y="320">F24=More keys</text>
+</svg>

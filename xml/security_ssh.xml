@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<!-- 2010-09-13, ke: I'd remove all these comparisons with the old tools (rsh,
+                     telnet, etc.  By now, ssh is available since quite some
+                     years and most user probably do not know that much about
+                     these lecagy tools.  It would probably be enough just to
+                     mention these tools at the beginning of this chapter? -->
+<!-- 2010-09-13, ke: Do we want to relace "host &exampleserver;" with
+                     <literal>&exampleserver;</literal>"? -->
+<chapter id="cha.ssh">
+ <title>SSH: Secure Network Operations</title>
+<!-- "endofrange" are also commented ATM
+ <indexterm id="idx.SSH" class="startofrange">
+  <primary>SSH</primary>
+ </indexterm>
+ <indexterm id="idx.security_SSH" class="startofrange">
+  <primary>security</primary>
+  <secondary>SSH</secondary>
+ </indexterm>
+--><indexterm>
+ <primary>configuring</primary>
+ <secondary>SSH</secondary></indexterm><indexterm>
+ <primary>security</primary>
+ <secondary>telnet</secondary></indexterm>
+ <abstract>
+  <para>
+   In networked environments, it is often necessary to access hosts from a
+   remote location. If a user sends login and password strings for
+   authentication purposes as plain text, they could be intercepted and
+   misused to gain access to that user account without the authorized user
+   knowing about it. This would open all the user's files to an attacker and
+   the illegal account could be used to obtain administrator or
+   <systemitem class="username">root</systemitem> access, or to penetrate
+   other systems. In the past, remote connections were established with
+   telnet, which offers no guards against eavesdropping in the form of
+   encryption or other security mechanisms. There are other unprotected
+   communication channels, like the traditional FTP protocol and some remote
+   copying programs.
+  </para>
+ </abstract>
+ <para>
+  The SSH suite provides the necessary protection by encrypting the
+  authentication strings (usually a login name and a password) and all the
+  other data exchanged between the hosts. With SSH, the data flow could
+  still be recorded by a third party, but the contents are encrypted and
+  cannot be reverted to plain text unless the encryption key is known. So
+  SSH enables secure communication over insecure networks, such as the
+  Internet. The SSH implementation coming with &productname; is OpenSSH.
+ </para>
+ <sect1 id="sec.ssh.impl">
+  <title>The OpenSSH Package</title><indexterm>
+
+  <primary>OpenSSH</primary>
+
+  <see>SSH</see></indexterm>
+
+  <para>
+   &productname; installs the OpenSSH package by default. The
+   <command>ssh</command>, <command>scp</command>, and
+   <command>sftp</command> command line tools are then available as
+   alternatives to <command>telnet</command>, <command>rlogin</command>,
+   <command>rsh</command>, <command>rcp</command>, and
+   <command>ftp</command>. In the default configuration, system access of a
+   &productname; system is only possible with the OpenSSH utilities, and
+   only if <systemitem>sshd</systemitem> is running and the firewall permits
+   access.
+  </para>
+ </sect1>
+ <sect1
+  id="sec.ssh.programm">
+  <title>The ssh Program</title><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>ssh</secondary></indexterm><indexterm>
+
+  <primary>commands</primary>
+
+  <secondary>ssh</secondary></indexterm>
+
+  <para>
+   Using the ssh program, it is possible to log in to remote systems and
+   work interactively. It replaces both telnet and rlogin. The slogin
+   program is just a symbolic link pointing to ssh. For example, log in to
+   the host <literal>&exampleserver;</literal> with the command
+   <command>ssh</command>&nbsp;<option>&exampleserver;</option>. The host
+   then prompts for the password on <literal>&exampleserver;</literal>.
+  </para>
+
+  <para>
+   After successful authentication, you can work on the remote command line
+   or use interactive applications, such as &yast;. If the local username is
+   different from the remote username, log in using a different login name
+   with <command>ssh</command>&nbsp;<option>-l augustine
+   &exampleserver;</option> or
+   <command>ssh</command>&nbsp;<option>augustine@&exampleserver;</option>.
+  </para>
+
+  <para>
+   Furthermore, ssh offers the possibility to run commands on remote
+   systems, as known from rsh. In the following example, run the command
+   <command>uptime</command> on the host &exampleserver; and create a
+   directory with the name <filename>tmp</filename>. The program output is
+   displayed on the local terminal of the host &wsI;.
+  </para>
+
+<screen>ssh otherplanet "uptime; mkdir tmp"
+Password:
+1:21pm  up  2:17,  9 users,  load average: 0.15, 0.04, 0.02</screen>
+
+  <para>
+   Quotation marks are necessary here to send both instructions with one
+   command. It is only by doing this that the second command is executed on
+   &exampleserver;.
+  </para>
+ </sect1>
+ <sect1
+  id="sec.ssh.copy">
+  <title>scp&mdash;Secure Copy</title><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>scp</secondary></indexterm><indexterm>
+
+  <primary>commands</primary>
+
+  <secondary>scp</secondary></indexterm>
+
+  <para>
+   scp copies files to a remote machine. It is a secure and encrypted
+   substitute for rcp. For example,
+   <command>scp</command>&nbsp;<option>MyLetter.tex
+   &exampleserver;:</option> copies the file
+   <filename>MyLetter.tex</filename> from the host &wsI; to the host
+   &exampleserver;. If the username on &wsI; is different than the username
+   on &exampleserver;, specify the latter using the
+   <option>username@host</option> format. The <option>-l</option> option has
+   a different meaning for this command.
+  </para>
+
+  <para>
+   After the correct password is entered, scp starts the data transfer and
+   shows a growing row of asterisks, simulating a progress bar. In addition,
+   the program displays the estimated time of arrival to the right of the
+   progress bar. Suppress all output with the <option>-q</option> option.
+  </para>
+
+  <para>
+   scp also provides a recursive copying feature for entire directories. The
+   command <command>scp</command>&nbsp;<option>-r src/
+   &exampleserver;:backup/</option> copies the entire contents of the
+   directory <filename>src</filename> including all subdirectories to the
+   <filename>backup</filename> directory on the host &exampleserver;. If
+   this subdirectory does not exist it is created automatically.
+  </para>
+
+  <para>
+   The <option>-p</option> option tells scp to leave the time stamp of files
+   unchanged. <option>-C</option> compresses the data transfer. This
+   minimizes the data volume to transfer, but creates a heavier burden on
+   the processor.
+  </para>
+ </sect1>
+ <sect1
+  id="sec.ssh.sftp">
+  <title>sftp&mdash;Secure File Transfer</title><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>sftp</secondary></indexterm><indexterm>
+
+  <primary>commands</primary>
+
+  <secondary>sftp</secondary></indexterm>
+
+  <para>
+   The sftp program can be used instead of scp for secure file transfer.
+   During an sftp session, you can use many of the commands known from ftp.
+   The sftp program may be a better choice than scp, especially when
+   transferring data for which the filenames are unknown.
+  </para>
+ </sect1>
+ <sect1 id="sec.ssh.sshdserver">
+  <title>The SSH Daemon (sshd)&mdash;Server-Side</title><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>daemon</secondary></indexterm><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>sshd</secondary></indexterm>
+
+  <para>
+   To work with the SSH client programs ssh and scp, a server (the SSH
+   daemon) must be running in the background, listening for connections on
+   <literal>TCP/IP port 22</literal>. The daemon generates three key pairs
+   when starting for the first time. Each key pair consists of a private and
+   a public key. Therefore, this procedure is referred to as public
+   key&ndash;based. To guarantee the security of the communication via SSH,
+   access to the private key files must be restricted to the system
+   administrator. The file permissions are set accordingly by the default
+   installation. The private keys are only required locally by the SSH
+   daemon and must not be given to anyone else. The public key components
+   (recognizable by the name extension <filename>.pub</filename>) are sent
+   to the client requesting the connection. They are readable for all users.
+   <indexterm>
+   <primary>SSH</primary>
+   <secondary>key pairs</secondary>
+   </indexterm>
+  </para>
+
+  <para>
+   A connection is initiated by the SSH client. The waiting SSH daemon and
+   the requesting SSH client exchange identification data to compare the
+   protocol and software versions, and to prevent connections through the
+   wrong port. Because a child process of the original SSH daemon replies to
+   the request, several SSH connections can be made simultaneously.
+  </para>
+
+  <para>
+   For the communication between SSH server and SSH client, OpenSSH supports
+   versions&nbsp;1 and 2 of the SSH protocol. Version&nbsp;2 of the SSH
+   protocol is used by default. Override this to use version&nbsp;1 of
+   protocol with the <option>-1</option> option.
+  </para>
+
+  <para>
+   When using version&nbsp;1 of SSH, the server sends its public host key
+   and a server key, which is regenerated by the SSH daemon every hour. Both
+   allow the SSH client to encrypt a freely chosen session key, which is
+   sent to the SSH server. The SSH client also tells the server which
+   encryption method (cipher) to use. Version&nbsp;2 of the SSH protocol
+   does not require a server key. Both sides use an algorithm according to
+   Diffie-Hellman to exchange their keys.
+  </para>
+
+  <para>
+   The private host and server keys are absolutely required to decrypt the
+   session key and cannot be derived from the public parts. Only the
+   contacted SSH daemon can decrypt the session key using its private keys.
+   This initial connection phase can be watched closely by turning on
+   verbose debugging using the <option>-v</option> option of the SSH client.
+  </para>
+
+  <para>
+   The client stores all public host keys in
+   <filename>~/.ssh/known_hosts</filename> after its first contact with a
+   remote host. This prevents any man-in-the-middle attacks&mdash;attempts
+   by foreign SSH servers to use spoofed names and IP addresses. Such
+   attacks are detected either by a host key that is not included in
+   <filename>~/.ssh/known_hosts</filename>, or by the server's inability to
+   decrypt the session key in the absence of an appropriate private
+   counterpart.
+  </para>
+
+  <para>
+   It is recommended to back up the private and public keys stored in
+   <filename>/etc/ssh/</filename> in a secure, external location. In this
+   way, key modifications can be detected and the old ones can be used again
+   after reinstallation. This spares users any unsettling warnings. If it is
+   verified that, despite the warning, it is indeed the correct SSH server,
+   the existing entry for the system must be removed from
+   <filename>~/.ssh/known_hosts</filename>.
+  </para>
+ </sect1>
+ <sect1 id="sec.ssh.authentic">
+  <title>SSH Authentication Mechanisms</title><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>authentication mechanisms</secondary></indexterm><indexterm>
+
+  <primary>commands</primary>
+
+  <secondary>ssh-keygen</secondary></indexterm>
+
+  <para>
+   Now the actual authentication takes place, which, in its simplest form,
+   consists of entering a password as mentioned above. The goal of SSH was
+   to introduce secure software that is also easy to use. Because it is
+   meant to replace rsh and rlogin, SSH must also be able to provide an
+   authentication method appropriate for daily use. SSH accomplishes this by
+   way of another key pair, which is generated by the user. The SSH package
+   provides a helper program for this: ssh-keygen. After entering
+   <command>ssh-keygen</command>&nbsp;<option>-t rsa</option> or
+   <command>ssh-keygen</command>&nbsp;<option>-t dsa</option>, the key pair
+   is generated and you are prompted for the base filename in which to store
+   the keys.
+  </para><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary> key pairs</secondary></indexterm><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>ssh-keygen</secondary></indexterm>
+
+  <para>
+   Confirm the default setting and answer the request for a passphrase. Even
+   if the software suggests an empty passphrase, a text from 10 to 30
+   characters is recommended for the procedure described here. Do not use
+   short and simple words or phrases. Confirm by repeating the passphrase.
+   Subsequently, you will see where the private and public keys are stored,
+   in this example, the files <filename>id_rsa</filename> and
+   <filename>id_rsa.pub</filename>.
+  </para>
+
+  <para>
+   Use <command>ssh-keygen</command>&nbsp;<option>-p -t rsa</option> or
+   <command>ssh-keygen</command>&nbsp;<option>-p -t dsa</option> to change
+   your old passphrase. Copy the public key component
+   (<filename>id_rsa.pub</filename> in the example) to the remote machine
+   and save it to <filename>~/.ssh/authorized_keys</filename>. You will be
+   asked to authenticate yourself with your passphrase the next time you
+   establish a connection. If this does not occur, verify the location and
+   contents of these files.
+  </para>
+
+  <para>
+   In the long run, this procedure is more troublesome than giving your
+   password each time. Therefore, the SSH package provides another tool,
+   ssh-agent, which retains the private keys for the duration of an X
+   session. The entire X session is started as a child process of ssh-agent.
+   The easiest way to do this is to set the variable
+   <literal>usessh</literal> at the beginning of the
+   <filename>.xsession</filename> file to <literal>yes</literal> and log in
+   via a display manager, such as KDM or GDM. Alternatively, enter
+   <command>ssh-agent</command>&nbsp;<option>startx</option>.
+  </para><indexterm>
+
+  <primary>configuration files</primary>
+
+  <secondary>.xsession</secondary></indexterm><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>ssh-agent</secondary></indexterm><indexterm>
+
+  <primary>commands</primary>
+
+  <secondary>ssh-agent</secondary></indexterm>
+
+  <para>
+   Now you can use <command>ssh</command> or <command>scp</command> as
+   usual. If you have distributed your public key as described above, you
+   are no longer prompted for your password. Take care of terminating your X
+   session or locking it with a password protection application, such as
+   xlock.
+  </para>
+
+  <note>
+<!--fix for bug #398647-->
+   <title>File Permissions for Host-Based Authentication</title>
+   <para>
+    If the host-based authentication is to be used, the file
+    <filename>/usr/lib/ssh/ssh-keysign</filename> or
+    <filename>/usr/lib64/ssh/ssh-keysign</filename> should have setuid bit
+    set, which is not the default setting in &productname;. In such a case,
+    set the file permissions manually. You should use
+    <filename>/etc/permissions.local</filename> for this purpose, to make
+    sure that the setuid bit is preserved after security updates of openssh.
+   </para>
+  </note>
+
+<!--bg: you are right, that we are since quite some time running version
+2. OTOH often ssh is used to log into/from other unix workstations, that
+sometimes only provide version 1. Thats why I would rather like to
+keep the information in here. -->
+
+<!--ke, 2010-09-13: by now, we can shorten it.  Those who still depend on
+                    version 1, probably figured out which settings are
+                    required.
+-->
+ </sect1>
+ <sect1 id="sec.ssh.pipe">
+  <title>X, Authentication, and Forwarding Mechanisms</title><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>X and</secondary></indexterm><indexterm>
+
+  <primary>X</primary>
+
+  <secondary>SSH and</secondary></indexterm>
+
+  <para>
+   Beyond the previously described security-related improvements, SSH also
+   simplifies the use of remote X applications. If you run
+   <command>ssh</command> with the <option>-X</option> option, the
+   <envar>DISPLAY</envar> variable is automatically set on the remote
+   machine and all X output is exported to the remote machine over the
+   existing SSH connection. At the same time, X applications started
+   remotely and locally viewed with this method cannot be intercepted by
+   unauthorized individuals.
+  </para>
+
+  <para>
+   By adding the <option>-A</option> option, the ssh-agent authentication
+   mechanism is carried over to the next machine. This way, you can work
+   from different machines without having to enter a password, but only if
+   you have distributed your public key to the destination hosts and
+   properly saved it there.
+  </para><indexterm>
+
+  <primary>SSH</primary>
+
+  <secondary>ssh-agent</secondary></indexterm>
+
+  <para>
+   Both mechanisms are deactivated in the default settings, but can be
+   permanently activated at any time in the systemwide configuration file
+   <filename>/etc/ssh/sshd_config</filename> or the user's
+   <filename>~/.ssh/config</filename>.
+  </para><indexterm>
+
+  <primary>configuration files</primary>
+
+  <secondary>sshd_config</secondary></indexterm>
+
+  <para>
+   ssh can also be used to redirect TCP/IP connections. In the examples
+   below, SSH is told to redirect the SMTP and the POP3 port, respectively:
+  </para>
+
+<screen>ssh -L 25:&exampleserver;:25 &wsI;</screen>
+
+  <para>
+   With this command, any connection directed to &wsI; port 25 (SMTP) is
+   redirected to the SMTP port on &exampleserver; via an encrypted channel.
+   This is especially useful for those using SMTP servers without SMTP-AUTH
+   or POP-before-SMTP features. From any arbitrary location connected to a
+   network, e-mail can be transferred to the <quote>home</quote> mail server
+   for delivery. Similarly, all POP3 requests (port&nbsp;110) on &wsI; can
+   be forwarded to the POP3 port of &exampleserver; with this command:
+  </para>
+
+<screen>ssh -L 110:&exampleserver;:110 &wsI;</screen>
+
+  <para>
+   Both commands must be executed as
+   <systemitem class="username">root</systemitem>, because the connection is
+   made to privileged local ports. E-mail is sent and retrieved by normal
+   users in an existing SSH connection. The SMTP and POP3 host must be set
+   to <literal>localhost</literal> for this to work. Additional information
+   can be found in the manual pages for each of the programs described above
+   and also in OpenSSH package documentation under
+   <filename>/usr/share/doc/packages/openssh</filename>.
+  </para>
+ </sect1>
+ <sect1 id="sec.ssh.yast">
+  <title>Configuring An SSH Daemon with &yast;</title>
+
+  <para os="osuse">
+<!-- FIXME: check sled/sles, 2010-09-13, ke -->
+   The &yast; SSHD Configuration module is not part of the default
+   installation. To install it, start &yast; and select
+   <menuchoice><guimenu>Software</guimenu> <guimenu>Software
+   Management</guimenu></menuchoice> and search for
+   <systemitem>yast2-sshd</systemitem>. Confirm the found item and install
+   it.
+  </para>
+
+  <para>
+   To configure an sshd server with &yast; run &yast; and choose
+   <menuchoice> <guimenu>Network Services</guimenu> <guimenu>SSHD
+   Configuration</guimenu> </menuchoice>. Then proceed as follows:
+  </para>
+
+  <procedure>
+   <step>
+    <para>
+     On the <guimenu>General</guimenu> tab, select the ports sshd should
+     listen on in the <guimenu>SSHD TCP Ports</guimenu> table. The default
+     port number is 22. Multiple ports are allowed. To add a new port, click
+     <guimenu>Add</guimenu>, enter the port number and click
+     <guimenu>OK</guimenu>. To delete port, select it in the table, click
+     <guimenu>Delete</guimenu> and confirm.
+    </para>
+   </step>
+   <step>
+    <para>
+     On the <guimenu>General</guimenu> tab, select the features the sshd
+     daemon should support. To disable TCP forwarding, uncheck
+     <guimenu>Allow TCP Forwarding</guimenu>. Disabling TCP forwarding does
+     not improve security unless users are also denied shell access, as they
+     can always install their own forwarders. See
+     <xref linkend="sec.ssh.pipe"/> for more information about TCP
+     forwarding.
+    </para>
+    <para>
+     To disable X forwarding, uncheck <guimenu>Allow X11
+     Forwarding</guimenu>. If this option is disabled, any X11 forward
+     requests by the client will return an error. However users can always
+     install their own forwarders. See <xref linkend="sec.ssh.pipe"/> for
+     more information about X forwarding.
+    </para>
+    <para>
+     In <guimenu>Allow Compression</guimenu> determine, whether the
+     connection between the server and clients should be compressed. After
+     setting these options, click <guimenu>Next</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     The <guimenu>Login Settings</guimenu> tab contains general login and
+     authentication settings. In <guimenu>Print Message of the Day After
+     Login</guimenu> determine, whether sshd should print message from
+     <filename>/etc/motd</filename> when a user logs in interactively. If
+     you want to disable connection of a user
+     <systemitem class="username">root</systemitem>, uncheck <guimenu>Permit
+     Root Login</guimenu>.
+    </para>
+    <para>
+     In <guimenu>Maximum Authentication Tries</guimenu> enter the maximum
+     allowed number of authentication attempts per connection.
+<!-- "Password Authentication"is gone since 2009-01-29 (bnc #469207):
+          2010-09-13, ke -->
+<!--
+     <guimenu>Password Authentication</guimenu> specifies whether password
+     authentication is allowed.
+     -->
+     <guimenu>RSA Authentication</guimenu> specifies whether pure RSA
+     authentication is allowed. This option applies to SSH protocol version
+     1 only. <guimenu>Public Key Authentication</guimenu> specifies whether
+     public key authentication is allowed. This option applies to protocol
+     version 2 only.
+    </para>
+   </step>
+   <step>
+    <para>
+     On the <guimenu>Protocol and Ciphers</guimenu> tab, determine which
+     versions of the SSH protocol should be supported. You can choose to
+     support version 1 only, version 2 only, or to support both SSH version
+     2 and 1.
+    </para>
+    <para>
+     Under <guimenu>Supported Ciphers</guimenu>, all supported ciphers are
+     listed. You can remove a cipher by selecting it in the list and
+     clicking <guimenu>Delete</guimenu>. To add a cipher to the list, select
+     it from the dropdown menu and click <guimenu>Add</guimenu>.
+    </para>
+   </step>
+   <step>
+    <para>
+     Click <guimenu>Finish</guimenu> to save the configuration.
+    </para>
+   </step>
+  </procedure>
+ </sect1>
+ <sect1 id="sec.security.ssh.moreinfo">
+  <title>For More Information</title>
+
+  <para/>
+
+  <variablelist>
+   <varlistentry>
+    <term><ulink url="http://www.openssh.com"/>
+    </term>
+    <listitem>
+     <para>
+      The homepage of OpenSSH
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><command>man</command><option>ssh_config</option>
+    </term>
+    <listitem>
+     <para>
+      Manpage of OpenSSH SSH client configuration files
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><command>man</command><option>ssh_config</option>
+    </term>
+    <listitem>
+     <para>
+      Manpage of OpenSSH SSH daemon configuration file
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><command>man</command><option>sshd</option>
+    </term>
+    <listitem>
+     <para>
+      Manpage of OpenSSH daemon
+     </para>
+    </listitem>
+   </varlistentry>
+   <varlistentry>
+    <term><command>man</command><option>scp</option>
+    </term>
+    <term><command>man</command><option>sftp</option>
+    </term>
+    <term><command>man</command><option>slogin</option>
+    </term>
+    <term><command>man</command><option>ssh</option>
+    </term>
+    <term><command>man</command><option>ssh-add</option>
+    </term>
+    <term><command>man</command><option>ssh-agent</option>
+    </term>
+    <term><command>man</command><option>ssh-copy-id</option>
+    </term>
+    <term><command>man</command><option>ssh-keyconvert</option>
+    </term>
+    <term><command>man</command><option>ssh-keygen</option>
+    </term>
+    <term><command>man</command><option>ssh-keyscan</option>
+    </term>
+    <listitem>
+     <para>
+      Manpage of several binary files to copy (<command>scp</command>,
+      <command>sftp</command>), login (<command>slogin</command>,
+      <command>ssh</command>), and manage keys.
+     </para>
+    </listitem>
+   </varlistentry>
+  </variablelist>
+ </sect1>
+</chapter>

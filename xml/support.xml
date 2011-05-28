@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect2 PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<sect2 id="sec.support">
+ <title>Support for &productname;</title>
+ <para>
+  Useful support information for &productname; is available in a number of
+  sources:
+ </para>
+ <itemizedlist>
+  <listitem>
+   <para>
+    Free installation support for retail box customer.
+   </para>
+  </listitem>
+  <listitem>
+   <para>
+    Free community support
+    <ulink url="http://en.opensuse.org/Communicate"/>.
+   </para>
+  </listitem>
+ </itemizedlist>
+ <para>
+  If you encounter problems with the installation or use of &productname;
+  that you are unable to solve, our experienced support staff can offer
+  practical assistance with the free installation support for registered
+  releases. Nearly all common customer problems can be eliminated quickly
+  and competently. You can use the extensive support offered through the
+  community, as well.
+ </para>
+ <sect3 id="sec.support.inst">
+  <title>Free Installation Support</title>
+  <para>
+   Our free installation support is provided for a period of 90 days
+   following the activation of your registration code
+   <ulink url="http://www.open-slx.com/register"/> or following the release
+   of the next version. If you cannot find an answer to your question in any
+   of the available information sources, we will gladly provide assistance
+   for the following issues:
+  </para>
+  <itemizedlist>
+   <listitem>
+    <para>
+     Installation on a typical home user system or laptop equipped with a
+     single processor, at least 512 MB RAM (1024 MB recommended), and 8 GB
+     of free hard disk space.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Resizing of one Windows partition that occupies the entire hard disk.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Dual-boot installation with Windows, limited to Linux Support.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Installation of a local ATAPI CD or DVD drive.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Installation from a remote CD/DVD drive
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Installation on the first or second hard disk in an IDE-only system
+     (<filename>/dev/sda</filename> or <filename>/dev/sdb</filename>) or
+     supported S-ATA system, excluding RAID.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Integration of a standard keyboard and standard mouse.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Configuration of the graphical user interface (without the hardware
+     acceleration feature of the graphics card).
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Installation of the boot manager in the MBR of the first hard disk
+     without modifying the BIOS mapping.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Setup of Internet access with a supported PCI ISDN card or external
+     serial modem (not USB). Conversely, setup of DSL based on PPPoE with a
+     supported NIC.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Basic configuration of a supported WLAN adapter.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Basic configuration of an ALSA-supported PCI sound card.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Basic configuration of a locally-attached compatible printer with
+     &yast;.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Basic configuration of an IDE CD writer for use with k3b (CD burning
+     application) without changing the jumper setting.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Configuration of a supported PCI ethernet card for LAN access with
+     either DHCP (client) or static IP. This does not include the
+     configuration of the LAN or any other computers or network components.
+     It also does not cover the configuration of the computer as a router.
+     Fault analysis is limited to checking for proper loading of the kernel
+     module and the correct local network settings.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Configuration of an e-mail client (Evolution and KMail) for collecting
+     mail from a POP3 account. Fault analysis is limited to checking for
+     proper settings in the e-mail client.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Support for the package selection KDE Desktop or GNOME Desktop.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Upgrade from the previous version of the product.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Kernel updates (only official Novell update RPMs).
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Installation of bug fixes and security updates from the official update
+     server using online update or the manual method.
+    </para>
+   </listitem>
+  </itemizedlist>
+  <para>
+   For a detailed listing of the subjects covered by the free installation
+   support, check <ulink url="http://www.open-slx.com/support"/>.
+  </para>
+  <para>
+   In case you are not sure if your support is covered, please do not
+   hesitate to give us a call. We are happy to assist.
+  </para>
+  <sect4 id="sec.support.inst.contact">
+   <title>Contact Information for Free Installation Support</title>
+   <para>
+    Reach our support staff under the following links and phone numbers. Our
+    installation support is offered through call back. After your problem
+    description our staff either tries to call you back in the next 2 hours
+    or arrange a time for a call back. Please register your product at
+    <ulink
+     url="http://www.open-slx.com/register"/> prior to your
+    support request.
+   </para>
+   <itemizedlist>
+    <listitem>
+     <para>
+      <ulink url="http://support.open-slx.com/eService"/>
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      United States and Canada: +1-404-5854-269
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      Germany, Austria, Switzerland: Phone: +49 (0)911-8946-0303
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      UK: +44-2030-025-943
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      All other countries (English only): please see
+      <ulink url="http://www.open-slx.com/support"/>.
+     </para>
+    </listitem>
+   </itemizedlist>
+   <para>
+    For the most recent contact information, refer to
+    <ulink url="http://www.open-slx.com/support"/>.
+   </para>
+  </sect4>
+  <sect4 id="sec.support.inst.note">
+   <title>Important Notes</title>
+   <orderedlist>
+    <listitem>
+     <para>
+      Free installation support is offered to customers with a valid and
+      activated registration code. You can activate your registration code
+      at <ulink url="http://www.open-slx.com/register/"/>.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      The registration code is not transferable to another person.
+     </para>
+    </listitem>
+    <listitem>
+     <para>
+      The free support covers the initial installation on one computer.
+      Refer to our Web site for further information
+      <ulink url="http://www.open-slx.com/support"/>.
+     </para>
+    </listitem>
+   </orderedlist>
+  </sect4>
+  <sect4 id="sec.support.inst.rec">
+   <title>Contact Recommendations</title>
+   <para>
+    We recommend using <ulink url="http://support.open-slx.com/eService"/>
+    to open a service request and to provide us with the relevant
+    information like problem description and log files. It helps us to avoid
+    misspelled commands, links, or directory names, which often cause
+    frustrating problems and are particularly common during phone
+    conversations. You will receive a reply soon, providing a practical
+    solution.
+   </para>
+  </sect4>
+ </sect3>
+ <sect3 id="sec.support.request">
+  <title>Preparing a Support Request</title>
+  <para>
+   We endeavor to help you as quickly and precisely as possible. The effort
+   and time needed is considerably reduced if the question is formulated
+   clearly. Please have answers to the following questions ready before
+   contacting us:
+  </para>
+  <orderedlist>
+   <listitem>
+    <para>
+     Which program and version are you using? During which process does the
+     problem occur?
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     What exactly is the problem? Try to describe the error as precisely as
+     possible, using phrases with words such as <emphasis>when</emphasis>
+     (for example, <quote>When X is pressed, this error appears</quote>).
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     What hardware do you use (graphics card, monitor, printer, ISDN card,
+     etc.)? You can get this information from the &yast; <emphasis>Hardware
+     Information</emphasis> module.
+    </para>
+   </listitem>
+  </orderedlist>
+  <para>
+   Detailed documentation can be found in manuals, online help, and the
+   Support Database. This comprehensive documentation of &productname; gives
+   guidance to solve a variety of problems. The &suse; Help Center on your
+   desktop provides additional information about installed packages, the
+   vital HOWTOs, and info pages.
+  </para>
+  <para>
+   You can access the latest Support Database articles online at
+   <ulink
+    url="http://www.open-slx.com/support"/> or access the
+   community Support Database at
+   <ulink url="http://en.opensuse.org/Portal:Support_database"/>. The
+   Support Database, one of the most frequently used databases in the Linux
+   world, offers our customers a wealth of analysis and solution approaches.
+   You can retrieve tested solutions using the keyword search, history
+   function, or version-dependent search.
+  </para>
+ </sect3>
+</sect2>

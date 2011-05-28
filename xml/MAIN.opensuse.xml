@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl"
+                 type="text/xml" 
+                 title="Profiling step"?>
+<!DOCTYPE set PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
+                      "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "IGNORE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<set lang="en">
+ <title>&productname; Documentation</title>
+<?dbhtml filename="index.html"?>
+<!-- Start-Up -->
+ <xi:include href="book_opensuse_startup.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<!-- Reference -->
+ <xi:include href="book_opensuse_reference.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<!-- Security Guide -->
+ <xi:include href="book_security.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<!-- Tuning Guide -->
+ <xi:include href="book_tuning.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<!-- KVM Guide -->
+ <xi:include href="book_kvm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</set>

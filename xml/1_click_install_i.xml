@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<sect1 id="sec.y2.sw.1click">
+ <title>1-Click Install</title>
+
+<!-- qt and gtk are very similar; no need to describe this twice -->
+
+ <para>
+  Installation using <literal>1-Click Install</literal> is available from a
+  lot of repositories available on Web interfaces. A very popular interface
+  is the &opensuse; Build Service software search.
+ </para>
+
+ <procedure>
+  <title>Installing Packages from the &opensuse; Build Service via <literal>1-Click Install</literal></title>
+  <step>
+   <para>
+    Start the &opensuse; Build Service search interface at
+    <ulink
+     url="http://software.opensuse.org/search"/>.
+   </para>
+  </step>
+  <step>
+   <para>
+    Select your system version from the drop-down menu, for example
+    <literal>&productname; &productnumber;</literal>.
+   </para>
+  </step>
+  <step>
+   <para>
+    Enter the name of the package you want to install, for example the
+    OpenStreetMap editor <systemitem>josm</systemitem>.
+   </para>
+  </step>
+  <step>
+   <para>
+    To refine the search, adjust the <guimenu>Search Options</guimenu>
+    according to your wishes.
+   </para>
+  </step>
+  <step>
+   <para>
+    Click <guimenu>Search</guimenu>.
+   </para>
+  </step>
+  <step>
+   <para>
+    From the results list select the preferred item by clicking its
+    <guimenu>1-Click Install</guimenu> button.
+   </para>
+  </step>
+  <step>
+   <para>
+    In the Web browser's download dialog, select to open the file with the
+    <guimenu>&yast; Meta Package Handler</guimenu>.
+   </para>
+   <para>
+    The 1-click installer opens the <guimenu>Additional Software
+    Repositories</guimenu> dialog. It shows the repositories providing the
+    packages you want to install per <literal>1-Click Install</literal>.
+    They are activated per default. To proceed with the installation, keep
+    the repository selection. By default, you remain subscribed to these
+    repositories after the installation has finished and you will receive
+    updates from them in the future.
+   </para>
+  </step>
+  <step>
+   <para>
+    If you want to use the new repositories only once instead, uncheck
+    <guimenu>Remain Subscribed to These Repositories after
+    Installation</guimenu>. Click <guimenu>Next</guimenu> to proceed.
+   </para>
+  </step>
+  <step>
+   <para>
+    Now select the software packages that should be installed. Normally
+    there is no need to change the default selection. Click
+    <guimenu>Next</guimenu> to proceed.
+   </para>
+  </step>
+  <step>
+   <para>
+    The <guimenu>Proposal</guimenu> screen summarizes the choices you made.
+    Click <guimenu>Customize</guimenu> to restart the configuration steps
+    from above. Click <guimenu>Next</guimenu> and <guimenu>Yes</guimenu> to
+    proceed with the installation.
+   </para>
+  </step>
+  <step>
+   <para>
+    Enter the &rootuser; password to start the installation. In case a new
+    repository has been added you also need to confirm the import of the
+    repository's GnuPG key. During the installation several progress pop-ups
+    appear that do not need any interaction. After reading the
+    <quote>Installation was successful</quote> message, click
+    <guimenu>Finish</guimenu>.
+   </para>
+  </step>
+ </procedure>
+
+ <tip>
+  <title>Disabling 1-Click Install Feature</title>
+<!-- see fate#304484 -->
+  <para>
+   If you want to disable the 1-Click install feature, uninstall the
+   <systemitem>yast2-metapackage-handler</systemitem> package using &yast;.
+   Alternatively, enter the following command as &rootuser;:
+  </para>
+<screen>rpm -e yast2-metapackage-handler</screen>
+ </tip>
+</sect1>

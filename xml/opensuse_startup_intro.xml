@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE preface PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN" "novdocx.dtd"
+[
+  <!ENTITY % NOVDOC.DEACTIVATE.IDREF "INCLUDE">
+  <!ENTITY % entities SYSTEM "entity-decl.ent">
+  %entities;
+]>
+<preface id="preface.startup">
+ <title>About This Guide</title>
+ <para>
+  This manual will see you through your initial contact with
+  &productnamereg;. Check out the various parts of this manual to learn how
+  to install, use and enjoy your system.
+ </para>
+ <variablelist>
+  <varlistentry>
+   <term>Installation and Setup</term>
+   <listitem>
+    <para>
+     Guides you through the installation process and the basic configuration
+     of your system. Introduces &yast;, the central tool for installation
+     and configuration of your system. Learn how to set up or modify key
+     components of your system and how to connect to the internet.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Basics</term>
+   <listitem>
+    <para>
+     This part mainly addresses to users changing to Linux from other
+     operating systems. It introduces basic Linux concepts such as the user
+     concept, the structure of the file system and access permissions for
+     files and directories. An introduction to the shell is also provided,
+     although you hardly ever need the command line to interact with your
+     system nowadays.
+    </para>
+   </listitem>
+  </varlistentry>
+  <varlistentry>
+   <term>Help and Troubleshooting</term>
+   <listitem>
+    <para>
+     Provides an overview of where to find help and additional documentation
+     in case you need more information or want to perform specific tasks
+     with your system. Also find a compilation of the most frequent problems
+     and annoyances and learn how to solve these problems on your own.
+    </para>
+   </listitem>
+  </varlistentry>
+ </variablelist>
+ <para>
+  This manual documents milestone 7 of &productname; &productnumber;.
+ </para>
+ <para>
+  Many chapters in this manual contain links to additional documentation
+  resources. This includes documentation that is available on the system as
+  well as documentation available on the Internet.
+ </para>
+ <para>
+  For an overview of the documentation available for your product and the
+  latest documentation updates, refer to
+  <ulink url="http://www.novell.com/documentation/opensuse114"/> or to the
+  following section.
+ </para>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+    href="common_intro_available_doc_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+   href="common_intro_feedback_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+  href="common_intro_typografie_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="osuse"
+  href="common_intro_making_i.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="osuse"
+  href="common_intro_source_code_i.xml" />
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="osuse"
+   href="common_intro_acknowl_i.xml" />
+</preface>

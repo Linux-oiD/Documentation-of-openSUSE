@@ -1,0 +1,10 @@
+# html must come first
+html    opensuse-html               common_copyright_opensuse.xml ok https://api.opensuse.org openSUSE:Factory
+# #
+pdfsub      opensuse-startup           common_copyright_opensuse.xml
+pdfsub      opensuse-reference         common_copyright_opensuse.xml
+pdfsub      opensuse-security          common_copyright_opensuse.xml
+pdfsub      opensuse-kvm               common_copyright_opensuse.xml
+# FOP failed on tuning, 2011-01-19; fs fixed it 2011-02-18
+pdfsub      opensuse-tuning          common_copyright_opensuse.xml
+# eof

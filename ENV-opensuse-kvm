@@ -1,0 +1,13 @@
+# -*- shell-script -*-
+# $Id: ENV-opensuse-reference 50737 2010-10-19 13:07:31Z toms $
+
+. .env-profile
+
+export MAIN="MAIN.opensuse.xml"
+export ROOTID="book.kvm"
+export PROFOS="osuse"
+export PROFARCH="x86;amd64;em64t"
+export DISTVER="11.4"
+export HTMLROOT="opensuse114"
+export PRODUCTNAME="&opensuse;"
+export PRODUCTNAMEREG="&opensusereg;"
