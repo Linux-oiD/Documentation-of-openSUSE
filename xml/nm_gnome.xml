@@ -6,11 +6,11 @@
           %entities;
 ]>
 <sect1 id="sec.nm.gnome">
- <title>Using GNOME &nm; Applet</title><indexterm>
+ <title>Использование апплета GNOME &nm;</title><indexterm>
 
  <primary>&nm;</primary>
 
- <secondary>GNOME &nm; applet</secondary></indexterm>
+ <secondary>Апплет GNOME &nm;</secondary></indexterm>
 
  <para>
   In GNOME, &nm; can be controlled with the GNOME &nm; applet. If the
