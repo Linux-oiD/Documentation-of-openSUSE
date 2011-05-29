@@ -13,7 +13,7 @@
 <!-- 2010-09-13, ke: Do we want to relace "host &exampleserver;" with
                      <literal>&exampleserver;</literal>"? -->
 <chapter id="cha.ssh">
- <title>SSH: Secure Network Operations</title>
+ <title>SSH: Безопасная работа в сети</title>
 <!-- "endofrange" are also commented ATM
  <indexterm id="idx.SSH" class="startofrange">
   <primary>SSH</primary>
@@ -29,51 +29,47 @@
  <secondary>telnet</secondary></indexterm>
  <abstract>
   <para>
-   In networked environments, it is often necessary to access hosts from a
-   remote location. If a user sends login and password strings for
-   authentication purposes as plain text, they could be intercepted and
-   misused to gain access to that user account without the authorized user
-   knowing about it. This would open all the user's files to an attacker and
-   the illegal account could be used to obtain administrator or
-   <systemitem class="username">root</systemitem> access, or to penetrate
-   other systems. In the past, remote connections were established with
-   telnet, which offers no guards against eavesdropping in the form of
-   encryption or other security mechanisms. There are other unprotected
-   communication channels, like the traditional FTP protocol and some remote
-   copying programs.
+   Часто бывает необходимо получить доступ к компьютеру удаленно.
+   Если пользователь отправляет логин и пароль в виде обычного текста,
+   они могут быть перехваченны и использованны злоумышеленником для того,
+   чтобы получить доступ к удаленной системе от именни этого пользователя.
+   Это откроет доступ нападавшему ко всем файлам пользователя, так же
+   может быть использован для попытки получения
+   <systemitem class="username">root</systemitem> привилегий или попытки
+   проникновения на другую систему. В прошлом для удаленных соединений
+   использовалась telnet, которая не шифрует передаваемый траффик и не
+   предпринимает ничего для предотвращения прослушивания. Есть и другие
+   незащищенные каналы связи, создаваемые например при использовании FTP
+   или других программ для копирования через сеть.
   </para>
  </abstract>
  <para>
-  The SSH suite provides the necessary protection by encrypting the
-  authentication strings (usually a login name and a password) and all the
-  other data exchanged between the hosts. With SSH, the data flow could
-  still be recorded by a third party, but the contents are encrypted and
-  cannot be reverted to plain text unless the encryption key is known. So
-  SSH enables secure communication over insecure networks, such as the
-  Internet. The SSH implementation coming with &productname; is OpenSSH.
+  Комплект программ SSH обеспечивает необходимую защиту, шифруя передаваемый траффик,
+  включая логин и пароль. При использовании SSH данные все же могут быть перехвачены,
+  но без ключа, использующегося для шифрования, их невозможно будет расшифровать. Таким
+  образом SSH обеспечивает безопасное соединение в небезопасной сети, такой как интернет.
+  Комплект программ SSH доступен в &productname; в пакете OpenSSH.
  </para>
  <sect1 id="sec.ssh.impl">
-  <title>The OpenSSH Package</title><indexterm>
+  <title>Пакет OpenSSH</title><indexterm>
 
   <primary>OpenSSH</primary>
 
   <see>SSH</see></indexterm>
 
   <para>
-   &productname; installs the OpenSSH package by default. The
-   <command>ssh</command>, <command>scp</command>, and
-   <command>sftp</command> command line tools are then available as
-   alternatives to <command>telnet</command>, <command>rlogin</command>,
-   <command>rsh</command>, <command>rcp</command>, and
-   <command>ftp</command>. In the default configuration, system access of a
-   &productname; system is only possible with the OpenSSH utilities, and
-   only if <systemitem>sshd</systemitem> is running and the firewall permits
-   access.
+    В &productname; пакет OpenSSH установлен по умолчанию. Программы
+    <command>ssh</command>, <command>scp</command>, и <command>sftp</command>
+    предоставляют альтернативу <command>telnet</command>, <command>rlogin</command>,
+    <command>rsh</command>, <command>rcp</command> и <command>ftp</command>.
+    В конфигурации по умолчанию доступ к &productname; возможен только с помощью
+    утилит из комплекта OpenSSH, и только если запущен <systemitem>sshd</systemitem>
+    и открыты соответствующие порты в firewall.
   </para>
  </sect1>
  <sect1
   id="sec.ssh.programm">
-  <title>The ssh Program</title><indexterm>
+  <title>ssh</title><indexterm>
 
   <primary>SSH</primary>
 
@@ -84,29 +80,29 @@
   <secondary>ssh</secondary></indexterm>
 
   <para>
-   Using the ssh program, it is possible to log in to remote systems and
-   work interactively. It replaces both telnet and rlogin. The slogin
-   program is just a symbolic link pointing to ssh. For example, log in to
-   the host <literal>&exampleserver;</literal> with the command
-   <command>ssh</command>&nbsp;<option>&exampleserver;</option>. The host
-   then prompts for the password on <literal>&exampleserver;</literal>.
+   Используя ssh, можно подключиться к удаленным системе и работать на ней в
+   интерактивном режиме. Это заменяет и telnet и rlogin. Программа slogin является
+   всего лишь линком на ssh. Например, для того, чтобы залогиниться в системе 
+   <literal>&exampleserver;</literal>, используйте команду
+   <command>ssh</command>&nbsp;<option>&exampleserver;</option>, после чего
+   надо будет ввести пароль, т.е. пройти аутентификацию в системе
+   <literal>&exampleserver;</literal>.
   </para>
 
   <para>
-   After successful authentication, you can work on the remote command line
-   or use interactive applications, such as &yast;. If the local username is
-   different from the remote username, log in using a different login name
-   with <command>ssh</command>&nbsp;<option>-l augustine
-   &exampleserver;</option> or
+   После успешной аутентификации Вы можете использовать либо консоль, либо
+   интерактивные приложения, такие как &yast;. Если имя пользователся на локальной
+   машине отличается от имени на удаленной, используйте команду
+   <command>ssh</command>&nbsp;<option>-l augustine
+   &exampleserver;</option> или
    <command>ssh</command>&nbsp;<option>augustine@&exampleserver;</option>.
   </para>
 
   <para>
-   Furthermore, ssh offers the possibility to run commands on remote
-   systems, as known from rsh. In the following example, run the command
-   <command>uptime</command> on the host &exampleserver; and create a
-   directory with the name <filename>tmp</filename>. The program output is
-   displayed on the local terminal of the host &wsI;.
+   Кроме того, ssh позволяет выполнять команды на удаленных системмах, используя
+   rsh. В следующем примере запускается команда <command>uptime</command> на
+   машине &exampleserver; и создается директория с именем <filename>tmp</filename>.
+   Вывод команды можно видеть на локальном терминале машины системы &wsI;.
   </para>
 
 <screen>ssh otherplanet "uptime; mkdir tmp"
@@ -114,14 +110,14 @@ Password:
 1:21pm  up  2:17,  9 users,  load average: 0.15, 0.04, 0.02</screen>
 
   <para>
-   Quotation marks are necessary here to send both instructions with one
-   command. It is only by doing this that the second command is executed on
-   &exampleserver;.
+   Кавычки здесь необходимы, чтобы посылать обе инструкции в одной команде.
+   Вторая команда создает директорию <filename>tmp</filename> в системе
+   &exampleserver; cразу после окончания работы <command>uptime</command>.
   </para>
  </sect1>
  <sect1
   id="sec.ssh.copy">
-  <title>scp&mdash;Secure Copy</title><indexterm>
+  <title>scp&mdash;безопасное копирование</title><indexterm>
 
   <primary>SSH</primary>
 
@@ -132,43 +128,41 @@ Password:
   <secondary>scp</secondary></indexterm>
 
   <para>
-   scp copies files to a remote machine. It is a secure and encrypted
-   substitute for rcp. For example,
+   scp копирует файлы на удаленную машину. Это более безопасная
+   замена для rcp. Например
    <command>scp</command>&nbsp;<option>MyLetter.tex
-   &exampleserver;:</option> copies the file
-   <filename>MyLetter.tex</filename> from the host &wsI; to the host
-   &exampleserver;. If the username on &wsI; is different than the username
-   on &exampleserver;, specify the latter using the
-   <option>username@host</option> format. The <option>-l</option> option has
-   a different meaning for this command.
+   &exampleserver;:</option> скопирует файл <filename>MyLetter.tex</filename>
+   из системы &wsI; в &exampleserver;. Если имена пользователей отличаются
+   в системах &wsI; и &exampleserver;, укажите его, используя такой формат:
+   <option>username@host</option>. Опция <option>-l</option> имеет другое
+   значение для этой команды.
   </para>
 
   <para>
-   After the correct password is entered, scp starts the data transfer and
-   shows a growing row of asterisks, simulating a progress bar. In addition,
-   the program displays the estimated time of arrival to the right of the
-   progress bar. Suppress all output with the <option>-q</option> option.
+   После того, как правильный пароль введен, scp начинает передачу данных и
+   показывает растущий ряд звездочек, имитируя процентное соотношение выполненного
+   процесса. Кроме того, программа показывает предполагаемое время до его завершения.
+   Используя ключ <option>-q</option> программа не будет ничего выводить на терминал.
+  </para>
+
+  <para>  
+   scp также поддерживает рекурсивное копирование. Команда
+   <command>scp</command>&nbsp;<option>-r src/
+   &exampleserver;:backup/</option> скопирует содержимое всей директории
+   <filename>src</filename>, включая все поддиректории, в
+   <filename>backup</filename> в системе &exampleserver;.
+   Если эти поддиректории не существуют, они будут созданны автоматически.
   </para>
 
   <para>
-   scp also provides a recursive copying feature for entire directories. The
-   command <command>scp</command>&nbsp;<option>-r src/
-   &exampleserver;:backup/</option> copies the entire contents of the
-   directory <filename>src</filename> including all subdirectories to the
-   <filename>backup</filename> directory on the host &exampleserver;. If
-   this subdirectory does not exist it is created automatically.
-  </para>
-
-  <para>
-   The <option>-p</option> option tells scp to leave the time stamp of files
-   unchanged. <option>-C</option> compresses the data transfer. This
-   minimizes the data volume to transfer, but creates a heavier burden on
-   the processor.
+    Используя ключ <option>-р</option>, scp оставит дату последнего изменения
+    без изменения. Ключ <option>-C</option> позволит сжать передаваеммые
+    данные. Это минимизирует объем данных для передачи, но нагружает процессор.
   </para>
  </sect1>
  <sect1
   id="sec.ssh.sftp">
-  <title>sftp&mdash;Secure File Transfer</title><indexterm>
+  <title>sftp&mdash;безопасная передача файлов</title><indexterm>
 
   <primary>SSH</primary>
 
