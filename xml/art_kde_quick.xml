@@ -422,43 +422,44 @@
       <guimenu>Добавить панель</guimenu>, затем выберите тип панели из списка.
      </para>
      <para>
-      If these menu items are not available, your desktop objects are
-      probably locked. In this case, right-click and select <guimenu>Unlock
-      Widgets</guimenu> first.
+      Если этот пункт меню недоступен, значит элементы Вашего рабочего стола
+      заблокированы. В этом случае, нажмите правой кнопкой мыши и выберите
+      <guimenu>Разблокировать измененеи виджетов</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Click the cashew icon at the end of the new panel to access the
-      configuration options and customize the panel as described in
+      Нажмите на значек кешью с правой стороны новой панели, чтобы получить доступ
+      опциях настройки панели как описано в
       <xref linkend="proc.kdequick.panel.conf"/>.
      </para>
     </step>
     <step>
      <para>
-      To delete a panel, right-click a blank space in the panel you want to
-      delete and select <menuchoice> <guimenu>Panel Options</guimenu>
-      <guimenu>Remove this Panel</guimenu> </menuchoice>. &productname;
-      requires that at least one panel is left on the desktop.
+      Чтобы удалить панель нажмите правой кнопкой мыши на пустом пространстве
+      на панели которую вы хотите удалить и выберите
+      <menuchoice> <guimenu>Настроить виджет "Панель"</guimenu>
+      <guimenu>Удалить виджет "Панель"</guimenu> </menuchoice>. &productname;
+      требует, чтобы по крайней мере одна панель оставалась на рабочем столе.
      </para>
     </step>
    </procedure>
    <procedure id="proc.kdequick.panel.conf">
-    <title>Configuring Panels</title>
+    <title>Настройка панелей</title>
     <para>
-     You can customize all KDE panels according to your preferences.
-     Applications and widgets can be added to the quick launch area or the
-     system tray in the main panel or to additional panels. Panel elements
-     and additional panels can be moved to different places or be completely
-     removed at any time.
+     Вы можете настроить панель KDE в соответствии с Вашими предпочтениями.
+     Приложения и виджеты могут быть добавлены в область быстрого запуска
+     или системный лоток на главной панели, или в дополнительной панели.
+     Элементы панели и дополнительные панели можно свободно перемещать или
+     полностью удалить в любое время.
     </para>
     <step>
      <para>
-      To access any options for the current panel, right-click an empty
-      patch in the panel (or click the cashew icon at the end of the panel)
-      and select <menuchoice> <guimenu>Panel Options</guimenu>
-      <guimenu>Panel Settings</guimenu> </menuchoice>. The panel changes
-      view and shows its configurations options.
+      Чтобы получить к опциям текущей панели нажмите правой кнопкой мыши на
+      пустом месте на панели (или нажмите на значек кешью с правой стороны панели)
+      и выберите <menuchoice> <guimenu>Настроить виджет "Панель"</guimenu>
+      <guimenu>Настроить панель</guimenu> </menuchoice>. Здесь Вы моежете
+      изменить внешний вид и расположение панели.
      </para>
      <informalfigure>
       <mediaobject>
@@ -471,88 +472,87 @@
       </mediaobject>
      </informalfigure>
      <para>
-      If the menu item and the icon are not available, your desktop objects
-      are probably locked. To unlock, right-click and select <guimenu>Unlock
-      Widgets</guimenu> first.
+      Если такой пункт в меню и значек недоступны, вероятно изменение элементов Вашего
+      рабочего стола заблокировано. В этом случае нажмите правой кнопкой мыши
+      и выберите <guimenu>Разблокировать измененеи виджетов</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      To move panel objects to a different place within the panel, hover the
-      mouse cursor over the respective panel object (for example, program
-      icon, pager, task manager, system tray). The mouse cursor turns into a
-      crosslines-like form. Click the object and move the cursor to the
-      desired position in the panel. Click again to fix it at this place.
+      Чтобы переместить эелемент панели в другое место поместите курсор мыши над
+      соответствующим элементом (например, значком программы, переключатель рабочих
+      столов, системный лоток). Под курсором мыши появится перекрестие. Нажмите на
+      него и переместите курсорв в нужную позицию на пнаели. Нажмите еще раз, чтобы
+      зафиксировать это положение.
      </para>
     </step>
     <step>
      <para>
-      To enlarge the distance between two widgets, use <guimenu>Add
-      Spacer...</guimenu>. A spacer widget appears on the right side. Drag
-      and drop it to the preferred place.
+      Чтобы увеличить расстояние между двумя виджетами, воспользуйтесь
+      кнопкой <guimenu>Добавить разделитель</guimenu>. Виджет разделитель
+      появится появится с правой стороны. Перетащите его в нужное место.
      </para>
     </step>
     <step>
      <para>
-      To change the panel width, click and drag the small arrow icons at the
-      left and right end of the settings panel. Use the arrow on the left
-      side to set the panel's position and the arrows at the left side to
-      set the maximum and minimum size.
+      Чтобы изменить ширину панели, нажмите и потяните за маленький значек
+      стрелки с левого или правого конца панели. Используйте стрелку с левой
+      стороны, чтобы задать положение  панела, стрелки с правой стороны для
+      задания максимального и минимального размеров панелей.
      </para>
     </step>
     <step>
      <para>
-      To change the panel height, click the <guimenu>Height</guimenu> button
-      and move the mouse cursor to the desired end location.
+      Чтобы изменить высоту панели, нажмите на кнопку <guimenu>Высота</guimenu>
+      и переместите курсор до нужного положения.
      </para>
     </step>
     <step>
      <para>
-      To place the panel at different sides of the screen use the
-      <guimenu>Screen Edge</guimenu> button. Drag and drop the panel to the
-      preferred location.
+      Чтобы поместить панель с другой стороны экрана, воспользуйтесь
+      кнопкой <guimenu>Край экрана</guimenu>. Потяните за нее и отпустите
+      в нужном месте.
      </para>
     </step>
     <step>
      <para>
-      If you need additional widgets on your panel, add them with the
-      <guimenu>Add Widgets...</guimenu> button as described in
+      Если Вам нужно добавить виджеты на панель, то сделайте это с
+      помощью кнопки <guimenu>Добавить виджеты...</guimenu>.
       <xref linkend="proc.kdequick.widgets.add"/>.
      </para>
     </step>
     <step>
      <para>
-      To remove program icons or widgets from the panel, right-click the
-      unwanted object and select the menu item to remove the icon or widget.
+      Чтобы удалить значки приордений или видже с панели нажмите правой кнопкой
+      мыши на нужном элементе и выберете пункт меню для удаления этого элемента.
      </para>
      <para>
-      The icons in the system tray usually belong to applications running in
-      the background. Therefore you can only remove those icons if you close
-      those applications (right-click the icon and select
-      <guimenu>Quit</guimenu>).
-     </para>
-    </step>
-    <step>
-     <para>
-      To prevent the panel and widgets from being moved accidentally, use
-      <guimenu>Lock Widgets</guimenu>.
+      Значки в системном лотке обычно относятся запущенным в фоне приложениям.
+      Поэтому Вы можете удалить эти значки только, если закроете эти приложения
+      (нажмите правой кнопкой мыши по значку и выберите <guimenu>Выход</guimenu>).
      </para>
     </step>
     <step>
      <para>
-      For additional configurations options like alignment and functions
-      (like auto hide), click <guimenu>More Settings...</guimenu>.
+      Чтобы воспрепятствовать случайному перемещению панели и виджетов, 
+      используйте кнопку <guimenu>Заблокировать изменение виджетов</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      If all panel changes are according to your wishes, close the panel
-      settings with the red close button on the right side.
+      Для установки дополнительных настроек (как автоскрытие панели) и
+      положения панели используйте кнопку <guimenu>Дополнительно</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Если все изменения панели соответствуют Вашим пожеланиями, то закройте панель
+      настройки с помощью красной кнопкой расположенной с правой стороны.
      </para>
     </step>
    </procedure>
    <procedure id="proc.kdequick.conf.deskback">
-    <title>Changing the Desktop Background</title>
+    <title>Изменение фона рабочего стола</title>
     <para>
      You can change the desktop background to display images, a slideshow,
      patterns or colors. It is even possible to use a map of the globe or
@@ -560,8 +560,9 @@
     </para>
     <step>
      <para>
-      Right-click an empty patch of the desktop and select <guimenu>Desktop
-      Settings</guimenu>. A configuration dialog appears.
+      Нажмите правой кнопкой мыши на пустом месте рабочего стола и выберите
+      <guimenu>Настроить виджет "Рабочий стол"</guimenu>. Откроется
+      диалоговое окно настроек.
      </para>
     </step>
     <step>

@@ -9,8 +9,8 @@
   <!ENTITY % entities SYSTEM "entity-decl.ent">
   %entities;
 ]>
-<set lang="en">
- <title>&productname; Documentation</title>
+<set lang="ru">
+ <title>&productname; документация</title>
 <?dbhtml filename="index.html"?>
 <!-- Start-Up -->
  <xi:include href="book_opensuse_startup.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
