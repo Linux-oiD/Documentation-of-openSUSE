@@ -212,15 +212,15 @@ Password:
    Связь начинает SSH-клиент. SSH-демон ожидает запроса от SSH-клиента
    для создания соединения. Первым шагом они обмениваются информацией
    идентификации, проверяя протокол и версию SSH, а так же уточняя номер
-   порта. Это важно, т.к. дочерние процессы, порожденные SSH демоном, могут
+   порта, т.к. дочерние процессы, порожденные SSH демоном, могут
    обслуживать несколько SSH-сессий одновременно.
   </para>
 
   <para>
-   For the communication between SSH server and SSH client, OpenSSH supports
-   versions&nbsp;1 and 2 of the SSH protocol. Version&nbsp;2 of the SSH
-   protocol is used by default. Override this to use version&nbsp;1 of
-   protocol with the <option>-1</option> option.
+   При связи между SSH-сервером и SSH-клиентом OpenSSH поддерживает
+   первую и вторую версию протокола SSH. Вторая версия используется по
+   умолчанию. Если Вы хотите использовать первую версию, используйте ключ
+   <option>-1</option>.
   </para>
 
   <para>
