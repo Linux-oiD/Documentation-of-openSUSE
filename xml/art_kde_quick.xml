@@ -15,7 +15,7 @@
    * Nepomuk?
 -->
 <?provo dirname="kdequick/"?>
-<article lang="en" id="art.kdequick">
+<article lang="ru" id="art.kdequick">
 <!-- color needs to be "novell" for all non-openSUSE products -->
 <?suse-quickstart color="suse"?>
  <title>&kdequick;</title>
@@ -26,32 +26,32 @@
  </articleinfo>
  <abstract>
   <para>
-   &productnamereg; provides the tools that Linux* users require in their
-   daily activities. It comes with an easy-to-use graphical environment, the
-   KDE* desktop, that communicates with the underlying Linux system to
-   access and manage files, folders, and programs.
-   <phrase os="sled;sles" >&productname; provides an integrated suite of
-   applications that meet all professional requirements to perform tasks in
-   a business environment.</phrase> <phrase os="osuse">&productname;
-   provides an integrated suite of applications for a wide range of purposes
-   (office, multimedia, Internet).</phrase> The &libo; suite is also
-   included, which allows you to edit and save files in a number of formats.
-   Because the office suite is available for several operating systems, you
-   can use the same data across different computing platforms.
+   &productnamereg; предоставляет пользователям Linux* утилиты, в которых они
+   нуждаются ежедневно. Они (утилиты) поставляются вместе с удобным в работе
+   графическим окружением (рабочий стол KDE*) облегчающим общение с системой Linux:
+   доступ и управление файлами, каталогами и программами.
+   <phrase os="sled;sles" >&productname; предоставляет интегрированный набор приложений
+   удовлитворяя все профессиональные требования предъявляемые для выполнить задачь в
+   бизнес-среде.</phrase> <phrase os="osuse">&productname;
+   предоставояет интегрированный набор приложений для широкого круга
+   задач (офис, мультимедиа, Интернет).</phrase> Так же включен пакет приложений &libo;,
+   который позволяет Вам редактировать и сохранить файлы во многих форматах.
+   Поскольку этот набор офисных приложений доступен для нескольких операционных систем,
+   то Вы можете использовать одни и те же данные на различных компьютерных платформах.
   </para>
  </abstract>
  <sect1 id="sec.kdequick.start">
-  <title>Getting Started</title>
+  <title>Вступление</title>
 
   <para>
-   When you start your system, you are usually prompted to enter your
-   username and password. If you did not install the system yourself, check
-   with the system administrator for your username and password.
+   Когда Вы запускаете систему, обычно запрашиваются Ваши имя
+   пользователя и пароль. Если Вы не устанавливали систему самостоятельно,
+   проверьте с системным администратором Ваши имя пользователя и пароль.
   </para>
 
   <para>
-   After logging in to KDE for the first time, you see the KDE desktop,
-   which shows the following basic elements:
+   После первого входа в KDE Вы увидите рабочий стол KDE, на котором
+   представлены следующие основные элементы:
   </para>
 
   <informalfigure>
@@ -66,78 +66,79 @@
   </informalfigure>
 
   <formalpara>
-   <title>Desktop Folder:</title>
+   <title>Папка "Рабочий стол":</title>
    <para>
-    By default, the desktop folder shows the contents of its
-    <filename>~/Desktop</filename> directory. Whenever you insert a file
-    into this directory, it appears in this view too.
+    По умолчанию, виджет Рабочий стол отображает содержимое каталога
+    <filename>~/Рабочий стол</filename>. Когда Вы поместите файл
+    в эту директорию, он сразу появится в виджете.
    </para>
   </formalpara>
 
   <formalpara>
-   <title>Desktop Context Menu:</title>
+   <title>Контекстное меню рабочего стола:</title>
    <para>
-    Right-click an empty area on the desktop to access the context menu for
-    configuring the appearance of the desktop, adding panels or widgets to
-    the desktop, configuring desktop settings, locking the widgets in their
-    current position, leaving the current session, or for locking the
-    screen.
+    Нажатие правой кнопки мыши на пустом месте рабочего стола для доступа к
+    контекстному меню, чтобы настроить внешний вид рабочего стола, добавить
+    панели или виджеты, изменить настройки рабочего стола, заблокировать
+    виджеты в их текущих положении на рабочем столе, завершить текущий сеанс
+    или заблокировать экран.
    </para>
   </formalpara>
 
   <formalpara>
-   <title>Desktop Toolbox:</title>
+   <title>Инструментарий рабочего стола:</title>
    <para>
-    Move your mouse pointer to the icon in the upper right corner of the
-    desktop to access the menu that lets you add or lock widgets.
+    Переместите указатель мыши к значку в верхнем правом углу рабочего
+    стола, чтобы вызвать меню, с помощью которого можно добавить или
+    удалить виджеты.
    </para>
   </formalpara>
 
   <formalpara>
-   <title>KDE Panel:</title>
+   <title>Панель KDE:</title>
    <para>
-    By default, the panel of your KDE desktop consists of the <guimenu>Main
-    Menu</guimenu> icon on the left, further widgets and program icons, and
-    the panel settings icon on the right. If you hover the mouse pointer
-    over an icon in the panel, a short description is displayed.
+    По умолчанию, панель на Вашем рабочем столе KDE состоит из изображения
+    <guimenu>Главное меню</guimenu> слева, далее расположены виджеты и значки
+    программ, а так же значок настроек меню справа. Если Вы подведете курсор
+    мыши к любому значку на панели, то увидите краткое описание.
    </para>
   </formalpara>
 
 <?dbfo-need height="20em"?>
  </sect1>
  <sect1 id="sec.kdequick.startprogr">
-  <title>Starting Programs</title>
+  <title>Запуск программ</title>
 
   <para>
-   Start programs from the <guimenu>Main Menu</guimenu> or from the command
-   line, using a shell or the <guimenu>Run Command</guimenu>. Additionally,
-   you can start programs from the desktop or the panel by left-clicking the
-   program icon once.
+   Для запуск программ из <guimenu>Главного меню</guimenu> или командой
+   строки, используйте оболочку или диалог <guimenu>Выполнить команду</guimenu>.
+   Дополнительно, Вы можете запустить программы с рабочего стола или панели 
+   по нажатию левой кнопки мыши на значке программы.
   </para>
 
   <sect2 id="sec.kdequick.startprogr.menu">
-   <title>Using the Main Menu</title>
+   <title>Работа с главным меню</title>
    <para>
-    To open the <guimenu>Main Menu</guimenu>, click the <guimenu>Main
-    Menu</guimenu> icon in the panel or press <keycombo>
-    <keycap function="alt"/> <keycap>F1</keycap> </keycombo>. The
-    <guimenu>Main Menu</guimenu> consists of the following elements: a
-    search function at the top and several tabs at the bottom, providing
-    quick access to the key functions of the menu. Additionally, the menu
-    displays your login name and the hostname of your computer.
+    Для открытия <guimenu>Главного меню</guimenu>, нажмите на значок
+    <guimenu>Главное меню</guimenu> на панели или нажмите <keycombo>
+    <keycap function="alt"/> <keycap>F1</keycap> </keycombo>. 
+    <guimenu>Главное меню</guimenu> состоит из следующих элементов: 
+    функцию поиска вверху и нескольких вкладок внизу, обеспечивающих 
+    быстрый доступ к основным функциям меню. Дополнительно, в меню
+    отображается Ваше имя пользователя и сетевое имя машины.
    </para>
    <para>
-    <guimenu>Favorites</guimenu> shows a default selection of key programs
-    for quick access, whereas <guimenu>Applications</guimenu> shows all
-    applications installed on your system. To navigate through the menu
-    structure, click an entry and use the arrow icons at the right or the
-    left to switch back and forth. <guimenu>Computer</guimenu> and
-    <guimenu>Recently Used</guimenu> provide quick access to some frequently
-    used places, applications, or documents. <guimenu>Leave</guimenu> shows
-    several options for leaving the session such as logging out, locking the
-    screen (access can only be regained with a password), shutting down or
-    restarting the computer. Some computers offer to suspend your session to
-    RAM or disc.
+    <guimenu>Избранное</guimenu> отображает выбранные по умолчанию основные
+    программы для быстрого доступа, тогда как <guimenu>Приложения</guimenu>
+    показывает все приложения установленные в системе. Для перемещения по
+    структуре меню, нажмите на элемент и используйте значки в виде стрелки
+    вправо или влево, чтобы перейти назад или вперед. <guimenu>Компьютер</guimenu>
+    и <guimenu>Последние</guimenu> предоставляют быстрый доступ к некоторые
+    часто используемым местам, приложениям или документы. <guimenu>Выход</guimenu>
+    показывает несколько опции выхода из системы, такие как завершение сеанса,
+    блокирование экрана (доступ можно получить только снова введя пароль),
+    выключение или перезагрузка компьютера. Возможно приостановление работы
+    компьютера с сохранением Вашей сессии в памяти или на диск.
    </para>
    <informalfigure>
     <mediaobject>
@@ -150,29 +151,29 @@
     </mediaobject>
    </informalfigure>
    <para>
-    If you often need a program and do not want to dig into the menu
-    structure, you can integrate the icon into the
-    <guimenu>Favorites</guimenu> tab. Right-click the icon on any of the
-    other tabs and choose <guimenu>Add to Favorites</guimenu>.
+    Если Вам часто нужна какая-то программа и Вы не хотите рыться в структуре
+    меню в поисках этой программы, то просто добавьте ее ярлык на вкладку
+    избранное. Нажмите правой кнопкой мыши по изображению этой программы и
+    выберите <guimenu>Добавить в избранное</guimenu>.
    </para>
   </sect2>
 
   <sect2 id="sec.kdequick.startprogr.krunner">
-   <title>Using the Run Command Dialog</title>
+   <title>Использования диалога "Выполненить"</title>
    <para>
-    KRunner is a helper application that lets you quickly start programs.
-    Apart from that, it offers a search function for finding applications or
-    locations.
+    KRunner - приложение помощник позволяющее Вам быстро запустить нужную
+    программу. Кроме того, с эта программа предлагает функцию поиска и
+    Вы можете легко найти приложение.
    </para>
    <para>
-    Press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
-    </keycombo> to open the <guimenu>Run Command</guimenu> dialog. Type a
-    command, for example, <command>dolphin</command>. While you are typing,
-    the dialog shows a list of applications or actions that match your
-    input. Select one of the results or press <keycap function="enter"/> to
-    start the highlighted application or action. The command to start the
-    application is often (but not always) the application name written in
-    lowercase.
+    Нажмите <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+    </keycombo> для открытия диалога <guimenu>Выполнить команду</guimenu>. Введите
+    нужную команду, например, <command>dolphin</command>. Пока Вы вводите команду,
+    диалог выводит список приложений или действий подходящих под Ваш ввод.
+    Выберите нужный пункт или нажмите <keycap function="enter"/>, чтобы
+    запустить выделенное приложение или действие. Введенная команда запустит
+    приложение, часто (но не всегда) команда это просто имя приложения, написанное
+    строчными буквами.
    </para>
    <informalfigure>
     <mediaobject>
@@ -185,12 +186,12 @@
     </mediaobject>
    </informalfigure>
    <para>
-    KRunner's abilities can also be extended by a huge number of plug-ins
-    that provide additional functionality. Click the wrench symbol on the
-    left of the input field to explore the full range of available plug-ins.
-    For example, you can use so-called <emphasis>Web shortcuts</emphasis>
-    defined in Konqueror to send search requests directly to a search engine
-    without first opening the browser. For details, refer to
+    KRunner обладает так же огромным числом различными расширений добавляющих
+    дополнительную функциональность. Нажмите на значок вопросительного знака,
+    чтобы увидеть список доступных функций. Например, вы можете использовать
+    так называемые <emphasis>Web-сокращения</emphasis> определенные в Konqueror
+    для отправки поисковых запросов непосредственно к поисковому сайту без открытия
+    браузера. Для получения дополнительной информации обратитесь к 
     <xref linkend="sec.kdequick.browser.conf"/>.
 <!--taroth 2010-08-04: focus on "bare bones", therefore
     commenting the additional info below-->
@@ -211,32 +212,31 @@
   </sect2>
 
   <sect2 id="sec.kdequick.startprogr.search">
-   <title>Searching for Programs</title>
+   <title>Поиск приложений</title>
    <para>
-    Both the <guimenu>Main Menu</guimenu> and the <guimenu>Run
-    Command</guimenu> dialog offer a search function that lets you quickly
-    start programs even if you do not already know the exact application
-    name or command. To search for an application, start typing a command or
-    part of the application name in the <guimenu>Main Menu</guimenu>
-    <guimenu>Search</guimenu> field or the input field in the <guimenu>Run
-    Command</guimenu> dialog. Each character you enter narrows down the
-    search.
+    <guimenu>Главное меню</guimenu> и диалог <guimenu>Выполнить команду</guimenu>
+    предлагают функцию поиска, которая позволяет Вам быстро запускать программы,
+    даже если Вы уже не знаете точное имя приложения или команду для его запуска.
+    Чтобы найти приложение, начните набирать команду или часть имени приложения в
+    поле <guimenu>Поиск:</guimenu> <guimenu>Главного меню</guimenu> или введите в
+    поле диалога <guimenu>Выполнить команду</guimenu>. Каждый введенный символ
+    сужает поиск.
    </para>
    <para>
-    From the list below the input field, choose the application matching
-    your query.
+    В списке расположенном ниже поля ввода выберите приложение которое Вы искали.
    </para>
   </sect2>
  </sect1>
 <!--taroth 2010-08-04: updated until here-->
  <sect1 id="sec.kdequick.mediahandling">
-  <title>Handling Media</title>
+  <title>Управление внешними устройствами</title>
 
   <para>
-   If you insert a CD or DVD into your drive or plug in a pluggable device
-   (for example, a USB stick or removable hard disk), the device notifier
-   widget opens a small window alerting you to this. It also proposes
-   possible actions, depending on the type of the device.
+   Если Вы вставите CD или DVD в привод или подключите внешнее устройство
+   (например, USB-брелок или переносной жесткий диск), то виджет оповещения
+   о новых устройствах откроется маленьким окошком со списком подключенных
+   устройств. В этом окне также выводятся возможные действия, в зависимости от
+   типа устройства.
   </para>
 
   <informalfigure>
@@ -251,123 +251,125 @@
   </informalfigure>
 
   <para>
-   For example, if you plugged in a digital camera, the actions allow you to
-   download your photos with Gwenview or &digikam;. Click the device entry
-   in the widget to access the available actions. To safely remove the
-   device from your computer, use the icon on the right side of the device
-   entry.
+   Так например, если Вы подключите цифровую камеру, то Вам будет предложено
+   загрузить фотографии с помощью Gwenview или &digikam;. Нажмите на пункт с
+   именем устройства, чтобы получить список доступных действий. Чтобы безопасно
+   отключить устройство от компьютера вопользуйтесь значком в правой части строки
+   с именем устройства.
   </para>
  </sect1>
  <sect1 id="sec.kdequick.custom">
-  <title>Customizing Your Desktop</title>
+  <title>Придание индивидуальности Вашему рабочему столу</title>
 
   <para>
-   You can change the way your KDE desktop looks and behaves to suit your
-   personal preferences.
+   Вы можете изменить внешний вид и поведение Вашего рабочего стола KDE
+   в соответствии с Вашими предпочтениями.
   </para>
 
   <sect2 id="sec.kdequick.custom.lock">
-   <title>Locking and Unlocking Desktop Objects</title>
+   <title>Блокировка и разблокировка элементов рабочего стола</title>
    <para>
-    Desktop elements can be locked in their current position to prevent them
-    from being moved around on the desktop. As long as the desktop elements
-    are locked you cannot add, move, or remove any objects to or from your
-    desktop.
+    Элементы рабочего стола могут быть заблокированы в их текущих позициях,
+    чтобы воспрепятствовать их перемещению на рабочем столе. Пока элементы
+    рабочего стола заблокированы Вы не можете добавлять, перемещать или
+    удалять их.
    </para>
    <para>
-    To lock or unlock the desktop elements, click the cashew icon (desktop
-    toolbox) at the upper right corner of the desktop and select
-    <guimenu>Lock Widgets</guimenu> or <guimenu>Unlock Widgets</guimenu>.
+    Чтобы заблокировать или разблокировать элементы рабочего стола, нажмите
+    на значек кешью (кнопка  инструментов Plasma) в верхнем правом углу
+    рабочего стола и выберите <guimenu>Заблокировать изменение виджетов</guimenu>
+    или <guimenu>Разблокировать изменение виджетов</guimenu>, соответственно.
    </para>
    <para>
-    Alternatively, right-click an empty patch on the desktop and select
-    <guimenu>Lock Widgets</guimenu> or <guimenu>Unlock Widgets</guimenu>.
+    Или нажмите правой кнопкой мыши на пустом месте рабочего стола и выберите
+    <guimenu>Заблокировать изменение виджетов</guimenu> или
+    <guimenu>Разблокировать изменение виджетов</guimenu>.
    </para>
   </sect2>
 
   <sect2 id="sec.kdequick.custom.indiv">
-   <title>Changing Individual Desktop Elements</title>
+   <title>Изменение индивидуальных элементов рабочего стола</title>
    <para>
-    In the following, you can find some examples of how to change individual
-    desktops elements.
+    Далее Вы можете найти некоторые примеры, как изменить индивидуальные
+    элементы рабочего стола.
    </para>
    <procedure id="proc.kdequick.conf.icons">
-    <title>Adding Program Icons to the Desktop</title>
+    <title>Добавление значка программы на рабочий стол</title>
     <para>
-     To create a link to an application and place it on the desktop or the
-     panel, proceed as follows:
+     Чтобы создать ярлык для приложения и поместить его на рабочий стол
+     или панель, воспользуйтесь следующей инструкцией:
     </para>
     <step>
      <para>
-      Click the <guimenu>Main Menu</guimenu> button and browse to the
-      desired application.
+      Нажмите кнопку <guimenu>Главное меню</guimenu> и найдите там
+      нужное приложение.
      </para>
     </step>
     <step>
      <para>
-      Right-click and select <guimenu>Add to Desktop</guimenu> from the
-      context menu that appears. If this menu item is not available, your
-      desktop elements are probably locked. Unlock them first as described
-      in <xref linkend="sec.kdequick.custom.lock"/>.
+      Нажмите правой кнопкой мыши и выберите <guimenu>Добавить на рабочий
+      стол</guimenu> в появившемся контекстном меню. Если этот пункт меню
+      не доступен, вероятно изменение элементов рабочего стола заблокировано.
+      Снимите блокировку как описано в <xref linkend="sec.kdequick.custom.lock"/>.
      </para>
     </step>
     <step>
      <para>
-      To change the icon position on the desktop, left-click the icon and
-      drag it to the desired position.
+      Чтобы изменить положение значка на рабочем столе, нажмите левой кнопкой
+      мыши на значке и перетащите его на нужное место.
      </para>
     </step>
    </procedure>
    <para>
-    To delete an icon from your desktop, right-click the program icon and
-    select <guimenu>Remove this Icon</guimenu>.
+    Чтобы удалить значок с Вашего рабочего стола, нажмите правой кнопкой мыши
+    на значке программы и выберите <guimenu>Удалить виджет "Значок"</guimenu>.
    </para>
    <procedure id="proc.kdequick.widgets.add">
-    <title>Adding Widgets to the Desktop or to the Panel</title>
+    <title>Добавление виджетов на рабочий стол</title>
     <step>
      <para>
-      To add widgets to you desktop, right-click an empty patch on your
-      desktop and select <guimenu>Add Widgets</guimenu>.
+      Чтобы добавить виджеты на рабочий стол, нажмите правой кнопкой мыши на
+      пустом месте рабочего стола и выберите <guimenu>Добавить виджеты...</guimenu>.
      </para>
      <para>
-      To add a widget to the panel, right-click an empty patch on the panel,
-      and select <menuchoice> <guimenu>Panel Options</guimenu> <guimenu>Add
-      Widgets</guimenu> </menuchoice>.
+      Чтобы добавить виджет на пенель нажмите правой кнопкой мыши на пустом
+      месте панели и выберите <menuchoice> <guimenu>Настроить виджет "Панель"</guimenu>
+      <guimenu>Добавить виджеты...</guimenu> </menuchoice>.
      </para>
      <para>
-      If these menu items are not available, your desktop elements are
-      probably locked. In this case, right-click and select <guimenu>Unlock
-      Widgets</guimenu> first.
+      Если такой пункт в меню недоступен, вероятно изменение элементов Вашего
+      рабочего стола заблокировано. В этом случае нажмите правой кнопкой мыши
+      и выберите <guimenu>Разблокировать измененеи виджетов</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      In the list that appears, select a widget. Use the scrollbar to browse
-      through the available widgets. To limit the selection of widgets,
-      either enter a search term in the input field or choose a Category.
+      В появившемся списке выберите нужный виджет. Используйте прокрутку для
+      исследования доступных виджетов. Чтобы ограничить число отображаемых виджетов,
+      введя в поле термин для поиска или выбрав категорию.
      </para>
     </step>
     <step>
      <para>
-      To make the selected widget appear on the desktop or in the panel,
-      double-click it and close the dialog box.
+      Чтобы поместить выбранный виджет на рабочий стол или на панель, дважды нажмите
+      левой кнопкой мышки по нему и закройте диалог.
      </para>
     </step>
    </procedure>
    <para>
-    To remove a widget from your desktop or panel, right-click the widget
-    and select the
+    Чтобы удалить виджет с Вашего рабочего стола, нажмите правой кнопкой мыши
+    на виджете и выберите пункт
     <remark>taroth 080507: added dots again on purpose because
      the menu item also contains the widgets name, e.g. "Remove this Analog
      Clock"</remark>
-    <guimenu>Remove...</guimenu> entry.
+    <guimenu>Удалить виджет...</guimenu>.
    </para>
    <procedure id="proc.kdequick.widgets.conf">
-    <title>Configuring Desktop Widgets</title>
+    <title>Настройка виджетов рабочего стола</title>
     <step>
      <para>
-      Hover your mouse pointer over the widget until a translucent frame
-      appears around the widget, showing a number of symbols:
+      Поместите указатель мыши сверху виджета, появится прозрачная область
+      рядом с виджетом, в которой будут находиться несколько символов:
      </para>
      <informalfigure>
       <mediaobject>
@@ -380,43 +382,44 @@
       </mediaobject>
      </informalfigure>
      <para>
-      If the frame does not appear, your widgets are probably locked. Unlock
-      them first as described in
+      Если эта область не появилась, вероятнее всего изменение виджетов
+      заблокировано. Сначала разблокируйте их, как написано в
       <xref linkend="sec.kdequick.custom.lock" />.
      </para>
     </step>
     <step>
      <para>
-      To change the widget size, left-click the scale symbol in the frame
-      and keep the mouse button pressed while slowly moving your cursor
-      across the desktop.
+      Чтобы изменить размер виджета нажмите левой кнопкой мыши на символ
+      масштабирования в прозрачной области и, не отпуская кнопку
+      мыши, медленно переместите курсор вдоль рабочего стола.
      </para>
     </step>
     <step>
      <para>
-      To rotate the widget in any direction, left-click the arrow symbol in
-      the frame and keep the mouse button pressed while moving your cursor
-      in a circle across the desktop. There is a sticky boundary in the
-      horizontal and vertical positions where you can <quote>clamp</quote>
-      the widget, if you like. Of course, you can also arrange it in any
-      tilted position.
+      Чтобы повернуть виджет в любом направлении нажмите левой кнопкой мыши
+      на символ круговой стрелки в прозрачной области и, удерживая кнопку
+      мыши нажатой, переместите курсор описывая окружность. Есть
+      <quote>липкая</quote> граница в горизонтальной и вертикальной позиции,
+      где Вы можете зафиксировать виджет. Конечно, Вы можете расположить
+      виджет под любым углом.
      </para>
     </step>
     <step>
      <para>
-      To change the contents, settings, or properties of a widget,
-      left-click the wrench symbol in the frame. In the configuration dialog
-      box that appears, set the options according to your wishes.
+      Чтобы изменить содержимое, параметры или свойства виджета, нажмите
+      левой кнопкой мыши на символ гаечного ключа в прозрачной области.
+      В появившемся диалогом окне произведите необходимые настройки,
+      согласно Вашим предпочтениям.
      </para>
     </step>
    </procedure>
    <procedure id="proc.kdequick.panel.add">
-    <title>Adding and Removing Panels</title>
+    <title>Добавление и удаление панелей</title>
     <step>
      <para>
-      If you want multiple panels on the desktop, right-click an empty area
-      on the desktop, select <guimenu>Add Panel</guimenu> and choose a panel
-      type from the list.
+      Если Вам нужно несколько панелей на рабочем столе, то нажмите правой
+      кнопкой мыши на пустом месте рабочегос тола и выберите
+      <guimenu>Добавить панель</guimenu>, затем выберите тип панели из списка.
      </para>
      <para>
       If these menu items are not available, your desktop objects are
