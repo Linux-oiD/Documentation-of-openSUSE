@@ -172,15 +172,15 @@ Password:
 
   <secondary>sftp</secondary></indexterm>
 
-  <para>
-   The sftp program can be used instead of scp for secure file transfer.
-   During an sftp session, you can use many of the commands known from ftp.
-   The sftp program may be a better choice than scp, especially when
-   transferring data for which the filenames are unknown.
+  <para>   
+   sftp программа может использоваться вместо scp для безопасной передачи файлов.
+   Во время sftp сессии Вы можете использовать многие из команд, используемых
+   при работе с ftp. Использование sftp может быть более лучшим выбором чем scp,
+   особенно если Вам не известны имена копируемых файлов.
   </para>
  </sect1>
  <sect1 id="sec.ssh.sshdserver">
-  <title>The SSH Daemon (sshd)&mdash;Server-Side</title><indexterm>
+  <title>Демон SSH (sshd)&mdash;серверная часть</title><indexterm>
 
   <primary>SSH</primary>
 
@@ -190,19 +190,18 @@ Password:
 
   <secondary>sshd</secondary></indexterm>
 
-  <para>
-   To work with the SSH client programs ssh and scp, a server (the SSH
-   daemon) must be running in the background, listening for connections on
-   <literal>TCP/IP port 22</literal>. The daemon generates three key pairs
-   when starting for the first time. Each key pair consists of a private and
-   a public key. Therefore, this procedure is referred to as public
-   key&ndash;based. To guarantee the security of the communication via SSH,
-   access to the private key files must be restricted to the system
-   administrator. The file permissions are set accordingly by the default
-   installation. The private keys are only required locally by the SSH
-   daemon and must not be given to anyone else. The public key components
-   (recognizable by the name extension <filename>.pub</filename>) are sent
-   to the client requesting the connection. They are readable for all users.
+  <para>    
+   Для работы с программами ssh и scp в фоновом режиме должнен быть запущен
+   SSH демон, который будет использовать <literal>TCP/IP 22</literal> порт.
+   Демон генерирует три пары ключей при запуске в первый раз. Каждая пара
+   стоит из секретного и открытого ключа.
+   Чтобы гарантировать безопасность соединения через SSH, доступ к файлу с
+   секретным ключем должен быть только у системного администратора. Именно
+   такие права имеет этот файл по умолчанию. Секретный ключ используется только
+   локальным SSH демоном и не должен быть предоставлен кому-то ещё. Открытый
+   ключ (узнаваемый по расширению файла <filename>.pub</filename>) отправляется
+   клиенту, запрашиваемому соединение. Файл, в котором находится открытый ключ,
+   может прочитать любой пользователь в системе.
    <indexterm>
    <primary>SSH</primary>
    <secondary>key pairs</secondary>
@@ -210,11 +209,11 @@ Password:
   </para>
 
   <para>
-   A connection is initiated by the SSH client. The waiting SSH daemon and
-   the requesting SSH client exchange identification data to compare the
-   protocol and software versions, and to prevent connections through the
-   wrong port. Because a child process of the original SSH daemon replies to
-   the request, several SSH connections can be made simultaneously.
+   Связь начинает SSH-клиент. SSH-демон ожидает запроса от SSH-клиента
+   для создания соединения. Первым шагом они обмениваются информацией
+   идентификации, проверяя протокол и версию SSH, а так же уточняя номер
+   порта. Это важно, т.к. дочерние процессы, порожденные SSH демоном, могут
+   обслуживать несколько SSH-сессий одновременно.
   </para>
 
   <para>
