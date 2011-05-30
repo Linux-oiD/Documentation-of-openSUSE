@@ -47,17 +47,17 @@
 <!ENTITY suseonsitereg  "&suseonsite;&reg;">
 <!-- suse studio service as different from the Onsite product -->
 <!ENTITY susestudio     "&suse; Studio">
-<!ENTITY obs            "&opensuse; Build Server">
+<!ENTITY obs            "Open Build Service">
 <!ENTITY xvendor        "X.Org">
 <!ENTITY yast           "YaST">
-<!ENTITY yastcc         "&yast; Control Center">
-<!ENTITY gnomecc        "GNOME Control Center">
+<!ENTITY yastcc         "Центр управления &yast;">
+<!ENTITY gnomecc        "Центр управления GNOME">
 <!ENTITY ay             "AutoYaST">
 <!ENTITY nm             "NetworkManager">
 <!ENTITY fspot          "f-spot">
 <!ENTITY digikam        "digiKam">
 <!ENTITY yelp           "Help">
-<!ENTITY khc            "KDE help center">
+<!ENTITY khc            "Центр справки KDE">
 <!ENTITY umtsmon        "UMTSmon">
 <!-- deprecated - use &libo; instead -->
 <!ENTITY ooo            "&libo;">
@@ -69,34 +69,34 @@
 <!-- ============================================================= -->
 
 <!ENTITY deploy         "Deployment Guide"> 
-<!ENTITY kdeuser        "KDE User Guide">
-<!ENTITY gnomeuser      "GNOME User Guide">
-<!ENTITY moblinuser     "Moblin User Guide">
-<!ENTITY instquick      "Installation Quick Start">
-<!ENTITY gnomequick     "GNOME Quick Start">
-<!ENTITY kdequick       "KDE Quick Start">
-<!ENTITY moblinquick     "Moblin Quick Start">
-<!ENTITY oofficequick   "&ooo; Quick Start">
+<!ENTITY kdeuser        "KDE Руководство пользователя">
+<!ENTITY gnomeuser      "GNOME Руководство пользователя">
+<!ENTITY moblinuser     "Moblin Руководство пользователя">
+<!ENTITY instquick      "Установка. Быстрый старт">
+<!ENTITY gnomequick     "GNOME Быстрый старт">
+<!ENTITY kdequick       "KDE Быстрый старт">
+<!ENTITY moblinquick     "Moblin Быстрый старт">
+<!ENTITY oofficequick   "&ooo; Быстрый старт">
 <!ENTITY apps           "Application Guide">
-<!ENTITY admin          "Administration Guide">
+<!ENTITY admin          "Руководство администратора">
 <!ENTITY reference      "Reference">
 <!ENTITY startup       	"Start-Up"> 
-<!ENTITY aaadmin        "Novell AppArmor Administration Guide">
-<!ENTITY aaquick        "Novell AppArmor Quick Start">
+<!ENTITY aaadmin        "Novell AppArmor Руководство администратора">
+<!ENTITY aaquick        "Novell AppArmor Быстрый старт">
 <!ENTITY lfl            "Lessons For Lizards">
 <!ENTITY storage        "Storage Administration Guide">
 <!ENTITY haguide        "High Availability Guide">
 <!ENTITY virtual        "Virtualization Guide">
-<!ENTITY xenguide       "Virtualization with &xen;">
-<!ENTITY kvmguide       "Virtualization with &kvm;">
+<!ENTITY xenguide       "Виртуализация с &xen;">
+<!ENTITY kvmguide       "Виртуализация с &kvm;">
 <!ENTITY auditguide     "The Linux Audit Framework">
-<!ENTITY auditquick     "Linux Audit Quick Start"> 
+<!ENTITY auditquick     "Linux Audit Быстрый старт"> 
 <!ENTITY tuning         "System Analysis and Tuning Guide">
 <!ENTITY tuningsub      "Problem Detection, Resolution, and Optimization">
 <!ENTITY secguide       "Security Guide">
 <!ENTITY smtguide       "Subscription Management Tool Guide">
 <!ENTITY webyastconfguide       "WebYaST Configuration Guide"> 
-<!ENTITY studioadmin    "Administration Guide">
+<!ENTITY studioadmin    "Руководство администратора">
 <!ENTITY studioinstall  "Installation &amp; Deployment Guide">
 
 
@@ -219,7 +219,7 @@
 <!--                    yast desktop entities                      -->
 <!-- ============================================================= -->
 
-<!ENTITY ycc_runlevel  "System Services (Runlevel)">
+<!ENTITY ycc_runlevel  "Системные службы (Уровень запуска)">
 
 <!-- ============================================================= -->
 <!--                    Miscellaneous                              -->
