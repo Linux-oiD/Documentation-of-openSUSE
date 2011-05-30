@@ -6,62 +6,57 @@
   %entities;
 ]>
 <preface id="preface.startup">
- <title>About This Guide</title>
+ <title>Об этом руководстве</title>
  <para>
-  This manual will see you through your initial contact with
-  &productnamereg;. Check out the various parts of this manual to learn how
-  to install, use and enjoy your system.
+  это руководство призвано облегчить Ваше первое знакомство с
+  &productnamereg;. Изучите различные части данного руководства, чтобы научиться
+  устанавливать, использовать и получать удовольствие при работе с Вашей системой.
  </para>
  <variablelist>
   <varlistentry>
-   <term>Installation and Setup</term>
+   <term>Установка и настройка</term>
    <listitem>
     <para>
-     Guides you through the installation process and the basic configuration
-     of your system. Introduces &yast;, the central tool for installation
-     and configuration of your system. Learn how to set up or modify key
-     components of your system and how to connect to the internet.
+     Проведет Вас через весь процесс установки и базовой конфигурации
+     Вашей системы. Представляет &yast;, центральный инструмент для установки
+     и конфигурации системы. Узнайте, как создать или изменить ключевые
+     компоненты Вашей системы и как подключиться к интернету.
     </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Basics</term>
+   <term>Основы</term>
    <listitem>
     <para>
-     This part mainly addresses to users changing to Linux from other
-     operating systems. It introduces basic Linux concepts such as the user
-     concept, the structure of the file system and access permissions for
-     files and directories. An introduction to the shell is also provided,
-     although you hardly ever need the command line to interact with your
-     system nowadays.
+     Эта часть в основном предназначена для тех пользователей, которые переходят на Linux с других
+     операционных систем. Здесь описаны основные концепции Linux,такие как концепция пользователей в Linux,
+	 структура файловой системы и права доступа для файлов и каталогов. Также приведены основы работы с оболочкой,
+     однако она едва ли понадобится Вам для взаимодействия с системой в настоящее время.
     </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Help and Troubleshooting</term>
+   <term>Помощь и решение проблем</term>
    <listitem>
     <para>
-     Provides an overview of where to find help and additional documentation
-     in case you need more information or want to perform specific tasks
-     with your system. Also find a compilation of the most frequent problems
-     and annoyances and learn how to solve these problems on your own.
+     Общие сведения о том, где найти помощь и дополнительную документацию
+     в случае необходимости получения дополнительной информации, или для выполнения
+	 конкретных задач с Вашей системой. Также эта часть содержит подборку наиболее частых проблем и ошибок,
+	 она может подсказать, как решить эти проблемы в Вашем случае.
     </para>
    </listitem>
   </varlistentry>
  </variablelist>
  <para>
-  This manual documents milestone 7 of &productname; &productnumber;.
+  Это руководство описывает &productname; &productnumber;.
  </para>
  <para>
-  Many chapters in this manual contain links to additional documentation
-  resources. This includes documentation that is available on the system as
-  well as documentation available on the Internet.
+  Многие главы этого руководства содержат ссылки на дополнительную документацию.
+  Это включает как документацю, которая доступна в системе так и документацию, доступную в Интернете.
  </para>
  <para>
-  For an overview of the documentation available for your product and the
-  latest documentation updates, refer to
-  <ulink url="http://www.novell.com/documentation/opensuse114"/> or to the
-  following section.
+  Для обзора доступной документации, а также доступных обновлений текущей документации, посетите
+  <ulink url="http://www.novell.com/documentation/opensuse114"/> или последующие разделы.
  </para>
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
     href="common_intro_available_doc_i.xml"/>

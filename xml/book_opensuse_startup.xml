@@ -32,7 +32,7 @@
 <!-- Appendices                                                            -->
 <!-- ===================================================================== -->
  <appendix>
-  <title>Help and Troubleshooting</title>
+  <title>Помощь и решение проблем</title>
   <para></para>
   <xi:include href="help_admin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <!-- fs 2010-12-27: Added from Start-Up -->
