@@ -224,44 +224,45 @@ Password:
   </para>
 
   <para>
-   При использовании версии&nbsp;1, SSH-сервер посылает свой открытый ключ и так называемый "ключ сервера", которые генерируются раз в час. На основании этих ключей SSH-клиент генерирует ключ сессии, который в последствии он посылает SSH-серверу. SSH-клиент также говорит серверу какой метод шифрования использовать. Вторая версия протокола SSH не требуют ключа сервера. Обе стороны используют алгоритм Диффи-Хеллмана (Diffie-Hellman) для обмена ключами.
+   При использовании версии&nbsp;1, SSH-сервер посылает свой открытый ключ
+   и так называемый "ключ сервера", которые генерируются раз в час. На основании
+   этих ключей SSH-клиент генерирует ключ сессии, который в последствии он
+   посылает SSH-серверу. SSH-клиент также говорит серверу какой метод шифрования
+   использовать. Вторая версия протокола SSH не требуют ключа сервера. Обе
+   стороны используют алгоритм Диффи-Хеллмана (Diffie-Hellman) для обмена ключами.
+  </para>
+
+  <para>  
+   Секретный и серверный ключи необходимы для расшифровки ключа сессии и не
+   могут быть получены, при использовании лишь открытых ключей. Только при
+   соединении SSH-демон может расшифровать ключ сессии, используя свои секретные
+   ключи. Эта начальная фаза установки соедининения более детально будет показана
+   (включая отладочную информацию) при использовании ключа <option>-v</option>.
   </para>
 
   <para>
-   The private host and server keys are absolutely required to decrypt the
-   session key and cannot be derived from the public parts. Only the
-   contacted SSH daemon can decrypt the session key using its private keys.
-   This initial connection phase can be watched closely by turning on
-   verbose debugging using the <option>-v</option> option of the SSH client.
+   Клиент хранит открытые host-ключи в фaйле
+   <filename>~/.ssh/known_hosts</filename>, после первого соединения с удаленной
+   системой. Это предотвращает любые попытки "нападений посредине" внешними SSH
+   серверами, использующими поддельные имена или IP-адреса. Такие нападения будут
+   сразу же обнаружены по отличному ключу, которого нет в
+   <filename>~/.ssh/known_hosts</filename> или неспособностью сервера расшифровать
+   ключ сессии из-за отсутсвия соответствующих секретных ключей. 
   </para>
 
-  <para>
-   The client stores all public host keys in
-   <filename>~/.ssh/known_hosts</filename> after its first contact with a
-   remote host. This prevents any man-in-the-middle attacks&mdash;attempts
-   by foreign SSH servers to use spoofed names and IP addresses. Such
-   attacks are detected either by a host key that is not included in
-   <filename>~/.ssh/known_hosts</filename>, or by the server's inability to
-   decrypt the session key in the absence of an appropriate private
-   counterpart.
-  </para>
-
-  <para>
-   It is recommended to back up the private and public keys stored in
-   <filename>/etc/ssh/</filename> in a secure, external location. In this
-   way, key modifications can be detected and the old ones can be used again
-   after reinstallation. This spares users any unsettling warnings. If it is
-   verified that, despite the warning, it is indeed the correct SSH server,
-   the existing entry for the system must be removed from
-   <filename>~/.ssh/known_hosts</filename>.
+  <para>  
+   Рекомендуестся сохранять секретные и открытые ключи, которые находятся в
+   <filename>/etc/ssh/</filename>, на каком-нибудь безопасном внешнем носителе.
+   В этом случае эти ключи могут быть снова использованны, к примеру, после
+   переустановки системы.
   </para>
  </sect1>
  <sect1 id="sec.ssh.authentic">
-  <title>SSH Authentication Mechanisms</title><indexterm>
+  <title>Механизм аутентификации SSH</title><indexterm>
 
   <primary>SSH</primary>
 
-  <secondary>authentication mechanisms</secondary></indexterm><indexterm>
+  <secondary>механизм аутентификации</secondary></indexterm><indexterm>
 
   <primary>commands</primary>
 
