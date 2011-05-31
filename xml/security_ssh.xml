@@ -443,173 +443,171 @@ keep the information in here. -->
   </para>
  </sect1>
  <sect1 id="sec.ssh.yast">
-  <title>Configuring An SSH Daemon with &yast;</title>
+  <title>Настройка SSH-демона с помощью &yast;</title>
 
   <para os="osuse">
 <!-- FIXME: check sled/sles, 2010-09-13, ke -->
-   The &yast; SSHD Configuration module is not part of the default
-   installation. To install it, start &yast; and select
+   &yast;-модуль, отвечающий за настройку SSHD, не устанавливается
+   по умолчанию. Для его установки запустите &yast;, выберете
    <menuchoice><guimenu>Software</guimenu> <guimenu>Software
-   Management</guimenu></menuchoice> and search for
-   <systemitem>yast2-sshd</systemitem>. Confirm the found item and install
-   it.
+   Management</guimenu></menuchoice> и найдите и установите
+   пакет <systemitem>yast2-sshd</systemitem>.
   </para>
 
   <para>
-   To configure an sshd server with &yast; run &yast; and choose
-   <menuchoice> <guimenu>Network Services</guimenu> <guimenu>SSHD
-   Configuration</guimenu> </menuchoice>. Then proceed as follows:
+   Для настройки sshd-сервера с помошью &yast; запустите &yast; и выберете
+   <menuchoice> <guimenu>Сетевые службы</guimenu> <guimenu>Настройка SSHD</guimenu>
+   </menuchoice>. Затем сделайте следующее:
   </para>
 
   <procedure>
    <step>
     <para>
-     On the <guimenu>General</guimenu> tab, select the ports sshd should
-     listen on in the <guimenu>SSHD TCP Ports</guimenu> table. The default
-     port number is 22. Multiple ports are allowed. To add a new port, click
-     <guimenu>Add</guimenu>, enter the port number and click
-     <guimenu>OK</guimenu>. To delete port, select it in the table, click
-     <guimenu>Delete</guimenu> and confirm.
+     На вкладке <guimenu>Общие</guimenu>, в таблице <guimenu>SSHD TCP Ports</guimenu>,
+     выберите порты, которые должен использовать SSHD. По умолчанию
+     используется порт 22. Вы можете выбрать несколько портов. Чтобы добавить
+     новый порт, нажмите кнопку <guimenu>Добавить</guimenu>, введите
+     номер порта и нажмите кнопку <guimenu>ОК</guimenu>. Для удаления порта,
+     найдите его в таблице, нажмите кнопку <guimenu>Удалить</guimenu> и
+     подтвердите удаление.
     </para>
    </step>
    <step>
     <para>
-     On the <guimenu>General</guimenu> tab, select the features the sshd
-     daemon should support. To disable TCP forwarding, uncheck
-     <guimenu>Allow TCP Forwarding</guimenu>. Disabling TCP forwarding does
-     not improve security unless users are also denied shell access, as they
-     can always install their own forwarders. See
-     <xref linkend="sec.ssh.pipe"/> for more information about TCP
-     forwarding.
+     На вкладке "Общие" находятся и другие настройки, поддерживаемые sshd-демоном.
+     Для отключения переадресации TCP (TCP Forwarding), снимите флажок
+     <guimenu>Разрешить TCP переадресацию</guimenu>. Отключение переадресации TCP
+     не улучшает безопасность, если пользователи не имеют доступа к терминалу,
+     так как они всегда могут установить свои собственные переадресации. См.
+     <xref linkend="sec.ssh.pipe"/> для получения дополнительной информации о
+     переадресации TCP.
     </para>
     <para>
-     To disable X forwarding, uncheck <guimenu>Allow X11
-     Forwarding</guimenu>. If this option is disabled, any X11 forward
-     requests by the client will return an error. However users can always
-     install their own forwarders. See <xref linkend="sec.ssh.pipe"/> for
-     more information about X forwarding.
+     Чтобы отключить переадресацию X, снимите флажок <guimenu>Разрешить X11
+     переадресацию</guimenu>. Если эта опция отключена, любые запросы переадресации
+     X11 вперед будут приводить к ошибке. Однако пользователи всегда могут установить
+     свою собственную переадресацию. См.<xref linkend="sec.ssh.pipe"/> для получения
+     дополнительной информации о переадресации X.
     </para>
     <para>
-     In <guimenu>Allow Compression</guimenu> determine, whether the
-     connection between the server and clients should be compressed. After
-     setting these options, click <guimenu>Next</guimenu>.
+     Опция <guimenu>Разрешить сжатие</guimenu> определить, должна ли связь между
+     сервером и клиентам быть сжата.
     </para>
    </step>
    <step>
     <para>
-     The <guimenu>Login Settings</guimenu> tab contains general login and
-     authentication settings. In <guimenu>Print Message of the Day After
-     Login</guimenu> determine, whether sshd should print message from
-     <filename>/etc/motd</filename> when a user logs in interactively. If
-     you want to disable connection of a user
-     <systemitem class="username">root</systemitem>, uncheck <guimenu>Permit
-     Root Login</guimenu>.
+     Вкладка <guimenu>Настройки входа в систему</guimenu> содержит общие настройки входа
+     в систему и аутентификации. В <guimenu>Показывать Сообщение дня после входа в
+     систему</guimenu> определяется, должен ли sshd выводить сообщение из
+     <filename>/etc/motd</filename> при интерактивном режиме входа в систему.
+     Если Вы хотит отключить возможность входить в систему пользователю 
+     <systemitem class="username">root</systemitem>, отключите
+     <guimenu>Разрешать вход администратора в систему</guimenu>.
     </para>
     <para>
-     In <guimenu>Maximum Authentication Tries</guimenu> enter the maximum
-     allowed number of authentication attempts per connection.
+     В <guimenu>Максимальном числе попыток аутентификации</guimenu> устанавливается
+     максимальное количество попыток аутентификации за одно соединение.
 <!-- "Password Authentication"is gone since 2009-01-29 (bnc #469207):
           2010-09-13, ke -->
 <!--
      <guimenu>Password Authentication</guimenu> specifies whether password
      authentication is allowed.
      -->
-     <guimenu>RSA Authentication</guimenu> specifies whether pure RSA
-     authentication is allowed. This option applies to SSH protocol version
-     1 only. <guimenu>Public Key Authentication</guimenu> specifies whether
-     public key authentication is allowed. This option applies to protocol
-     version 2 only.
+     <guimenu>Аутентификация RSA</guimenu> определяет, разрешенна ли аутентификация RSA.
+     Этот параметр применяется только к первой версии протокола SSH.
+     <guimenu>Аутентификация по открытому ключу</guimenu> определяет, разрешеа ли
+     аутентификация пользователя с помощью открытого ключа. Этот параметр используется
+     только во второй версии протокола SSH.
     </para>
    </step>
    <step>
     <para>
-     On the <guimenu>Protocol and Ciphers</guimenu> tab, determine which
-     versions of the SSH protocol should be supported. You can choose to
-     support version 1 only, version 2 only, or to support both SSH version
-     2 and 1.
+     На вкладке <guimenu>Протокол и шифрования</guimenu> определяются версии протокола
+     SSH, которые должны поддерживатся. Вы можете выбрать первую или вторую версию, а
+     так же параллельную поддержку обоих SSH-протоколов.
     </para>
     <para>
-     Under <guimenu>Supported Ciphers</guimenu>, all supported ciphers are
-     listed. You can remove a cipher by selecting it in the list and
-     clicking <guimenu>Delete</guimenu>. To add a cipher to the list, select
-     it from the dropdown menu and click <guimenu>Add</guimenu>.
+     В <guimenu>Поддерживаемые методы шифрования</guimenu> перечисленны все поддерживаемые
+     алгоритмы шифрования. Вы можете удалить шифр, выбрав его в списке и нажав кнопку
+     <guimenu>Удалить</guimenu>. Чтобы добавить шифр, выберите его из выпадающего меню и
+     нажмите кнопку <guimenu>Добавить</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     Click <guimenu>Finish</guimenu> to save the configuration.
+     Нажмите <guimenu>Finish</guimenu> для сохранения настроек.
     </para>
    </step>
   </procedure>
  </sect1>
  <sect1 id="sec.security.ssh.moreinfo">
-  <title>For More Information</title>
+  <title>Дополнительная информация</title>
 
   <para/>
 
   <variablelist>
    <varlistentry>
-    <term><ulink url="http://www.openssh.com"/>
+    <term><ulink url="http://www.openssh.com/ru"/>
     </term>
     <listitem>
      <para>
-      The homepage of OpenSSH
+      Страница проекта OpenSSH
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>man</command><option>ssh_config</option>
+    <term><command>man</command>&nbsp;<option>ssh_config</option>
     </term>
     <listitem>
      <para>
-      Manpage of OpenSSH SSH client configuration files
+      man-страница о конфигурационных файлах OpenSSH SSH-клиента.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>man</command><option>ssh_config</option>
+    <term><command>man</command>&nbsp;<option>ssh_config</option>
     </term>
     <listitem>
      <para>
-      Manpage of OpenSSH SSH daemon configuration file
+      man-страница о конфигурационных файлах OpenSSH SSH-демона.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>man</command><option>sshd</option>
+    <term><command>man</command>&nbsp;<option>sshd</option>
     </term>
     <listitem>
      <para>
-      Manpage of OpenSSH daemon
+      man-страница по OpenSSH-демону
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>man</command><option>scp</option>
+    <term><command>man</command>&nbsp;<option>scp</option>
     </term>
-    <term><command>man</command><option>sftp</option>
+    <term><command>man</command>&nbsp;<option>sftp</option>
     </term>
-    <term><command>man</command><option>slogin</option>
+    <term><command>man</command>&nbsp;<option>slogin</option>
     </term>
-    <term><command>man</command><option>ssh</option>
+    <term><command>man</command>&nbsp;<option>ssh</option>
     </term>
-    <term><command>man</command><option>ssh-add</option>
+    <term><command>man</command>&nbsp;<option>ssh-add</option>
     </term>
-    <term><command>man</command><option>ssh-agent</option>
+    <term><command>man</command>&nbsp;<option>ssh-agent</option>
     </term>
-    <term><command>man</command><option>ssh-copy-id</option>
+    <term><command>man</command>&nbsp;<option>ssh-copy-id</option>
     </term>
-    <term><command>man</command><option>ssh-keyconvert</option>
+    <term><command>man</command>&nbsp;<option>ssh-keyconvert</option>
     </term>
-    <term><command>man</command><option>ssh-keygen</option>
+    <term><command>man</command>&nbsp;<option>ssh-keygen</option>
     </term>
-    <term><command>man</command><option>ssh-keyscan</option>
+    <term><command>man</command>&nbsp;<option>ssh-keyscan</option>
     </term>
     <listitem>
      <para>
-      Manpage of several binary files to copy (<command>scp</command>,
+      man-страницы о программах копирования файлов (<command>scp</command>,
       <command>sftp</command>), login (<command>slogin</command>,
-      <command>ssh</command>), and manage keys.
+      <command>ssh</command>), и ключах.
      </para>
     </listitem>
    </varlistentry>
