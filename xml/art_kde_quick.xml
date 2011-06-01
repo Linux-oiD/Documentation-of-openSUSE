@@ -162,8 +162,8 @@
    <title>Использования диалога "Выполненить"</title>
    <para>
     KRunner - приложение помощник позволяющее Вам быстро запустить нужную
-    программу. Кроме того, с эта программа предлагает функцию поиска и
-    Вы можете легко найти приложение.
+    программу. Кроме того, эта программа предлагает функцию поиска и Вы
+    можете легко найти приложение.
    </para>
    <para>
     Нажмите <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
@@ -554,9 +554,9 @@
    <procedure id="proc.kdequick.conf.deskback">
     <title>Изменение фона рабочего стола</title>
     <para>
-     You can change the desktop background to display images, a slideshow,
-     patterns or colors. It is even possible to use a map of the globe or
-     the weather report as desktop background.
+     Вы можете изменить фон рабочего стола на изображение, слайдшоу, мозаику или
+     просто залить однотонным цветом. Так же присутствует возможность установать
+     в качестве фона карту земного шара или прогноз погоды.
     </para>
     <step>
      <para>
@@ -574,30 +574,29 @@
     </step>
     <step>
      <para>
-      For example, to use an image wallpaper:
+      Например, чтобы установить изображениев качетве обоев:
      </para>
      <substeps>
       <step>
        <para>
-        Set <guimenu>Wallpaper</guimenu> to <guimenu>Image</guimenu>.
+        Выберите <guimenu>Изображение</guimenu> в списке <guimenu>Обои</guimenu>.
        </para>
       </step>
       <step>
        <para>
-        Define the <guimenu>Positioning</guimenu> of the image.
+        Задайте <guimenu>Расположение</guimenu> для изображения.
        </para>
       </step>
       <step>
        <para>
-        To use one of the available wallpapers, either choose a wallpaper
-        from the list or click <guimenu>Get New Wallpapers</guimenu> to
-        download additional wallpapers.
+        Чтобы выбрать уже имеющиеся обои выберите их в списке ниже или нажмите
+	<guimenu>Загрузить новые обои...</guimenu>, чтобы загрузить и установить новые обои.
        </para>
       </step>
       <step>
        <para>
-        To use a custom picture, click <guimenu>Open</guimenu> and select an
-        image file from the file system.
+        Чтобы выбрать другое изображение нажмите <guimenu>Открыть...</guimenu> и выберите
+	нужное в файловой системе.
        </para>
        <informalfigure>
         <mediaobject>
@@ -614,18 +613,17 @@
     </step>
     <step>
      <para>
-      Set the other options in the configuration dialog according to your
-      wishes, and click <guimenu>OK</guimenu> to save your changes and leave
-      the configuration dialog.
+      Установите другие настройки в диалоговом окне в соотвествии с Вашими предпочтениями
+      и нажмите <guimenu>OK</guimenu>, чтобы сохранить изменения и закрыть это окно.
      </para>
     </step>
    </procedure>
   </sect2>
 
   <sect2 id="sec.kdequick.custom.kcontrol">
-   <title>Modifying System Settings</title>
+   <title>Изменение персональных настроек</title>
    <para>
-    The <guimenu>System Settings</guimenu> are the central place for users
+    <guimenu>Параметры системы</guimenu> – центральное место, где пользователь
     to change the overall appearance and behavior of many components of the
     KDE desktop. Start them from the <guimenu>Main Menu</guimenu> by
     selecting <menuchoice> <guimenu>Favorites</guimenu> <guimenu>System
