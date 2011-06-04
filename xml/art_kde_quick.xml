@@ -674,54 +674,55 @@
   <title>Применение эффектов рабочего стола</title>
 
   <para>
-   If your computer supports a 3D graphics card with Xgl, you can use
-   graphical effects like turning your desktop into a rotating 3D cube,
-   enabling translucent or transparent windows, and zooming in and out of
-   the desktop screen. You can also use other window effects such as
-   shadows, fading, and transformations. If you do not have a 3D graphics
-   card, some effects may be disabled or reduce the performance of your
-   system. If the performance of your system is too low, disable the effects
-   for your current session with <keycombo> <keycap function="alt"/>
+   Если Ваш компьютер оснащен видео картой поддерживающей ускорение 3D-графики и Xgl,
+   то Вы можете использовать такие графические эффекты как превращение рабочего стола
+   во вращаемый трехмерный куб, прозрачные элементы рабочего стола или прозрачные окна,
+   экранная лупа и так далее. Вы так же можете использовать другие эффекты как тени, 
+   затухание и колыхание окон. Если у Вас нет совместимой видео карты, некоторые
+   эффекты могут быть заблокированы или негативно сказаться на производительности
+   Вашей системы. Если производительность Вашего компьютера очень маленькая - отключите
+   композитные эффекты для Вашей текущей сессии с помощью <keycombo> <keycap function="alt"/>
    <keycap function="shift"/> <keycap>F12</keycap> </keycombo>.
   </para>
 
   <para>
-   To configure effects on your desktop, proceed as follows:
+   Чтобы настроить эффекты рабочего стола, проделайте следующее:
   </para>
 
   <procedure>
    <step>
     <para>
-     Start the <guimenu>System Settings</guimenu> as described in
+     Запустите <guimenu>Параметры системы</guimenu> как описано в
      <xref linkend="sec.kdequick.custom.kcontrol"/>.
     </para>
    </step>
    <step>
     <para>
-     Select <guimenu>Desktop Effects</guimenu> from the <guimenu>Workspace
-     Appearance and Behavior</guimenu> category and choose <guimenu>Enable
-     Desktop Effects</guimenu>. If your graphic card does not support 3D,
-     you will be notified.
+     Выберите <guimenu>Эффекты рабочего стола</guimenu> в категории <guimenu>Внешний
+     вид и поведение рабочего стола</guimenu> и отметьте <guimenu>Включить
+     графические эффекты</guimenu>. Если Ваша видео карта не поддерживает ускорение
+     3D графики, то Вы получите соответствующие уведомление.
     </para>
    </step>
    <step>
     <para>
-     Optionally, change some options below <guimenu>Common
-     Settings</guimenu>.
+     Дополнительно, можно изменить некоторые настройки в секции
+     <guimenu>Основные параметры</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     On the <guimenu>All Effects</guimenu> tab, select the effects you want
-     to activate. Click the information icon for a short explanation of the
-     respective effect. If an effect is activated, the wrench icon on the
-     right gives access to further configuration options like assigning
-     keyboard shortcuts to the effect.
+     На вкладке <guimenu>Эффекты</guimenu> выберите необходимые Вам эффекты.
+     Нажмите на значок с буквой <guimenu>i</guimenu>, чтобы получить краткое
+     описание для соответствующего эффекта. Если эффект активирован, то значок с
+     гаечным ключом предоставит доступ к таким настройкам как например, сочетания
+     клавиш.
     </para>
    </step>
    <step>
     <para>
-     Use <guimenu>Apply</guimenu> to enable the effects permanently.
+     Воспользуйтесь кнопкой <guimenu>Применить</guimenu>, чтобы немедленно
+     активировать выбранные эффекты.
     </para>
    </step>
   </procedure>
@@ -730,69 +731,71 @@
  subject to change, instead mentioned in the procedure above where they can be configured-->
  </sect1>
  <sect1 id="sec.kdequick.virtdesk">
-  <title>Using Virtual Desktops</title>
+  <title>Использование виртуальных рабочих столов</title>
 
   <para>
-   The desktop environment allows you to organize your programs and tasks on
-   several virtual desktops. If you often run a lot of programs
-   simultaneously, this minimizes the number of windows to arrange on your
-   screen. You might, for example, use one desktop for e-mailing and
-   calendaring and another for word processing and graphics applications.
+   Среда рабочего стола предоставляет возможность размещать Ваши программы и
+   задачи на нескольких виртуальных рабочих столах. Если Вы часто работаете с
+   множеством запущенных программ, то данная функция позволит сократить число
+   окон выводимых на экран. Вы могли бы, например, использовать один рабочий
+   стол для работы с электронной почтой и календарем, а другой для правки
+   текстом и обработки изображений.
   </para>
 
   <procedure id="proc.kdequick.virtdesk.move">
-   <title>Moving an Application to Another Virtual Desktop</title>
+   <title>Перемещение приложения на другой виртуальный рабочий стол</title>
    <para>
-    You can display a running application on one or all virtual desktops, or
-    move it to other desktops.
+    Вы можете отобразить запущенные приложения с текущего или со всех виртуальных
+    рабочих столов, или перемещать их на другие рабочие столы.
    </para>
    <step>
     <para>
-     Open the application.
+     Запустите любое приложение.
     </para>
    </step>
    <step>
     <para>
-     Right-click the title bar of the application.
+     Нажмите правой кнопкой мыши на заголовке окна.
     </para>
    </step>
    <step>
     <para>
-     Click <guimenu>To Desktop</guimenu>.
+     Нажмите <guimenu>На рабочий стол</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     Select the desktop on which to place the application.
+     Выберите рабочий стол на который нужно переместить приложение.
     </para>
    </step>
    <step>
     <para>
-     To switch to a certain desktop, click the desired desktop in the pager
-     in the panel. Switch to the next or previous desktop by placing the
-     mouse cursor on an empty patch on the desktop and move the mouse wheel.
+     Чтобы переключиться на другой рабочий стол выберите нужный в виджете
+     <guimenu>Переключение рабочих столов</guimenu>. Переключаться на следующий
+     или предыдущий рабочий стол можно колеса мыши, поместив курсор над пустым
+     пространством рабочего стола.
     </para>
    </step>
   </procedure>
 
   <procedure id="proc.kdequick.virtdesk.add">
-   <title>Configuring Virtual Desktops</title>
+   <title>Конфигурирование виртуальных рабочих столов</title>
    <para>
-    You can increase the number of virtual desktops, change the default
-    names, assign activities, configure effect animations or assign keyboard
-    shortcuts for switching virtual desktops.
+    Вы можете увеличить число виртуальных рабочих столов, изменить присвоенные
+    им по умолчанию названия, назначить комнаты, настроить эффекты анимации или
+    назначит сочетания клавиш для их переключения.
    </para>
    <step>
     <para>
-     To add additional desktops, right-click the pager in the panel and
-     select <guimenu>Add Virtual Desktop</guimenu>. A new desktop is shown
-     in the pager.
+     Чтобы добавить еще один рабочий стол нажмите правой кнопкой мыши на пейджере
+     на панели и выберите <guimenu>Добавить виртуальный рабочий стол</guimenu>.
+     Новый рабочий стол появится в этом виджете.
     </para>
    </step>
    <step>
     <para>
-     For any configuration options, right-click the pager and select
-     <guimenu>Pager Settings</guimenu>.
+     Для получения доступа к настройкам нажмите правой кнопкой мыши на пейджере и
+     выберите <guimenu>Настроить виджет "Переключение рабочих столов"</guimenu>.
     </para>
     <informalfigure>
      <mediaobject>
@@ -807,43 +810,43 @@
    </step>
    <step>
     <para>
-     Use the options on the <guimenu>General</guimenu> screen to configure
-     the appearance of the pager in the panel.
+     Используйте настройки в секции <guimenu>Параметры</guimenu> для задания
+     внешнего вида и поведения виджета.
     </para>
    </step>
    <step>
     <para>
-     Desktop names, keyboard shortcuts for switching desktops and the
-     switching type can be configured on the <guimenu>Virtual
-     Desktops</guimenu> screen.
+     Названия рабочих столов, сочетания клавиш и анимация переключения
+     между виртуальными рабочими столами могут быть настроены в
+     секции <guimenu>Рабочие столы</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     Set the options according to your wishes and click
-     <guimenu>OK</guimenu> to apply the changes and to close the
-     configuration dialog.
+     Установите настройки в соответствии с Вашими предпочтениями и нажмите
+     <guimenu>OK</guimenu>, чтобы применить сделанные изменения и закрыть
+     этот диалог.
     </para>
    </step>
   </procedure>
  </sect1>
  <sect1 id="sec.kdequick.dolphin">
-  <title>Using the File Manager</title>
+  <title>Работа с файловым менеджером</title>
 
   <para>
-   With KDE 4, Dolphin has replaced Konqueror as the default file manager.
-   Konqueror remains a Web browser (refer to
-   <xref linkend="sec.kdequick.browser"/>). Start Dolphin, from the Main
-   Menu by selecting <menuchoice> <guimenu>Favorites</guimenu> <guimenu>File
-   Manager</guimenu></menuchoice> or press <keycombo>
-   <keycap function="alt"/> <keycap>F2</keycap> </keycombo> and enter
+   В KDE 4, Dolphin заменил Konqueror в качестве программы по умолчанию для
+   работы с файлами. Konqueror остался веб-браузером (смотрите
+   <xref linkend="sec.kdequick.browser"/>). Чтобы запустить Dolphin выберите
+   в главном меню <menuchoice> <guimenu>Избранное</guimenu> <guimenu>Менеджер
+   файлов</guimenu></menuchoice> или нажмите <keycombo>
+   <keycap function="alt"/> <keycap>F2</keycap> </keycombo> и введите
    <command>dolphin</command>.
   </para>
 
   <sect2 id="sec.kdequick.dolphin.oview">
-   <title>Dolphin Main Window</title>
+   <title>Dolphin, основное окно</title>
    <para>
-    The Dolphin main window consists of the following elements:
+    Основное окно Dolphin состоит из следующих элементов:
    </para>
    <informalfigure>
     <mediaobject>
@@ -856,7 +859,7 @@
     </mediaobject>
    </informalfigure>
    <formalpara>
-    <title>Menu Bar:</title>
+    <title>Строка меню:</title>
     <para>
      The menu bar holds menu items for actions like copying, moving, or
      deleting files, changing views, starting additional tools, defining
