@@ -861,160 +861,161 @@
    <formalpara>
     <title>Строка меню:</title>
     <para>
-     The menu bar holds menu items for actions like copying, moving, or
-     deleting files, changing views, starting additional tools, defining
-     your settings, and getting help.
+     Строка меню содержит элементы для таких действий как: копирование,
+     перемещение и удаление файлов, изменение режима представления, запуск
+     дополнительных инструментов, различные настройки и получение помощи.
     </para>
    </formalpara>
    <formalpara>
-    <title>Toolbar:</title>
+    <title>Панель инструментов:</title>
     <para>
-     The toolbar provides quick access to frequently used functions that can
-     also be accessed via the menu. If you hover the mouse pointer over an
-     icon, a short description is displayed.
+     Панель инструментов обеспечивает быстрый доступ к часто используемым
+     функциям, которые также доступны через меню. Если Вы подведете курсор
+     мыши к значку, то увидите краткое описание во всплывающей подсказке.
     </para>
    </formalpara>
    <formalpara>
-    <title>Location Bar:</title>
+    <title>Строка адреса:</title>
     <para>
-     The location bar displays the path to the current directory. It is
-     available in two versions: one shows the path to the current directory
-     with icons for every parent folder in a <quote>bread crumb</quote>
-     view. Click any icon in the bread crumb view to change to that
-     directory. The second version of the location bar shows the path to the
-     current directory as a string of text you can edit.
+     Строка адреса отображает путь к текущему открытому каталогу. Она может
+     быть представлена в двух версиях: путь до текущего каталога отображается
+     значками для каждой встречающейся папки в виде <quote>хлебных крошек</quote>.
+     Нажмите на любой значок в строке адреса, чтобы перейти в этот каталог.
+     Вторая версия показывает показывает путь до текущего каталога в виде 
+     текстовой строки, которую Вы можете редактировать.
     </para>
    </formalpara>
    <formalpara>
-    <title>Panels:</title>
+    <title>Панели:</title>
     <para>
 <!-- ke, 2010-06-22: background on root dir (/), see bnc#555362) -->
-     By default, Dolphin shows the <guimenu>Places</guimenu> panel. It
-     allows quick access to some often-used places like your home directory,
-     the root directory of the file system (<filename>/</filename>), the
-     trash bin, and removable media. There are several other panels you can
-     add to the main window by clicking <menuchoice> <guimenu>View</guimenu>
-     <guimenu>Panels</guimenu> </menuchoice>.
+     По умолчанию, Dolphin отображает только панель <guimenu>Точки входа</guimenu>.
+     Она предоставляет быстрый доступ к часто используемым местам, как
+     например, Ваш домашний каталог, корневой каталог (<filename>/</filename>),
+     корзина и внешние носители. Есть и другие панели, которые Вы можете добавить
+     в основное окно нажав <menuchoice> <guimenu>Вид</guimenu>
+     <guimenu>Панели</guimenu> </menuchoice>.
     </para>
    </formalpara>
    <formalpara>
-    <title>Display Field (Working Space):</title>
+    <title>Область отображения (рабочее пространство):</title>
     <para>
-     The display field shows the contents of the selected directory or file.
-     By default, Dolphin displays the contents of your home directory on
-     start-up. By default, clicking a folder or file in Dolphin directly
-     starts an action: Dolphin loads the file into an application for
-     further processing or opens the folder.
+     В области отображения выводится содержимое выбранного каталога или файла.
+     По умолчанию, при запуске Dolphin отображает содержимое Вашего домашнего
+     каталога. Нажатие на папку или файл в Dolphin приведет к следующему:
+     он загрузит файл в приложение для дальнейшей обработки или откроет
+     отобразит содержимое этой папки.
     </para>
    </formalpara>
    <formalpara>
-    <title>Status Bar:</title>
+    <title>Строка состояния:</title>
     <para>
-     Shows the file type and size of the currently selected object and
-     allows you to enlarge or diminish the size of the icons or entries
-     shown in the display field.
+     Отображает тип и размер выделенного объекта, позволяет увеличить или
+     уменьшить размер значков или записей, отображаемых в рабочем пространстве.
     </para>
    </formalpara>
   </sect2>
 
   <sect2 id="sec.kdequick.dolphin.files">
-   <title>Managing Files and Folders with Dolphin</title>
+   <title>Управление файлами и папками в Dolphin</title>
    <para>
-    To perform actions like copying, moving, creating or deleting files, you
-    need appropriate permissions to the folders and files involved in your
-    action.
+    Чтобы выполнить такие действия как копирование, перемещение, создание или
+    удаление файлов Вы должны обладать соответствующими правами доступа для
+    этих каталогов и файлов.
    </para>
    <procedure>
     <para>
-     To copy, move, or delete a file or folder, proceed as follows:
+     Для копирования, перемещения или удаления файла или каталога, проделайте
+     следующее:
     </para>
     <step>
      <para>
-      In order to select one or multiple files and folders in Dolphin, move
-      your mouse pointer over the file or folder but do not click. A green
-      cross appears on the upper-left edge. If you click it, the object is
-      selected. To deselect again, click the red minus icon that appears if
-      the object is currently selected.
+      Чтобы выбрать в Dolphin один или несколько файлов или каталогов 
+      переместите указатель мыши к значку, но не нажимайте на него. Появится
+      зеленый значок плюса в верхнем левом углу. Если Вы нажмете на него, то
+      этот элемент будет выделен. Чтобы снять выделение нажмите на красный
+      значок минуса наведя курсор на выделенный объект.
      </para>
      <para>
-      Alternatively, press <keycap function="control"></keycap> and click
-      the objects you want to select or deselect.
+      Другим способом можно выделить или снять выделение у нужных объектов
+      зажав <keycap function="control"></keycap> при выделении элементов мышью.
      </para>
     </step>
     <step id="step.dophin.cut">
      <para>
-      Right-click and select <guimenu>Copy</guimenu> or <guimenu>Cut
-      </guimenu> from the context menu.
+      Нажмите правой кнопкой мыши и выберите <guimenu>Копировать</guimenu> или
+      <guimenu>Вырезать</guimenu> в появившемся контекстном меню.
      </para>
     </step>
     <step>
      <para>
-      Navigate to the destination folder in which to insert the object.
+      Перейдите в в нужный каталог и вставьте туда выбранные элементы.
      </para>
     </step>
     <step>
      <para>
-      To create a new folder at the current location, select <menuchoice>
-      <guimenu>File</guimenu> <guimenu>Create New</guimenu>
-      <guimenu>Folder</guimenu> </menuchoice> or press <keycap>F10</keycap>.
-      Enter a folder name in the new window and press
+      Чтобы создать новую папку в текущем каталоге, выберите <menuchoice>
+      <guimenu>Файл</guimenu> <guimenu>Создать</guimenu>
+      <guimenu>Папку</guimenu> </menuchoice> или нажмите <keycap>F10</keycap>.
+      Укажите имя для нового каталога в появившемся окне и нажмите
       <keycap function="enter"/>.
      </para>
     </step>
     <step>
      <para>
-      To insert the object you copied or cut in
-      <xref linkend="step.dophin.cut"/>, right-click the destination folder
-      in the main display field and select <guimenu>Paste</guimenu>. The
-      object is copied or moved there.
+      Чтобы вставить скопированные или вырезанные объекты на шаге
+      <xref linkend="step.dophin.cut"/>, нажмите правой кнопкой мыши находясь
+      в каталоге, в который Вы хотите вставить объекты и выберите
+      <guimenu>Вставить</guimenu>. Выбранные объекты будут скопированы или
+      перемещены в эту папку.
      </para>
     </step>
     <step>
      <para>
-      To delete a file or folder, right-click the object in the main display
-      field and select <guimenu>Move to Trash</guimenu> from the context
-      menu. The object is moved to the trash bin. From there, you can
-      restore it if necessary or delete the object permanently.
+      Чтобы удалить файл или папку, нажмите правой кнопкой мыши на удаляемом
+      объекте и выберите <guimenu>Удалить в корзину</guimenu> в появившемся
+      контекстном меню. Выбранный объект будет перемещен в корзину. В ней Вы
+      сможете восстановить удаленный по ошибке объект или окончательно удалить
+      его без возможности восстановления.
      </para>
     </step>
    </procedure>
    <para>
-    To quickly filter for certain filenames in the current directory, press
-    <keycombo> <keycap function="control"/> <keycap>I</keycap> </keycombo>
+    Чтобы быстро отфильтровать файлы в текущем каталоге по имени, нажмите
+    <keycombo> <keycap function="control"/> <keycap>I</keycap> </keycombo> –
 <!-- or select <menuchoice>
      <guimenu>Tools</guimenu>
      <guimenu>Show Filter Bar</guimenu>
      </menuchoice>-->
-    to add the <guimenu>Filter</guimenu> input field to the bottom of the
-    Dolphin main window. Type any part of the filename you are searching for
-    to see all files in the current directory containing the search string.
-    For more detailed and advanced searches, press <keycombo>
-    <keycap function="control"/> <keycap>F</keycap> </keycombo> to use the
-    desktop search. For more information, refer to
-    <xref linkend="sec.kdequick.find.nepomuk" />.
+    появится поле ввода <guimenu>Фильтр</guimenu> в низу основного окна
+    Dolphin. Введя любую часть имени файла, который Вы ищете, чтобы отобразить
+    все файлы в текущем каталоге, в имени которых присутствует заданная строка.
+    Для более детального и расширенного поиска, нажмите <keycombo>
+    <keycap function="control"/> <keycap>F</keycap> </keycombo>, чтобы
+    запустить утилиту KFind. Для получения дополнительной информации,
+    обратитесь к <xref linkend="sec.kdequick.find.nepomuk" />.
    </para>
   </sect2>
 
   <sect2 id="sec.kdequick.dolphin.conf">
-   <title>Configuring Dolphin</title>
+   <title>Настройка Dolphin</title>
    <para>
-    Dolphin offers many options for adjusting the view and the overall
-    settings according to your preferences.
+    Dolphin предлагает много опций для изменения представления данных о файлах
+    и всех других параметров в соответствии с Вашими предпочтениям.
    </para>
    <procedure>
-    <title>Changing the View</title>
+    <title>Смена представления</title>
     <step>
      <para>
-      To switch from the bread crumb view to the editable version of the
-      location bar, press <keycap>F6</keycap>. Enter a path to a directory
-      by typing it in. After typing an address, press
-      <keycap function="enter"/> or click on the background of the bread
-      crumb view.
+      Чтобы переключить адресную строку из вида хлебных крошек к редактируемой
+      версии, нажмите <keycap>F6</keycap> или нажмите на фон хлебных крошек.
+      Введите пусть до нужного каталога. После ввода адреса нажмите
+      <keycap function="enter"/>.
      </para>
      <para>
-      To delete the contents of the location bar click the black
-      <literal>X</literal> symbol on the left. To switch back to bread crumb
-      view, press <keycombo> <keycap function="control"/> <keycap>L</keycap>
+      Чтобы очистить содержимое адресной строки нажмите на черный символ
+      <literal>X</literal> справа. Чтобы переключиться обратно к виду хлебных
+      крошек нажмите <keycombo> <keycap function="control"/> <keycap>L</keycap>
       </keycombo>.
      </para>
      <informalfigure>
