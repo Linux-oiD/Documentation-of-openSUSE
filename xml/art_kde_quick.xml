@@ -1235,11 +1235,11 @@
     </step>
    </procedure>
    <para>
-    Konqueror offers predefined Web shortcuts for quickly searching the Web.
-    For example, to search the Web for <literal>yast</literal> using the
-    Google search engine, just type <literal>gg: yast</literal> into the
-    Konqueror location bar (or the <guimenu>Run Command</guimenu> dialog)
-    and press <keycap function="enter"/>.
+    Konqueror предлагает пользователям сокращения для быстро поиска в Интернет.
+    Например, чтобы запустить поиск для слова <literal>yast</literal> используя
+    Google, просто введите <literal>gg: yast</literal> в адресной строке
+    браузера (или диалоге <guimenu>Выполнить команду</guimenu>) и нажмите
+    <keycap function="enter"/>.
    </para>
 <!--
    <informalfigure>
@@ -1254,42 +1254,44 @@
    </informalfigure>
 -->
    <para>
-    You can also define individual Web shortcuts in Konqueror and Firefox as
-    described in <xref linkend="sec.kdequick.browser.conf"/>.
+    Вы можете задать собственные сокращения в Konqueror и Firefox как
+    описано в <xref linkend="sec.kdequick.browser.conf"/>.
    </para>
   </sect2>
 
   <sect2 id="sec.kdequick.browser.download">
-   <title>Downloading Files from the Web</title>
+   <title>Загрузка файлов из сети</title>
    <para>
-    If you download a file with Firefox or Konqueror, a dialog window
-    appears asking you if you want to save the file or to open it with a
-    specific application. Also choose if to remember the action you selected
-    for this type of file. By default, Firefox saves the file to the folder
-    configured in the <guimenu>Firefox Preferences</guimenu> and shows your
-    finished downloads in the <guimenu>Downloads</guimenu> dialog.
+    Если Вы попробуете загрузить файл в Firefox или Konqueror, то
+    увидите диалоговое окно запрашивающее у Вас разрешения на
+    сохранение или открытие файла в программе связанной с этим
+    типом файлов. Так же можно указать применять выбранное данное
+    действие ко всем файлам данного типа. По умолчанию, Firefox 
+    сохраняет файлы в папку заданную в <guimenu>Настройках Firefox</guimenu>
+    и показывает завершенные загрузки в диалоговом окне
+    <guimenu>Загрузки</guimenu>.
    </para>
    <para>
-    To open the downloaded files directly from there, right-click and select
-    <guimenu>Open</guimenu>. To clean up the history of downloaded files,
-    click <guimenu>Clear List</guimenu>.
+    Чтобы открыть загруженные файлы, нажмите правой кнопкой мыши и выберите
+    <guimenu>Открыть</guimenu>. Чтобы очистить историю загрузок, нажмите
+    правой кнопкой мышки и выберите <guimenu>Очистить список</guimenu>.
    </para>
   </sect2>
 
   <sect2 id="sec.kdequick.browser.conf">
-   <title>Configuring Preferences</title>
+   <title>Задание персональных настроек</title>
    <para>
-    Adjust preferences in Konqueror or Firefox. In Konqueror, access the
-    configuration dialog with <menuchoice> <guimenu>Settings</guimenu>
-    <guimenu>Configure Konqueror</guimenu> </menuchoice>. To change the
-    behavior of Konqueror as Web browser, select one of the <guimenu>Web
-    Browsing</guimenu> sub categories in the left sidebar to show the
-    options for the relevant category. For example, you can
-    <quote>hide</quote> Konqueror's real identity and make Konqueror
-    identify as a different browser (for example, Internet Explorer*) for
-    certain Web sites you visit. To do so, select <guimenu>Browser
-    Identification</guimenu>, and click <guimenu>New</guimenu> to add a new,
-    site-specific identification.
+    Установите желаемое поведение Konqueror или Firefox. В Konqueror, получить
+    доступ к диалогу настроек можно в <menuchoice> <guimenu>Настройка</guimenu>
+    <guimenu>Настроить Konqueror...</guimenu> </menuchoice>. Чтобы изменить
+    поведение Konqueror как Веб-браузера, выберите категорию
+    <guimenu>Веб-браузер</guimenu> в левой панели, чтобы отобразить опции для
+    соответствующей категории. Например, Вы можете <quote>спрятать</quote>
+    реальный идентификатор Konqueror и задать для него значение для другого
+    браузера (например, Internet Explorer*) определенных сайтов. Для этого
+    выберите <guimenu>Версия браузера</guimenu> и нажмите
+    <guimenu>Добавить</guimenu>, чтобы добавить идентификацию для нужного
+    домена.
    </para>
    <informalfigure>
     <mediaobject>
@@ -1302,22 +1304,23 @@
     </mediaobject>
    </informalfigure>
    <para>
-    You might also want to configure the Web shortcuts you can use with
-    Konqueror (and the <guimenu>Run Command</guimenu> dialog). In the
-    Konqueror configuration dialog, click <guimenu>Web Shortcuts</guimenu>
-    to see which shortcuts are already defined. Click <guimenu>New</guimenu>
-    to define new shortcuts. Leave the Konqueror configuration dialog with
-    <guimenu>OK</guimenu> to apply your changes.
+    Вы можете задать сетевые сокращения, которые используете в
+    Konqueror (или в диалоге <guimenu>Выполнить команду</guimenu>). В
+    диалоге настройки Konqueror нажмите <guimenu>Сокращения</guimenu>,
+    чтобы увидеть какие сокращения уже определены. Нажмите
+    <guimenu>Добавить</guimenu> , чтобы задать новое сокращение. Закройте
+    диалог настройки Konqueror нажатием на <guimenu>OK</guimenu>, чтобы
+    сохранить изменения.
    </para>
    <para>
-    In Firefox, select <menuchoice> <guimenu>Edit</guimenu>
-    <guimenu>Preferences</guimenu> </menuchoice> to open the
-    <guimenu>Firefox Preferences</guimenu>. Click the icons in the upper
-    display field to access the options for the relevant category. For
-    example, change the default download folder on the
-    <guimenu>General</guimenu> page, or adjust the pop-up blocking feature
-    on the <guimenu>Content</guimenu> page. Click <guimenu>OK</guimenu> to
-    apply the changes.
+    В Firefox, выберите <menuchoice> <guimenu>Правка</guimenu>
+    <guimenu>Настройки</guimenu> </menuchoice>, чтобы открыть
+    <guimenu>Настройки Firefox</guimenu>. Нажмите на значок в верхней части
+    экрана, чтобы получить доступ к настройкам в соответствующей нужной
+    категории. Например, измените папку загрузок по умолчанию на вкладке
+    <guimenu>Основные</guimenu> или скорректируйте правила блокирования
+    всплывающих окон на странице <guimenu>Содержимое</guimenu>. Нажмите
+    <guimenu>Закрыть</guimenu>, чтобы сохранить сделанные изменения.
    </para>
    <para>
     To configure a Web shortcut for a search in Firefox, browse to the Web
@@ -1329,15 +1332,15 @@
   </sect2>
  </sect1>
  <sect1 id="sec.kdequick.kwallet">
-  <title>Managing Passwords</title>
+  <title>Управление паролями</title>
 
   <para>
-   When you enter a password in a KDE application for the first time (in
-   KMail or Konqueror, for example), you are asked if you want to store the
-   password. If you click <guimenu>Yes</guimenu>, KWallet wizard starts by
-   default. KWallet is a password management tool that can collect all
-   passwords and store them in one or more encrypted files (called
-   <literal>wallets</literal>).
+   Когда Вы впервые вводите пароль в приложении KDE (например, в KMail
+   или Konqueror), Вам будет задан предложено сохранить пароль в
+   зашифрованном бумажнике. Если Вы нажмете <guimenu>Да</guimenu>, то
+   по умолчанию запустится мастер KWallet. KWallet – это приложение
+   для управления паролями, в котором Вы можете хранить все свои пароли
+   в надежно зашифрованных файлах (<literal>бумажниках</literal>).
   </para>
 
   <informalfigure>
