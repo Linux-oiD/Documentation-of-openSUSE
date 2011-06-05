@@ -1031,10 +1031,10 @@
     </step>
     <step>
      <para>
-      To change the view of the currently displayed folder, either click
-      <guimenu>Icons</guimenu>, <guimenu>Details</guimenu>, or
-      <guimenu>Columns</guimenu> in the toolbar. Dolphin remembers the
-      selected view for each folder.
+      Чтобы изменить представление текущей папки нажмите на панели
+      инструментов на <guimenu>Значки</guimenu>,
+      <guimenu>Таблица</guimenu> или <guimenu>Столбцы</guimenu>.
+      Dolphin запомнит выбранный вид для текущей папки.
 <!--Alternatively, press <keycombo>
        <keycap function="control"/>
        <keycap>1</keycap>
@@ -1045,11 +1045,11 @@
        <keycap function="control"/>
        <keycap>3</keycap>
       </keycombo> to switch between the view modes.-->
-      Click <guimenu>Split</guimenu> or press <keycap>F3</keycap> to view
-      the contents of the current folder in two separate columns. Now you
-      can navigate to a different directory in each column and easily drag
-      or drop objects or compare the contents of directories. Press
-      <keycap>F3</keycap> again to leave the split view.
+      Нажмите <guimenu>Две панели</guimenu> или <keycap>F3</keycap>, чтобы
+      представить содержимое текущей папки в двух разделенных столбцах. Теперь
+      Вы можете перемещаться по каталогам в каждом столбце и легко перетаскивать
+      объекты из одно столбца в другой или сравнивать содержимое каталогов.
+      Нажмите еще раз <keycap>F3</keycap>, чтобы убрать дополнительный столбец.
      </para>
      <informalfigure>
       <mediaobject>
@@ -1064,8 +1064,8 @@
     </step>
     <step>
      <para>
-      To make Dolphin also show hidden files, select <menuchoice>
-      <guimenu>View</guimenu> <guimenu>Show Hidden Files</guimenu>
+      Чтобы указать Dolphin также отображать и скрытые файлы, выберите
+      <menuchoice> <guimenu>Вид</guimenu> <guimenu>Показывать скрытые файлы</guimenu>
       </menuchoice>.
 <!-- or press <keycombo> <keycap function="alt"/>
        <keycap>.</keycap> </keycombo>-->
@@ -1073,10 +1073,10 @@
     </step>
     <step>
      <para>
-      To view more details about the files (like access permissions or
-      ownership) in the working space, select <menuchoice>
-      <guimenu>View</guimenu> <guimenu>Additional Information</guimenu>
-      </menuchoice> and enable the corresponding options.
+      Чтобы выводить больше информации о файлах (как права доступа или
+      владельца) в рабочем пространстве окна, выберите <menuchoice>
+      <guimenu>Вид</guimenu> <guimenu>Дополнительные сведения</guimenu>
+      </menuchoice> и отметьте интересующие Вас опции.
      </para>
 <!--<informalfigure>
       <mediaobject>
@@ -1092,66 +1092,66 @@
     </step>
     <step>
      <para>
-      To add further directories to the <guimenu>Places</guimenu> panel,
-      drag a folder from the working space to the <guimenu>Places</guimenu>
-      panel and drop it there. Right-click and use the context menu to hide,
-      edit or remove entries from <guimenu>Places</guimenu>.
+      Чтобы добавить нужные каталоги на панель <guimenu>Точки входа</guimenu>,
+      перетащите папку из рабочей области на эту панель. Нажмите правой кнопкой
+      мыши и воспользуйтесь контекстным меню, чтобы скрыть, отредактировать или
+      удалить элементы панели <guimenu>Точки входа</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      To add more panels to the main window, select <menuchoice>
-      <guimenu>View</guimenu> <guimenu>Panels</guimenu> </menuchoice> and
-      select additional panels such as <guimenu>Folders</guimenu>, or
-      <guimenu>Terminal</guimenu>.
+      Чтобы добавить другие панели в главном окне, выберите <menuchoice>
+      <guimenu>Вид</guimenu> <guimenu>Панели</guimenu> </menuchoice> и
+      выберите такие дополнительные панели как <guimenu>Сведения</guimenu>,
+      <guimenu>Папки</guimenu> или <guimenu>Терминал</guimenu>.
      </para>
     </step>
    </procedure>
    <para>
-    Detach the panels from the main Dolphin window by clicking the left icon
-    at the top of each panel. Click the panel's title bar and drag it to
-    another place on the desktop. To reintegrate the panel into the Dolphin
-    window, click the left symbol at the top of the panel again.
+    Открепить панели от главного окна Dolphin можно нажав на левый значок в
+    заголовке каждой панели. Нажмите на заголовок панели и потяните ее в любое
+    другое место на рабочем столе. Чтобы вернуть панель обратно в окно Dolphin,
+    снова нажмите на левый символ в заголовке панели.
    </para>
    <procedure>
-    <title>Changing Dolphin's Overall Behavior</title>
+    <title>Полное изменение настроек Dolphin</title>
     <para>
-     If you want to change Dolphin's overall behavior or view, select
-     <menuchoice> <guimenu>Settings</guimenu> <guimenu>Configure
-     Dolphin</guimenu> </menuchoice> and explore the options offered in the
-     Dolphin configuration dialog.
+     Если Вы хотите полностью изменить поведение Dolphin или его внешний вид,
+     выберите <menuchoice> <guimenu>Настройка</guimenu>
+     <guimenu>Настроить Dolphin...</guimenu> </menuchoice> и изучите опции,
+     предлагаемые в диалоге настройки Dolphin.
     </para>
     <step>
      <para>
-      To use the same view mode for all folders, click
-      <guimenu>General</guimenu> in the left sidebar and activate
-      <guimenu>Use Common View Properties for All Folders</guimenu>. Click
-      <guimenu>View Modes</guimenu> in the left sidebar and adjust the
-      options for the individual view modes. Click <guimenu>Apply</guimenu>
-      to save the changes.
+      Чтобы использовать один режим представления для всех папок, нажмите
+      <guimenu>Главное</guimenu> в левом столбце. Выберите <guimenu>Одинаковые
+      для всех папок</guimenu> на вкладке <guimenu>Представление</guimenu>.
+      Измените опции режимов представления согласно вашим предпочтениям на
+      других вкладках и нажмите <guimenu>Применить</guimenu>, чтобы сохранить
+      изменения.
      </para>
     </step>
     <step>
      <para>
-      If you want Dolphin to show a different directory on start-up, or if
-      you want to permanently use the editable location bar instead of the
-      bread crumb view, click <guimenu>Startup</guimenu> in the left sidebar
-      and change the relevant options.
+      Если Вы хотите, чтобы Dolphin отображал другой каталог при запуске или,
+      если Вы хотите всегда использовать строку адреса в текстовом формате
+      вместо хлебных крошек, то измените соответствующие опции выбрав слева
+      <guimenu>Начальное представление</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      To configure which entries and services to show in the Dolphin context
-      menu, click <guimenu>General</guimenu>. On the <guimenu>Context
-      Menu</guimenu> tab, activate the entries to show. Click
-      <guimenu>Services</guimenu> in the left sidebar and activate or
-      deactivate the respective services to appear in the context menu.
+      Чтобы настроить пункты и действия отображаемые в контекстном меню Dolphin
+      нажмите <guimenu>Главное</guimenu>. На вкладке <guimenu>Контекстное
+      меню</guimenu> активируйте необходимые пункты. Нажмите
+      <guimenu>Действия</guimenu> в левой панели и включите или отключите
+      соответствующие действия для контекстного меню.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu>OK</guimenu> to save the changes and to close the
-      Dolphin configuration dialog.
+      Нажмите <guimenu>OK</guimenu>, чтобы сохранить изменения и закрыть
+      диалог настройки Dolphin.
      </para>
     </step>
    </procedure>
@@ -1159,20 +1159,22 @@
  </sect1>
 <!-- fs 2011-01-18: Go on witth 11.4 review from here -->
  <sect1 id="sec.kdequick.browser">
-  <title>Browsing the Internet</title>
+  <title>Путешествие в сети Интернет</title>
 
   <para>
-   Apart from Konqueror (KDE's default Web browser), &productname; also
-   includes the default Firefox Web browser. To start Konqueror or Firefox,
-   press <keycombo> <keycap function="alt"/> <keycap>F2</keycap> </keycombo>
-   and enter <command>konqueror</command> or <command>firefox</command>.
+   Кроме Konqueror (веб-браузер по умолчанию в KDE), &productname; также
+   включает веб-брайзер Firefox. Чтобы запустить Konqueror или Firefox
+   нажмите <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+   </keycombo> и введите, соответственно, <command>konqueror</command>
+   или <command>firefox</command>.
   </para>
 
   <para>
-   With features like tabbed browsing, pop-up window blocking, and download
-   and image management, both browsers combine the latest Web technologies.
-   Their easy access to different search engines helps you find the
-   information you need.
+   В купе с такими функциями как поддержка вкладок, блокирование
+   всплывающей рекламы и менеджер загрузок, оба браузера сочетают
+   в себе последние достижения в веб-технологиях. Их свободный
+   подход к использованию поисковых механизмов помогает Вам находить
+   информацию, в которой Вы нуждаетесь.
   </para>
 
   <informalfigure>
@@ -1187,50 +1189,48 @@
   </informalfigure>
 
   <para>
-   Enter a URL in the location bar to start browsing. To open a new, empty
-   tab, press <keycombo> <keycap function="control"/> <keycap>T</keycap>
-   </keycombo>. To open a link in a new tab, click the link with your middle
-   mouse button. Right-click the tab itself to access more tab options. You
-   can create a new tab, reload one or all existing tabs, or close them. You
-   can also change the sequence of the tabs by dragging and dropping them to
-   the desired position.
+   Введите URL в адресной строке, чтобы перейти по этой ссылке. Чтобы
+   открыть новую пустую вкладку нажмите <keycombo> <keycap function="control"/>
+   <keycap>T</keycap> </keycombo>. Чтобы открыть ссылку в новой вкладке нажмите
+   на ней средней кнопкой. Нажмите правой кнопкой мыши на вкладке, чтобы
+   обратиться к большому количеству опций доступных для вкладок. Вы можете
+   создать новую вкладку, перезагрузить или закрыть одну или все открытые вкладки.
+   Вы можете также изменить расположение вкладок перетаскивая их в нужное положение.
   </para>
 
   <sect2 id="sec.kdequick.browser.search">
-   <title>Finding Information</title>
+   <title>Поиск информации</title>
    <para>
-    Both browsers offer different kinds of search options: you can find
-    information on the Web or you can search the current Web page for
-    keywords.
+    Оба браузера предлагают различные параметры поиска: Вы можете искать
+    информацию в Интернет или по ключевому слову в тексте открытой страницы.
    </para>
 <?dbfo-need height="20em"?>
    <procedure>
-    <title>Searching the Web</title>
+    <title>Поиск в Интернет</title>
     <step>
      <para>
-      To start a search on the Web, click the left icon in the search bar
-      (located next to the location bar) to open a list of search engines.
+      Чтобы запустить поиск в Интернет нажмите на значок в левой части поисковой
+      строки, для открытия списка доступных поисковых ресурсов.
      </para>
     </step>
     <step>
      <para>
-      Select the desired engine and type your search keywords into the input
-      field.
+      Выберите желаемый поисковый ресурс и введите поисковый запрос в текстовое поле.
      </para>
     </step>
     <step>
      <para>
-      Press <keycap function="enter"/> to start the search.
+      Нажмите <keycap function="enter"/>, чтобы запустить поиск.
      </para>
     </step>
     <step>
      <para>
-      To search the current Web page with Firefox or Konqueror, press
-      <keycombo> <keycap function="control"/> <keycap>F</keycap> </keycombo>
-      to open a find bar at the bottom of the window. Enter your search
-      keyword there and use the buttons beneath the bar to search in
-      different directions or to configure search options such as
-      <guimenu>Match Case</guimenu>.
+      Чтобы найти искомое слово на открой странице в Firefox или Konqueror
+      нажмите <keycombo> <keycap function="control"/> <keycap>F</keycap>
+      </keycombo>, чтобы открыть панель поиска в нижней части окна. Введите
+      здесь слово которое необходимо найти и используйте кнопки на панели,
+      чтобы искать в разных направлениях или установить настройки поиска
+      как, например, <guimenu>С учетом регистра</guimenu>.
      </para>
     </step>
    </procedure>
