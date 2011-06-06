@@ -10,7 +10,7 @@
   %entities;
 ]>
 <?provo dirname="oofficequick/"?>
-<article lang="en" id="art.oofficequick">
+<article lang="ru" id="art.oofficequick">
  <title>&oofficequick;</title>
  <subtitle><productname>&productname; &productnumber;</productname>
  </subtitle>
@@ -19,12 +19,7 @@
  </articleinfo>
  <abstract>
   <para>
-   &ooo; is a powerful open-source office suite that provides tools for all
-   types of office tasks such as writing texts, working with spreadsheets,
-   creating graphics and presentations, or designing scientific formulas.
-   With &ooo;, you can use the same data across different computing
-   platforms. You can also open and edit files in other formats, including
-   Microsoft Office, then save them back to this format.
+   &ooo; - это мощный офисный пакет с открытым исходным кодом, представляющий инструменты для всех типов офисных задач, таких как написание текстов, работа с таблицами, создание графиков, научных формул и презентаций. С &ooo;, вы можете использовать свои данные на разных компьютерных платформах. Вы также можете открывать и редактировать файлы в других форматах, включая форматы  Microsoft Office, и затем сохранять их в выбранном формате.
   </para>
  </abstract>
 <!-- toba 2011-01-20: Novell Edition no longer exists, features are upstream
@@ -107,44 +102,44 @@
  </sect1>
  -->
  <sect1 id="sec.oofficequick.compatible">
-  <title>Compatibility</title>
+  <title>Совместимость</title>
 
   <para>
-   &ooo; can work with documents, spreadsheets, presentations, and databases
-   in many other formats, including Microsoft Office. They can be seamlessly
-   opened like other files and saved back to the original format. Though
-   some work has already been invested in interoperability, occasionally
-   there are still formatting issues. If you have problems with your
-   documents, consider opening them in the original application and resaving
-   them in an open format such as RTF for text documents. In case of
-   migration problems with spreadsheets however, it is advisable to resave
-   them as Excel files and use this as intermediate format (with CSV format
-   you would lose all cell formatting and CSV sometimes leads to incorrect
-   cell type detection for spreadsheets).
+   &ooo; может работать с текстовыми документами, таблицами, презентациями и базами данных
+   во многих разных форматах, включая форматы Microsoft Office. Они могут быть легко
+   открыты как другие файлы, а также сохранены в исходном формате. Хотя такие
+   файлы уже можно использовать в совместной работе, тем не менее, 
+   иногда возникают сложности с форматированием. Если проявилось нарушение форматирования
+   при открытии документов, необходимо открыть их в оригинальном приложении и пересохранить
+   их в открытом формате для текстовых документов,таком как RTF, например. В случае проблем с 
+   отображением табличных файлов, рекомендуется пересохранить их
+   как файлы Excel и использовать его как промежуточный формат (с форматом CSV 
+   возможна утрата форматирования клеток в таблице и CSV иногда приводит к некорректному
+   распознаванию типов ячеек в табличных файлах).
   </para>
  </sect1>
  <sect1 id="sec.oofficequick.modules">
-  <title>&ooo; Modules</title>
+  <title>Приложения &ooo; </title>
 
   <para>
-   &ooo; consists of several application modules (subprograms), which are
-   designed to interact with each other. All modules feature the same
-   graphical user interface and similar functionality.
+   &ooo; содержит несколько приложений (субпрограмм), спроектированных
+   для взаимодействия друг с другом. Все приложения имеют схожий графический
+   интерфейс пользователя и аналогичные выполняемые функции.
   </para>
 
   <table id="tab.oofficequick.oview.modules">
-   <title>The &ooo; Modules</title>
+   <title>Приложения &ooo;</title>
    <tgroup cols="2">
     <thead>
      <row>
       <entry>
        <para>
-        Module
+        Приложение
        </para>
       </entry>
       <entry>
        <para>
-        Usage
+        Использование
        </para>
       </entry>
      </row>
@@ -158,7 +153,7 @@
       </entry>
       <entry>
        <para>
-        Text document module
+        Текстовый процессор
        </para>
       </entry>
      </row>
@@ -170,7 +165,7 @@
       </entry>
       <entry>
        <para>
-        Spreadsheet module
+        Электронная таблица
        </para>
       </entry>
      </row>
@@ -182,7 +177,7 @@
       </entry>
       <entry>
        <para>
-        Presentation module
+        Презентация
        </para>
       </entry>
      </row>
@@ -194,7 +189,7 @@
       </entry>
       <entry>
        <para>
-        Database module
+        База данных
        </para>
       </entry>
      </row>
@@ -206,7 +201,7 @@
       </entry>
       <entry>
        <para>
-        Vector graphics module
+        Рисование
        </para>
       </entry>
      </row>
@@ -218,7 +213,7 @@
       </entry>
       <entry>
        <para>
-        Mathematical equation module
+        Модуль математических формул
        </para>
       </entry>
      </row>
@@ -227,68 +222,68 @@
   </table>
  </sect1>
  <sect1 id="sec.oofficequick.whatsnew">
-  <title>What is New in &ooo;</title>
+  <title>Что нового в &ooo;</title>
 
   <para>
-   A number of new improvements common to all &ooo; modules were introduced
-   since the last &productname; release. Here are the most notable ones:
+   Множество улучшений во всех приложениях &ooo; были введены
+   со времени последнего выпуска &productname;. Вот некоторые особо примечательные:
   </para>
 
   <variablelist>
    <varlistentry>
-    <term>Common Search Toolbar</term>
+    <term>Общее меню поиска</term>
     <listitem>
      <para>
-      A unified search toolbar is now present in each &ooo; module to ease
-      searching for a text string within open documents. You can toggle the
-      toolbar with <menuchoice><guimenu>View</guimenu>
-      <guimenu>Toolbars</guimenu> <guimenu>Find</guimenu> </menuchoice>.
+      Единое меню поиска теперь представлено в каждом приложении &ooo;  для легкого
+      поиска текстовых связок между открытыми документами. Поиск можно активировать,  
+      перейдя в меню <menuchoice><guimenu>Вид</guimenu>
+      <guimenu>Панели инструментов</guimenu> <guimenu>Найти</guimenu> </menuchoice>.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Online Help</term>
+    <term> Помощь в Интернете</term>
     <listitem>
      <para>
-      If no package with help information
-      (<literal>libreoffice-hell-*</literal>) is installed, &ooo; tries to
-      view the relevant help page online in a Web browser.
+      Если ни один файл справки
+      (<literal>libreoffice-help-*</literal>) не установлен, &ooo; пытается
+      показать соответствующую страницу справки в Интернете с помощью Веб-браузера.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>New <guimenu>Print</guimenu> Dialog</term>
+    <term>Новый <guimenu>Диалог печати</guimenu></term>
     <listitem>
      <para>
-      The <guimenu>Print</guimenu> dialog has been reworked to include
-      useful features, such as simple page preview and pages per sheet
-      option, in one place.
+       <guimenu>Диалог печати</guimenu> был переработан с целью объединения в одном месте таких
+      полезных функций, как простой предварительный просмотр страницы и выбор количества листов
+      на странице.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>New <guimenu>Thesaurus</guimenu> Dialog</term>
+    <term>Новый <guimenu>Диалог Thesaurus</guimenu></term>
     <listitem>
      <para>
-      The new <guimenu>Thesaurus</guimenu> dialog improved in usability so
-      that it is now easier to find similar or related terms to make the
-      documents language more vivid.
+      Новый <guimenu>Диалог Thesaurus</guimenu> был улучшен
+      и теперь легче подобрать аналогичные или соответствующие термины для придания 
+      документам более отчетливого вида.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Alpha Channel Import for TIFF Images</term>
+    <term>Импорт alpha channel информации для TIFF имиджей</term>
     <listitem>
      <para>
-      &ooo; modules can now import RGBA TIFF images with their alpha channel
-      information.
+      Приложения &ooo; теперь могут импортировать имиджи RGBA TIFF вместе с их alpha channel
+      информацией.
      </para>
     </listitem>
    </varlistentry>
   </variablelist>
  </sect1>
  <sect1 id="sec.oofficequick.start">
-  <title>Starting &ooo;</title>
+  <title>Запуск &ooo;</title>
 
   <informalfigure pgwide="0">
    <mediaobject>
@@ -302,79 +297,78 @@
   </informalfigure>
 
   <para>
-   To start the &ooo; suite, press <keycombo> <keycap function="alt"/>
-   <keycap>F2</keycap> </keycombo>, type <command>ooffice</command> and
-   press <keycap>Enter</keycap>. In the welcome dialog, select the module
-   you want to open. If an &ooo; application is open, you can start any of
-   the other applications by clicking <menuchoice> <guimenu>File</guimenu>
-   <guimenu>New</guimenu> <guimenu>Name of Application</guimenu>
+   Для запуска &ooo; нужно нажать <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo>, вписать <command>ooffice</command> и
+   нажать <keycap>Enter</keycap>. В диалоге приветствия можно выбрать желаемое приложение.
+    Если какое-нибудь приложение &ooo; уже открыто, можно запустить
+   любое другое приложение путем нажатия <menuchoice> <guimenu>Файл</guimenu>
+   <guimenu>Открыть</guimenu> <guimenu>Название приложения</guimenu>
    </menuchoice>.
   </para>
 
   <sect2 id="sec.oofficequick.save">
-   <title>Saving &ooo; Files</title>
+   <title>Сохранение файлов &ooo;</title>
    <procedure>
     <step>
      <para>
-      To save a new file, select <menuchoice> <guimenu>File</guimenu>
-      <guimenu>Save</guimenu> </menuchoice> or <guimenu>Save as</guimenu>
-      from the <guimenu>Menu Bar</guimenu> or use the shortcut <keycombo>
+      Для сохранения нового файла, перейти <menuchoice> <guimenu>Файл</guimenu>
+      <guimenu>Сохранить</guimenu> </menuchoice> или <guimenu>Сохранить как</guimenu>
+      из <guimenu>Меню</guimenu> или использовать комбинацию клавиш <keycombo>
       <keycap function="control"/> <keycap function="shift"/>
       <keycap>S</keycap> </keycombo>.
      </para>
     </step>
     <step>
      <para>
-      Select the directory where you want to save the file.
+      Выбрать директорию, где нужно сохранить файл.
      </para>
     </step>
     <step>
      <para>
-      Enter the filename in the <guimenu>Name</guimenu> box.
+      Ввести имя файла в строке <guimenu>Имя</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      From the <guimenu>File Type</guimenu> box, select the format in which
-      you want to save the file.
+      В строке <guimenu>Фильтр</guimenu> выбрать формат, в котором
+      требуется сохранить файл.
      </para>
     </step>
    </procedure>
    <para>
-    In all modules you can save your documents as native &ooo; files, &ooo;
-    templates, Microsoft files and StarOffice files.
+    В каждом приложении возможно сохранять свои документы как файлы &ooo;, шаблоны &ooo;,
+    а также как файлы Microsoft и StarOffice.
    </para>
   </sect2>
 
   <sect2 id="sec.oofficequick.nav">
-   <title>Navigator and Navigation Shortcuts</title>
+   <title>Навигатор и комбинации клавиш</title>
    <para>
-    The <guimenu>Navigator</guimenu> tool displays information about the
-    contents of a document. It also lets you quickly jump to different
-    elements. For example, you can use the Navigator to get a quick overview
-    of all images included in the document. To open the
-    <guimenu>Navigator</guimenu>, click <menuchoice> <guimenu>View</guimenu>
-    <guimenu>Navigator</guimenu> </menuchoice> or with <keycombo>
-    <keycap>F5</keycap> </keycombo>. The elements listed in the
-    <guimenu>Navigator</guimenu> vary according to the &ooo; module being
-    used.
+    Инструмент <guimenu>Навигатор</guimenu> представляет информацию о
+    содержимом документов. Он позволяет также быстро перемещаться между различными
+    элементами. Например, можно использовать Навигатор для быстрого просмотра
+    всех имеющихся в документе изображений. Чтобы открыть
+    <guimenu>Навигатор</guimenu>, перейдите в меню <menuchoice> <guimenu>Вид</guimenu>
+    <guimenu>Навигатор</guimenu> </menuchoice> или нажмите клавишу <keycombo>
+    <keycap>F5</keycap> </keycombo>. Элементы перечисленные в модуле
+    <guimenu>Навигатор</guimenu> варьируются в зависимости от используемого приложения &ooo;
    </para>
    <para>
-    You can also navigate your files with the following shortcuts:
+    Кроме того, возможно перемещаться по файлам, используя следующие комбинации клавиш:
    </para>
    <table>
-    <title>Navigation Shortcuts</title>
+    <title>Комбинации клавиш для навигации</title>
     <tgroup cols="2">
      <thead>
       <row>
        <entry>
         <para>
-         Action
+         Действие
         </para>
        </entry>
        <entry>
         <para>
-         Shortcut
+         Комбинация клавиш
         </para>
        </entry>
       </row>
@@ -383,7 +377,7 @@
       <row>
        <entry>
         <para>
-         Delete to the End of the Word
+         Удалить до конца слова
         </para>
        </entry>
        <entry>
@@ -396,7 +390,7 @@
       <row>
        <entry>
         <para>
-         Delete to the Beginning of the Word
+         Удалить до начала слова
         </para>
        </entry>
        <entry>
@@ -409,7 +403,7 @@
       <row>
        <entry>
         <para>
-         End of Document
+         В конец документа
         </para>
        </entry>
        <entry>
@@ -422,7 +416,7 @@
       <row>
        <entry>
         <para>
-         End of Line
+         В конец строки
         </para>
        </entry>
        <entry>
@@ -434,7 +428,7 @@
       <row>
        <entry>
         <para>
-         Select All
+         Выбрать всё
         </para>
        </entry>
        <entry>
@@ -447,7 +441,7 @@
       <row>
        <entry>
         <para>
-         Start of Line
+         В начало строки
         </para>
        </entry>
        <entry>
@@ -459,7 +453,7 @@
       <row>
        <entry>
         <para>
-         Top of Document
+         В верх документа
         </para>
        </entry>
        <entry>
@@ -472,7 +466,7 @@
       <row>
        <entry>
         <para>
-         Word Left
+         Слева от слова
         </para>
        </entry>
        <entry>
@@ -485,7 +479,7 @@
       <row>
        <entry>
         <para>
-         Word Right
+         Справа от слова
         </para>
        </entry>
        <entry>
@@ -501,109 +495,108 @@
   </sect2>
 
   <sect2>
-   <title>Using and Creating Templates</title>
+   <title>Использование и Создание Шаблонов</title>
    <para>
-    &ooo; comes with a set of predefined templates, and you can find
-    additional templates on the Internet. If you want to create your own
-    templates, you need to determine what you want the document to look like
-    and create the styles you need in that template.
+    &ooo; поставляется с набором готовых шаблонов,
+    также возможно найти дополнительные шаблоны в Интернете.
+    Если необходимо создать собственный шаблон,
+    нужно определить как должен выглядеть документ
+    и создать стили, необходимые в шаблоне.
    </para>
    <para>
-    For text document, spreadsheets, presentations, and drawings, you can
-    easily create a template from an existing document as follows:
+    Для текстовых документов, таблиц, презентаций и рисунков,
+    можно с легкостью создать шаблон из уже существующих файлов, по следующим рекомендациям:
    </para>
    <procedure>
     <step>
      <para>
-      Start &ooo; and open or create a document that contains the styles
-      that you want to use as a template.
+      Запустить &ooo; и открыть или создать документ, содержащий стили,
+      которые необходимо использовать как шаблон.
      </para>
     </step>
     <step>
      <para>
-      Click <menuchoice> <guimenu>File</guimenu>
-      <guimenu>Templates</guimenu> <guimenu>Save</guimenu> </menuchoice>.
+      Нажать <menuchoice> <guimenu>Файл</guimenu>
+      <guimenu>Шаблоны</guimenu> <guimenu>Сохранить</guimenu> </menuchoice>.
      </para>
     </step>
     <step>
      <para>
-      Specify a name for the template.
+      Указать название шаблона.
      </para>
     </step>
     <step>
      <para>
-      In the <guimenu>Categories</guimenu> box, click the category where you
-      want to place the template.
+      В подменю <guimenu>Категории</guimenu> выбрать категорию, в которую
+      нужно поместить шаблон.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu>OK</guimenu>.
+      Нажать <guimenu>OK</guimenu>.
      </para>
     </step>
    </procedure>
   </sect2>
  </sect1>
  <sect1 id="oofficequick.write">
-  <title>&ooo; Writer</title>
+  <title>Текстовый процессор &ooo;</title>
 
   <para>
-   &ooo; Writer is a full-featured word processor with page and
-   text-formatting capabilities. Its interface is similar to interfaces for
-   other major word processors. It also includes some features that are
-   usually found only in expensive desktop publishing applications. Many of
-   the &ooo; Writer features apply also to other &ooo; modules.
+   Текстовый процессор &ooo; Writer - это полнофункциональный текстовый процессор с возможностью
+   форматирования текста и страниц. Его внешний вид похож на интерфейсы
+   других основных мировых текстовых процессоров. Он также включает некоторые особенности, которые
+   обычно можно найти только в дорогостоящих издательских приложениях. Многие
+   из функций текстового процессора &ooo; также задействованы в других приложениях &ooo;.
   </para>
 
   <sect2 id="ooficeqiuck.newwrite">
-   <title>What is New in Writer</title>
+   <title>Что нового в текстовом процессоре</title>
    <para>
-    Below is a list of new features:
+    Перед вами список новых функций:
    </para>
    <variablelist>
     <varlistentry>
-     <term>Increased Document Protection</term>
+     <term>Улучшенная Защита Документа</term>
      <listitem>
       <para>
-       &ooo; Writer and Calc now allow two levels of document protection.
-       You can normally save a document with a password that prevents
-       unauthorized users from reading the content, but also set a password
-       to protect a document against unwanted changes. This way, you can
-       make the content of a document available for reading to a selected
-       group of people, while different group can both read and edit it.
-       This behavior is now compatible with Microsoft Word and Excel file
-       protection.
+       Приложения Текстовый процессор и Электронная таблица &ooo; теперь позволяют двухуровневую защиту документа.
+       Можно легко защитить документ при помощи пароля, который предотвращает
+       несанкционированное прочтение пользователями содержимого документа, а также установить пароль
+       для защиты документа от нежелательных изменений. Таким образом, можно сделать содержимое
+       документа доступным только для чтения, для определенной группы пользователей,
+       тогда как пользователи другой группы смогут и читать и редактировать документ.
+       Это свойство теперь соответствует защите файлов в Microsoft Word и Excel.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Resetting Text to the Default Language</term>
+     <term>Переустановка Настроек Текста на Язык по Умолчанию</term>
      <listitem>
       <para>
-       You can now reset the language of the text back to the default
-       language using the language status bar or with
-       <menuchoice><guimenu>Tools</guimenu>
-       <guimenu>Language</guimenu></menuchoice>.
+       Доступно переключение языка текста на язык по умолчанию,
+       используя  языковую строку состояния или выбрав в меню
+       <menuchoice><guimenu>Сервис</guimenu>
+       <guimenu>Язык</guimenu></menuchoice>.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Word Count Dialog Enhanced</term>
+     <term>Улучшен Диалог Подсчёта Слов в Тексте</term>
      <listitem>
       <para>
-       &ooo; Writer now displays the number of characters both with and
-       without spaces.
+       Текстовый процессор &ooo; может теперь отображать количество символов в тексте с учётом или без учёта пробелов.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>New Title Page Option</term>
+     <term>Новые Опции Абзацев</term>
      <listitem>
       <para>
-       Right-click an open document and select <guimenu>Title Page</guimenu>
-       to insert a new title page of the document with different formatting
-       options. The document can contain several title pages. You can, for
-       example, specify to reset numberings after each inserted title page.
+       Для вставки в документ нового абзаца с различными опциями форматирования, можно кликнуть
+       правой кнопкой мыши на открытом документе и выбрать <guimenu>Абзац</guimenu>.
+       Документ может содержать несколько видов форматирования абзацев. Возможно, например, 
+       указать сброс нумерации после каждой вставки абзаца.
       </para>
      </listitem>
     </varlistentry>
@@ -611,14 +604,14 @@
   </sect2>
 
   <sect2 id="sec.oofficequick.write.createnew">
-   <title>Creating a New Document</title>
+   <title>Создание Нового Документа</title>
    <para>
-    There are two ways to create a new document:
+    Есть два пути создать новый документ:
    </para>
    <para>
-    To create a completely new document, click <menuchoice>
-    <guimenu>File</guimenu> <guimenu>New</guimenu> <guimenu>Text
-    Document</guimenu> </menuchoice>.
+    Для создания совершенно нового документа, нажать в меню <menuchoice>
+    <guimenu>Файл</guimenu> <guimenu>Создать</guimenu> <guimenu>Текстовый
+    Документ</guimenu> </menuchoice>.
    </para>
    <informalfigure pgwide="0">
     <mediaobject>
@@ -631,116 +624,116 @@
     </mediaobject>
    </informalfigure>
    <para>
-    To use a standard format and predefined elements for your own documents,
-    try a wizard (a small utility that lets you make some basic initial
-    decisions and then produces a ready-made document from a template). For
-    example, to create a business letter, click <menuchoice>
-    <guimenu>File</guimenu> <guimenu>Wizards</guimenu>
-    <guimenu>Letter</guimenu> </menuchoice>. With the wizard's dialogs, you
-    can create a basic document that uses a standard format.
+    Для использования стандартного формата и предопределённых элементов в документах,
+    попробуйте Мастер (маленькое приложение, которое позволяет принять предварительное решение 
+    и затем создать готовый документ из шаблона). Например,
+    для создания делового письма, нажать в меню <menuchoice>
+    <guimenu>Файл</guimenu> <guimenu>Мастер</guimenu>
+    <guimenu>Письмо</guimenu> </menuchoice>. Используя диалоги настройки Мастера,
+    возможно создание базисного документа, используя стандартный формат.
    </para>
    <para>
-    Enter text in the document window as desired. Use the
-    <guimenu>Formatting</guimenu> toolbar or the <guimenu>Format</guimenu>
-    menu to adjust the appearance of the document. Use the
-    <guimenu>File</guimenu> menu or the relevant buttons in the toolbar to
-    print and save your document. With the options under
-    <guimenu>Insert</guimenu>, add extra items to your document, such as a
-    table, picture, or chart.
+    Вводим желаемый текст в окно документа. Используем панель инструментов
+    <guimenu>Форматирование</guimenu> или раздел меню <guimenu>Формат</guimenu>
+    для упорядочивания документа. Применяем раздел меню
+    <guimenu>Файл</guimenu> или соответствующие кнопки панели инструментов
+    для печати или сохранения документа. С помощью опций в меню
+    <guimenu>Вставка</guimenu>, можно добавить в документ дополнительные элементы, такие как
+    таблицы,рисунки или графики.
    </para>
   </sect2>
 
   <sect2 id="sec.oofficequick.write.custom">
-   <title>Customizing &ooo;</title>
+   <title>Адоптация настроек форматирования &ooo;</title>
    <para>
-    With &ooo; you can customize the default settings with the
-    <guimenu>Format</guimenu> menu.
+    С &ooo; можно настроить установки по умолчанию при помощи меню
+    <guimenu>Формат</guimenu>.
    </para>
    <para>
-    Below is a list of the most popular options available in most modules:
+    Перед вами список наиболее популярных опций доступных в большинстве модулей:
    </para>
    <variablelist>
     <title/>
     <varlistentry>
-     <term>Customizing Character Settings</term>
+     <term>Настройки Символов</term>
      <listitem>
       <para>
-       To set all character elements at the same time, select <menuchoice>
-       <guimenu>Format</guimenu> <guimenu>Character</guimenu> </menuchoice>.
+       Для одновременной настройки всех символьных элементов нужно выбрать в меню <menuchoice>
+       <guimenu>Формат</guimenu> <guimenu>Символы</guimenu> </menuchoice>.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Customizing Paragraph Settings</term>
+     <term>Изменение Настроек Абзаца</term>
      <listitem>
       <para>
-       To format paragraphs, select <menuchoice> <guimenu>Format</guimenu>
-       <guimenu>Paragraph</guimenu> </menuchoice> and select the appropriate
-       tabs for making changes.
+       Для форматирования абзацев, перейти <menuchoice> <guimenu>Формат</guimenu>
+       <guimenu>Абзац</guimenu> </menuchoice> и выбрать соответствиющий раздел
+       для внесения изменений.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Customizing Alignment</term>
+     <term>Настройка Выравнивания</term>
      <listitem>
       <para>
-       To modify the alignment, select <menuchoice>
-       <guimenu>Format</guimenu> <guimenu>Paragraph</guimenu> </menuchoice>
-       and choose the alignment you want.
+       Для изменения выравнивания, перейти <menuchoice>
+       <guimenu>Формат</guimenu> <guimenu>Абзац</guimenu> </menuchoice>
+       и выбрать желательное выравнивание.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Inserting Headers and Footers</term>
+     <term>Введение Верхнего и Нижнего Колонтитула</term>
      <listitem>
       <para>
-       If you want to add headers and footers, click
-       <guimenu>Insert</guimenu> and select either <guimenu>Header</guimenu>
-       or <guimenu>Footer</guimenu>.
+       Для добавления верхнего или нижнего колонтитула, нажать в меню
+       <guimenu>Вставка</guimenu> и выбрать, соответственно, <guimenu>Верхний колонтитул</guimenu>
+       или <guimenu>Нижний колонтитул</guimenu>.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Inserting Special Characters</term>
+     <term>Добавление Специальных Символов</term>
      <listitem>
       <para>
-       If you want to insert special characters, select <menuchoice>
-       <guimenu>Insert</guimenu> <guimenu>Special Character</guimenu>
+       Если необходимо ввести специальные символы, переходим в меню <menuchoice>
+       <guimenu>Вставка</guimenu> <guimenu>Специальные символы</guimenu>
        </menuchoice>.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Inserting Footnotes</term>
+     <term>Вставка Сноски</term>
      <listitem>
       <para>
-       If you want to insert footnotes, click <guimenu>Insert</guimenu> and
-       select <guimenu>Footnote</guimenu>.
+       Если нужно вставить сноску, нажать в меню <guimenu>Вставка</guimenu> и
+       выбрать <guimenu>Сноска</guimenu>.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Inserting Columns</term>
+     <term>Введение Колонок</term>
      <listitem>
       <para>
-       If you want to insert columns, click <guimenu>Insert</guimenu> and
-       select <guimenu>Section</guimenu>. Then in the
-       <guimenu>Columns</guimenu> tab, specify the number of columns to use
-       for the current section.
+       Для введения колонок, нажать в меню <guimenu>Вставка</guimenu> и
+       выбрать <guimenu>Раздел</guimenu>. Теперь на вкладке
+       <guimenu>Колонки</guimenu> указать требуемое количество колонок для
+       использования в данном разделе.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Inserting Indexes and Table of Contents</term>
+     <term>Добавление Оглавлений и Указателей</term>
      <listitem>
       <para>
-       If you want to insert indexes or a table of contents, click
-       <guimenu>Insert</guimenu> and select <guimenu>Indexes and
-       Tables</guimenu>.
+       Если необходимо добавить оглавления или указатели, нажимаем
+       <guimenu>Вставка</guimenu> и выбираем <guimenu>Оглавления и
+       Указатели</guimenu>.
       </para>
       <para>
-       The <guimenu>Object Toolbar</guimenu> offers additional text
-       formatting options.
+       Меню <guimenu>Настройка</guimenu> предоставляет дополнительные опции
+       форматирования.
       </para>
      </listitem>
     </varlistentry>
@@ -1200,7 +1193,7 @@
       name for the database, then click <guimenu>Save</guimenu>.
      </para>
     </step>
-   </procedure>
+   </procedure>https://svn.berlios.de/svnroot/repos/opensuse-doc/tags/trans/ru/112_source/
    <procedure>
     <title>Setting Up the Database Table</title>
     <step>
