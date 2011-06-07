@@ -269,7 +269,7 @@ Password:
   <para>
    Аутентификация в своей простейшей форме, как упоминалось выше, это просто ввод
    пароля. Цель SSH сосоит в том, чтобы предоставить пользователю безопасное программное
-   обеспечение, которое так же удобно и просто. Поскольку при создании подразумевалась
+   обеспечение, которое так же просто в использовании. Поскольку при создании подразумевалась
    альтернатива rsh и rlogin, SSH так же предоставило очень простые методы аутентификации,
    подходящие для ежедневного использования. Достигается это посредством еще одной пары
    ключей, создаваемых пользователем. В составе openssh-пакета специально для этого есть
@@ -287,24 +287,20 @@ Password:
   <secondary>ssh-keygen</secondary></indexterm>
 
   <para>
-   Confirm the default setting and answer the request for a passphrase. Even
-   if the software suggests an empty passphrase, a text from 10 to 30
-   characters is recommended for the procedure described here. Do not use
-   short and simple words or phrases. Confirm by repeating the passphrase.
-   Subsequently, you will see where the private and public keys are stored,
-   in this example, the files <filename>id_rsa</filename> and
-   <filename>id_rsa.pub</filename>.
+   Подтвердите использование установок по умолчанию и введите пароль. Пароль должен
+   содержать (рекомендованное количество для процедуры, описанной тут) от 10 до 30
+   символов. Не используйте простые или короткие слова или фразы. Подтвердите пароль
+   (введите его еще раз). После этого секретный и открытый ключи, в этом примере,
+   будут сохраненны в <filename>id_rsa</filename> и <filename>id_rsa.pub</filename>.
   </para>
 
   <para>
-   Use <command>ssh-keygen</command>&nbsp;<option>-p -t rsa</option> or
-   <command>ssh-keygen</command>&nbsp;<option>-p -t dsa</option> to change
-   your old passphrase. Copy the public key component
-   (<filename>id_rsa.pub</filename> in the example) to the remote machine
-   and save it to <filename>~/.ssh/authorized_keys</filename>. You will be
-   asked to authenticate yourself with your passphrase the next time you
-   establish a connection. If this does not occur, verify the location and
-   contents of these files.
+   Используйте <command>ssh-keygen -p -t rsa</command> или
+   <command>ssh-keygen -p -t dsa</command>, чтобы изменить пароль. Скопируйте открытый ключ
+   (<filename>id_rsa.pub</filename> в этом примере) на другую машину и сохраните его в
+   <filename>~/.ssh/authorized_keys</filename>. При следующем соединении Вам будет предложенно
+   идентифицировать cебя, т.е. подтвердить пароль еще раз. Если этого не происходит,
+   проверьте расположение и содержимое этих файлов.
   </para>
 
   <para>
