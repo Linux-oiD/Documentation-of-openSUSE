@@ -63,8 +63,8 @@
     предоставляют альтернативу <command>telnet</command>, <command>rlogin</command>,
     <command>rsh</command>, <command>rcp</command> и <command>ftp</command>.
     В конфигурации по умолчанию доступ к &productname; возможен только с помощью
-    утилит из комплекта OpenSSH, и только если запущен <systemitem>sshd</systemitem>
-    и открыты соответствующие порты в firewall.
+    служебных программ из комплекта OpenSSH, и только если запущен <systemitem>sshd</systemitem>
+    и открыты соответствующие порты в брандмауэре.
   </para>
  </sect1>
  <sect1
@@ -80,7 +80,7 @@
   <secondary>ssh</secondary></indexterm>
 
   <para>
-   Используя ssh, можно подключиться к удаленным системе и работать на ней в
+   Используя ssh, можно подключиться к удаленным системам и работать в
    интерактивном режиме. Это заменяет и telnet и rlogin. Программа slogin является
    всего лишь линком на ssh. Например, для того, чтобы залогиниться в системе 
    <literal>&exampleserver;</literal>, используйте команду
@@ -90,12 +90,11 @@
   </para>
 
   <para>
-   После успешной аутентификации Вы можете использовать либо консоль, либо
+   После успешной аутентификации можно использовать либо консоль, либо
    интерактивные приложения, такие как &yast;. Если имя пользователся на локальной
    машине отличается от имени на удаленной, используйте команду
-   <command>ssh</command>&nbsp;<option>-l augustine
-   &exampleserver;</option> или
-   <command>ssh</command>&nbsp;<option>augustine@&exampleserver;</option>.
+   <command>ssh&nbsp;-l augustine &exampleserver;</command> или
+   <command>ssh&nbsp;augustine@&exampleserver;</command>.
   </para>
 
   <para>
@@ -130,11 +129,11 @@ Password:
   <para>
    scp копирует файлы на удаленную машину. Это более безопасная
    замена для rcp. Например
-   <command>scp</command>&nbsp;<option>MyLetter.tex
-   &exampleserver;:</option> скопирует файл <filename>MyLetter.tex</filename>
+   <command>scp&nbsp;MyLetter.tex
+   &exampleserver;:</command> скопирует файл <filename>MyLetter.tex</filename>
    из системы &wsI; в &exampleserver;. Если имена пользователей отличаются
    в системах &wsI; и &exampleserver;, укажите его, используя такой формат:
-   <option>username@host</option>. Опция <option>-l</option> имеет другое
+   <option>username@host</option>. Ключ <option>-l</option> имеет другое
    значение для этой команды.
   </para>
 
@@ -147,16 +146,15 @@ Password:
 
   <para>  
    scp также поддерживает рекурсивное копирование. Команда
-   <command>scp</command>&nbsp;<option>-r src/
-   &exampleserver;:backup/</option> скопирует содержимое всей директории
-   <filename>src</filename>, включая все поддиректории, в
+   <command>scp&nbsp;-r src/ &exampleserver;:backup/</command> скопирует содержимое
+   всей директории <filename>src</filename>, включая все поддиректории, в
    <filename>backup</filename> в системе &exampleserver;.
    Если эти поддиректории не существуют, они будут созданны автоматически.
   </para>
 
   <para>
-    Используя ключ <option>-р</option>, scp оставит дату последнего изменения
-    без изменения. Ключ <option>-C</option> позволит сжать передаваеммые
+    При использовании ключа <option>-р</option>, scp сохранит дату последнего
+    изменения как у источника. Ключ <option>-C</option> позволит сжать передаваеммые
     данные. Это минимизирует объем данных для передачи, но нагружает процессор.
   </para>
  </sect1>
@@ -174,9 +172,9 @@ Password:
 
   <para>   
    sftp программа может использоваться вместо scp для безопасной передачи файлов.
-   Во время sftp сессии Вы можете использовать многие из команд, используемых
-   при работе с ftp. Использование sftp может быть более лучшим выбором чем scp,
-   особенно если Вам не известны имена копируемых файлов.
+   Во время sftp сессии доступны многие из команд, используемых при работе с ftp.
+   Использование sftp может быть более лучшим выбором чем scp,
+   особенно если не известны имена копируемых файлов.
   </para>
  </sect1>
  <sect1 id="sec.ssh.sshdserver">
@@ -192,7 +190,7 @@ Password:
 
   <para>    
    Для работы с программами ssh и scp в фоновом режиме должнен быть запущен
-   SSH демон, который будет использовать <literal>TCP/IP 22</literal> порт.
+   SSH демон, который будет использовать порт <literal>22 TCP/IP</literal>.
    Демон генерирует три пары ключей при запуске в первый раз. Каждая пара
    стоит из секретного и открытого ключа.
    Чтобы гарантировать безопасность соединения через SSH, доступ к файлу с
@@ -200,7 +198,7 @@ Password:
    такие права имеет этот файл по умолчанию. Секретный ключ используется только
    локальным SSH демоном и не должен быть предоставлен кому-то ещё. Открытый
    ключ (узнаваемый по расширению файла <filename>.pub</filename>) отправляется
-   клиенту, запрашиваемому соединение. Файл, в котором находится открытый ключ,
+   клиенту, запросившему соединение. Файл, в котором находится открытый ключ,
    может прочитать любой пользователь в системе.
    <indexterm>
    <primary>SSH</primary>
@@ -241,7 +239,7 @@ Password:
   </para>
 
   <para>
-   Клиент хранит открытые host-ключи в фaйле
+   Клиент сохраняет открытые host-ключи в фaйле
    <filename>~/.ssh/known_hosts</filename>, после первого соединения с удаленной
    системой. Это предотвращает любые попытки "нападений посредине" внешними SSH
    серверами, использующими поддельные имена или IP-адреса. Такие нападения будут
@@ -274,11 +272,10 @@ Password:
    обеспечение, которое так же удобно и просто. Поскольку при создании подразумевалась
    альтернатива rsh и rlogin, SSH так же предоставило очень простые методы аутентификации,
    подходящие для ежедневного использования. Достигается это посредством еще одной пары
-   ключей, создаваемые пользователем. В состав SSH-пакета специально для этого входят
+   ключей, создаваемых пользователем. В составе openssh-пакета специально для этого есть
    вспомогательная программа ssh-keygen. После команд
-   <command>ssh-keygen</command>&nbsp;<option>-t rsa</option> или
-   <command>ssh-keygen</command>&nbsp;<option>-t dsa</option>, генерируется эта пара
-   ключей.
+   <command>ssh-keygen&nbsp;-t rsa</command> или <command>ssh-keygen&nbsp;-t dsa</command>,
+   генерируется эта пара ключей.
   </para><indexterm>
 
   <primary>SSH</primary>
@@ -367,7 +364,7 @@ keep the information in here. -->
 -->
  </sect1>
  <sect1 id="sec.ssh.pipe">
-  <title>X, Authentication, and Forwarding Mechanisms</title><indexterm>
+  <title>X, аутентификация и механизмы переадресации</title><indexterm>
 
   <primary>SSH</primary>
 
@@ -378,22 +375,22 @@ keep the information in here. -->
   <secondary>SSH and</secondary></indexterm>
 
   <para>
-   Beyond the previously described security-related improvements, SSH also
-   simplifies the use of remote X applications. If you run
-   <command>ssh</command> with the <option>-X</option> option, the
-   <envar>DISPLAY</envar> variable is automatically set on the remote
-   machine and all X output is exported to the remote machine over the
-   existing SSH connection. At the same time, X applications started
-   remotely and locally viewed with this method cannot be intercepted by
-   unauthorized individuals.
+   Помимо описанных выше возможностей, через SSH также можно работать с
+   удаленными X-приложениями. При использовании <command>ssh</command>
+   с ключем <option>-X</option>, переменная <envar>DISPLAY</envar>
+   автоматически устанавливается на удаленной машине, и весь вывод
+   X-приложения экспортируется через SSH-соединение. Другими словами,
+   X-приложение запускается на удаленной системе, но работать с ней можно
+   локально, при этом передаваемые данные не могут быть перехвачены
+   злоумышленником.
   </para>
 
   <para>
-   By adding the <option>-A</option> option, the ssh-agent authentication
-   mechanism is carried over to the next machine. This way, you can work
-   from different machines without having to enter a password, but only if
-   you have distributed your public key to the destination hosts and
-   properly saved it there.
+   При использовании ключа <option>-A</option>, для механизма аутентификации ssh-agent
+   используется следующая машина. Таким образом, можно подключаться с различных
+   машин без необходимости вводить пароль. Этот механизм работает лишь в том
+   случае, если на них есть открытый ключ пользователя, от имени которого создается
+   соединение.
   </para><indexterm>
 
   <primary>SSH</primary>
@@ -401,9 +398,9 @@ keep the information in here. -->
   <secondary>ssh-agent</secondary></indexterm>
 
   <para>
-   Both mechanisms are deactivated in the default settings, but can be
-   permanently activated at any time in the systemwide configuration file
-   <filename>/etc/ssh/sshd_config</filename> or the user's
+   Оба механизма не используются по умолчанию, но могут быть в любое время включены.
+   Для этого отредактируйте системный конфигурационный файл
+   <filename>/etc/ssh/sshd_config</filename> или пользовательский
    <filename>~/.ssh/config</filename>.
   </para><indexterm>
 
@@ -412,32 +409,31 @@ keep the information in here. -->
   <secondary>sshd_config</secondary></indexterm>
 
   <para>
-   ssh can also be used to redirect TCP/IP connections. In the examples
-   below, SSH is told to redirect the SMTP and the POP3 port, respectively:
+   ssh также может быть использован для перенаправления TCP/IP соединения.
+   В приведенном ниже примере SSH перенаправляет SMTP и POP3 порт:
   </para>
 
 <screen>ssh -L 25:&exampleserver;:25 &wsI;</screen>
 
   <para>
-   With this command, any connection directed to &wsI; port 25 (SMTP) is
-   redirected to the SMTP port on &exampleserver; via an encrypted channel.
-   This is especially useful for those using SMTP servers without SMTP-AUTH
-   or POP-before-SMTP features. From any arbitrary location connected to a
-   network, e-mail can be transferred to the <quote>home</quote> mail server
-   for delivery. Similarly, all POP3 requests (port&nbsp;110) on &wsI; can
-   be forwarded to the POP3 port of &exampleserver; with this command:
+   С помощью этой команды, все соединения на 25 порт (SMTP) системы &wsI; будут
+   перенаправляться через зашифрованный канал на SMTP порт системы &exampleserver;.
+   Это особенно полезно для тех, кто использует SMTP серверы без SMTP-AUTH или 
+   POP-before-SMTP. Электронная почта, откуда бы она ни пришла, будет переданна для
+   дальнейшей доставки <quote>домашнему</quote> почтовому серверу. Точно так же все
+   POP3 запросы (порт&nbsp;110) на &wsI; могут быть перенаправленны на POP3 порт
+   &exampleserver;, при помощи следующей команды:
   </para>
 
 <screen>ssh -L 110:&exampleserver;:110 &wsI;</screen>
 
   <para>
-   Both commands must be executed as
-   <systemitem class="username">root</systemitem>, because the connection is
-   made to privileged local ports. E-mail is sent and retrieved by normal
-   users in an existing SSH connection. The SMTP and POP3 host must be set
-   to <literal>localhost</literal> for this to work. Additional information
-   can be found in the manual pages for each of the programs described above
-   and also in OpenSSH package documentation under
+   Обе команды должны быть выполненны с правами
+   <systemitem class="username">root</systemitem>,
+   так как соединение использует привилегированные порты. При использовании
+   электронной почты обычными пользователями будет использоваться SSH соединение.
+   Дополнительную информацию можно найти в man-руководствах для каждой из программ,
+   описанной выше, а также в документации проекта OpenSSH:
    <filename>/usr/share/doc/packages/openssh</filename>.
   </para>
  </sect1>
@@ -489,7 +485,7 @@ keep the information in here. -->
      дополнительной информации о переадресации X.
     </para>
     <para>
-     Опция <guimenu>Разрешить сжатие</guimenu> определить, должна ли связь между
+     Опция <guimenu>Разрешить сжатие</guimenu> определяет, должна ли связь между
      сервером и клиентам быть сжата.
     </para>
    </step>
@@ -559,25 +555,15 @@ keep the information in here. -->
     </term>
     <listitem>
      <para>
-      man-страница о конфигурационных файлах OpenSSH SSH-клиента.
+      man-страница о конфигурационных файлах OpenSSH.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><command>man</command>&nbsp;<option>ssh_config</option>
-    </term>
-    <listitem>
+    <term><command>man</command>&nbsp;<option>sshd</option></term>
+   <listitem>
      <para>
-      man-страница о конфигурационных файлах OpenSSH SSH-демона.
-     </para>
-    </listitem>
-   </varlistentry>
-   <varlistentry>
-    <term><command>man</command>&nbsp;<option>sshd</option>
-    </term>
-    <listitem>
-     <para>
-      man-страница по OpenSSH-демону
+      man-страница о OpenSSH-демоне
      </para>
     </listitem>
    </varlistentry>
