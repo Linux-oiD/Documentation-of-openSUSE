@@ -646,11 +646,20 @@
   <sect2 id="sec.oofficequick.write.custom">
    <title>Адоптация настроек форматирования &ooo;</title>
    <para>
+<<<<<<< .mine
+    С &ooo; можно изменить установки по умолчанию при помощи меню
+    <guimenu>Формат</guimenu>.
+=======
     С &ooo; можно настроить установки по умолчанию при помощи меню
     <guimenu>Формат</guimenu>.
+>>>>>>> .r5669
    </para>
    <para>
+<<<<<<< .mine
+    Перед вами список наиболее популярных опций, доступных в большинстве приложений:
+=======
     Перед вами список наиболее популярных опций доступных в большинстве модулей:
+>>>>>>> .r5669
    </para>
    <variablelist>
     <title/>
@@ -667,9 +676,15 @@
      <term>Изменение Настроек Абзаца</term>
      <listitem>
       <para>
+<<<<<<< .mine
+       Для форматирования абзацев, перейти <menuchoice> <guimenu>Формат</guimenu>
+       <guimenu>Абзац</guimenu> </menuchoice> и выбрать соответствующий раздел
+       для внесения изменений.
+=======
        Для форматирования абзацев, перейти <menuchoice> <guimenu>Формат</guimenu>
        <guimenu>Абзац</guimenu> </menuchoice> и выбрать соответствиющий раздел
        для внесения изменений.
+>>>>>>> .r5669
       </para>
      </listitem>
     </varlistentry>
@@ -751,53 +766,53 @@
   </sect2>
 
   <sect2>
-   <title>Using Master Documents</title>
+   <title>Использование Составного Документа</title>
    <para>
-    If you are working with a very large document (such as a book), you
-    might find it easier to manage the book with a master document, rather
-    than keeping the book in a single file. A master document enables you to
-    quickly apply formatting changes to a large document or to jump to each
-    subdocument for editing.
+    При работе с большими документами (такими, например, как книги), возможно,
+    окажется более удобным управляться с книгой при помощи Составного Документа, чем
+    при хранении книги в виде единого документа. Составной Документ позволяет
+    быстро изменить форматирование всего большого файла или переместиться в каждый субдокумент
+    для отдельного редактирования.
    </para>
    <para>
-    A master document is a Writer document that serves as a container for
-    multiple Writer files. You can maintain chapters or other subdocuments
-    as individual files collected in the master document. Master documents
-    are also useful if multiple people are working on a document. You can
-    separate each person’s relevant part of the document into
-    subdocuments, allowing multiple writers to work on their subdocuments at
-    the same time without the danger of overwriting each other’s work.
+    Составной Документ - это текстовый документ, который служит контейнером для
+    множества текстовых файлов. Можно манипулировать томами или другими субдокументами,
+    как индивидуальными файлами, собранными в Составной Документ. Составной Документ 
+    особенно удобен, если множество пользователей работают над одним документом. Можно выделить
+    каждому пользователю соответствующую часть документа в виде
+    субдокумента, позволяя множеству пользователей работать над документом одновременно,
+    без риска повредить или удалить записи друг друга.
    </para>
    <procedure>
     <step>
      <para>
-      Click <menuchoice> <guimenu>New</guimenu> <guimenu>Master
-      Document</guimenu> </menuchoice>.
+      Нажать в меню <menuchoice> <guimenu>Создать</guimenu> <guimenu>Составной
+      Документ</guimenu> </menuchoice>.
      </para>
      <para>
-      or
+      Или
      </para>
      <para>
-      Open an existing document and click <menuchoice>
-      <guimenu>File</guimenu> <guimenu>Send</guimenu> <guimenu>Create Master
-      Document</guimenu> </menuchoice>.
-     </para>
-    </step>
-    <step>
-     <para>
-      Insert subdocuments.
+      Открыть существующий документ и выбрать в меню <menuchoice>
+      <guimenu>Файл</guimenu> <guimenu>Отправить</guimenu> <guimenu>Создать Составной
+      Документ</guimenu> </menuchoice>.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu>File Save</guimenu>.
+      Добавить субдокументы.
+     </para>
+    </step>
+    <step>
+     <para>
+      Нажать <guimenu>Сохранить</guimenu>.
      </para>
     </step>
    </procedure>
    <para>
-    The &ooo; help files contain more complete information about working
-    with master documents. Look for the topic entitled <guimenu>Working with
-    Master Documents and Subdocuments</guimenu>.
+    Файлы помощи &ooo; содержат более подробную информацию о работе с 
+    составными документами. Смотрите в разделе, озаглавленном <guimenu>Составные Документы и 
+    Вложенные документы</guimenu>.
    </para>
   </sect2>
 
@@ -1193,7 +1208,7 @@
       name for the database, then click <guimenu>Save</guimenu>.
      </para>
     </step>
-   </procedure>
+   </procedure>https://svn.berlios.de/svnroot/repos/opensuse-doc/tags/trans/ru/112_source/
    <procedure>
     <title>Setting Up the Database Table</title>
     <step>
