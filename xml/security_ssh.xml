@@ -298,21 +298,20 @@ Password:
    Используйте <command>ssh-keygen -p -t rsa</command> или
    <command>ssh-keygen -p -t dsa</command>, чтобы изменить пароль. Скопируйте открытый ключ
    (<filename>id_rsa.pub</filename> в этом примере) на другую машину и сохраните его в
-   <filename>~/.ssh/authorized_keys</filename>. При следующем соединении Вам будет предложенно
-   идентифицировать cебя, т.е. подтвердить пароль еще раз. Если этого не происходит,
+   <filename>~/.ssh/authorized_keys</filename>. При следующем соединении будет предложенно
+   идентифицировать cебя, т.е. подтвердить пароль еще раз. Если этого не произойдет,
    проверьте расположение и содержимое этих файлов.
   </para>
 
-  <para>
-   In the long run, this procedure is more troublesome than giving your
-   password each time. Therefore, the SSH package provides another tool,
-   ssh-agent, which retains the private keys for the duration of an X
-   session. The entire X session is started as a child process of ssh-agent.
-   The easiest way to do this is to set the variable
-   <literal>usessh</literal> at the beginning of the
-   <filename>.xsession</filename> file to <literal>yes</literal> and log in
-   via a display manager, such as KDM or GDM. Alternatively, enter
-   <command>ssh-agent</command>&nbsp;<option>startx</option>.
+  <para>  
+   Эта процедура не так удобна, чем ввод пароля при каждом новом соединении. По
+   этой причине пакет openssh предоставляет другую программу,
+   ssh-agent, который сохраняет секретные ключи на время X-сессии. Все X-сессии
+   запускаются как дочерний процесс ssh-agent. Самый простой способ сделать это
+   - установить параметр <literal>yes</literal> для переменной <literal>usessh</literal>
+   в начале файла <filename>.xsession</filename>, выйти и зайти в систему снова,
+   используя, к примеру, KDM или GDM. Можно так же просто сделать
+   <command>ssh-agent startx</command>.
   </para><indexterm>
 
   <primary>configuration files</primary>
