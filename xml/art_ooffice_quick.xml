@@ -650,7 +650,7 @@
     <guimenu>Формат</guimenu>.
    </para>
    <para>
-    Перед вами список наиболее популярных опций доступных в большинстве модулей:
+    Перед вами список наиболее популярных опций, доступных в большинстве модулей:
    </para>
    <variablelist>
     <title/>
@@ -668,7 +668,7 @@
      <listitem>
       <para>
        Для форматирования абзацев, перейти <menuchoice> <guimenu>Формат</guimenu>
-       <guimenu>Абзац</guimenu> </menuchoice> и выбрать соответствиющий раздел
+       <guimenu>Абзац</guimenu> </menuchoice> и выбрать соответствующий раздел
        для внесения изменений.
       </para>
      </listitem>
@@ -795,102 +795,100 @@
     </step>
    </procedure>
    <para>
-    Файлы помощи &ooo; содержат более подробную информацию о работе с 
+    Файлы справки &ooo; содержат более подробную информацию о работе с 
     составными документами. Смотрите в разделе, озаглавленном <guimenu>Составные Документы и 
     Вложенные документы</guimenu>.
    </para>
   </sect2>
 
   <sect2 id="oofficequick.write.html">
-   <title>Using Writer as HTML Editor</title>
+   <title>Использование Текстового Процессора как Редактора HTML</title>
    <para>
-    In addition to being a full-featured word processor, Writer also
-    functions as an HTML editor. Writer includes HTML tags that can be
-    applied the same way as any other style in a Writer document. You can
-    view the document as it will appear online, or you can directly edit the
-    HTML code.
+    Writer в &ooo;, являясь полнофункциональным текстовым процессором,
+    также может быть использован как Редактор HTML. Он включает теги HTML, которые могут быть
+    применены таким-же образом, как и другие стили в текстовом документе. Документ может изображаться в том виде,
+    как он будет представлен он-лайн, или же вы можете напрямую редактировать код HTML.
    </para>
    <procedure>
     <step>
      <para>
-      Click <menuchoice> <guimenu>File</guimenu> <guimenu>New</guimenu>
-      <guimenu>HTML Document</guimenu> </menuchoice>.
+      Нажать <menuchoice> <guimenu>Файл</guimenu> <guimenu>Создать</guimenu>
+      <guimenu>Документ HTML</guimenu> </menuchoice>.
      </para>
     </step>
     <step>
      <para>
-      Press <guimenu>F11</guimenu> to open the <guimenu>Styles and
-      Formatting</guimenu> window.
+      Нажать <guimenu>F11</guimenu> для открытия окна <guimenu>Стили и
+      Форматирование</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Click the arrow at the bottom of the <guimenu>Styles and Formatting
-      window</guimenu>.
+      Нажать на стрелку внизу окна <guimenu>Стили и Форматирование
+      </guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Select <guimenu>HTML Styles</guimenu>.
+      Выбрать <guimenu>Стили HTML</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Create your HTML document, using the styles to tag your text.
+      Создать документ, используя стили для теггирования текста.
      </para>
     </step>
     <step>
      <para>
-      Click <menuchoice> <guimenu>File</guimenu> <guimenu>Save As</guimenu>
+      Нажать <menuchoice> <guimenu>Файл</guimenu> <guimenu>Сохранить как</guimenu>
       </menuchoice>.
      </para>
     </step>
     <step>
      <para>
-      Select the location where you want to save your file, name the file,
-      and select HTML Document (.html) from the <guimenu>File Type</guimenu>
-      list.
+      Выбрать местоположение для сохраняемого файла, имя файла,
+      и указать Документ HTML (.html) в строке <guimenu>Фильтр</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu>OK</guimenu>.
+      Нажать <guimenu>Сохранить</guimenu>.
      </para>
     </step>
    </procedure>
    <para>
-    If you prefer to edit HTML code directly, or if you want to see the HTML
-    code created when you edited the HTML file as a Writer document, click
-    <menuchoice> <guimenu>View</guimenu> <guimenu>HTML Source</guimenu>
-    </menuchoice>. In HTML Source mode, the Formatting and Styles list is
-    not available. The first time you switch to HTML Source mode, you are
-    prompted to save the file as HTML, if you have not already done so.
+    Если предпочтительно напрямую редактировать код HTML или необходимо видеть код HTML
+    создаваемый при редактировании HTML файла, как текстового документа, нажать
+    <menuchoice> <guimenu>Вид</guimenu> <guimenu>Исходный текст HTML</guimenu>
+    </menuchoice>. В режиме Исходный текст HTML, окно  Стили и Форматирование
+    не доступно. При первом переключении в режим Исходный текст HTML, будет
+    предложено сохранить документ как файл HTML, если это не было сделано ранее.
    </para>
   </sect2>
 
   <sect2 id="sec.oofficequick.write.table">
    <title>Tables</title>
    <para>
-    You can include tabular data in the Writer, Impress and Draw module.
-    Insert basic tables directly into your document either with the
-    following menus items or by using the toolbar:
+    Можно включать табличные данные в приложениях Текстовый Процессор, Презентация и Рисование.
+    Удобно включать базовые таблицы напрямую в документы при помощи соответствующих
+    элементов меню или используя панель инструментов:
    </para>
    <itemizedlist>
     <listitem>
      <para>
-      <menuchoice> <guimenu>Insert</guimenu> <guimenu>Table</guimenu>
+      <menuchoice> <guimenu>Вставка</guimenu> <guimenu>Таблица</guimenu>
       </menuchoice>,
      </para>
     </listitem>
     <listitem>
      <para>
-      <menuchoice> <guimenu>Table</guimenu> <guimenu>Insert</guimenu>
-      <guimenu>Table</guimenu> </menuchoice>,
+      <menuchoice> <guimenu>Таблица</guimenu> <guimenu>Вставить</guimenu>
+      <guimenu>Таблицу</guimenu> </menuchoice>,
      </para>
     </listitem>
     <listitem>
      <para>
-      or use the <guimenu>Table</guimenu> icon.
+      или использовать иконку <guimenu>Таблицу</guimenu> на панели инструментов.
      </para>
     </listitem>
    </itemizedlist>
@@ -905,15 +903,15 @@
     </mediaobject>
    </informalfigure>
    <para>
-    To enter data, select a cell with your mouse pointer and begin typing.
-    To move around cells, use the arrow keys. <keycap function="tab"/> moves
-    to the next cell, skipping over the contents of the cell and <keycombo>
-    <keycap function="shift"/> <keycap function="tab"/> </keycombo> moves
-    backwards.
+    Для ввода данных, выбрать клетку при помощи курсора мыши, и впечатать текст.
+    Для перемещения между клетками, используйте клавиши со стрелками. <keycap function="tab"/> переместиться в следующую клетку,
+     и <keycombo>
+    <keycap function="shift"/> и <keycap function="tab"/> </keycombo> - переместиться
+    назад и сбросить содержимое клетки.
    </para>
    <para>
-    You can use <guimenu>Table</guimenu> menu or the
-    <guimenu>Table</guimenu> toolbar to modify the table.
+    Можно модифицировать таблицы, используя меню <guimenu>Таблица</guimenu> или
+    <guimenu>Таблицу</guimenu> в панели инструментов.
    </para>
   </sect2>
  </sect1>

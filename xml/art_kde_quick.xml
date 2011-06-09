@@ -1355,76 +1355,77 @@
   </informalfigure>
 
   <para>
-   To activate KWallet, select <guimenu>Basic Setup</guimenu> and click
-   <guimenu>Next</guimenu>. Select <guimenu>Yes, I wish to use the KDE
-   wallet to store my personal information</guimenu> and enter a password.
-   This is your master password for the default wallet (named
-   <literal>kdewallet</literal>) that is created during the next step.
+   Для активации KWallet выберите <guimenu>Стандартная настройка</guimenu>
+   и нажмите <guimenu>Далее</guimenu>. Выберите <guimenu>Да, я хочу использовать
+   бумажник KDE для хранения личной информации</guimenu> и введите пароль.
+   Это Ваш мастер-пароль для получения доступа к бумажнику (с названием
+   <literal>kdewallet</literal>), который будет создан на следующем шаге.
   </para>
 
   <warning>
    <title>Зашита Ваших паролей в KWallet</title>
    <para>
-    If you forget your master password for any wallet, it cannot be
-    recovered. Furthermore, anyone who knows your master password can obtain
-    all information contained in the respective wallet.
+    Если Вы забудете мастер-пароль для какого-либо бумажника, то его будет
+    невозможно восстановить. Кроме того, любой, кто знает Ваш мастер-пароль
+    может получить доступ ко всей информации содержащейся в этом бумажнике.
    </para>
   </warning>
 
   <para>
-   Click <guimenu>Finish</guimenu> to close the wizard. If you started the
-   KWallet wizard initially from another application like Konqueror or
-   KMail, KWallet will prompt you to enter the password once again in order
-   to store the password for this application in the newly created wallet.
-   After initial configuration you can open your wallet at any time to view,
-   search, delete, or create entries. Normally you do not need to insert an
-   entry manually. KDE recognizes if a resource requires authentication and
-   KWallet starts automatically, prompting you for the KWallet password.
-   However, you can add additional data if you wish. To configure any
-   KWallet options, press <keycombo> <keycap function="alt"/>
-   <keycap>F2</keycap> </keycombo> and enter
-   <command>kwalletmanager</command>. In the <guimenu>KDE Wallet
-   Manager</guimenu> that opens select <menuchoice>
-   <guimenu>Settings</guimenu> <guimenu>Configure Wallet</guimenu>
-   </menuchoice>.
+   Нажмите <guimenu>Завершить</guimenu>, чтобы завершить настройку. Если Вы
+   запустите мастер KWallet из другого приложения как, например, Konqueror
+   или KMail, то KWallet запросит у Вам мастер-пароль для бумажника, чтобы
+   сохранить в нем пароль для этого приложения. После создания конфигурации
+   Вы можете окткрыть Ваш бумажник в любое время для просмотра, поиска,
+   удаления или создания записей. Обычно добавлять записи вручную не нужно.
+   KDE самостоятельно распознает когда ресурсу необходима авторизация и
+   автоматически запустит KWallet, при этот у Вас будет запрошен мастер-пароль.
+   Тем не менее, Вы можете добавить дополнительные данные, если это необходимо.
+   Для на настройки каких-либо парамтеров KWallet намжите
+   <keycombo> <keycap function="alt"/> <keycap>F2</keycap> </keycombo> и введите
+   <command>kwalletmanager</command>. В открывшейся <guimenu>программе управления
+   бумажниками KDE</guimenu> выберите <menuchoice> <guimenu>Настройка</guimenu>
+   <guimenu>Настроить KWallet...</guimenu> </menuchoice>.
   </para>
 
   <para>
-   Whereas KWallet is designed to centrally manage passwords for several KDE
-   applications, Firefox also offers the ability to store data when you
-   enter a username and a password on a Web site. If you accept by clicking
-   <guimenu>Remember</guimenu>, the password will be stored on your hard
-   disk in an encrypted format. The next time you access this site, Firefox
-   will automatically populate the login fields.
+   Не смотря на то, что KWallet создавался как основная программа для управления
+   паролями KDE приложений, Firefox так же может хранить данные которые Вы
+   вводите в поля имени пользователя и пароля на Веб-сайтах. Если Вы подтвердите
+   свое согласие на сохранение этих данну нажатием на кнопку
+   <guimenu>Запомнить</guimenu>, то пароль будет сохранен на Вашем жестком диске
+   в зашифрованном формате. В следующий раз, когда Вы посетите этот сайт Firefox
+   автоматически заполнит поля имени пользователя и пароля.
   </para>
 
   <para>
-   Firefox does not use KWallet to store passwords, but rather uses it's own
-   password store. To review or manage your passwords in Firefox, click
-   <menuchoice> <guimenu>Edit</guimenu> <guimenu>Preferences</guimenu>
-   <guimenu>Security</guimenu> <guimenu>Saved Passwords...</guimenu>
+   Firefox не использует KWallet для хранения паролей – используется собственное
+   хранилище паролей. Чтобы просмотреть или изменить Вами пароли сохраненные в
+   Firefox нажмите <menuchoice> <guimenu>Правка</guimenu> <guimenu>Настройки</guimenu>
+   <guimenu>Защита</guimenu> <guimenu>Сохраненные пароли...</guimenu>
    </menuchoice>.
   </para>
  </sect1>
  <sect1 id="sec.kdequick.mail">
-  <title>E-Mailing and Calendaring</title>
+  <title>Электронная почта и календарь</title>
 
   <para>
-   For reading and managing your mails and appointments, you can use Kontact
-   as your personal information management tool (PIM). Kontact combines KDE
-   applications like KMail, KOrganizer, and KAddressBook into a single
-   interface. This gives you easy access to your e-mails, calendar, address
-   book, and other PIM functionality. Kontact can also manage multiple
-   e-mail accounts.
+   Для чтения и управления Вашей почтой, Вы можете воспользоваться программой
+   Kontact, выступающей в качетсве персонального информационного менеджером
+   (Personal Information Manager, PIM). Kontact объединяет в едином интерфейсе
+   такие приложения из состава KDE как KMail, KOrganizer и KAddressBook. Это
+   позволяет легко получить доступ к почте, календарю, адресной книге и другим
+   функциям PIM. Kontact так же поддерживает работу сразу с несколькими
+   учетными записями электронной почты.
   </para>
 
   <sect2 id="sec.kdequick.mail.kontact">
-   <title>Starting Kontact for the First Time</title>
+   <title>Первый запуск Kontact</title>
    <para>
-    To start Kontact, press <keycombo> <keycap function="alt">Alt</keycap>
-    <keycap>F2</keycap> </keycombo> and enter <command>kontact</command>. To
-    access one of its components like KMail, click the corresponding icon in
-    the left sidebar.
+    Чтобы запустить Kontact нажмите <keycombo> <keycap function="alt">Alt</keycap>
+    <keycap>F2</keycap> </keycombo> и введите <command>kontact</command>. Чтобы
+    доступ к одному из его компонентов, как, например, KMail нажмите на соответствующий
+    значок в левой боковой панели.
    </para>
    <informalfigure>
     <mediaobject>
@@ -1437,8 +1438,8 @@
     </mediaobject>
    </informalfigure>
    <para>
-    Before you can send or receive mails, you must configure an e-mail
-    identity and account:
+    Перед тем, как Вы сможете отправить или получить почту необходимо настроить
+    учетную запись:
    </para>
    <procedure>
     <step>
