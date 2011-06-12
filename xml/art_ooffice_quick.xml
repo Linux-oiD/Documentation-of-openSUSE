@@ -918,20 +918,19 @@
   <title>&ooo; Calc</title>
 
   <para>
-   Calc is the &ooo; spreadsheet and data-plotting module. Spreadsheets
-   consist of a number of sheets, containing cells which can be filled with
-   elements like text, numbers, or formulas. A formula can manipulate data
-   from other cells to generate a value for the cell into which it is
-   inserted. Calc also allows you to define ranges, filter and sort the
-   data, or create charts from the data to present it graphically. By using
-   DataPilots, you can combine, analyze or compare larger amounts of data.
+   Calc - это приложение &ooo; для работы с табличными данными, а также построения графиков и диаграмм. 
+   Таблицы содержат множество листов, включающих клетки, которые могут быть заполненными
+   такими элементами, как текст, номерные значения или формулы. Формулы могут манипулировать
+   данными из других ячеек таблицы для генерации значения в ячейке, в которую они были внесены.
+   Calc позволяет систематизировать, фильтровать и сортировать данные,
+   или создавать из них графики для их графического представления. Также можно
+   комбинировать, анализировать и сопоставлять большие количества данных.
   </para>
 
   <para>
-   As with the entire &ooo; suite, Calc can be used across a variety of
-   platforms. It provides a number of exchange formats (including export to
-   PDF documents), and can also read and save files in Microsoft Excel's
-   format.
+   Как и весь комплект &ooo; приложение Calc может быть использовано на
+   множестве программных платформ. Приложение поддерживает большое количество обменных форматов (включая экспорт в
+   документы PDF), а также может читать и сохранять файлы в формате Microsoft Excel.
   </para>
 
   <informalfigure pgwide="0">
@@ -946,54 +945,54 @@
   </informalfigure>
 
   <sect2>
-   <title>What is New in Calc</title>
+   <title>Что нового в Calc</title>
    <para>
-    Below is a list of new features for Calc:
+    Ниже список новых возможностей в приложении:
    </para>
    <variablelist>
     <varlistentry>
-     <term>Higher Number of Rows Per Calc Sheet</term>
+     <term>Большее Количество Столбцов на Листе Таблицы</term>
      <listitem>
       <para>
-       Calc spreadsheets now support 1 million rows instead of former 65,536
-       rows.
+       Calc поддерживает 1 миллион столбцов вместо прежних 65,536
+       столбцов.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Charts Support Drawing Objects</term>
+     <term>Таблицы Поддерживают Рисованные Объекты</term>
      <listitem>
       <para>
-       The Chart functionality is enhanced and now supports drawing objects.
-       The drawing toolbar allows to insert simple shapes such as lines,
-       rectangles and text objects, and even complex shapes such as cubes,
-       symbols, block arrows, flowcharts and stars.
+       Табличная функциональность была улучшена и теперь поддерживает рисованные объекты.
+       Панель инструментов Рисование позволяет включать простые формы, такие как линии,
+       прямоугольники и текстовые объекты, и даже комплексные формы, такие как кубы,
+       символы, блоки-указатели, блок-схемы и звёздочки.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Intelligent Selection of Filter Area</term>
+     <term>Интеллигентный Выбор Фильтруемой Области</term>
      <listitem>
       <para>
-       The selection is now shrunk to the actually used data columns when
-       enabling a filter (AutoFilter, StandardFilter, AdvancedFilter). Users
-       can select an entire row by clicking on a row header and expect a
-       filter to operate on the data below the selected row. If one single
-       row is selected the selection is shrunk to the actually used data
-       columns and then expanded over all contiguous data rows below.
-       Selecting only a portion of a row behaves similar by expanding the
-       selected columns over the data rows. If more than one entire row is
-       selected, the area is shrunk to the actual used data columns.
+       Выбор фильтруемой области теперь сокращен до строк актуально используемых данных,
+       при включении фильтра (Авто-фильтр, Стандартный фильтр, Расширенный фильтр). Пользователи
+       могут выбрать строку, кликнув мышкой на заголовке строки и применить фильтр
+       для операции с данными в пределах выбранной строки. Если выбрана
+       только одна строка выбор сокращается до актуально используемых колонок данных
+       и затем расширяется на все смежные строки с данными.
+       Выбор только части строки ведет себя похоже, расширяя
+       выбранные колонки вокруг строк с данными. Если выбрана более,чем одна строка,
+       область сокращается до колонок с актуально используемыми данными.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term>Colored Sheet Tabs</term>
+     <term>Цветные Листы Таблиц</term>
      <listitem>
       <para>
-       Each sheet in a Calc document can be assigned a color for its tab:
-       Right-click on a sheet tab and choose <guimenu>Tab color</guimenu>
-       and choose the color of your choice.
+       Каждый лист в документе Электронной Таблицы Можно ассоциировать с цветом таблицы:
+       щелкнуть правой кнопкой мыши на листе таблицы, выбрать <guimenu>Цвет ярлыка</guimenu>
+       и подобрать желаемый цвет.
       </para>
      </listitem>
     </varlistentry>
@@ -1001,132 +1000,125 @@
   </sect2>
 
   <sect2 id="sec.oofficequick.calc.createnew">
-   <title>Creating a New Document</title>
+   <title>Создание Нового Документа</title>
    <para>
-    Start &ooo; and select <menuchoice> <guimenu>File</guimenu>
-    <guimenu>New</guimenu> <guimenu>Spreadsheet</guimenu> </menuchoice> to
-    create a new spreadsheet. Access the individual sheets by clicking the
-    respective tabs at the bottom of the window.
+    Запустить &ooo; и выбрать <menuchoice> <guimenu>Файл</guimenu>
+    <guimenu>Создать</guimenu> <guimenu>Электронную таблицу</guimenu> </menuchoice> для
+    создания нового документа. Доступ к каждому листу таблицы можно получить,
+    нажав соответствующую вкладку внизу окна.
    </para>
    <para>
-    Enter data in the cells as desired. To adjust appearance, either use the
-    <guimenu>Formatting</guimenu> toolbar or the <guimenu>Format</guimenu>
-    menu&mdash;or define styles. Use the <guimenu>File</guimenu> menu or the
-    relevant buttons in the toolbar to print and save your document.
+    Вводим данные в требуемые клетки таблицы. Для изменения внешнего вида, используем панель инструментов
+    <guimenu>Форматирование</guimenu>, меню <guimenu>Формат</guimenu>&mdash;или применяем стили. 
+    Используем меню <guimenu>Файл</guimenu> или соответствующие кнопки
+    панели инструментов для печати или сохранения документа.
    </para>
   </sect2>
 
   <sect2 id="sec.oofficequick.calc.custom">
-   <title>Customizing &ooo; Calc</title>
+   <title>Настройка &ooo; Calc</title>
    <para>
-    Calc comes with a few built-in cell and page styles to improve the
-    appearance of your spreadsheets and reports. Although these built-in
-    styles are adequate for many uses, you will probably find it useful to
-    create styles for your own frequently-used formatting preferences.
+    Для улучшения внешнего вида таблиц и отчетов, Calc поставляется
+    со встроенными стилями ячеек и листов. Несмотря на то, что встроенные стили подходят большинству пользователей,
+    возможно, будет найдено более удобным
+    создать собственные стили для более дружественных к пользователю настроек форматирования.
    </para>
    <procedure>
-    <title>Creating a Style</title>
+    <title>Создание Стиля</title>
     <step>
      <para>
-      Click <menuchoice> <guimenu>Format</guimenu> <guimenu>Styles and
-      Formatting</guimenu> </menuchoice>.
+      Нажать <menuchoice> <guimenu>Формат</guimenu> <guimenu>Стили</guimenu> </menuchoice>.
      </para>
     </step>
     <step>
      <para>
-      In the <guimenu>Styles and Formatting</guimenu> window, click one of
-      the icons representing either <guimenu>Paragraph Styles</guimenu>,
-      <guimenu>Paragraph Styles</guimenu>, or <guimenu>Page
-      Styles</guimenu>.
+      В окне <guimenu>Стили и форматирование</guimenu>, нажать одну
+      из иконок,либо <guimenu>Стили страницы</guimenu>, либо <guimenu>Стили Ячейки</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Right-click in the <guimenu> Styles and Formatting</guimenu> window,
-      then click <guimenu>New</guimenu>.
+      Кликнуть правой кнопкой мыши в окне <guimenu>Стили и форматирование</guimenu>,
+      затем выбрать <guimenu>Создать</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Specify a name for your style and use the various tabs to set the
-      desired formatting options.
+      Указать название нового стиля, и, используя различные вкладки, выбрать желаемые опции форматирования.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu>OK</guimenu>.
+      Нажать <guimenu>OK</guimenu>.
      </para>
     </step>
    </procedure>
    <procedure>
-    <title>Modifying a Style</title>
+    <title>Модификация Стиля</title>
     <step>
      <para>
-      Click <menuchoice> <guimenu>Format</guimenu> <guimenu>Styles and
-      Formatting</guimenu> </menuchoice>.
+      Нажать <menuchoice> <guimenu>Формат</guimenu> <guimenu>Стили</guimenu> </menuchoice>.
      </para>
     </step>
     <step>
      <para>
-      In the <guimenu>Styles and Formatting</guimenu> window, click one of
-      the icons representing either <guimenu>Paragraph Styles</guimenu>,
-      <guimenu>Paragraph Styles</guimenu>, or <guimenu>Page
-      Styles</guimenu>.
+      В меню <guimenu>Стили и Форматирование</guimenu> нажать одну
+      из иконок: <guimenu>Стили страницы</guimenu>, либо
+      <guimenu>Стили ячейки</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Right-click the name of the style you want to change, then click
-      <guimenu>Modify</guimenu>.
+      Кликнуть правой кнопкой мыши на названии стиля, который необходимо изменить, затем нажать
+      <guimenu>Изменить</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Change the desired formatting options.
+      Изменить существующие опции форматирования.
      </para>
     </step>
     <step>
      <para>
-      Click OK.
+      Нажать OK.
      </para>
     </step>
    </procedure>
   </sect2>
  </sect1>
  <sect1>
-  <title>Other &ooo; Modules</title>
+  <title>Другие Приложения &ooo;</title>
 
   <para>
-   Besides Writer and Calc, &ooo; also includes the modules Impress, Base,
-   Draw, and Math. With these you can create presentations, design
-   databases, draw up graphics and diagrams, and create mathematical
-   formulas.
+   Кроме Текстового Редактора и Электронной таблицы, &ooo; также включает приложения Презентация, База Данных,
+   Рисование, и Математическая Формула. С этими приложениями можно создавать презентации, строить
+   базы данных, рисовать рисунки и диаграммы, и создавать математические
+   формулы.
   </para>
 
   <sect2 id="sec.oofficequick.various.impress">
-   <title>Using Presentations with Impress</title>
+   <title>Использование Презентаций При Помощи Приложения Презентация</title>
    <para>
-    Use &ooo; Impress to create presentations for screen display or
-    printing, such as slide shows or transparencies. If you have used other
-    presentation software, you can move comfortably to Impress, which works
-    very similarly to other presentation software.
+    Приложение &ooo; Презентация используется при создании файлов для демонстрации на экране или
+    печати, таких как слайд-шоу или прозрачные слайды. Если ранее использовалось другое
+    программное приложение для презентаций, можно комфортабельно начать применять приложение Презентация, так как
+    оно функционирует очень похоже на другие программы презентаций.
    </para>
    <para>
-    Impress can open and save Microsoft PowerPoint presentations, which
-    means you can exchange presentations with PowerPoint users, as long as
-    you save your presentations in PowerPoint format.
+    Приложение Презентация может открывать и сохранять презентации Microsoft PowerPoint, то есть
+    возможен обмен документами с пользователями PowerPoint, также как и 
+    хранение ваших файлов в формате PowerPoint.
    </para>
    <para>
-    Impress also allows you to use 3D transitions for your slides. Access
-    the available transitions by selecting <menuchoice> <guimenu>Slide
-    Show</guimenu> <guimenu>Slide Transitions</guimenu> </menuchoice>.
+    Приложение Презентация также позволяет использование трёхмерных эффектов в слайдах. Доступ
+    к используемым эффектам можно получить, выбрав в меню <menuchoice> <guimenu>Демонстрация</guimenu> 
+    <guimenu>Эффекты</guimenu> </menuchoice>.
    </para>
    <para>
-    You can either create a brand new presentation (without any preformatted
-    slides) or use an existing template or presentation for your new
-    document. Impress uses styles and templates the same way other &ooo;
-    modules do. A wizard leads you through the options available for
-    creating new presentations.
+    Для нового файла можно создать совершенно новую презентацию (без каких-либо предварительно настроенных
+    слайдов) или использовать существующие шаблон или презентацию.
+    Приложение Презентация использует стили и шаблоны таким-же путём, как и другие приложения &ooo;.
+    Мастер помогает выбрать из существующих опций при создании новых презентаций.
    </para>
    <informalfigure pgwide="0">
     <mediaobject>
