@@ -13,11 +13,11 @@
 <!-- openSUSE Start-Up                                                     -->
 <!-- ##################################################################### -->
 <?provo dirname="startup/"?>
-<book lang="en" id="book.opensuse.startup" role="print">
+<book lang="ru" id="book.opensuse.startup" role="print">
  <bookinfo>
   <title>&startup;</title><productname>&productname;</productname>
   <productnumber>&productnumber;</productnumber><date>
-<?dbtimestamp format="B d, Y"?></date>
+<?dbtimestamp format="d.m.Y"?></date>
   <xi:include href="common_copyright_opensuse.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
  </bookinfo>
  <xi:include href="opensuse_startup_intro.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
