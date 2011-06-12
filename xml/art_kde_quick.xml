@@ -1416,7 +1416,7 @@
    такие приложения из состава KDE как KMail, KOrganizer и KAddressBook. Это
    позволяет легко получить доступ к почте, календарю, адресной книге и другим
    функциям PIM. Kontact так же поддерживает работу сразу с несколькими
-   учетными записями электронной почты.
+   учётными записями электронной почты.
   </para>
 
   <sect2 id="sec.kdequick.mail.kontact">
@@ -1439,84 +1439,81 @@
    </informalfigure>
    <para>
     Перед тем, как Вы сможете отправить или получить почту необходимо настроить
-    учетную запись:
+    учётную запись:
    </para>
    <procedure>
     <step>
      <para>
-      From the menu, select <menuchoice> <guimenu>Settings</guimenu>
-      <guimenu>Configure Kontact...</guimenu> </menuchoice>.
+      В меню выберите <menuchoice> <guimenu>Настройка</guimenu>
+      <guimenu>Настроить Kontact...</guimenu> </menuchoice>.
      </para>
     </step>
     <step>
      <para>
-      In the left side pane under <guimenu>Mail</guimenu>, click
-      <guimenu>Identities</guimenu> and select the identity that KMail has
-      automatically created for you. <guimenu>Modify</guimenu> it by
-      entering your full name and e-mail address and confirming your
-      changes.
+      В левой боковой панели под <guimenu>Почта</guimenu> нажмите на
+      <guimenu>Профили</guimenu> и выберите профиль автоматически созданный
+      KMail. Нажав <guimenu>Изменить...</guimenu> можно указать Ваше полное имя
+      и адрес электронной почты, внести другие изменения.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu>Accounts</guimenu> in the left side pane under
-      <guimenu>Mail</guimenu> and <guimenu>Add</guimenu> at least one
-      account on the tabs for <guimenu>Receiving</guimenu> and
-      <guimenu>Sending</guimenu> mails. (Optionally, you can configure
-      multiple mail accounts).
+      Нажмите <guimenu>Учётные записи</guimenu> в левой боковой панели под
+      <guimenu>Почта</guimenu> и <guimenu>Добавить...</guimenu>, чтобы добавить по
+      крайней мере по одной учётной записи на вкладках <guimenu>Получение</guimenu>
+      и <guimenu>Отправка</guimenu>. (Вы можете настроить одновременное использование
+      нескольких учётных записей).
      </para>
      <para>
-      Usually, the following information is required for both incoming and
-      outgoing mail: <guimenu>Account Type</guimenu>, <guimenu>Server
-      Name</guimenu> and <guimenu>Port</guimenu>. Depending on the account,
-      you may also need to set encryption or authentication options. If you
-      are not sure about the settings or items to select, consult your
-      Internet Service Provider or system administrator.
+      Обычно, требуется следующая информация для обоих учётных записей – для входящей
+      и отправляемой почты: <guimenu>тип учётной записи</guimenu>, <guimenu>адрес
+      сервера</guimenu> и <guimenu>порт</guimenu>. В зависимости от учётной записи,
+      Вам так же понадобится указать опции шифрования или авторизации. Если Вы не уверены,
+      что знаете какие настройки нужно указать – обратитесь за консультацией к Вашему Интернет-провайдеру или системному администратору.
      </para>
     </step>
     <step>
      <para>
-      Confirm the setup and leave the configuration dialog with
-      <guimenu>OK</guimenu>.
+      Проверьте установки и покиньте диалог настройки нажав <guimenu>OK</guimenu>.
      </para>
     </step>
    </procedure>
    <para>
-    To write a new mail, click the <guimenu>Mail</guimenu> icon in the
-    Kontact main window and press <keycombo> <keycap function="control"/>
-    <keycap>N</keycap> </keycombo> to open the mail composer. After you have
-    finished your mail, click <guimenu>Send</guimenu> to send it
-    immediately. In case you have configured multiple e-mail accounts, keep
-    the <guimenu>Send</guimenu> button pressed, then select the account from
-    which you want to send the mail.
+    Чтобы написать письмо нажмите на значок <guimenu>Почтка</guimenu> в
+    главном окне Kontact и нажмите <keycombo> <keycap function="control"/>
+    <keycap>N</keycap> </keycombo>. После того, как Вы закончите написание
+    письма нажмите <guimenu>Отправить</guimenu>, чтобы немедленно его отправить.
+    В случае использования нескольких учётных записей нажмите удерживайте кнопку <guimenu>Отправить</guimenu> нажатой, чтобы выбрать учётную запись с помощью
+    которой Вы хотите отпарвить это письмо.
    </para>
   </sect2>
  </sect1>
  <sect1 id="sec.kdequick.kopete">
-  <title>Instant Messaging with Kopete</title>
+  <title>Обмен мгновенными сообщениями с Kopete</title>
 
   <para>
-   Kopete is an online messenger application that allows multiple partners
-   connected to the Internet to chat with each other. Kopete currently
-   supports a number of common messenger protocols, such as AOL* Instant
-   Messenger (AIM), Gadu-Gadu, GroupWise&reg; Messenger, ICQ, Jabber*, SMS,
-   and Yahoo!*. To be able to use instant messaging (IM), you must register
-   with a provider offering IM services and configure a Kopete account.
+   Kopete – приложение для обмена сообщениями в сети Интернет, позволяющее
+   работать сразу с несколькими протоколами. Kopete в настоящее время
+   поддерживает все популярные протоколы общения, такие как AOL* Instant
+   Messenger (AIM), Gadu-Gadu, GroupWise&reg; Messenger, ICQ, Jabber*, MSN,
+   SMS и Yahoo!*. Чтобы воспользоваться службой мгновенного обмена сообщений
+   (IM), Вы должны сначала зарегистрироваться у провайдера предлагающего
+   данную службу IM, и настроить учётную записать в Kopete.
   </para>
 
   <para>
-   To start Kopete, press <keycombo> <keycap function="alt"/>
-   <keycap>F2</keycap> </keycombo> and enter <command>kopete</command>. If
-   started for the first time, click the wrench icon at the bottom of the
-   Kopete window to create an account. Kopete guides you through the setup
-   steps like selecting the messaging service, and entering the respective
-   account information like user name or ID, server name and port and any
-   authentication details like passwords. If you have not registered with
-   the provider for the selected messaging service yet, click
-   <guimenu>Register New Account</guimenu>. In the browser window that
-   opens, enter your user data to register. Switch back to Kopete and enter
-   the data received on registration. Complete the configuration of your
-   account by clicking <guimenu>Finish</guimenu>.
+   Чтобы запустить Kopete нажмите <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo> и введите <command>kopete</command>.
+   Если программа запущена первый раз – нажмите на значок гаечного ключа в
+   нижней части окна Kopete, чтобы создать учетную запись. Kopete проведет
+   Вас через несколько шагов как выбор службы обмена сообщениями, ввод
+   соответствующей информации об учётной записи – имя пользователя или ID,
+   имя сервера и порт и другие данные необходимые для авторизации. Если Вы
+   еще не зарегистрированы в выбранной службе обмена сообщениями, то нажмите
+   <guimenu>Зарегистрировать новую учетную запись</guimenu>. В открывшемся
+   окне браузера введите данные необходимые для регистрации. Переключитесь
+   обратно в Kopete и введите данные полученные при регистрации. Для завершения
+   настройки учетной записи нажмите <guimenu>Завершить</guimenu>.
   </para>
 
 <!--taroth 2010-08-06: as Kopete has a wizard-like setup again, commenting the
@@ -1585,28 +1582,27 @@
   </procedure>-->
 
   <para>
-   If you decided to go online after configuring your account, you can now
-   add contacts in the main Kopete window. If the Kopete window shows
-   <literal>offline </literal>, first click <menuchoice>
-   <guimenu>File</guimenu> <guimenu>Set Status</guimenu>
-   <guimenu>Online</guimenu> </menuchoice> and enter your password if you
-   are prompted for it. After connecting, click <menuchoice>
-   <guimenu>File</guimenu> <guimenu>Add Contact</guimenu> </menuchoice> and
-   select the Kopete account for which you want to add contacts. Enter the
-   contact data or search for a contact and click <guimenu>OK</guimenu>.
+   Если Вы решили выйти в сеть после конфигурирования Вашей учетной записи,
+   то Вы можете добавить контакты в основном окне Kopete. Если в окне
+   Kopete отображается статус <literal>не в сети</literal>, сперва нажмите
+   <menuchoice> <guimenu>Файл</guimenu> <guimenu>Установить статус</guimenu>
+   <guimenu>В сети</guimenu> </menuchoice> и введите пароль, если он будет
+   запрошен. После подключения нажмите <menuchoice> <guimenu>Файл</guimenu>
+   <guimenu>Добавить контакт</guimenu> </menuchoice> и выберите учётную
+   запись Kopete для которой Вы хотите добавить контакты. Введите данные
+   кантакта или найдите его и нажмите <guimenu>OK</guimenu>.
   </para>
 
   <para>
-   To view all your contacts, even if they are offline at the moment, select
-   <menuchoice> <guimenu>Settings</guimenu> <guimenu>Show Offline
-   Users</guimenu> </menuchoice>.
+   Чтобы видеть все Ваши контакты, даже если некоторые из них не в сети,
+   выберите <menuchoice> <guimenu>Настройка</guimenu> <guimenu>Показывать
+   пользователей не в сети</guimenu> </menuchoice>.
   </para>
 
   <para>
-   To start a chat with someone, click the desired contact and type your
-   message in the lower part of the chat window. Press
-   <keycap function="enter"/> to send the message. The upper part of the
-   window displays the messages you have sent and received.
+   Чтобы начать с кем-нибудь разговор, нажмите на нужном контакте и введите
+   сообщение в нижней части открывшегося окна. Нажмите <keycap function="enter"/>
+   для отправки сообщения. В верхней части окна будет отображаться Ваша переписка.
   </para>
 
   <informalfigure>
@@ -1621,92 +1617,97 @@
   </informalfigure>
  </sect1>
  <sect1 id="sec.kdequick.ooo">
-  <title>Starting &libo;</title>
+  <title>Запуск &libo;</title>
 
   <para>
-   The office suite &libo; offers a complete set of office tools, including
-   word processor, spreadsheet, presentation, vector drawing, and database
-   components. Because &libo; is available for a number of operating
-   systems, you can use the same data across different computing platforms.
+   Набор офисных приложений &libo; включает все необходимое для работы:
+   текстовый процессор, редактор электронных таблиц, мастер презентаций,
+   редактор векторной графики и компоненты для работы с базами данных.
+   Так как &libo; доступен для большого числа систем – Вы можете работать
+   с теми же данными на различных компьютерных платформах.
   </para>
 
   <para>
-   To start &libo; press <keycombo> <keycap function="alt"/>
-   <keycap>F2</keycap> </keycombo> and enter <command>ooffice</command>. In
-   the window that appears, select the &libo; module you want to open. To
-   create a new document, select <menuchoice> <guimenu>File</guimenu>
-   <guimenu>New</guimenu> </menuchoice> and choose the type of document to
-   create. To open an existing document, select <guimenu>Open</guimenu> and
-   choose the appropriate file from the file system.
+   Чтобы запустить &libo; нажмите <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo> и введите <command>ooffice</command>. В
+   открывшемся окне выберите модуль &libo; который Вы хотите запустить.
+   Чтобы создать новый документ выберите <menuchoice> <guimenu>Файл</guimenu>
+   <guimenu>Создать</guimenu> </menuchoice> и выберите тип создаваемого
+   документа. Чтобы открыть существующий документ выберите
+   <guimenu>Открыть</guimenu> и укажите соотвуствующий файл в файловой
+   системе.
   </para>
  </sect1>
  <sect1 id="sec.kdequick.docview">
-  <title>Viewing PDF Files and Other Documents</title>
+  <title>Просмотр PDF-файлов и других документов</title>
 
   <para>
-   Documents that need to be shared or printed across multiple platforms can
-   be saved as PDF (Portable Document Format) files, for example, in the
-   &libo; suite. View them with Okular, the default KDE document viewer.
+   Документы, которые должны быть доступны для распространения или печати
+   на многих платформах, могут быть сохранены в формате PDF (Portable
+   Document Format), например, при помощи &libo;. Просмотреть их можно с
+   помощью Okular – программа по умолчанию для просмотра документов в KDE.
   </para>
 
   <sect2 id="sec.kdequick.docview.okular">
-   <title>Using Okular Document Viewer</title>
+   <title>Использование Okular</title>
    <para>
-    Apart from PDF files, Okular allows you to view a great number of file
-    formats, such as PostScript, several image formats, OpenDocument format
-    (ODF), OpenDocument text (ODT), some eBook formats (ePub), and even
-    Microsoft* Compiled HTML Help (CHM). Okular also provides support for
-    bookmarks, annotations, form fields and multimedia content, and the
-    rotation of pages.
+    Кроме файлов формата PDF Okular позволяет просматривать большое число
+    других форматов, таких как PostScript, несколько форматов изображений,
+    формат OpenDocument (ODF), OpenDocument Text (ODT), некоторые форматы
+    eBook (ePub), и даже Microsoft* Compiled HTML Help (CHM). Также Okular
+    поддерживает работу с закладками, аннотациями, метаданным и
+    мультимедийным содержимым, а также поворот страниц.
    </para>
    <para>
-    Start Okular from the <guimenu>Main Menu</guimenu> or press <keycombo>
-    <keycap function="alt"/> <keycap>F2</keycap> </keycombo> and enter
-    <command>okular</command>.
+    Запустить Okular можно из <guimenu>Главного меню</guimenu> или нажав
+    <keycombo> <keycap function="alt"/> <keycap>F2</keycap> </keycombo>
+    и введя <command>okular</command>.
    </para>
    <para>
-    To open a document, select <menuchoice> <guimenu>File</guimenu>
-    <guimenu>Open</guimenu> </menuchoice> and choose the desired file from
-    the file system. Navigate through the document by using the navigation
-    icons at the top or bottom of the window. Depending on which icon you
-    click on the navigation panel on the left, the sidebar either shows a
-    table of <guimenu>Contents</guimenu>, a <guimenu>Thumbnail</guimenu>
-    view of each page, the <guimenu>Reviews</guimenu>, or your
-    <guimenu>Bookmarks</guimenu> for this file. To filter for any text
-    listed in the sidebar or the overall document, enter a string into the
-    input field at the top of the sidebar. If you want to select and copy
-    text or images from the file in Okular, click the
-    <guimenu>Selection</guimenu> icon in the toolbar and select one of the
-    options from the context menu. Click the <guimenu>Browse</guimenu> icon
-    to switch back to browsing the document.
+    Чтобы открыть документ, выберите <menuchoice> <guimenu>Файл</guimenu>
+    <guimenu>Открыть</guimenu> </menuchoice> и укажите нужный файл в файловой
+    системе. Перемещение по документу, осуществляется с помощью значков
+    навигации в верхней или нижней части окна. В зависимости от значка на
+    который Вы нажмете, расположенных в левой части окна, в боковой панели
+    отобразится колонка с <guimenu>Содержанием</guimenu>, 
+    <guimenu>Миниатюрами</guimenu> для каждой страницы,
+    <guimenu>Рецензирование</guimenu> или Ваши <guimenu>Закладки</guimenu>
+    для этого документа. Чтобы найти любой текст среди перечисленных в
+    боковой панели миниатюр или во всем документе, просто введите искомую
+    строку в поле вверху боковой панели. Если Вам нужно выделить и скопировать
+    текст или изображение из открытого в Okular файла, то нажмите на значок
+    <guimenu>Выделение области</guimenu> на панели инструментов и выберите
+    нужную функцию в контекстном меню. Нажмите на значок
+    <guimenu>Перетаскивание</guimenu>, чтобы переключиться обратно в режим
+    просмотра документа.
    </para>
    <procedure>
-    <title>Working with Bookmarks and Annotations</title>
+    <title>Работа с закладками и аннотациями</title>
     <para>
-     With Okular, you can review a document by highlighting certain text
-     parts or adding annotations or bookmarks that Okular then attaches to
-     the file in the form of metadata. Note that the annotations and markers
-     you add are not stored within the document, so you cannot print them or
-     pass them on to other users.
+     С Okular Вы можете рецензировать документ, подсвечивая части текста,
+     или добавлять примечания или закладки, которые Okular затем прикрепит к
+     файлу в виде метаданных. Заметьте, что добавленные Вами примечания и
+     закладки не сохранятся в документе, поэтому Вы не сможете их распечатать
+     или передать другим пользователям.
     </para>
     <step>
      <para>
-      To add a bookmark for a page, click the page in the sidebar or in the
-      main display field and press <keycombo> <keycap function="control"/>
-      <keycap>B</keycap> </keycombo>. The page is added to the
-      <guimenu>Bookmarks</guimenu> list on the left sidebar. Right-click the
-      bookmark entry to access a context menu for going to this bookmark or
-      renaming, or removing it.
+      Чтобы добавить закладку для страницы в боковой панели или в главном окне
+      приложения нажмите <keycombo> <keycap function="control"/>
+      <keycap>B</keycap> </keycombo>. Страница будет добавлена в список
+      <guimenu>Закладок</guimenu>, доступный на левой боковой панели. Нажав
+      правой кнопкой мыши на закладке в появившемся контекстном меню ее можно
+      переместить, переименовать, или удалить.
      </para>
     </step>
     <step>
      <para>
-      To create an annotation for a page, press <keycap>F6</keycap> and
-      select one of the annotation tools from the toolbar that appears. The
-      annotation is added to the list of <guimenu>Reviews</guimenu> and is
-      flagged with the login name of the user who created it. Use the icons
-      at the bottom of the sidebar to group the annotations by page, by
-      author or to show the annotations for the current page only.
+      Чтобы создать примечание для страницы нажмите <keycap>F6</keycap> и
+      выберите один из инструментов рецензирования в появившейся панели.
+      Примечание будет добвалено в список <guimenu>Рецензирование</guimenu>
+      с указанием имени пользователя создавшего его. Используйте значок в
+      нижней части боковой панели для группировки примечаний по страницам,
+      по авторам или, чтобы отобразить примечания только для текущей страницы.
      </para>
      <informalfigure>
       <mediaobject>
@@ -1721,78 +1722,78 @@
     </step>
     <step>
      <para>
-      To open a pop-up note and add text for an annotation (or to remove an
-      annotation), right-click the annotation entry in the
-      <guimenu>Reviews</guimenu> list and select the corresponding menu
-      item. The annotations or markers you added are automatically attached
-      to the file, you do not need to save them.
+      Чтобы открыть вспылвающее окно и добавить текст в примечание (или удалить
+      примечание), нажмите правой кнопкой мыши по примечанию в списке
+      <guimenu>Рецензирование</guimenu> и выберите соответствующий пункт меню.
+      Примечание или выделение, добавленные Вами, автоматически присоединяются
+      к файду, поэтому нет необходимости сохранять их.
      </para>
     </step>
    </procedure>
   </sect2>
 
   <sect2 id="sec.kdequick.docview.acroread" os="osuse">
-   <title>Using Acrobat Reader</title>
+   <title>Использование Acrobat Reader</title>
    <para>
-    If Acrobat Reader is not installed by default, install the
-    <systemitem>acroread</systemitem> package with &yast;. To start Acrobat
-    reader, press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
-    </keycombo> and enter <command>acroread</command>.. Click <menuchoice>
-    <guimenu>File</guimenu> <guimenu>Open</guimenu> </menuchoice>, locate
-    the desired PDF file and click <guimenu>Open</guimenu> to view the file.
+    Если Acrobat Reader не установлен по умолчанию – установите пакет
+    <systemitem>acroread</systemitem> с помощью &yast;. Чтобы запустить
+    Acrobat Reader нажмите <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+    </keycombo> и введите <command>acroread</command>. Нажмите <menuchoice>
+    <guimenu>Файл</guimenu> <guimenu>Открыть</guimenu> </menuchoice>, выберите
+    нужный PDF-файл и нажмите <guimenu>Открыть</guimenu>, чтобы увидеть
+    содержимое этого файла.
    </para>
   </sect2>
  </sect1>
  <sect1 id="sec.kdequick.find">
-  <title>Searching for Data</title>
+  <title>Поиск данных</title>
 
   <para>
-   KDE provides more than one application for finding data on your computer
-   or in the file system. One application is KFind, which is described
-   below.
+   KDE предлагает множество приложений для осуществления поиска данных на
+   Вашем компьютере или в файловой системе. Одним из таких приложений
+   является KFind, работа с которой описывается ниже.
   </para>
 
   <sect2 id="sec.kdequick.find.kfind">
-   <title>Using KFind</title>
+   <title>Использование KFind</title>
    <para>
-    To perform basic and advanced searches, use KFind. Start it from the
-    <guimenu>Main Menu</guimenu> by clicking <menuchoice>
-    <guimenu>Applications</guimenu> <guimenu>Find Files/Folders</guimenu>
-    </menuchoice> or press <keycombo> <keycap function="alt"/>
-    <keycap>F2</keycap> </keycombo> and enter <command>kfind</command>.
+    Чтобы воспользоваться простым и расширенным поиском, используйте KFind.
+    Запустить эту программу можно из <guimenu>Главного меню</guimenu>, выбрав
+    <menuchoice> <guimenu>Приложения</guimenu> <guimenu>Поиск файлов и папок</guimenu>
+    </menuchoice> или нажав <keycombo> <keycap function="alt"/>
+    <keycap>F2</keycap> </keycombo> и введя <command>kfind</command>.
    </para>
    <procedure id="proc.kdequick.find.simple">
-    <title>Searching by Name</title>
+    <title>Поиск по имени</title>
     <para>
-     To use a filename (or a part of it) as the search keyword, proceed as
-     follows:
+     Чтобы использовать имя файла (или его часть) как поисковый запрос,
+     выполните следующее:
     </para>
     <step>
      <para>
-      Enter the filename or a part of the filename in the
-      <guimenu>Named</guimenu> input field. Use wild cards, such as an
-      asterisk (<literal>*</literal>), to indicate missing characters in the
-      filename.
+      Введите имя файла или только его часть в поле <guimenu>Имя файла</guimenu>.
+      Используйте специальные символы, такие как звездочка (<literal>*</literal>),
+      чтобы указать недостающие символы в имени файла.
      </para>
     </step>
     <step>
      <para>
-      Specify the folder in which to search for the file. Either enter a
-      path to the folder in <guimenu>Look in</guimenu> or click
-      <guimenu>Browse</guimenu> to locate the folder.
+      Укажите папку в которой необходимо произвести поиск файла. Также можно
+      ввести путь до нужной папки в поле <guimenu>Искать в</guimenu> или нажав
+      <guimenu>Просмотр...</guimenu>, чтобы указать расположение папки.
      </para>
     </step>
     <step>
      <para>
-      To search subfolders, check <guimenu>Include Subfolders</guimenu>.
+      Для поиска в подкаталогах, отметьте <guimenu>Включая вложенные папки</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu>Find</guimenu> to start the search. The results are
-      displayed in the lower part of the dialog. To directly open the
-      result, just click it. Right-click it to choose one of the options
-      from the context menu.
+      Нажмите <guimenu>Поиск</guimenu>, чтобы начать поиск. Результаты
+      поиска отобразятся в нижней части диалогового окна. Чтобы открыть
+      найденную папку, просто нажмите на нее. По нажатию правой кнопки
+      мыши можно выбрать одну из функций контекстного меню.
      </para>
 <!--   <informalfigure>
       <mediaobject>
@@ -1807,31 +1808,32 @@
     </step>
    </procedure>
    <procedure id="proc.kdequick.findadv">
-    <title>Searching by Contents or Properties</title>
+    <title>Поиск по содержимому и свойствам файла</title>
     <para>
-     For a more detailed search, you can also specify further options, such
-     as a text the file must contain or the creation or modification date of
-     a file. To search for content or properties, proceed as follows:
+     Для более детального поиска, Вы можете задать дополнительные опции,
+     такие как текст, который должен содержать файл, или время последнего
+     изменения файла. Для поиска по содержимому или свойствам выполните:
     </para>
     <step>
      <para>
-      On the <guimenu>Name/Location</guimenu> tab, specify at least the path
-      to search for the file. You can leave <guimenu>Named</guimenu> empty.
+      На вкладке <guimenu>Имя и расположениеn</guimenu> определите путь,
+      где следует искать файл. Поле <guimenu>Имя файла</guimenu> можно
+      оставить пустым.
      </para>
     </step>
     <step>
      <para>
-      To search for certain content in a file, click the
-      <guimenu>Contents</guimenu> tab. In <guimenu>Containing
-      Text</guimenu>, enter the word or phrase the file to find must
-      contain. This option does not work for all types of files.
+      Чтобы найти определенное содержимое в файле, перейдите на вкладку
+      <guimenu>Содержимое</guimenu>. В поле <guimenu>Содержит текст</guimenu>,
+      введите слово или фразу, которую требуется найти. Эта функция работает
+      не для всех типов файлов.
      </para>
     </step>
     <step>
      <para>
-      To search for properties such as creation or modification date of the
-      file, click the <guimenu>Properties</guimenu> tab and choose the
-      options you want.
+      Для поиска по свойствам, таким как время создания или время последнего
+      изменения файла, перейдите на вкладку <guimenu>Свойства</guimenu> и
+      выберите необходимые опции.
      </para>
      <informalfigure>
       <mediaobject>
@@ -1846,7 +1848,7 @@
     </step>
     <step>
      <para>
-      Click <guimenu>Find</guimenu> to start the search.
+      Нажмите <guimenu>Поиск</guimenu>, чтобы начать поиск.
      </para>
     </step>
    </procedure>
@@ -1879,33 +1881,33 @@
   </sect2>
  </sect1>
  <sect1 id="sec.kdequick.burn">
-  <title>Creating a CD or DVD</title>
+  <title>Создание CD или DVD</title>
 
   <para>
-   If you possess a CD or DVD writer, you can burn files to a CD or DVD with
-   K3b. To create a data CD or DVD, proceed as follows:
+   Если Вы являетесь обладателем CD или DVD привода с поддержкой записи,
+   то Вы можете записывать файлы на CD или DVD при помощи K3b. Чтобы
+   записать данные на диск, выполните следующее:
   </para>
 
   <procedure id="proc.kdequick.burn">
    <step>
     <para>
-     Press <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
-     </keycombo> and enter <command>k3b</command>. K3b opens.
+     Нажмите <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+     </keycombo> и введите <command>k3b</command>. Откроется программа K3b.
     </para>
    </step>
    <step>
     <para>
-     Select <menuchoice> <guimenu>File</guimenu> <guimenu>New
-     Project</guimenu> <guimenu>New Data Project</guimenu> </menuchoice>
-     from the main menu.
+     Выберите <menuchoice> <guimenu>Файл</guimenu>
+     <guimenu>Создать проект</guimenu> <guimenu>Новый проект с данными</guimenu>
+     </menuchoice> из главного меню.
     </para>
    </step>
    <step>
     <para>
-     Use the tree view in the top left part of the window to search for the
-     files or folders to burn. When they appear in the top right part of the
-     window, drag and drop them into the <guimenu>Current Projects</guimenu>
-     window.
+     Используйте дерево просмотра в левой части окна для поиска файлов или
+     папок, которые Вы хотите записать на диск. Когда они появятся в верхней
+     правой части окна, перетащите их в окно <guimenu>Текущие проекты</guimenu>.
     </para>
     <informalfigure>
      <mediaobject>
@@ -1920,50 +1922,48 @@
    </step>
    <step>
     <para>
-     Insert a writable CD or DVD into the device then click the
-     <guimenu>Burn</guimenu> icon.
+     Вставьте записываемый диск в устройство и нажмите на <guimenu>Записать</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     Check the settings on the <guimenu>Writing</guimenu> tab. Usually the
-     defaults should work well for almost all files. If you wish, you can
-     change more options (for example the <guimenu>Volume Name</guimenu>) on
-     the <guimenu>Filesystem</guimenu> tab.
+     Проверьте настройки на вкладке <guimenu>Запись</guimenu>. Обычно не нужно
+     вносить какие-либо изменения. Если желаете, можете изменить информацию о 
+     проекте на вкладке <guimenu>Файловая система</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     Click <guimenu>Burn</guimenu>.
+     Намжите <guimenu>Записать</guimenu>.
     </para>
    </step>
   </procedure>
  </sect1>
  <sect1 id="sec.kdequick.digikam">
-  <title>Managing Your Digital Image Collection</title>
+  <title>Управление Вашей коллекцией цифровых изображений</title>
 
   <para>
-   With &digikam; it is easy to manage your digital images: download your
-   images from the camera, edit and improve them, organize them in albums
-   (or flag them with tags for easy retrieval, independent of folders or
-   albums), archive them on CD or DVD, or export them to a Web image
-   gallery.
+   С &digikam; очень просто управлять Вашими цифровыми изображениями:
+   загружать их с камеры, править и улучшать, объединять в альбомы
+   (или создавать метки для простого поиска независимо от папок или
+   альбомов), и архивировать их на CD, или экспортировать в Веб-галерею.
   </para>
 
   <para>
-   &digikam; also contains a set of useful batch functions and plug-ins,
-   allowing you to convert multiple images to various different formats,
-   rename multiple images, or automatically improve them with functions such
-   as red eye reduction, speck removal, and hot pixel removal. Various
-   filter and effects plug-ins help create works of art from your digital
-   images.
+   &digikam; также содержит ряд полезных функций и дополнений, которые
+   позволят Вам преобразовывать многочисленные изображения в различные
+   форматы, переименовывать сразу множество изображений, или автоматически
+   улучшать их с помощью специальных функций, таких как удаление эффекта
+   "красных глаз", шумоподавление и удаление "горячих" пикселей. Различные
+   фильтры и дополнения к программе позволят создавать произведения искусства
+   из Ваших фотографий.
   </para>
 
   <para>
-   To start &digikam;, press <keycombo> <keycap function="alt"/>
-   <keycap>F2</keycap> </keycombo> and enter <command>digikam</command>. On
-   initial start-up, the first-run wizard appears to guide you through the
-   setup.
+   Чтобы запустить &digikam; нажмите <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo> и введите <command>digikam</command>. При
+   первом запуске появляется мастер первоначальной настройки, в котором будет
+   задать некоторые настройки.
   </para>
 
   <informalfigure>
