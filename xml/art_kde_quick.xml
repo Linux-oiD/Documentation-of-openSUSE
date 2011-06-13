@@ -1855,28 +1855,26 @@
   </sect2>
 
   <sect2 id="sec.kdequick.find.nepomuk">
-   <title>Using Strigi Desktop Search</title>
+   <title>Использование локального поиска Strigi</title>
    <para>
-    Strigi Desktop Search offers advanced search capabilities,by
-    additionally searching for metadata such as tags, ratings, and even
-    source URLs for downloads. It requires the services
-    <systemitem
-     class="service">nepomuk</systemitem> and
-    <systemitem
-     class="service">strigi</systemitem> to run. To activate
-    these services, press &altf2; and enter <literal>strigi</literal>.
-    Choose <guimenu>Nepomuk/Strigi server Configuration</guimenu> to start
-    the configuration dialog. Enable the two services on the tab
-    <guimenu>Basic Settings</guimenu>and leave the dialog by clicking
-    <guimenu>Apply</guimenu> and <guimenu>OK</guimenu>.
+    Демон локального поиска Strigi предоставляет возможность расширенного
+    поиска с учетом таких метаданных как теги, оценки и даже URL-источник
+    загрузи. Для этого потребуется запустить службы
+    <systemitem class="service">nepomuk</systemitem> и
+    <systemitem class="service">strigi</systemitem>. Для активации этих служб
+    ажмите &altf2; и введите <literal>strigi</literal>. Выберите
+    <guimenu>Настройка сервера Nepomuk/Strigi</guimenu>, чтобы открыть
+    окно настройки. Включите две службы на вкладке
+    <guimenu>Основные параметры</guimenu> и закройте это окно нажав
+    <guimenu>Применить</guimenu> и <guimenu>OK</guimenu>.
    </para>
    <para>
-    Once activated, you can use KRunner (&altf2;) to search for files by
-    just typing a keyword. A more advanced search interface is available in
-    the Dolphin file manager. Press <keycombo> <keycap function="control"/>
-    <keycap>F</keycap> </keycombo> in Dolphin to activate the desktop
-    search. You can filter the search results for
-    <guimenu>Filename</guimenu>, <guimenu>Content</guimenu> or location.
+    После активирования этих служб Вы можете использовать KRunner (&altf2;)
+    для поиска файлов только вводя ключевые слова. Интерфейс расширенного поиска
+    доступен в файловом менеджере Dolphin. Намжите в Dolphin <keycombo>
+    <keycap function="control"/> <keycap>F</keycap> </keycombo> для активации
+    локального поиска. Вы можете задать фильтр для результатов поиска:
+    <guimenu>Имена файлов</guimenu>, <guimenu>Содержимое</guimenu> или расположение.
    </para>
   </sect2>
  </sect1>
@@ -1978,30 +1976,31 @@
   </informalfigure>
 
   <para>
-   &digikam;'s main window contains a tree view on the left and shows
-   thumbnails of the images on the right. For quick access to your images,
-   use the sidebar on the left, which allows you to switch between different
-   views, for example, sorting the images according to
-   <guimenu>Albums</guimenu>, <guimenu>Dates</guimenu>,
-   <guimenu>Tags</guimenu> or <guimenu>Searches</guimenu>. To enter
-   &digikam;'s viewing and editing mode, double-click an image thumbnail.
+   Главное окно &digikam; содержит древовидное представление Вашей коллекции
+   в левой части окна и отображает миниатюры изображений в правой части. Для
+   быстрого доступа к Вашим изображениям используйте боковую панель слева, с
+   помощью которой можно переключаться между различными видами, например,
+   сортировать изображения по <guimenu>Альбомам</guimenu>,
+   <guimenu>Дате</guimenu>, <guimenu>Меткам</guimenu> или
+   <guimenu>Поисковым запросам</guimenu>. Чтобы переключить &digikam; в режим
+   просмотра или редактирования нажмите два раза по миниатюре.
   </para>
  </sect1>
  <sect1 id="sec.kdequick.amarok">
-  <title>Managing Your Music Collection</title>
+  <title>Управление Вашей музыкальной коллекцией</title>
 
   <para>
-   KDE's &amarok; music player allows you to play various audio formats,
-   create playlists, listen to streaming audio broadcasts of radio stations
-   on the Internet and subscribe to podcasts. The file types supported
-   depend on the engine used for &amarok;.
+   Аудиоплейер KDE &amarok; позволяет Вам прослушивать различные звуковые
+   форматы, создавать списки воспроизведения, слушать потоковое вещание
+   радиостанций в Интернете и подписываться на подкасты. Поддерживаемые
+   типы файлов зависят от механизма, используемого в &amarok;.
   </para>
 
   <para>
-   To start &amarok;, press <keycombo> <keycap function="alt"/>
-   <keycap>F2</keycap> </keycombo> and enter <command>amarok</command>. On
-   first start, &amarok; asks for the folders where to look for your music
-   files.
+   Для запуска &amarok; нажмите <keycombo> <keycap function="alt"/>
+   <keycap>F2</keycap> </keycombo> и введите <command>amarok</command>. При
+   первом запустке &amarok; попросит указать каталог, в которрм находятся
+   аудио файлы.
   </para>
 
   <informalfigure>
@@ -2016,101 +2015,100 @@
   </informalfigure>
 
   <para>
-   &amarok;'s main window shows a sidebar on the left providing different
-   views: your local music collection, some addresses to listen to podcasts
-   or streams from the Internet, your playlists and a file browser. The
-   middle part, the context browser, displays information about the current
-   track, the Wikipedia page of the artist and the song's lyrics by default.
-   The right part of the window shows the current playlist. To play music,
-   just drag and drop items from any of the sidebar browsers to the playlist
-   area. Double-click an item in the playlist to start playback.
+   В главном окне &amarok; присутствует боковая панель в левой его части,
+   с помощью которой можно переключаться между различными видами: музыкальной
+   коллекцией, адресами для прослушивания подкастов или потокового радиовещания
+   в Интернет, списками воспроизведения и файловым навигатором. В средней части,
+   контекстном навигаторе, отображается информация о текущей дорожке, сведения
+   об артисте и текст песни из Википедии. Правая часть окна отображает текущий
+   список воспроизведения. Чтобы запустить воспроизведение музыки достаточно
+   перетащить элементы из любой боковой панели в список воспроизведения. Двойное
+   нажатие на элементе в списке воспроизведения запускает его воспроизведение.
   </para>
 
   <para>
-   If your music files are properly tagged (containing at least information
-   about the artist and album), you can make use of several nice &amarok;
-   features. To automatically retrieve the album cover images from Amazon,
-   select <menuchoice> <guimenu>Tools</guimenu> <guimenu>Cover
-   Manager</guimenu> </menuchoice> and click <guimenu>Fetch Missing
-   Covers</guimenu>. The next time you play a track from this album, the
-   cover is displayed in the context browser and on the on-screen display.
-   To learn more about the artist, click on the <guimenu>Wikipedia</guimenu>
-   button in the middle area to make &amarok; search for the appropriate
-   Wikipedia article.
+   Если Ваши музыкальные файлы содержат корректные метаданные (по крайней мере
+   содержат информацию об артисте и альбоме), то Вы можете воспользоваться
+   несколькими замечательными возможностями &amarok;. Чтобы автоматически
+   получать изображение обложки диска с Amazon, выберите <menuchoice> <guimenu>Сервис</guimenu> <guimenu>Управление обложками</guimenu>
+   </menuchoice> и нажмите <guimenu>Загрузить недостающие обложки</guimenu>. При
+   следующем воспроизведении песни из этого альбома, обложка отобразится в
+   контекстном навигаторе и в экранном уведомлении. Чтобы узнать больше об
+   артисте нажмите на кнопку <guimenu>Википедия</guimenu> в средней части окна,
+   чтобы &amarok; выполнил поиск подходящей статьи в Википедии.
   </para>
 
   <para>
-   To configure the use of another engine (or various other &amarok;
-   features), select <menuchoice> <guimenu>Settings</guimenu>
-   <guimenu>Configure &amarok;</guimenu> </menuchoice>.
+   Чтобы настроить любой другой механизм (или других функций &amarok;), выберите
+   <menuchoice> <guimenu>Настройка</guimenu> <guimenu>Настроить &amarok;...</guimenu> </menuchoice>.
   </para>
  </sect1>
  <sect1 id="sec.kdequick.logout">
-  <title>Logging Out</title>
+  <title>Выход из системы</title>
 
   <para>
-   Log out (and leave the system running), restart or shut down the
-   computer.
+   Выход из системы (без завершения работы системы), перезагрузка или выключение
+   компьютера.
   </para>
 
   <sect2 id="sec.kdequick.logout.switch">
-   <title>Logging Out or Switching Users</title>
+   <title>Завершение сеанса или переключение пользователя</title>
    <para>
-    Click the <guimenu>Main Menu</guimenu> button on your panel and select
-    <menuchoice> <guimenu>Leave</guimenu> <guimenu>Logout</guimenu>
-    </menuchoice>. This ends your session but leaves the system running. To
-    start a parallel session as a different user, select <menuchoice>
-    <guimenu>Leave</guimenu> <guimenu>Switch User</guimenu> </menuchoice>
-    instead.
+    Нажмите на значок <guimenu>Главное меню</guimenu> на панели и выберите
+    <menuchoice> <guimenu>Выход</guimenu> <guimenu>Завершить сеанс KDE</guimenu>
+    </menuchoice>. Сеанс завершится, но система продолжит свою работу. Чтобы
+    запустить параллельный сеанс с другим пользователем выберите <menuchoice>
+    <guimenu>Выход</guimenu> <guimenu>Переключить пользователя</guimenu>
+    </menuchoice>.
    </para>
   </sect2>
 
   <sect2 id="sec.kdequick.logout.restart">
-   <title>Restarting or Shutting Down the Computer</title>
+   <title>Перезагрузка или выключение компьютера</title>
    <para>
-    Click <guimenu>Leave</guimenu>, then select one of the following
-    options:
+    Нажмите <guimenu>Выход</guimenu>, затем выберите один из следующих
+    вариантов:
    </para>
    <variablelist>
     <varlistentry>
-     <term><guimenu>Sleep</guimenu>
+     <term><guimenu>Ждущий режим</guimenu>
      </term>
      <listitem>
       <para>
-       Only available if your computer provides power management
-       functionality. Pauses your computer without logging you out. All your
-       data and the session data is saved to RAM.
+       Доступно только, если Ваш компьютер поддерживает функции управления
+       питанием. Приостанавливает работу компьютера без завершения сессии.
+       Все Ваши данные и данные сессии сохранаяются в оперативной памяти (RAM).
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Hibernate</guimenu>
+     <term><guimenu>Спящий режим</guimenu>
      </term>
      <listitem>
       <para>
-       Only available if your computer provides power management
-       functionality. Pauses your computer without logging you out. All your
-       data and the session data is saved to disk before the system is laid
-       to rest. It is thus protected against data loss should you lose power
-       in the meantime.
+       Доступно только, если Ваш компьютер поддерживает функции управления
+       питанием. Приостанавливает работу компьютера без завершения сессии.
+       Все Ваши данные и данные сессии сохранаяются на диске до выключения
+       компьютера. Таким образом Вы будете защищены от потери данных даже,
+       если питание компьютератем будет отключено.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Restart</guimenu>
+     <term><guimenu>Перезагрузить</guimenu>
      </term>
      <listitem>
       <para>
-       Restarts your computer.
+       Перезапускает Ваш компьютер.
       </para>
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>Shutdown</guimenu>
+     <term><guimenu>Выключить</guimenu>
      </term>
      <listitem>
       <para>
-       Logs you out of the current session, then turns off the computer.
+       Закрывает текущий сеанс, затем выключает компьютер.
       </para>
      </listitem>
     </varlistentry>
@@ -2118,13 +2116,14 @@
   </sect2>
  </sect1>
  <sect1 id="sec.kdequick.more">
-  <title>For More Information</title>
+  <title>Дополнительная информация</title>
 
   <para os="sled">
-   This guide gave you a short introduction to the KDE desktop and some key
-   applications running on it. To discover more, refer to the
-   <xref linkend="book.kdeuser"/>, and the other manuals available for
-   &productname; at
+   Это руководство представляет лишь короткое введение в рабочий стол KDE
+   и некоторые ключевые моменты запуска и работы с его приложениями. За
+   дополнительной информацией обратитесь к
+   <xref linkend="book.kdeuser"/> и другим руководствам доступных для
+   &productname; по адресу
    <ulink url="http://www.novell.com/documentation/sled11/"/>.
   </para>
 
@@ -2141,8 +2140,8 @@
 -->
 
   <para>
-   To learn more about KDE and KDE applications, also refer to
-   <ulink url="http://www.kde.org/"/> and
+   За дополнительной информацией о KDE и KDE приложениях смотрите на 
+   <ulink url="http://www.kde.org/"/> и
    <ulink url="http://www.kde-apps.org/"/>.
   </para>
  </sect1>
