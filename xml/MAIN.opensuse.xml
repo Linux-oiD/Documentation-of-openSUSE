@@ -10,7 +10,7 @@
   %entities;
 ]>
 <set lang="ru">
- <title>&productname; документация</title>
+ <title>Документация &productname;</title>
 <?dbhtml filename="index.html"?>
 <!-- Start-Up -->
  <xi:include href="book_opensuse_startup.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

@@ -10,7 +10,7 @@
   %entities;
 ]>
 <?provo dirname="installquick/"?>
-<article id="art.osuse.installquick" lang="en">
+<article id="art.osuse.installquick" lang="ru">
 <?suse-quickstart color="suse"?>
  <title>&instquick;</title>
  <subtitle><productname>&productname; &productnumber;</productname>
@@ -20,59 +20,60 @@
  </articleinfo>
  <abstract>
   <para>
-   Use the following procedures to install a new version of &productnamereg;
-   &productnumber;. This document gives a quick overview on how to run
-   through a default installation of &productname;.
+   Воспользуйтесь этим руководством для установки новой версии &productnamereg;
+   &productnumber;. Этот документ дает краткое описание обычной установки
+   &productname;.
   </para>
  </abstract>
  <sect1 id="sec.osuse.installquick">
-  <title>Welcome to &productname;</title>
+  <title>Добро пожаловать в &productname;</title>
 
   <para>
-   For more detailed installation instructions and deployment strategies,
-   see the &productname; documentation at
+   Для получения более детальных инструкций по установке, обратитесь к
+   документации &productname; по адресу
    <ulink url="http://www.novell.com/documentation/opensuse114/"/>.
   </para>
 
   <sect2 id="sec.osuse.installquick.sysreqs">
-   <title>System Requirements</title>
+   <title>Системные требования</title>
    <itemizedlist mark="check">
     <listitem>
      <para>
-      Pentium* III 500 MHz or higher processor (Pentium 4 2.4 GHz or higher
-      or any AMD64 or Intel* EM64T processor recommended)
+      Pentium* III 500 МГц или более мощный (рекомендуется Pentium 4 2.4 ГГц или мощнее
+      или любой процессор поддерживающий набор инструкций AMD64 или Intel* EM64T)
      </para>
     </listitem>
     <listitem>
      <para>
-      512 MB physical RAM (1 GB recommended)
+      512 МБ оперативной памяти (рекомендуется 1 ГБ)
      </para>
     </listitem>
     <listitem>
      <para>
-      3 GB available disk space (more recommended)
+      3 ГБ доступного места на диске (рекомендуется больше в зависимости от
+      количества устанавливаемых программ)
      </para>
     </listitem>
     <listitem>
      <para>
-      800 x 600 display resolution (1024 x 768 or higher recommended)
+      Разрешение экрана 800 x 600 пикселей (рекомендуется 1024 x 768 или больше)
      </para>
     </listitem>
    </itemizedlist>
   </sect2>
 
   <sect2 id="sec.osuse.installquick.install">
-   <title>Installing &productname;</title>
+   <title>Установка &productname;</title>
    <para>
-    Use these instructions if there is no existing Linux system on your
-    machine, or if you want to replace an existing Linux system.
+    Используйте эти инструкции, если на Вашем компьютере не установлены другие
+    Linux системы или, если Вы хотите заменить существующую Linux систему.
    </para>
 <?dbfo-need height="10em"?>
    <procedure>
     <step>
      <para>
-      Insert the &productname; DVD into the drive, then reboot the computer
-      to start the installation program.
+      Вставьте DVD с &productname; в привод и перезагрузите компьютер
+      для запуска программы установки.
      </para>
      <informalfigure>
       <mediaobject>
@@ -87,9 +88,9 @@
     </step>
     <step>
      <para>
-      Select <guimenu>Installation</guimenu> on the boot screen and press
-      <keycap>Enter</keycap>. This loads the &productname; installation
-      program and starts the installation in normal mode.
+      Выберите <guimenu>Установка</guimenu> на экране загрузки и нажмите
+      <keycap>Enter</keycap>. Это приведет к загрузке и запуску
+      процесса установки &productname; в обычном режиме.
      </para>
      <informalfigure>
       <mediaobject>
@@ -104,13 +105,14 @@
     </step>
     <step>
      <para>
-      Select the language and the keyboard layout to be used during the
-      installation and for the installed system.
+      Выберите язык и раскладку клавиатуры, которые будут использоваться
+      в процессе установки и в установленной системе.
      </para>
      <para>
-      Read the License Agreement and proceed with <guimenu>Next</guimenu> if
-      you agree. If you do not agree, press <guimenu>Abort</guimenu> to
-      terminate the installation.
+      Прочтите лицензионное соглашение и, если Вы принимаете его условия,
+      перейдите к следующему шагу нажав <guimenu>Далее</guimenu>. Если Вы
+      не согласны с условиями лицензионного соглашения, то нажмите
+      <guimenu>Прервать</guimenu> для завершения установки.
      </para>
      <informalfigure>
       <mediaobject>
@@ -125,8 +127,8 @@
     </step>
     <step>
      <para>
-      Select <guimenu>New Installation</guimenu> and proceed with
-      <guimenu>Next</guimenu>.
+      Выберите <guimenu>Новая установка</guimenu> и нажмите
+      <guimenu>Далее</guimenu>.
      </para>
      <informalfigure>
       <mediaobject>
@@ -141,10 +143,9 @@
     </step>
     <step>
      <para>
-      Either use the map or the drop down lists for
-      <guimenu>Region</guimenu> and <guimenu>Time Zone</guimenu> to select
-      the clock and time zone to use in your system. Proceed with
-      <guimenu>Next</guimenu>.
+      Используйте карту или выпадающие списки <guimenu>Регион</guimenu> и
+      <guimenu>Часовой пояс</guimenu>, чтобы задать время и часовой пояс
+      используемые в Вашей системе. Затем нажмите <guimenu>Далее</guimenu>.
      </para>
      <informalfigure>
       <mediaobject>
@@ -159,11 +160,11 @@
     </step>
     <step>
      <para>
-      Select the desktop system you would like to use.
-      <guimenu>KDE</guimenu> and <guimenu>GNOME</guimenu>, are powerful
-      graphical desktop environments similar to Windows, alternative
-      selections are available when checking <guimenu>Other</guimenu>.
-      Proceed with <guimenu>Next</guimenu>.
+      Выберите окружение рабочего стола, которое Вам нравится больше.
+      <guimenu>KDE</guimenu> и <guimenu>GNOME</guimenu> – мощные
+      окружения рабочего стола, похожие на Windows; другие варианты
+      доступны в меню <guimenu>Другое</guimenu>. Затем нажмите
+      <guimenu>Далее</guimenu>.
      </para>
      <informalfigure>
       <mediaobject>
@@ -178,12 +179,14 @@
     </step>
     <step>
      <para>
-      Define a partition setup for &productname; in this step. In most cases
-      a reasonable scheme that can be accepted without change is proposed.
-      Accept the proposal with <guimenu>Next</guimenu> and proceed with the
-      installation. Experienced users can also customize the proposal
-      (<guimenu>Edit Partition Setup</guimenu>) or apply their own
-      partitioning scheme (<guimenu>Create Partition Setup</guimenu>).
+      На этом этапе предлагается определить раздел для установки
+      &productname;. В большинстве случаев предлагаемый системой
+      вариант может быть использован без каких-либо изменений.
+      Для принятия данной разметки нажмите <guimenu>Далее</guimenu>
+      для перехода к следующему шагу. Опытные пользователи могут
+      отредактировать схему разметки диска
+      (<guimenu>Редактировать разметку...</guimenu>) или создать
+      собственную схему (<guimenu>Создать разметку</guimenu>).
      </para>
      <informalfigure>
       <mediaobject>
@@ -198,27 +201,25 @@
     </step>
     <step>
      <para>
-      Type your first and last name in the <guimenu>User’s Full
-      Name</guimenu> field, your login name in the
-      <guimenu>Username</guimenu> field, and your password in the
-      <guimenu>Password</guimenu> field.
+      Введите свои имя и фамилию в поле <guimenu>Полное имя пользователя</guimenu>,
+      имя пользователя и пароль, соответственно, в поля
+      <guimenu>Имя пользователя</guimenu> и <guimenu>Пароль</guimenu>.
      </para>
      <para>
-      For security reasons, your password should be at least eight
-      characters long and should contain uppercase and lowercase letters and
-      numbers. Passwords are case-sensitive. Proceed with
-      <guimenu>Next</guimenu>.
+      В целях безопасности, пароль должен состоять из заглавных и строчных
+      букв и цифр. Его длинна должна быть не меньше восьми символов. Пароли
+      чувствительны к регистру. Для продолжения нажмите <guimenu>Далее</guimenu>.
      </para>
      <para>
-      By default, the password you enter here is also used for the system
-      administrator, &rootuser;. Uncheck the relevant option if you prefer
-      to specify a different password for &rootuser; in the next step.
+      По умолчанию, указанный здесь пароль также используется в качестве
+      пароля администратора системы – &rootuser;. Отключите данную опцию,
+      если Вы хотите на следующем шаге задать другой пароль для &rootuser;.
      </para>
      <para>
-      With automatic login enabled, the system boots straight to your
-      desktop with no authentication at all. If you store sensitive data on
-      your system, you should not enable this option as long as the computer
-      can also be accessed by others.
+      При активации автоматического входа после включения системы будет
+      загружен Ваш рабочий стол, без какой-либо авторизации. Если Вы храните
+      важную информацию на Вашем компьютере, то Вы должны отключить эту опцию,
+      так как при этом посторонние люди могут получить доступ к этим данным.
      </para>
      <informalfigure>
       <mediaobject>
@@ -233,16 +234,17 @@
     </step>
     <step>
      <para>
-      Type a password for the system administrator account (called the
-      &rootuser; user). This step is skipped in case you had activated
-      <guimenu>Use this Password for System Administrator</guimenu> in the
-      previous step.
+      Введите пароль для учетной записи администратора (также называемой
+      пользователем &rootuser;). Этот шаг может быть пропущен, если Вы
+      активировали опцию
+      <guimenu>Использовать этот пароль для системного администратора</guimenu>
+      на предыдущем шаге.
      </para>
      <para>
-      You should never forget the <systemitem>root</systemitem> password.
-      After you enter it here, the password cannot be retrieved. It can only
-      be reset with administrative assistance. Proceed with
-      <guimenu>Next</guimenu>.
+      Если Вы забудете пароль пользователя <systemitem>root</systemitem>, то
+      его уже нельзя будет восстановить. Его можно будет сбросить только при
+      наличии прав администратора системы. Для перехода к следующему шагу
+      нажмите <guimenu>Далее</guimenu>.
      </para>
      <informalfigure>
       <mediaobject>
@@ -257,15 +259,15 @@
     </step>
     <step>
      <para>
-      Use the Installation Settings screen to review your choices as well as
-      some automatically proposed settings. If necessary, change the
-      settings.
+      На экране параметров установки будут выведены сделанные Вами установки,
+      среди которых так же присутствуют настройки установленные автоматически.
+      При необходимости, внесите нужные изменения.
      </para>
      <para>
-      Click <guimenu>Install</guimenu> to proceed. Depending on your
-      software selection you may have to accept additional license
-      agreements by clicking <guimenu>Accept</guimenu>. Before the actual
-      installation starts you will see the following screen:
+      Нажмите <guimenu>Установка</guimenu>, чтобы продолжить. В зависимости
+      от выбранного программного обеспечения, Вам может быть предложено принять
+      дополнительные лицензионные соглашения (кнопка <guimenu>Принять</guimenu>).
+      Перед началом установки Вы можете увидеть следующее:
      </para>
      <informalfigure>
       <mediaobject>
@@ -280,7 +282,7 @@
     </step>
     <step>
      <para>
-      Click <guimenu>Install</guimenu> to start the installation.
+      Нажмите <guimenu>Установка</guimenu> для запуска установки.
      </para>
      <informalfigure>
       <mediaobject>
@@ -295,11 +297,10 @@
     </step>
     <step>
      <para>
-      The installation usually takes between 15 and 30 minutes, depending on
-      the system performance and the selected software scope. During the
-      installation you may either view the product presentation, the release
-      notes containing last-minute information, or the detailed installation
-      log.
+      Обычно установка длится от 15 до 30 минут, в зависимости от
+      производительности системы и выбранного программного обеспечения.
+      В процессе установки Вы можете скоротать время за изучением презентации,
+      примечания к выпуску или просмотром подробного журнала установки.
      </para>
      <informalfigure>
       <mediaobject>
@@ -314,11 +315,11 @@
     </step>
     <step>
      <para>
-      After completing the installation of all selected software packages
-      and the basic system setup, the &productname; installation boots into
-      the new Linux system, to perform the automatic system configuration.
-      This routine attempts to configure your network and Internet access
-      and sets up your hardware. This process does not need any interaction.
+      После завершения установки всех выбранных пакетов программного
+      обеспечения будет загружена новая система &productname; и произведена
+      автоматической настройки, как например, настройка сетевой подсистемы,
+      доступ в Интернет и определение настроек оборудования. Этот этап
+      выполняется полностью автоматически и не требует Вашего участия в нем.
      </para>
      <informalfigure>
       <mediaobject>
@@ -333,10 +334,11 @@
     </step>
     <step>
      <para>
-      If you have chosen the automatic login function, the desktop directly
-      starts. Otherwise you will see the login screen. Click on your
-      username, and type your password in the <guimenu>Password</guimenu>
-      field. Press <keycap>Enter</keycap> to login.
+      Если на этапе задания установок системы был выбран автоматический
+      вход в систему, то сразу будет загружен рабочий стол. В противном случае,
+      Вы увидите экран входа в систему. Нажмите на имени Вашего
+      пользователя и введите в поле <guimenu>Пароль</guimenu>. Нажмите
+      <keycap>Enter</keycap>, чтобы выполнить вход в систему.
      </para>
     </step>
    </procedure>
