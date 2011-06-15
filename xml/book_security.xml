@@ -27,7 +27,7 @@
  <bookinfo>
   <title>&secguide;</title><productname>&productname;</productname>
   <productnumber>&productnumber;</productnumber><date>
-<?dbtimestamp format="B d, Y"?></date>
+<?dbtimestamp format="d.m.Y"?></date>
   <xi:include os="osuse" href="common_copyright_opensuse.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include os="sled;sles" href="common_copyright_sle.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
  </bookinfo>

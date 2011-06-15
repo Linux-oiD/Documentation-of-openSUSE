@@ -12,7 +12,7 @@
  <bookinfo>
   <title>Быстрый старт. Руководство</title><productname>&productname;</productname>
   <productnumber>&productnumber;</productnumber><date>
-<?dbtimestamp format="d m Y"?></date>
+<?dbtimestamp format="d.m.Y"?></date>
   <titleabbrev></titleabbrev>
   <xi:include os="osuse" href="common_copyright_opensuse.xml"
      xmlns:xi="http://www.w3.org/2001/XInclude" />  
