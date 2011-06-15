@@ -6,33 +6,35 @@
   %entities;
 ]>
 <chapter id="cha.y2.sw.inst_pkg_internet">
- <title>Installing Packages From the Internet</title>
+ <title>Установка пакетов программного обеспечения из Интернет</title>
  <abstract>
   <para>
-   By default, it is only possible to install packages from configured and
-   enabled repositories. Apart from the official repositories that are
-   configured during the installation, numerous other repositories exist.
-   The &opensusereg; Build Service hosts several hundred ones and a lot of
-   third party repositories exist, too&mdash;see
+   По умолчанию, установить пакеты возможно только из включенных и
+   сконфигурированных репозиториев. Кроме официальных репозитариев,
+   которые были сконфигурированы во время установки, существует большое
+   число сторонних репозитариев. В &obs; находится несколько сотен
+   сторонних репозиториев, смотрите
    <ulink
-    url="http://en.opensuse.org/Additional_package_repositories"/>.
+    url="http://ru.opensuse.org/Дополнительные_репозитории"/>.
   </para>
 
   <para>
-   &productname; offers two easy ways to install from these repositories
-   without the need to first subscribe to them. The <literal>1-Click
-   Install</literal> method allows you to install packages directly from a
-   Web browser, while the &yast; Package Search lets you query almost all
-   known repositories for &productname;. You can directly install any
-   package found by the package search module.
+   &productname; предлагает два легких способа установки программ из этих
+   репозиториев без необходимости предварительной настройки. Метод
+   <literal>1-Click Install</literal> позволяет Вам устанавливать пакеты
+   непосредственно в Веб-браузере, в то же время встроенный в &yast; поиск
+   пакетов позволяет Вам задействовать почти все известные репозитории для
+   &productname;. Вы можете тут же установить любой пакет найденный в этом
+   модуле.
   </para>
  </abstract>
  <warning>
-  <title>Trusting External Software Sources</title>
+  <title>Доверие внешние источники программного обеспечения</title>
   <para>
-   Before installing from any external software repository, make sure it can
-   be trusted. &productname; is not responsible for any potential problems
-   arising from software installed from third-party software repositories.
+   Прежде, чем установить какой-либо пакет из внешнего репозитария,
+   удостоверьтесь, что ему можно доверять. &productname; не несет
+   отвественности за любые потенциальные проблемы, являющиеся результатом
+   установленного программного обеспечения из сторонних репозитариев.
   </para>
  </warning>
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="1_click_install_i.xml"/>

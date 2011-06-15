@@ -13,7 +13,7 @@
 <!-- openSUSE Reference                                                     -->
 <!-- ##################################################################### -->
 <?provo dirname="reference/"?>
-<book lang="en" id="book.opensuse.reference" role="online">
+<book lang="ru" id="book.opensuse.reference" role="online">
  <bookinfo>
   <title>&reference;</title><productname>&productname;</productname>
   <productnumber>&productnumber;</productnumber><date>
@@ -25,7 +25,7 @@
 <!-- Part: Advanced Deployment Scenarios                                   -->
 <!-- ===================================================================== -->
  <part id="part.reference.install">
-  <title>Installation and Deployment</title>
+  <title>Установка и использование</title>
 <!-- fs 2010-12-27: Added from Start-Up -->
   <xi:include href="inst_yast2.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="deployment_remote.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -35,7 +35,7 @@
 <!-- Part: Managing and Updating Software                                  -->
 <!-- ===================================================================== -->
  <part id="part.reference.software">
-  <title>Managing and Updating Software</title>
+  <title>Установка, удаление и обновление программного обеспечения</title>
   <xi:include href="yast2_sw.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="yast2_you.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="inst_pkg_internet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -46,7 +46,7 @@
 <!-- Part: Administration                                                  -->
 <!-- ===================================================================== -->
  <part id="part.reference.administration">
-  <title>Administration</title>
+  <title>Администрирование</title>
   <xi:include href="yast2_userman.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="yast2_lang.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="yast2_ncurses.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -60,7 +60,7 @@
 <!-- Part: System                                                          -->
 <!-- ===================================================================== -->
  <part id="part.reference.system">
-  <title>System</title>
+  <title>Система</title>
   <xi:include href="64bit_issues.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="bootconcept.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="grub.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -74,7 +74,7 @@
 <!-- Part: Services                                                          -->
 <!-- ===================================================================== -->
  <part id="part.reference.services">
-  <title>Services</title>
+  <title>Службы</title>
   <xi:include href="net_general.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="net_slp.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="net_dns.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -89,7 +89,7 @@
 <!-- Part: Mobility                                                        -->
 <!-- ===================================================================== -->
  <part id="part.reference.mobility">
-  <title>Mobility</title>
+  <title>Мобильные устройства</title>
   <xi:include href="mobile.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="pcmcia_apm.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="wlan.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

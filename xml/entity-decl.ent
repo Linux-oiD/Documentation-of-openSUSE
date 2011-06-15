@@ -80,7 +80,7 @@
 <!ENTITY apps           "Application Guide">
 <!ENTITY admin          "Руководство администратора">
 <!ENTITY reference      "Reference">
-<!ENTITY startup       	"Start-Up"> 
+<!ENTITY startup       	"Вступление"> 
 <!ENTITY aaadmin        "Novell AppArmor Руководство администратора">
 <!ENTITY aaquick        "Novell AppArmor Быстрый старт">
 <!ENTITY lfl            "Lessons For Lizards">

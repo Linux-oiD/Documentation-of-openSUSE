@@ -10,9 +10,9 @@
 ]>
 <book lang="en" id="book.quickstarts">
  <bookinfo>
-  <title>Quick Start Manuals</title><productname>&productname;</productname>
+  <title>Быстрый старт. Руководство</title><productname>&productname;</productname>
   <productnumber>&productnumber;</productnumber><date>
-<?dbtimestamp format="B d, Y"?></date>
+<?dbtimestamp format="d m Y"?></date>
   <titleabbrev></titleabbrev>
   <xi:include os="osuse" href="common_copyright_opensuse.xml"
      xmlns:xi="http://www.w3.org/2001/XInclude" />  
@@ -27,7 +27,7 @@
  <xi:include os="sled;sles" xmlns:xi="http://www.w3.org/2001/XInclude"  href="art_audit_quick.xml"/>
  <xi:include os="sled" xmlns:xi="http://www.w3.org/2001/XInclude" href="art_ooffice_quick.xml"/>
 <article>
-  <title>Legal Information</title>
+  <title>Правовая информация</title>
  <!--<xi:include os="osuse" xmlns:xi="http://www.w3.org/2001/XInclude" href="common_copyright_quick.xml"/>-->
  <xi:include  os="osuse" xmlns:xi="http://www.w3.org/2001/XInclude"
   href="common_gfdl_i.xml"/>

@@ -7,10 +7,10 @@
 ]>
 <!--taroth 080104: included several times, therefore no ID here, all products-->
 <sect1>
- <title>Feedback</title>
+ <title>Обратная связь</title>
 
  <para>
-  Several feedback channels are available:
+  Некоторые из доступных каналов обратной связи:
  </para>
 
  <variablelist>
@@ -18,14 +18,14 @@
    <term>Bugs and Enhancement Requests</term>
    <listitem>
     <para>
-     To report bugs for a product component, or to submit enhancement
-     requests, please use <ulink url="https://bugzilla.novell.com/"/>. For
-     documentation bugs, submit a bug against the component
-     <guimenu>Documentation</guimenu> for the respective product.
+     Чтобы сообщить об ошибке или отправить запрос об улучшении, пожалуйста,
+     используйте <ulink url="https://bugzilla.novell.com/"/>. Для ошибок в
+     документации отправьте Ваш отчет для компонента
+     <guimenu>Documentation</guimenu> для соответствуюущего продукта.
     </para>
     <para>
-     If you are new to Bugzilla, you might find the following articles
-     helpful:
+     Если Вы плохо знакомы с Bugzilla, то Вам могут быть полезные этим
+     статьи:
     </para>
     <itemizedlist>
      <listitem>
@@ -42,19 +42,19 @@
    </listitem>
   </varlistentry>
   <varlistentry os="sles;sled;slepos">
-   <term>Bugs and Enhancement Requests</term>
+   <term>Ошибки и запросы об улучшении</term>
    <listitem>
     <para>
-     For services and support options available for your product, refer to
+     Для служб и опций поддержки, доступных для Вашего продукта, обратитесь к
      <ulink url="http://www.novell.com/services/"></ulink>.
     </para>
     <para>
-     To report bugs for a product component, please use
+     Чтобы сообщить об ошибках в компоненте продукта, пожалуйста, используйте
      <ulink
     url="http://support.novell.com/additional/bugreport.html"/>.
     </para>
     <para>
-     Submit enhancement requests at
+     Отправьте запрос об улучшении по ссылке
      <ulink
       url="https://secure-www.novell.com/rms/rmsTool?action=ReqActions.viewAddPage&amp;return=www"
      />.
@@ -62,15 +62,16 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>User Comments</term>
+   <term>Комментарии пользователей</term>
    <listitem>
     <para>
-     We want to hear your comments and suggestions about this manual and the
-     other documentation included with this product. Use the User Comments
-     feature at the bottom of each page in the online documentation or go to
+     Мы хотим услышать Ваши комментарии и предложения об этом руководстве и другой
+     документации, поставляемой с данным продуктом. Используйте функцию комментариев
+     пользователей в нижней части каждой страницы в онлайн-документации или перейдите
+     по ссылке
      <ulink
       url="http://www.novell.com/documentation/feedback.html"/>
-     and enter your comments there.
+     и оставьте Ваш комментарий.
     </para>
    </listitem>
   </varlistentry>
