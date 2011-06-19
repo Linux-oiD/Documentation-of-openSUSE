@@ -1152,109 +1152,107 @@
   <sect2 id="sec.oofficequick.various.base">
    <title>Работа с базами данных в Base</title>
    <para>
-    &ooo; includes a database module called Base. Use Base to design a
-    database to store many different kinds of information, from a simple
-    address book or recipe file to a sophisticated document management
-    system.
+     В состав &ooo; входит модуль для работы с базами данных – Base. Он
+     используется для создания баз данных, хранящих в себе много разных
+     видов информации: от простой адресной книги или рецептов, до сложных
+     систем управления документами.
    </para>
    <para>
-    Tables, forms, queries, and reports can be created manually or using
-    convenient wizards. For example, the Table Wizard contains a number of
-    common fields for business and personal use. A wizard guides you through
-    the steps to create a new database.
+    Таблицы, формы, запросы и отчёты могут быть созданы вручную или с помощью
+    удобных мастеров. Например, мастер таблиц содержит множество типовых полей
+    для делового или персонального использования. С помощью такого мастера
+    можно пошагово создать новую базы данных.
    </para>
    <para>
-    &ooo; Base comes with several predefined database fields to help you
-    create a database. A wizard guides you through the steps to create a new
-    database. The following steps are specific to creating an address book
-    using predefined fields, but it should be easy to use the predefined
-    fields for any of the built-in database options. The process for
-    creating a database can be broken into several subprocesses:
+    &ooo; Base поставляется с несколькими предопределёнными полями базы данных,
+    облегчающих создание базы данных. Мастер помогает поэтапно создать новую
+    базу данных. Следующие шаги специфичны для создания адресной книги,
+    используются предопределённые поля, но также легко использовать стандартные
+    поля из предложенных образцов таблиц. Процесс создания базы данных можно
+    разбить на несколько отдельных под-процессов:
    </para>
    <procedure>
-    <title>Creating a Database</title>
+    <title>Создание базы данных</title>
     <step>
      <para>
-      Click <menuchoice> <guimenu>File</guimenu> <guimenu>New</guimenu>
-      <guimenu>Database</guimenu> </menuchoice>.
+      Нажмите <menuchoice> <guimenu>Файл</guimenu> <guimenu>Создать</guimenu>
+      <guimenu>Базу данных</guimenu> </menuchoice>.
      </para>
     </step>
     <step>
      <para>
-      Select <guimenu>Create a new database</guimenu> and click
-      <guimenu>Next</guimenu>.
+      Выберите <guimenu>Создать новую базу данных</guimenu> и нажмите
+      <guimenu>Далее</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Click <guimenu>Yes, register the database for me</guimenu> to make
-      your database information available to other &ooo; modules, select
-      both check boxes in the bottom half of the dialog, then click
-      <guimenu>Finish</guimenu>.
+      Нажмите <guimenu>Да, зарегистрировать базу данных</guimenu>, чтобы
+      информация о создаваемой базе данных была доступна другим модулям &ooo;,
+      отметьте оба флажка в нижней половине окна и нажмите <guimenu>Готово</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Browse to the directory where you want to save the database, specify a
-      name for the database, then click <guimenu>Save</guimenu>.
+      Выберите директорию в которой будет размещен файл базы данных, укажите
+      его имя, затем нажмите <guimenu>Сохранить</guimenu>.
      </para>
     </step>
    </procedure>
    <procedure>
-    <title>Setting Up the Database Table</title>
+    <title>Создание таблицы базы данных</title>
     <step>
      <para>
-      Click the <guimenu>Tables</guimenu> icon in the left pane and select
-      <guimenu>Use Wizard to Create Table</guimenu>.
+      Нажмите на значок <guimenu>Таблицы</guimenu> на левой напели и выберите
+      <guimenu>Использовать мастер для создания таблицы</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      In the <guimenu>Table Wizard</guimenu>, click
-      <guimenu>Personal</guimenu>.
+      В окне <guimenu>Мастер таблиц</guimenu> выберите
+      <guimenu>Персональные</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      The <guimenu>Sample tables</guimenu> list changes to show the
-      predefined tables for personal use. If you had clicked
-      <guimenu>Business</guimenu>, the list would contain predefined
-      business tables.
+      Меню <guimenu>Примеры таблиц</guimenu> содержит список стандартных
+      таблиц для персонального использования. При выборе
+      <guimenu>Деловые</guimenu>, список будет содержать предустановленные
+      деловые таблицы.
      </para>
      <para>
-      In the <guimenu>Sample tables</guimenu> list, click
-      <guimenu>Addresses</guimenu>. The available fields for the predefined
-      address book appear in the <guimenu>Available fields</guimenu> menu.
-     </para>
-    </step>
-    <step>
-     <para>
-      In the <guimenu>Available fields</guimenu> menu, click the fields you
-      want to use in your address book.
-     </para>
-     <para>
-      You can select one item at a time, or you can shift-click multiple
-      items to select them.
+      В списке <guimenu>Примеры таблиц</guimenu> выберите
+      <guimenu>Адреса</guimenu>. Возможные поля для стандартной адресной
+      книги появятся в меню <guimenu>Переменные поля</guimenu>.
      </para>
     </step>
     <step>
      <para>
-      Click the single arrow icon to move the selected items to the
-      <guimenu>Selected fields</guimenu> menu.
+      В меню <guimenu>Переменные поля</guimenu> выберите желаемые
+      поля которые Вы хотите использовать в адресной книге.
      </para>
      <para>
-      To move all available fields to the <guimenu>Selected fields</guimenu>
-      menu, click the double right- arrow.
+      Вы можете выбрать каждый объект по отдельности или сразу несколько
+      удерживая <keycap function="shift"/>.
      </para>
     </step>
     <step>
      <para>
-      Use the arrow keys to adjust the order of the selected fields and
-      click <guimenu>Finish</guimenu>.
+      Нажать кнопку с одиночной стрелкой для перемещения выбранных полей
+      в меню <guimenu>Выбранные поля</guimenu>.
      </para>
      <para>
-      The fields appear in the table and forms in the order in which they
-      are listed.
+      Для перемещения всех возможных полей в меню
+      <guimenu>Выбранные поля</guimenu> нажмите на кнопку с двойной стрелкой.
+     </para>
+    </step>
+    <step>
+     <para>
+      Используйте кнопки со стрелками для размещения выбранных полей в требуемом порядке
+      и нажмите <guimenu>Готово</guimenu>.
+     </para>
+     <para>
+      Поля будут помещены в таблице и на формах в указанном порядке.
      </para>
     </step>
    </procedure>
@@ -1280,34 +1278,35 @@
     Flash-версию Вашего векторного изображения.
    </para>
    <procedure>
-    <title>Creating a Graphic</title>
+    <title>Создание рисунка</title>
     <step>
      <para>
-      Click <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
-      </keycombo> and enter <command>oodraw</command> to open &ooo; Draw.
+      Нажмите <keycombo> <keycap function="alt"/> <keycap>F2</keycap>
+      </keycombo> и введите <command>oodraw</command>, чтобы запустить
+      &ooo; Draw.
      </para>
     </step>
     <step>
      <para>
-      Use the toolbar at the bottom of the window to create a graphic.
+      Используйте элементы меню внизу окна для создания рисунка.
      </para>
     </step>
     <step>
      <para>
-      Save the graphic.
+      Сохраните рисунок.
      </para>
     </step>
    </procedure>
    <para>
-    To embed an existing Draw graphic into an &ooo; document, select
-    <menuchoice> <guimenu>Insert</guimenu> <guimenu>Object</guimenu>
-    <guimenu>OLE Object</guimenu> </menuchoice>. Select <guimenu>Create from
-    file</guimenu> and click <guimenu>Search</guimenu> to navigate to the
-    Draw file to insert. If you insert a file as OLE object, you can easily
-    edit the object later by double-clicking it.
+    Для вставки существующего рисунка Draw в документ &ooo; выберите
+    <menuchoice> <guimenu>Вставка</guimenu> <guimenu>Объект</guimenu>
+    <guimenu>Объект OLE</guimenu> </menuchoice>. Выберите
+    <guimenu>Создать из файла</guimenu> и нажмите <guimenu>Обзор</guimenu>,
+    чтобы выбрать нужный файл. При вставке файла как OLE-объекта Вы можете
+    легко его отредактировать дважды нажав по нему на нем.
    </para>
    <procedure>
-    <title>Opening Draw From Other &ooo; Modules</title>
+    <title>Открытие формы Draw из другого модуля &ooo;</title>
     <para>
      One particularly useful feature of Draw is the ability to open it from
      other &ooo; modules so you can create a drawing that is automatically
@@ -1413,7 +1412,7 @@
     </term>
     <listitem>
      <para>
-      Страница официальной поддержки &ooo;, руководства и другая документация.
+      Официальная страница поддержки &ooo;, содержащая руководства и другую документацию.
      </para>
     </listitem>
    </varlistentry>
