@@ -1306,75 +1306,74 @@
     легко его отредактировать дважды нажав по нему на нем.
    </para>
    <procedure>
-    <title>Открытие формы Draw из другого модуля &ooo;</title>
+    <title>Использование функций Draw в других модулях &ooo;</title>
     <para>
-     One particularly useful feature of Draw is the ability to open it from
-     other &ooo; modules so you can create a drawing that is automatically
-     imported into your document.
+     Одной из особенностей использования Draw является возможность
+     использования его функций в других модулях &ooo;, что позволяет
+     создавать рисунки, автоматически встраиваемые в документ.
     </para>
     <step>
      <para>
-      From an &ooo; module (for example, from Writer), click <menuchoice>
-      <guimenu>Insert</guimenu> <guimenu>Object</guimenu> <guimenu>OLE
-      Object</guimenu> <guimenu>&ooo; 3.x Drawing</guimenu>
-      <guimenu>OK</guimenu> </menuchoice>. This opens Draw.
+      Нажмите в модуле &ooo; (например, Writer) <menuchoice>
+      <guimenu>Вставка</guimenu> <guimenu>Объект</guimenu>
+      <guimenu>Объект OLE...</guimenu> <guimenu>Рисунок &ooo; 3.3</guimenu>
+      <guimenu>OK</guimenu> </menuchoice>. Откроется окно Draw.
      </para>
     </step>
     <step>
      <para>
-      Create your drawing.
+      Создайте рисунок.
      </para>
     </step>
     <step>
      <para>
-      Click in your document, outside the Draw frame.
+      Поместите курс в документе за пределами рамки Draw.
      </para>
      <para>
-      The drawing is automatically inserted into your document.
+      Рисунок будет автоматически вставлен в документ.
      </para>
     </step>
    </procedure>
   </sect2>
 
   <sect2>
-   <title>Creating Mathematical Formulas with Math</title>
+   <title>Создание математических выражений с помощью Math</title>
    <para>
-    It is usually difficult to include complex mathematical formulas in your
-    documents. The &ooo; Math equation editor lets you create formulas using
-    operators, functions, and formatting assistants. You can then save those
-    formulas as objects that can be imported into other documents. Math
-    functions can be inserted into other &ooo; documents like any other
-    graphic object.
+    Обычно включение комплексных математических формул в документ является
+    нетривиальной задачей. &ooo; Math – редактор математических выражений,
+    который позволяет создавать формулы содержащие операторы, функции и
+    укажания по форматированию. Вы можете сохранить эти формулы как объекты,
+    которые могут быть импортированы в другие документы &ooo;, как любые
+    другие графические объекты.
    </para>
    <para>
-    Using Math, you can enter your equation in three different ways:
+    Используя Math можно создавать уравнения и формулы тремя различными способами:
    </para>
    <itemizedlist>
     <listitem>
      <para>
-      Type markup in the equation editor,
+      Ввести разметку в редактор формул,
      </para>
     </listitem>
     <listitem>
      <para>
-      Right-click on the equation editor and select the symbol from the
-      context menu,
+      нажмите правой кнопкой мыши в редакторе формул и выберите символ из контекстного меню
      </para>
      <para>
-      or
+      или
      </para>
     </listitem>
     <listitem>
      <para>
-      Select a symbol from the <guimenu>Elements</guimenu> toolbox.
+      выберите его в окне <guimenu>Элементы</guimenu>.
      </para>
     </listitem>
    </itemizedlist>
    <note>
     <para>
-     Math is not a calculator. The functions it creates are graphical
-     objects. Even if they are imported into Calc, these functions cannot be
-     evaluated.
+     Math – не калькулятор. Выражения которые в нем создаются являются графическими
+     объектами. Даже, если они были импортированы в Calc – по ним невозможно произвести
+     какие-либо вычисления.
     </para>
    </note>
   </sect2>
