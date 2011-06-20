@@ -13,16 +13,16 @@
 <sect1>
  <title>Доступная документация</title><indexterm>
 
- <primary>help</primary>
+ <primary>справка</primary>
 
- <secondary>Novell/&suse; manuals</secondary></indexterm><indexterm>
+ <secondary>Руководства Novell/&suse;</secondary></indexterm><indexterm>
 
- <primary>Novell/&suse; manuals</primary></indexterm>
+ <primary>Руководства Novell/&suse;</primary></indexterm>
 
  <para>
-  We provide HTML and PDF versions of our books in different languages.
-  <phrase os="osuse;sled;sles">The following manuals for users and
-  administrators are available on this product:</phrase>
+  Мы предоставляем HTML и PDF-версии наших книг на разных языках.
+  <phrase os="osuse;sled;sles">Для данного дистрибутива доступны следующие
+    руководства для пользователей и администраторов:</phrase>
  </para>
 
 <!-- fs 2010-12-27: 
@@ -48,11 +48,11 @@
    </term>
    <listitem>
     <para>
-     Guides you step-by-step through the installation of &productname; from
-     DVD, or from an ISO image, gives short introductions to the GNOME and
-     KDE desktops including some key applications running on it. Also gives
-     an overview of &libo; and its modules for writing texts, working with
-     spreadsheets, or creating graphics and presentations.
+     Руководство шаг за шагом провведет Вас через установку &productname; с
+     DVD или из ISO-образа, даст краткое введение в окружения рабочего стола
+     GNOME и KDE, включая некоторые ключевые приложения. Также познакомит с
+     &libo; и его модулями для создания текста со сложным форматированием,
+     работы с электронными таблицами или создания графики и презентаций.
     </para>
    </listitem>
   </varlistentry>
@@ -97,13 +97,13 @@
    </term>
    <listitem>
     <para>
-     Gives you a general understanding of &productname; and covers advanced
-     system administration tasks. It is intended mainly for system
-     administrators and home users with basic system administration
-     knowledge. It provides detailed information about advanced deployment
-     scenarios, administration of your system, the interaction of key system
-     components and the set-up of various network and file services
-     &productname; offers.
+     Даст Вам общее понимание работы &productname;, затрагивая задачи
+     продвинутого системного администрирования. Его материал предназначен
+     в первую очередь для системных администраторов и домашних пользователей,
+     обладающих базовыми навыками администрирования. Содержит детальную
+     информацию о продвинутых вариантах развертывания, администрирования,
+     взаимодействия ключевых компонентов и настройке различных сетевых и
+     файловых служб &productname;.
     </para>
    </listitem>
   </varlistentry>
@@ -135,11 +135,13 @@
    </term>
    <listitem>
     <para>
-     Introduces basic concepts of system security, covering both local and
-     network security aspects. Shows how to make use of the product inherent
-     security software like &naa; (which lets you specify per program which
-     files the program may read, write, and execute) or the auditing system
-     that reliably collects information about any security-relevant events.
+      Описываются основные понятия системы безопасности, охватывающей как
+      локальные, так и сетевые аспекты. Показывается, как использовать
+      такие утилиты для обеспечения сетевой безопасности, как &naa; (которая
+      позволяет определить к каким файлам заданная программа будет иметь
+      доступ на запись, чтение или выполнение) или система аудита,
+      которая тщательно собирает информацию о событиях, так или иначе
+      связанных с обеспечением надлежащего уровня безопасности системы.
     </para>
    </listitem>
   </varlistentry>
@@ -148,11 +150,12 @@
    </term>
    <listitem>
     <para>
-     An administrator's guide for problem detection, resolution and
-     optimization. Find how to inspect and optimize your system by means of
-     monitoring tools and how to efficiently manage resources. Also contains
-     an overview of common problems and solutions and of additional help and
-     documentation resources.
+     Руководство администратора по обнаружению проблем, их разрешение и
+     оптимизация работы. В нем найдется информация о том, как проверить
+     и оптимизировать работу системы с помощью специальных инструментов,
+     эффективно управлять ее ресурсами. Также в нем содержится обзор общих
+     проблем и их решений, а также дополнительные справочные материалы и
+     обзор доступных ресурсов.
     </para>
    </listitem>
   </varlistentry>
@@ -173,10 +176,10 @@
    </term>
    <listitem>
     <para>
-     This manual offers an introduction to setting up and managing
-     virtualization with &kvm; (Kernel-based Virtual Machine) on
-     &productname;. Also shows how to manage &vmguest;s with &libvirt; and
-     &qemu;.
+     Данное руководство предлагает краткое описание настройки и управления
+     системой виртуализации на базе &kvm; (Kernel-based Virtual Machine) в
+     &productname;. Также показывается, как управлять &vmguest; с помощью
+     &libvirt; и &qemu;.
     </para>
    </listitem>
   </varlistentry>
@@ -252,18 +255,18 @@
    <term>&aaquick;</term>
    <listitem>
     <para>
-     Helps you understand the main concepts behind &naareg;.
+     Помогает понять основные концепции, лежащие в основе &naareg;.
     </para>
    </listitem>
   </varlistentry>
  </variablelist>
 
  <para>
-  Find HTML versions of most product manuals in your installed system under
-  <filename>/usr/share/doc/manual</filename> or in the help centers of your
-  desktop. Find the latest documentation updates at
-  <ulink url="http://www.novell.com/documentation"/> where you can download
-  PDF or HTML versions of the manuals for your product.
+  Большинство HTML-версий руководств в установленной системе можно найти по
+  адресу <filename>/usr/share/doc/manual</filename> или в справочном центре
+  Вашего окружения рабочего стола. Последние обновления документации доступны
+  по адресу <ulink url="http://www.novell.com/documentation"/>, где можно
+  загрузить в PDF или HTML-версии руководств для Вашего продукта.
  </para>
 
 <!-- fs 2009-09-21: No PDFs on media anymore

@@ -7,14 +7,17 @@
 ]>
 <!--taroth 080104: included several times, therefore no ID here, openSUSE only-->
 <sect1>
- <title>Acknowledgments</title>
+ <title>Благодарности</title>
 
  <para>
-  With a lot of voluntary commitment, the developers of Linux cooperate on a
-  global scale to promote the development of Linux. We thank them for their
-  efforts&mdash;this distribution would not exist without them. Furthermore,
-  we thank Frank Zappa and Pawar. Special thanks, of course, goes to Linus
-  Torvalds.
+  Разработчики Linux сотрудничают с огромным числом добровольцев по всему
+  миру, чтобы способствовать развитию Linux. Мы благоданы им за приложенные
+  усилия &mdash; этот дистрибутив не существовал бы без них. Кроме того,
+  мы благодарим Фрэнка Заппа (Frank Zappa) и Павар (Pawar). Особая
+  благодарность, конечно же, направляется к Линусу Торвальдсу (Linus
+  Torvalds).
+  !!! Здесь идут благодарности переводчиками и всем кто помогал готовить этот
+  материал !!!
  </para>
 
  <para>
@@ -22,6 +25,6 @@
  </para>
 
  <para>
-  Your &suse; Team
+  Ваша команда &suse;
  </para>
 </sect1>

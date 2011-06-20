@@ -7,7 +7,7 @@
 ]>
 <!-- jjaeger: only include in openSUSE, Enterprise products are entirely different -->
 <sect1>
- <title>Source Code</title>
+ <title>Исходный код</title>
 
  <remark>toms 2011-01-13: (FIXME) Correct this section to include BerliOS URL
  jw 2011-02-25:  As per BNC#667627, we no longer offer a source DVD. 
@@ -15,16 +15,15 @@
  </remark>
 
  <para>
-  The source code of &productname; is publicly available. To download the
-  source code, proceed as outlined under
+  Исходный код &productname; находится в открытом доступе. Чтобы его загрузить,
+  выполните следующее:
   <ulink
-   url="http://en.opensuse.org/Portal:Distribution/Features"/>. If
-  requested we send you the source code on a DVD. We need to charge a $15 or
-  €15 fee for creation, handling and postage. To request a DVD of the
-  source code, send an e-mail to
+   url="http://ru.opensuse.org/Portal:Дистрибутив/Возможности"/>. Если потребуется –
+   мы можем отправить исходные коды на DVD. Мы берем $15 или €15 за запись, упаковку
+   и доставку дисков. Чтобы запросить DVD с исходным кодом, отправьте e-mail на
+   электронный адрес
   <ulink
-   url="mailto:sourcedvd@suse.de">sourcedvd@suse.de</ulink> or mail
-  the request to:
+   url="mailto:sourcedvd@suse.de">sourcedvd@suse.de</ulink> или обычное письмо:
  </para>
 
 <screen>
