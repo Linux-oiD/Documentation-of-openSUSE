@@ -6,64 +6,64 @@
   %entities;
 ]>
 <chapter id="cha.security.yast_security">
- <title>Configuring Security Settings with &yast;</title>
+ <title>Конфигурация настроек безопасности с помощью &yast;</title>
  <abstract>
   <para>
-   The &yast; module <guimenu>Local Security</guimenu> offers a central
-   clearinghouse to configure security-related settings for &productname;.
-   Use it to configure security aspects such as settings for the login
-   procedure and for password creation, for boot permissions, user creation
-   or for default file permissions. Launch it from the &yast; Control Center
-   by <menuchoice><guimenu>Security and Users</guimenu> <guimenu>Local
-   Security</guimenu> </menuchoice>. The <guimenu>Local Security</guimenu>
-   dialog always starts with the <guimenu>Security Overview</guimenu>, and
-   other configuration dialogs are available from the right pane.
+   Модуль <guimenu>Центр Безопасности</guimenu> &yast; предназначен для 
+   изменения настроек  &productname; связанных с безопасностью системы.
+   Этот модуль используется для настройки таких аспектов безопасности, 
+   как вход в систему, установка пароля, опции загрузки, создание 
+   пользователей и права доступа к файлам по умолчанию. Он запускается из
+   Центра Управления &yast; <menuchoice><guimenu>Безопасность и Пользователи
+   </guimenu> <guimenu>Центр Безопасности</guimenu> </menuchoice>. После 
+   запуска <guimenu>Центра Безопасности</guimenu> активным является диалог 
+    <guimenu>Обзор безопасности</guimenu>, остальные диалоги настроек доступны
+   в правой панели.
   </para>
  </abstract>
  <sect1 id="sec.security.yast_security.overview">
-  <title><guimenu>Security Overview</guimenu></title>
+  <title><guimenu>Обзор безопасности</guimenu></title>
 
   <para>
-   The <guimenu>Security Overview</guimenu> displays a comprehensive list of
-   the most important security settings for your system. The security status
-   of each entry in the list is clearly visible. A green check mark
-   indicates a secure setting while a red cross indicates an entry as being
-   insecure. Clicking on <guimenu>Help</guimenu> presents an overview of the
-   setting and information on how to make it secure. To change a setting,
-   click on the corresponding link in the Status column. Depending on the
-   setting, the following entries are available:
+   <guimenu>Обзор безопасности</guimenu> отображает понятный список самых 
+   важных настроек безопасности Вашей системы. Статус безопасности каждого 
+   пункта списка очевиден. Зеленая галка соответствует безопасным значениям,
+   в то время как красный крест говорит о том, что значение данного пункта 
+   списка не является безопасным. Нажав <guimenu>Описание</guimenu> Вы 
+   получите обзор настроек и информацию о том, как обезопасить систему.
+   Для изменения настроек нажмите соответствующую ссылку в колонке Состояние.
+   В зависимости от настройки доступны следующие значения:
   </para>
 
   <variablelist>
    <varlistentry>
-    <term><guimenu>Enable</guimenu>/<guimenu>Disable</guimenu>
+    <term><guimenu>Включено</guimenu>/<guimenu>Выключено</guimenu>
     </term>
     <listitem>
      <para>
-      Clicking on this entry will toggle the status of the setting to either
-      enabled or disabled.
+      Нажав на этот элемент Вы можете включить или отключить 
+      соответствующую опцию.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><guimenu>Configure</guimenu>
+    <term><guimenu>Настроить</guimenu>
     </term>
     <listitem>
      <para>
-      Clicking on this entry will launch another &yast; module for
-      configuration. You will return to the Security Overview when leaving
-      the module.
+      Нажав на этот элемент Вы запустите соответствующий модуль &yast; для 
+      изменения настроек. Вы вернетесь в диалог Обзор безопасности, как только 
+      модуль будет закрыт.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><guimenu>Unknown</guimenu>
+    <term><guimenu>Неизвестно</guimenu>
     </term>
     <listitem>
      <para>
-      A setting's status is set to unknown when the associated service is
-      not installed. Such a setting does not represent a potential security
-      risk.
+      Данный статус означает, что соответствующая служба не установлена. Он не 
+      является индикатором потенциальных проблем безопасности.
      </para>
     </listitem>
    </varlistentry>
@@ -82,84 +82,82 @@
   </figure>
  </sect1>
  <sect1 id="sec.security.yast_security.predefined_configs">
-  <title><guimenu>Predefined Security Configurations</guimenu></title>
+  <title><guimenu>Предопределенные настройки безопасности</guimenu></title>
 
   <para>
-   &productname; comes with three predefined sets of security
-   configurations. These configurations affect all the settings available in
-   the <guimenu>Local Security</guimenu> module. Each configuration can be
-   modified to your needs using the dialogs available from the right pane.
-   Choose between the following sets:
+   В &productname; есть три предопределенных набора настроек безопасности.
+   Эти наборы применяются ко всем настройкам модуля <guimenu>Центр Безопасности</guimenu>.
+   Каждый из них может быть изменен по своему усмотрению используя диалоги в 
+   правой панели. Список наборов следующий:
   </para>
 
   <variablelist>
    <varlistentry>
-    <term><guimenu>Home Workstation</guimenu>
+    <term><guimenu>Домашняя рабочая станция</guimenu>
     </term>
     <listitem>
      <para>
-      This setting is designed for a computer that has no network connection
-      at all (including a connection to the Internet). It provides the least
-      secure configuration of the predefined settings.
+      Этот набор настроек разработан для компьютера, который не является 
+      частью локальной сети и не подключен к Интернету. Соответствует состоянию 
+      с наименьшей безопасностью.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><guimenu>Networked Workstation</guimenu>
+    <term><guimenu>Сетевая рабочая станция</guimenu>
     </term>
     <listitem>
      <para>
-      A configuration for a workstation with any kind of network connection
-      (including a connection to the Internet).
+      Данная конфигурация используется для компьютера, подключенного к локальной 
+      сети либо Интернету.     
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><guimenu>Network Server</guimenu>
+    <term><guimenu>Сервер сети</guimenu>
     </term>
     <listitem>
      <para>
-      Security settings designed for a machine providing network services
-      such as a web server, file server, name server, etc. This set provides
-      the most secure configuration of the predefined settings.
+      Конфигурация разработана для компьютера предоставляющего сетевые сервисы:
+      вебсервера, файлового сервера, DNS сервера и т.д. Соответствует наиболее 
+      безопасным значениям настроек.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><guimenu>Custom Settings</guimenu>
+    <term><guimenu>Пользовательские настройки</guimenu>
     </term>
     <listitem>
      <para>
-      A pre-selected <guimenu>Custom Settings</guimenu> (when opening the
-      <guimenu>Predefined Security Configurations</guimenu> dialog)
-      indicates that one of the predefined sets has been modified. Actively
-      choosing this option does not change the current configuration - you
-      will have to change it using the <guimenu>Security Overview</guimenu>.
+      Если пункт <guimenu>Пользовательские настройки</guimenu> выбран при открытии
+      диалога <guimenu>Предопределенные настройки безопасности</guimenu> это говорит
+      о том, что значения одного из предустановленных наборов настроек были изменены.
+      Самостоятельное переключение на этот пункт с любого другого не изменяет настроек
+      безопасности - Вы должны изменять их с помощью диалога  <guimenu>Обзор безопасности</guimenu>.
      </para>
     </listitem>
    </varlistentry>
   </variablelist>
  </sect1>
  <sect1 id="sec.security.yast_security.password">
-  <title><guimenu>Password Settings</guimenu></title>
+  <title><guimenu>Настройки пароля</guimenu></title>
 
   <para>
-   Passwords that are easy to guess are a major security issue. The
-   <guimenu>Password Settings</guimenu> dialog provides the means to ensure
-   that only secure passwords can be used.
+   Одной из самых важных проблем безопасности являются легко подбираемые пароли. Средства
+   диалога <guimenu>Настройки пароля</guimenu> предназначены для проверки безопасности
+   используемых паролей.
   </para>
 
   <variablelist>
    <varlistentry>
-    <term><guimenu>Check New Passwords</guimenu>
+    <term><guimenu>Проверять новые пароли</guimenu>
     </term>
     <listitem>
      <para>
-      By activating this option, a warning will be issued if new passwords
-      appear in a dictionary, or if they are proper names (proper nouns). In
-      order to also check for a minimum length, enter the desired length
-      into the field <guimenu>Minimum Acceptable Password Length</guimenu>
-      after having activated <guimenu>Check New Passwords</guimenu>.
+      Если этот пункт активирован, пользователь получит предупреждение, при использовании в
+      качестве пароля слова из словаря или имени собственного. Для ограничения минимальной 
+      длины пароля введите ее значение в поле <guimenu>Минимальная приемлемая длина пароля</guimenu>
+      после активации <guimenu>Проверять новые пароли</guimenu>.
      </para>
     </listitem>
    </varlistentry>
@@ -176,191 +174,173 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Number of Passwords to Remember</term>
+    <term>Число запоминаемых паролей</term>
     <listitem>
      <para>
-      When password expiration is activated (via Password Age), this setting
-      stores the given number of a user's previous passwords, preventing
-      their reuse.
+      Когда проверка возраста пароля активирована, эта настройка используется для
+      сохранения заданного числа предыдущих паролей пользователя, предотвращая их 
+      повторное использование.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Password Encryption Method</term>
+    <term>Метод шифрования пароля</term>
     <listitem>
      <para>
-      Choose a password encryption algorithm. Normally there is no need to
-      change the default (Blowfish).
+      Алгоритм шифрования пароля. Значение по умолчанию (Blowfish) обычно не требует 
+      изменений.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Password Age</term>
+    <term>Возраст пароля</term>
     <listitem>
      <para>
-      Activate password expiration by specifying a minimum and a maximum
-      time limit (in days). By setting the minimum age to a value greater
-      than <literal>0</literal> days, you can prevent users from immediately
-      changing their passwords again (and in doing so circumventing the
-      password expiration). Use the values <literal>0</literal> and
-      <literal>99999</literal> to deactivate password expiration.
+      Проверка возраста пароля активируется путем указания минимального и максимального 
+      значений (в днях). Установовив минимальное значение больше <literal>0</literal> дней,
+      вы можете запретить пользователю повторную немедленную смену пароля (и следующее за ней 
+      окончание времени жизни пароля). Для отключения проверки срока действия пароля используются
+      значения <literal>0</literal> и <literal>99999</literal> соответственно.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Days Before Password Expires Warning</term>
+    <term>Дней до предупреждения об истечении срока действия пароля</term>
     <listitem>
      <para>
-      When a password expires, the user receives a warning in advance.
-      Specify the number of days prior to the expiration date that the
-      warning should be issued.
+      Пользователь может заблаговременно получать предупреждение об истечении срока 
+      действия пароля. В этом поле указывается количество дней до истечения срока действия
+      пароля, по достижении которого пользователь будет получать предупреждение о необходимости сменить пароль.
      </para>
     </listitem>
    </varlistentry>
   </variablelist>
  </sect1>
  <sect1 id="sec.security.yast_security.boot">
-  <title>Boot Settings</title>
+  <title>Настройки загрузки</title>
 
   <para>
-   Configure which users will be able to shutdown the machine via the
-   graphical login manager in this dialog. You can also specify how
-   <keycombo> <keycap function="control"/> <keycap function="alt"/>
-   <keycap function="delete"/> </keycombo> will be interpreted.
+   Этот диалог устанавливает, кому из пользователей разрешено выключать компьютер через менеджер авторизации. Здесь также можно указать, как будет интерпретироваться <keycombo> <keycap function="control"/> <keycap function="alt"/><keycap function="delete"/> </keycombo>.
   </para>
  </sect1>
  <sect1 id="sec.security.yast_security.login">
-  <title>Login Settings</title>
+  <title>Настройки входа в систему</title>
 
   <para>
-   This dialog lets you configure security-related login settings:
+   Диалог позволяет установить настройки безопасности, связанные со входом в систему:
   </para>
 
   <variablelist>
    <varlistentry>
-    <term>Delay after Incorrect Login Attempt</term>
+    <term>Задержка после неправильной попытки входа</term>
     <listitem>
      <para>
-      In order to make it difficult to guess a user's password by repeatedly
-      logging in, it is recommended to delay the display of the login prompt
-      that follows an incorrect login. Specify the value in seconds. Make
-      sure that users who have mistyped their passwords do not need to wait
-      too long.
+      Определяет задержку (в секундах) после неудачной попытки входа в систему.
+      Рекомендуется установить данное значение для затруднения проникновения в систему 
+      путем перебора паролей. Поскольку эта настройка влияет на пользователей, 
+      допустивших ошибку при наборе пароля, не заставляйте их ждать повторной авторизации
+      слишком долго.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Record Successful Login Attempts</term>
+    <term>Записывать успешные попытки входа</term>
     <listitem>
      <para>
-      With this option turned on, the last successful login attempt is
-      recorded in <filename>/var/log/lastlog</filename> and displayed when
-      logging in. This data is also used by the command
-      <command>finger</command>.
+      При включении данной опции последняя удачная попытка авторизации будет сохраняться
+      в файл <filename>/var/log/lastlog</filename> и отображаться при последующем входе в
+      систему. Эти данные также используются командой <command>finger</command>.
      </para>
      <note>
       <para>
-       Note that logging to <filename>/var/log/wtmp</filename> is not
-       affected by this option. This file collects login dates, login times
-       and reboot dates. The content of <filename>/var/log/wtmp</filename>
-       can be displayed by using the command <command>last</command>.
+        Внимание! Эта опция не влияет на журнал <filename>/var/log/wtmp</filename>,
+        который содержит дату и время всех авторизаций и перезагрузкок системы. 
+        Содержимое  <filename>/var/log/wtmp</filename> отображается с помощью команды <command>last</command>.
       </para>
      </note>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>Allow Remote Graphical Login</term>
+    <term>Разрешить удаленный графический вход</term>
     <listitem>
      <para>
-      When checked, the graphical login manager (e.g. gdm or kdm) can be
-      accessed from the network. This is a potential security risk.
-     </para>
+      Если включено, графический менеджер авторизации (например gdm или kdm) будет
+      доступен из сети. Включение представляет потенциальную опасность для системы.     </para>
     </listitem>
    </varlistentry>
   </variablelist>
  </sect1>
  <sect1 id="sec.security.yast_security.user">
-  <title>User Addition</title>
+  <title>Добавление пользователя</title>
 
   <para>
-   Set minimum and maximum values for user and group IDs. These default
-   settings would rarely need to be changed.
+   Минимальные и максимальные значения идентификаторов групп и пользователей. Изменение
+   значений по умолчанию требуется крайне редко.
   </para>
  </sect1>
  <sect1 id="sec.security.yast_security.misc">
-  <title>Miscellaneous Settings</title>
+  <title>Различные настройки</title>
 
   <para>
-   Other security settings that don't fit the above-mentioned categories are
-   listed here:
+   Здесь представлены настройки безопасности, не соответствующие остальным категориям:
   </para>
 
   <variablelist>
    <varlistentry>
-    <term>File Permissions</term>
+    <term>Разрешения файлов</term>
     <listitem>
      <para>
-      &productname; comes with three predefined sets of file permissions for
-      system files. These permission sets define whether a regular user may
-      read log files or start certain programs. <guimenu>Easy</guimenu> file
-      permissions are suitable for standalone machines. This settings allows
-      regular users, for example, to read most system files. See the file
-      <filename>/etc/permissions.easy</filename> for the complete
-      configuration. The <guimenu>Secure</guimenu> file permissions are
-      designed for multi-user machines with network access. A thorough
-      explanation of these settings can be found in
-      <filename>/etc/permissions.secure</filename>. The
-      <guimenu>Paranoid</guimenu> settings are the most restrictive ones and
-      should be used with care. See
-      <filename>/etc/permissions.paranoid</filename> for more information.
+      &productname; предлагает три предустановленных уровня файловых привилегий для
+      системных файлов. Эти наборы привилегий определяют, может ли обычный пользователь
+      читать файлы журналов или запускать определенные программы. Уровень <guimenu>Легкий</guimenu>
+      предназначен для системы с одним пользователем и позволяет, например, читать
+      большинство системных файлов обычному пользователю. Полный список привилегий
+      доступен в файле <filename>/etc/permissions.easy</filename>. Уровень <guimenu>Безопасный</guimenu>
+      разработан для многопользовательских систем с доступом к сети. Подробное объяснение
+      его настроек можно посмотреть в файле  <filename>/etc/permissions.secure</filename>.
+      Наиболее жестким является уровень <guimenu>Параноидальный</guimenu>, использовать
+      который следует осторожно. Информацию об этом уровне можно получить из файла 
+      <filename>/etc/permissions.paranoid</filename>.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>User Launching updatedb</term>
+    <term>Пользователь, запускающий updatedb</term>
     <listitem>
      <para>
-      The program <command>updatedb</command> scans the system and creates a
-      database of all file locations which can be queried with the command
-      <command>locate</command>. When <command>updatedb</command> is run as
-      user nobody, only world-readable files will be added to the database.
-      When run as user &rootuser;, almost all files (except the ones root is
-      not allowed to read) will be added.
+      Программа <command>updatedb</command> сканирует систему и создает базу данных
+       размещения файлов, используемую командой <command>locate</command>. При запуске  <command>updatedb</command> от пользователя nobody, в  базу данных добавляются только файлы доступные на чтение всем пользователям. При запуске ее от пользователя &rootuser;, в базу данных попадут практически все файлы (за исключение тех, к которым root не имеет доступа на чтение).
 <?dbfo-need height="15em"?>
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><guimenu>Current Directory in root's Path</guimenu> /
-     <guimenu>Current Directory in Path of Regular Users</guimenu>
+    <term><guimenu>Текущий каталог в пути root</guimenu> /
+     <guimenu>Текущий каталог в пути обычных пользователей</guimenu>
     </term>
     <listitem>
      <para>
-      Whenever a program is called without specifying the full path to the
-      executable, the system looks in the user's search path (defined by the
-      variable <envar>$PATH</envar>) for the executable. By default the
-      current directory is not added to the search path. This setting
-      ensures that, for example, <filename>/bin/ls</filename> and not the
-      trojan horse <filename>/<replaceable>current
-      directory</replaceable>/ls</filename> is executed when entering
-      <command>ls</command>. In order to start a program in the current
-      directory the command must be prefixed with <filename>./</filename>.
-      When activating these options, the current directory
-      (<filename>.</filename>) is appended to the search path. It is
-      recommended you not change the default.
+      При запуске программы без указания полного пути к ее исполняемому файлу, 
+      система производит поиск этой программы по пути установленному переменной
+      <envar>$PATH</envar>. По умолчанию в список директорий для поиска команды
+      не входит текущая директория. Это необходимо для того, чтобы, например, при
+      запуске команды <command>ls</command> запускалась программа <filename>/bin/ls</filename> , а не троян из <filename>/<replaceable>текущий каталог</replaceable>/ls</filename>. Для запуска программ из текущей директории
+      к ее имени нужно добавить префикс <filename>./</filename>.
+      При изменении этой опции текущая директория
+      (<filename>.</filename>) будет добавлена в путь для поиска команды. 
+      Изменять значение по умолчанию для этих опций не рекомендуется.
      </para>
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term><guimenu>Enable Magic SysRq Keys</guimenu>
+    <term><guimenu>Разрешить магические клавиши SysRq</guimenu>
     </term>
     <listitem>
      <para>
-      The magic SysRq key is a keycombo that enables you to have some
-      control over the system even when it has crashed. The complete
-      documentation can be found at
-      <filename>/usr/src/linux/Documentation/sysrq.txt</filename> (requires
-      installation of the <systemitem>kernel-source</systemitem> package).
+      Волшебная кнопка SysRq - это клавиатурное сочетание, позволяющее контролировать
+      систему, даже если в ней произошел сбой. Для получения подробной информации
+      обратитесь к файлу <filename>/usr/src/linux/Documentation/sysrq.txt</filename>
+      (требуется установка пакета <systemitem>kernel-source</systemitem>).
      </para>
     </listitem>
    </varlistentry>
