@@ -9,29 +9,26 @@
  <title>About This Guide</title>
  <para>
 <!-- FIXME: enable the audit snippet at the end of this para again,
-       once it is updated for 11.4, or later. -->
-  This manual introduces the basic concepts of system security on
-  &productname;. It covers extensive documentation about the authentication
-  mechanisms available on Linux, such as NIS or LDAP. It also deals with
-  aspects of local security like access control lists, encryption and
-  intrusion detection. In the network security part you learn how to secure
-  your computers with firewalls and masquerading, and how to set up virtual
-  private networks (VPN). This manual also shows you how to make use of the
-  product's inherent security software like &naa; (which lets you specify
-  per program which files the program may read, write, and
-  execute)<phrase os="sles;sled"> or the auditing system that reliably
-  collects information about any security-relevant events</phrase>.
+       once it is updated for 11.4, or later. -->  
+  Это руководство представляет основные концепции безопасности системы в &productname;.
+  Оно охватывает обширную часть документации, об аутетификационных механизмах, доступных
+  в GNU/Linux, такие как NIS или LDAP. В руководстве также освещаются такие вопросы
+  безопасности как: списки контроля доступа, шифрование и обнаружение вторжения. В третьей
+  части "Сетевая безопасность" Вы узнаете как обезопасить свой компьютер с помощью брандмауера,
+  а так же настроить виртуальную частную сеть (VPN). Это руководство также рассказывает как
+  использовать доступное в системе ПО для обеспечения безопасности, такое как: &naa; (с
+  помощью него Вы можете настраивать доступ для ПО к файлам)<phrase os="sles;sled"> или систем
+  аудита, которые помогают отслеживать все события в системе, так или иначе имеющие отношения
+  к безопасности</phrase>.
  </para>
  <para>
-  Many chapters in this manual contain links to additional documentation
-  resources. These include additional documentation that is available on the
-  system, as well as documentation available on the Internet.
+  Многие главы в этом руководстве содержат ссылки на ресурсы с дополнительной
+  документацией. Все эти ресурcы и оригинальная документация, доступны как в
+  системе, так и в сети.
  </para>
  <para>
-  For an overview of the documentation available for your product and the
-  latest documentation updates, refer to
-  <ulink url="http://www.novell.com/documentation"/> or to the following
-  section.
+  Документацию, доступную для Вашего продукта, можно найти на этой странице:
+  <ulink url="http://www.novell.com/documentation"/>, а так же в следующих разделах.
  </para>
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="common_intro_available_doc_i.xml"/>
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="common_intro_feedback_i.xml"/>
