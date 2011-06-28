@@ -13,15 +13,15 @@
 -->
 <legalnotice>
  <para>
-  Copyright &copy; 2006&ndash;
-<?dbtimestamp format="Y"?>
+  Copyright &copy; 2006&ndash;<?dbtimestamp format="Y"?>
   Novell, Inc. и Сообщество. Все права защищены.
  </para>
  <para>
-  Разрешается копировать, распространять и / или измененять этот документ
-  в соответствии с условиями GNU Free Documentation License, версии 1.2 или (на
-  Ваше усмотрение) версии 1.3; с обязательным указанием этого уведобления об авторском
- праве и лицензии. Копия лицензии версии 1.2 включена в раздел <quote>GNU Free Documentation License</quote>.
+  Разрешается копировать, распространять и/или изменять этот документ в
+  соответствии с условиями GNU Free Documentation License, версии 1.2 или
+  (на Ваше усмотрение) версии 1.3; с обязательным указанием этого уведобления
+  об авторском праве и лицензии. Копия лицензии версии 1.2 включена в раздел
+  <quote>GNU Free Documentation License</quote>.
  </para>
  <para>
   Для торговых марок Novell, смотрите Novell Trademark and Service Mark list
