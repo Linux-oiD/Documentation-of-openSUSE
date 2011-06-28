@@ -9,34 +9,32 @@
  <title>Security and Confidentiality</title><indexterm class="startofrange" id="idx.security">
  <primary>security</primary></indexterm>
  <para>
-  One of the main characteristics of a Linux or UNIX system is its ability
-  to handle several users at the same time (multiuser) and to allow these
-  users to perform several tasks (multitasking) on the same computer
-  simultaneously. Moreover, the operating system is network transparent. The
-  users often do not know whether the data and applications they are using
-  are provided locally from their machine or made available over the
-  network.
+  Одной из главных характеристик UNIX/Linux систем это возможность обслуживать
+  несколько пользователей (многопользовательские системы), а так же предоставлять
+  им возможность выполнять несколько задач одновременно (многозадачность).
+  Более того, опреационная система прозрачна для сети. Пользователи часто даже не
+  знают находятся ли данные или программы, которые они используют,
+  локально или доступны через сеть.
  </para>
  <para>
-  With the multiuser capability, the data of different users must be stored
-  separately, and security and privacy need to be guaranteed. Data security
-  was already an important issue, even before computers could be linked
-  through networks. Just like today, the most important concern was the
-  ability to keep data available in spite of a lost or otherwise damaged
-  data medium (a hard disk in most cases).
+  Так как системы многопользовательские, данные разных пользователей должны
+  храниться раздельно, а так же должна быть обеспечена их безопасность и приватность.
+  Безопасность данных всегда была важной проблемой, и даже до того, как появилась
+  возможность объединять компьютеры через сеть. На много большее беспокойство вызывает
+  возможность несанкционируемого доступа к данным, нежели на потерю или даже поломку
+  носителя данных (например жесткого диска).
  </para>
  <para>
-  This section is primarily focused on confidentiality issues and on ways to
-  protect the privacy of users, but it cannot be stressed enough that a
-  comprehensive security concept should always include procedures to have a
-  regularly updated, workable, and tested backup in place. Without this, you
-  could have a very hard time getting your data back&mdash;not only in the
-  case of some hardware defect, but also in the case that someone has gained
-  unauthorized access and tampered with files.
+  Этот раздел фокусируется на проблемах конфиденциальности и на способах защиты
+  личных пользовательских данных. Все же концепция безопасности включает в себя
+  регулярно обновляемую, рабочую и проверяемую резервную копию, хранящуюся в безопасном
+  месте. Без этих мер Вам придется потратить много времени, возвращая ваши данные&mdash;
+  притом не только в случае поломки или дефекта носителя данных, но и в случае
+  несанкционированного доступа.
  </para>
 <?dbfo-need height="20em"?>
  <sect1 id="sec.security.general.overview">
-  <title>Local Security and Network Security</title>
+  <title>Локальная и сетевая безопасность</title>
 
   <para>
    There are several ways of accessing data:
