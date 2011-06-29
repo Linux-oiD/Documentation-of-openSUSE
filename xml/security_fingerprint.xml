@@ -8,65 +8,65 @@
 <!--taroth 2010-07-14: thoenig found some software bugs while
  testing but doc is still valid for 11.3 :-) -->
 <chapter id="cha.security.fp">
- <title>Using the Fingerprint Reader</title>
+ <title>Использование сканера отпечатков пальцев</title>
  <remark>taroth 090811: according to thoenig, nobody is working on the
   fingerprint issue, therefore no changes needed (11.0 version still
   valid)</remark>
  <para>
-  If your system includes a fingerprint reader, you can use biometric
-  authentication in addition to standard authentication via login and
-  password. After registering their fingerprint, users can log in to the
-  system either by swiping a finger on the fingerprint reader or by typing
-  in a password. &productnamereg; supports most available fingerprint
-  readers. For a list of supported devices, please refer to
+  Если у Вам есть сканер отпечатков пальцев, Вы можете
+  использовать биометрическую аутентификацию в дополнение к стандартной,  
+  используя также логин и пароль. После регистрации своих отпечатков
+  пальцев, пользователь может войти в систему, проведя пальцем по сканеру,
+  или введя пароль. &productnamereg; поддерживает большое количество подобных сканеров.
+  Список поддерживаемых устройств можно найти на
   <ulink
    url="http://reactivated.net/fprint/wiki/Supported_devices"/>.
  </para>
  <para>
-  If the hardware check detects the fingerprint reader integrated with your
-  laptop (or connected to your system), the packages
+  Если &productnamereg; находит сканер отпечатков пальцев, который интегрирован с
+  ноутбуком (или просто подключенного к вашей системе), пакеты
   <systemitem
    class="resource">libfprint</systemitem>,
   <systemitem class="resource"
-    >pam_fp</systemitem>, and
-  <systemitem class="resource"
-     >yast2-fingerprint-reader</systemitem>
-  are automatically installed.
+    >pam_fp</systemitem>, и
+    <systemitem class="resource"
+    >yast2-fingerprint-reader</systemitem>
+  будут автоматически установленны.
  </para>
  <para>
-  Currently, only one fingerprint per user can be registered. The user's
-  fingerprint data is stored to
+  В настоящее время может быть зарегистрирован только один отпечаток пальца для
+  каждого пользователя. Он хранится в 
   <filename>/home/<replaceable>login</replaceable>/.fprint/</filename>.
  </para>
  <sect1 id="sec.security.fp.supported">
   <title>Supported Applications and Actions</title>
 
   <para>
-   The PAM module <literal>pam_fp</literal> supports fingerprint
-   authentication for the following applications and actions (although you
-   may not be prompted to swipe your finger in all cases):
+   PAM модуль <literal>pam_fp</literal> поддерживает аутентификации распознавания
+   отпечатка пальца в следующих случаях (хотя и не во всех случаях Вам может быть
+   предложено идентифицировать себя таким образом):
   </para>
 
   <itemizedlist>
    <listitem>
     <para>
-     Logging in to GDM/KDM or a login shell
+     Авторизация в GDM/KDM или при использовании программы login
     </para>
    </listitem>
    <listitem>
     <para>
-     Unlocking your screen on the GNOME/KDE desktop
+     Блокировка экрана в GNOME/KDE
     </para>
    </listitem>
    <listitem>
     <para>
-     Starting &yast; and the &yast; modules
+     Запуск &yast; и &yast; модулей
     </para>
    </listitem>
    <listitem>
     <para>
-     Starting an application with &rootuser; permission:
-     <command>sudo</command> or <command>gnomesu</command>
+     Запуск приложений, которые требуют права &rootuser;:
+     <command>sudo</command> или <command>gnomesu</command>
      <remark>taroth 080314:
       kdesu does not work yet according to dmuelle</remark>
 <!-- or <command>kdesu</command>-->
@@ -74,7 +74,7 @@
    </listitem>
    <listitem>
     <para>
-     Changing to a different user identity with <command>su</command> or
+     Вход в систему от имени другого пользователся при помощи <command>su</command> или
      <command>su <option>-</option>
      <replaceable>username</replaceable></command>
     </para>
@@ -85,13 +85,13 @@
    is included in yast2_userman.xml</remark>
 
   <note>
-   <title>Fingerprint Reader Devices and Encrypted Home Directories</title>
+   <title>Устройства для считывания отпечатка пальца и шифрование домашней директории</title>
    <para>
-    If you want to use a fingerprint reader device, you must not use
-    encrypted home directories (see <xref linkend="cha.y2.userman"/> for
-    more information). Otherwise logging in will fail, because decrypting
-    during login is not possible in combination with an active fingerprint
-    reader device.
+    Если Вы хотите идентифицировать себя с помощью сканера, Вы не можете при этом использовать
+    зашифрованную домашнюю директорию (см. <xref linkend="cha.y2.userman"/> для получения
+    дополнительной информации). В противном случае идентифицировать себя таким образом не
+    получится, т.к. до успешного окончания процесса авторизации, т.е. когда используется
+    устройство считывания отпечатков пальцев, невозможно расшифровать домашнюю директорию.
    </para>
   </note>
  </sect1>
@@ -99,18 +99,17 @@
   <title>Managing Fingerprints with &yast;</title>
 
   <procedure>
-   <title>Enabling Fingerprint Authentication</title>
+   <title>Включение биометрической аутентификации</title>
    <para>
-    You can only use biometric authentication if PAM is configured
-    accordingly. Usually, this is done automatically during installation of
-    the packages when the hardware check detects a supported fingerprint
-    reader. If not, manually enable the fingerprint support in &yast; as
-    follows:
+    Для использования биометрической аутентификации Вы должны настроить PAM.
+    Как правило, это происходит автоматически во время установки системы,
+    когда openSUSE обнаруживает поддерживаемый сканер. Если этого не произошло,
+    Вы можете включить поддержку отпечатков пальцев в &yast; следующим образом:
    </para>
    <step>
     <para>
-     Start &yast; and select <menuchoice> <guimenu>Hardware</guimenu>
-     <guimenu>Fingerprint Reader</guimenu> </menuchoice>.
+     Запустите &yast; и выберете <menuchoice> <guimenu>Оборудование</guimenu>
+     <guimenu>Распознавание отпечатков пальцев</guimenu> </menuchoice>.
     </para>
 <!--<informalfigure>
      <mediaobject>
