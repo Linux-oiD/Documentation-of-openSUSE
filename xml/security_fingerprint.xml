@@ -39,12 +39,12 @@
   <filename>/home/<replaceable>login</replaceable>/.fprint/</filename>.
  </para>
  <sect1 id="sec.security.fp.supported">
-  <title>Supported Applications and Actions</title>
+  <title>Программы, поддерживающие биометрическую аутентификацию</title>
 
   <para>
    PAM модуль <literal>pam_fp</literal> поддерживает аутентификации распознавания
    отпечатка пальца в следующих случаях (хотя и не во всех случаях Вам может быть
-   предложено идентифицировать себя таким образом):
+   предложено аутентифицировать себя таким образом):
   </para>
 
   <itemizedlist>
@@ -87,16 +87,16 @@
   <note>
    <title>Устройства для считывания отпечатка пальца и шифрование домашней директории</title>
    <para>
-    Если Вы хотите идентифицировать себя с помощью сканера, Вы не можете при этом использовать
+    Если Вы хотите аутентифицировать себя с помощью сканера, Вы не можете при этом использовать
     зашифрованную домашнюю директорию (см. <xref linkend="cha.y2.userman"/> для получения
-    дополнительной информации). В противном случае идентифицировать себя таким образом не
+    дополнительной информации). В противном случае аутентифицировать себя таким образом не
     получится, т.к. до успешного окончания процесса авторизации, т.е. когда используется
     устройство считывания отпечатков пальцев, невозможно расшифровать домашнюю директорию.
    </para>
   </note>
  </sect1>
  <sect1 id="sec.security.fp.yast">
-  <title>Managing Fingerprints with &yast;</title>
+  <title>Управление биометрической аутентификации через &yast;</title>
 
   <procedure>
    <title>Включение биометрической аутентификации</title>
@@ -126,46 +126,46 @@
    </step>
    <step>
     <para>
-     In the configuration dialog, activate <guimenu>Use Fingerprint
-     Reader</guimenu> and click <guimenu>Finish</guimenu> to save the
-     changes and close the dialog.
+     В окне настроек, выберете <guimenu>Использовать распознавание отпечатков
+     пальцев</guimenu> и нажмите<guimenu>Готово</guimenu> для сохранения
+     настроек.
     </para>
    </step>
   </procedure>
 
   <para>
-   Now you can register a fingerprint for various users.
+   После этого Вы можете аутентифицировать себя с помощью сканера.
   </para>
 
 <?dbfo-need height="10em"?>
 
   <procedure>
-   <title>Registering a Fingerprint</title>
+   <title>Регистрация отпечатков пальцев</title>
    <step>
     <para>
-     In &yast;, click <menuchoice> <guimenu>Security and Users</guimenu>
-     <guimenu>User Management</guimenu> </menuchoice> to open the
-     <guimenu>User and Group Administration</guimenu> dialog. A list of
-     users or groups in the system is displayed.
+     В &yast;, нажмите <menuchoice> <guimenu>Безопасность и пользователи</guimenu>
+     <guimenu>Управление пользователями</guimenu> </menuchoice> для открытия окна
+     <guimenu>User and Group Administration</guimenu>. В нем отображается список
+     пользователей и групп в системе.
     </para>
    </step>
    <step>
     <para>
-     Select the user for whom you want to register a fingerprint and click
-     <guimenu>Edit</guimenu>.
+     Выберете пользователя, для которого Вы хотите зарегистрировать отпечаток пальца и нажмите
+     <guimenu>Редактировать</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     On the <guimenu>Plug-Ins</guimenu> tab, select the fingerprint entry
-     and click <guimenu>Launch</guimenu> to open the <guimenu>Fingerprint
-     Configuration</guimenu> dialog.
+     Во вкладке <guimenu>Plug-Ins</guimenu>, выберете the fingerprint entry
+     и нажмите <guimenu>Launch</guimenu> для открытия окна <guimenu>Конфигурация отпечатков
+     пальцев</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     &yast; prompts the user to swipe his finger until three readable
-     fingerprints have been gathered.
+     &yast; попросит пользователя сканировать отпечаток пальца до тех пор, пока не будет
+     сделанно три четких снимка. 
     </para>
     <informalfigure>
      <mediaobject>
@@ -182,48 +182,46 @@
    </step>
    <step>
     <para>
-     After the fingerprint has been acquired successfully, click
-     <guimenu>Accept</guimenu> to close the <guimenu>Fingerprint
-     Configuration</guimenu> dialog and the dialog for the user.
+     После того, как отпечатки были сняты, нажмите кнопку
+     <guimenu>Применить</guimenu>, чтобы закрыть окно <guimenu>Конфигурация отпечатков
+     пальцев</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     If you also want to use fingerprint authentication for starting &yast;
-     or the &yast; modules, you need to register a fingerprint for
-     &rootuser;, too.
+     Если Вы так же хотите использовать отпечатки пальцев для аутентификации при
+     запуске &yast; или &yast; модулей, Вы должны настроить использование отпечатков
+     для пользователя &rootuser;.
     </para>
     <para>
-     To do so, set the filter in the <guimenu>User and Group
-     Administration</guimenu> dialog to <guimenu>System Users</guimenu>,
-     select the &rootuser; entry and register a fingerprint for &rootuser;
-     as described above.
+     Чтобы сделать это, установите фильтр <guimenu>System Users</guimenu> в окне
+     <guimenu>User and Group Administration</guimenu>, и выберете пользователя
+     &rootuser;, а так же оставте 3 четких отпечатка пальца, как описанно выше.
     </para>
    </step>
    <step>
-    <para>
-     After you have registered fingerprints for the desired users, click
-     <guimenu>Finish</guimenu> to close the administration dialog and to
-     save the changes.
+    <para>  
+     После регистрации отпечатков пальцев для желаемого пользователя, нажмите
+     <guimenu>Finish</guimenu>, чтобы закрыть диалоговое окно и сохранить изменения.
     </para>
    </step>
   </procedure>
 
   <para>
-   As soon as the user's fingerprint has been successfully registered, the
-   user can choose to authenticate with either fingerprint or password for
-   the actions and applications listed in
+   Как только отпечатки пальцев зарегистрированы, пользователь может выбрать
+   метод аутентификации: или отпечаток пальца, или пароль, которые будут использоваться
+   для доступа к программам, перечисленным в
    <xref linkend="sec.security.fp.supported"/>.
   </para>
 
   <para>
-   Currently, &yast; does not offer verification or removal of fingerprints,
-   but you remove fingerprints by deleting the directory
+   В настоящее время в &yast; не реализована функция проверки или удаления существующих
+   отпечатков пальцев. Если Вы все же хотите удалить их, просто удалите директорию
    <filename>/home/<replaceable>login</replaceable>/.fprint</filename>.
   </para>
 
   <para>
-   For more technical details, refer to
+   Для получения дополнительной технической информации см.
    <ulink
      url="http://reactivated.net/fprint/"/>.
   </para>
