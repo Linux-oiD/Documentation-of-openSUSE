@@ -6,7 +6,7 @@
   %entities;
 ]>
 <preface id="preface.security">
- <title>About This Guide</title>
+ <title>О этом руководстве</title>
  <para>
 <!-- FIXME: enable the audit snippet at the end of this para again,
        once it is updated for 11.4, or later. -->  

@@ -6,7 +6,7 @@
   %entities;
 ]>
 <chapter id="cha.security">
- <title>Security and Confidentiality</title><indexterm class="startofrange" id="idx.security">
+ <title>Безопасность и конфиденциальность</title><indexterm class="startofrange" id="idx.security">
  <primary>security</primary></indexterm>
  <para>
   Одной из главных характеристик UNIX/Linux систем это возможность обслуживать
