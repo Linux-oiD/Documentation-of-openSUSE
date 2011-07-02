@@ -34,7 +34,7 @@
  <xi:include href="security_intro.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
  <xi:include href="security_preface.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
  <part id="part.auth">
-  <title>Authentication</title>
+  <title>Аутентификация</title>
   <xi:include href="security_pam.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <!-- taroth 090217:
      dropping edirectory - no contact person
@@ -52,7 +52,7 @@
 -->
  </part>
  <part id="part.local_security">
-  <title>Local Security</title>
+  <title>Локальная безопасность</title>
   <xi:include href="security_yast2_security.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="security_policy_kit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="security_acls.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -64,14 +64,14 @@
   <xi:include href="security_aide.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
  </part>
  <part id="part.network_security">
-  <title>Network Security</title>
+  <title>Сетевая безопасность</title>
   <xi:include href="security_ssh.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="security_firewall.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="security_vpnserver.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="security_yast2_ca.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
  </part>
  <part id="part.apparmor">
-  <title>Confining Privileges with &naa;</title>
+  <title>Ограничение привилегий с &naa;</title>
   <xi:include href="apparmor_intro.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="apparmor_start.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="apparmor_whatimmunize.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
