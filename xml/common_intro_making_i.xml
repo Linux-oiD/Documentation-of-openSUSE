@@ -10,7 +10,7 @@
  <title>О создании этого руководства</title>
 
  <para>
-  Эта книга была написано в Novdoc, основан на DocBook (смотрите
+  Эта книга была создана в Novdoc, основан на DocBook (смотрите
   <ulink
    url="http://www.docbook.org"/>). Исходные XML-файлы проверяются программой
    <command>xmllint</command>, обработанные <command>xsltproc</command> и 
