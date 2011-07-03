@@ -23,34 +23,40 @@
  </para>
  <variablelist>
    <varlistentry>
-     <para>
-       Астахов Павел pastakhov@yandex.ru
-     </para>
+     <term>Астахов Павел</term>
+     <listitem>
+       <para>pastakhov@yandex.ru</para>
+     </listitem>
    </varlistentry>
    <varlistentry>
-     <para>
-       Валеев Динар k0da@opensuse.org
-     </para>
+     <term>Валеев Динар</term>
+     <listitem>
+       <para>k0da@opensuse.org</para>
+     </listitem>
    </varlistentry>
    <varlistentry>
-     <para>
-       Вассерман Борис natabor2004@gmail.com
-     </para>
+     <term>Вассерман Борис</term>
+     <listitem>
+       <para>natabor2004@gmail.com</para>
+     </listitem>
    </varlistentry>
    <varlistentry>
-     <para>
-       Карепин Андрей egdfree@opensuse.org
-     </para>
+     <term>Карепин Андрей</term>
+     <listitem>
+       <para>egdfree@opensuse.org</para>
+     </listitem>
    </varlistentry>
    <varlistentry>
-     <para>
-       Наумов Александр alexander_naumov@opensuse.org
-     </para>
+     <term>Наумов Александр</term>
+     <listitem>
+       <para>alexander_naumov@opensuse.org</para>
+     </listitem>
    </varlistentry>
    <varlistentry>
-     <para>
-       Черкасов Антон linux-oid@opensuse.org>
-     </para>
+     <term>Черкасов Антон</term>
+     <listitem>
+       <para>linux-oid@opensuse.org></para>
+     </listitem>
    </varlistentry>
  </variablelist>
  
