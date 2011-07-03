@@ -5,10 +5,10 @@
   %entities;
 ]>
 <appendix id="app.nwscheme">
- <title>An Example Network</title>
+ <title>Примера сети</title>
  <para>
-  This example network is used across all network-related chapters of the
-  &productnamereg; documentation.
+  Эта сеть используется в качестве примера для всех глав
+  документации &productnamereg; связанных с работой с сетью.
  </para>
  <informalfigure>
   <mediaobject>

@@ -16,10 +16,44 @@
   мы благодарим Фрэнка Заппа (Frank Zappa) и Павар (Pawar). Особая
   благодарность, конечно же, направляется к Линусу Торвальдсу (Linus
   Torvalds).
-  !!! Здесь идут благодарности переводчиками и всем кто помогал готовить этот
-  материал !!!
  </para>
-
+ 
+ <para>
+  Спасибо всем кто принял участие в подготовке данного руководства:
+ </para>
+ <variablelist>
+   <varlistentry>
+     <para>
+       Астахов Павел pastakhov@yandex.ru
+     </para>
+   </varlistentry>
+   <varlistentry>
+     <para>
+       Валеев Динар k0da@opensuse.org
+     </para>
+   </varlistentry>
+   <varlistentry>
+     <para>
+       Вассерман Борис natabor2004@gmail.com
+     </para>
+   </varlistentry>
+   <varlistentry>
+     <para>
+       Карепин Андрей egdfree@opensuse.org
+     </para>
+   </varlistentry>
+   <varlistentry>
+     <para>
+       Наумов Александр alexander_naumov@opensuse.org
+     </para>
+   </varlistentry>
+   <varlistentry>
+     <para>
+       Черкасов Антон linux-oid@opensuse.org>
+     </para>
+   </varlistentry>
+ </variablelist>
+ 
  <para>
   Have a lot of fun!
  </para>
