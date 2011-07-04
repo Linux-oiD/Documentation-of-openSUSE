@@ -23,7 +23,7 @@
          documenting openvpn alone is sufficient
 -->
 <?provo dirname="security/"?>
-<book lang="en" id="book.security">
+<book lang="ru" id="book.security">
  <bookinfo>
   <title>&secguide;</title><productname>&productname;</productname>
   <productnumber>&productnumber;</productnumber><date>
