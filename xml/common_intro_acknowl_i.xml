@@ -12,10 +12,9 @@
  <para>
   Разработчики Linux сотрудничают с огромным числом добровольцев по всему
   миру, чтобы способствовать развитию Linux. Мы благоданы им за приложенные
-  усилия &mdash; этот дистрибутив не существовал бы без них. Кроме того,
-  мы благодарим Фрэнка Заппа (Frank Zappa) и Павар (Pawar). Особая
-  благодарность, конечно же, направляется к Линусу Торвальдсу (Linus
-  Torvalds).
+  усилия &mdash; этот дистрибутив не существовал бы без них. Кроме того, мы
+  благодарим Фрэнка Заппа (Frank Zappa) и Павар (Pawar). Особая благодарность,
+  конечно же, выражается Линусу Торвальдсу (Linus Torvalds).
  </para>
  
  <para>
@@ -41,6 +40,12 @@
      </listitem>
    </varlistentry>
    <varlistentry>
+     <term>Дубинюк Виктор</term>
+     <listitem>
+       <para>victor.dubiniuk@gmail.com</para>
+     </listitem>
+   </varlistentry>
+   <varlistentry>
      <term>Карепин Андрей</term>
      <listitem>
        <para>egdfree@opensuse.org</para>
@@ -55,7 +60,7 @@
    <varlistentry>
      <term>Черкасов Антон</term>
      <listitem>
-       <para>linux-oid@opensuse.org></para>
+       <para>linux-oid@opensuse.org</para>
      </listitem>
    </varlistentry>
  </variablelist>

@@ -17,7 +17,7 @@
   </para>
  </abstract>
  <tip>
-  <title>Graphics card, monitor, mouse and keyboard settings</title>
+  <title>Настройка видеокарты, монитора, мыши и клавиатуры</title>
   <para>
    Graphics card, monitor, mouse and keyboard can be configured with either
    KDE or GNOME tools. <phrase os="sled;ossue">For KDE, see
@@ -26,21 +26,21 @@
   </para>
  </tip>
  <sect1 id="sec.y2.hw.probe">
-  <title>Hardware Information</title>
+  <title>Информация об оборудовании</title>
 
   <para>
-   Use the &yast; hardware information module if you want to know more about
-   your hardware or if you need to find out details like vendor and model of
-   a certain piece of hardware to be able to properly configure it.
+   Используйте модуль &yast; Информация об оборудовании, если Вы хотите узнать больше
+   о Вашем аппаратном обеспечении или, если Вам нужно узнать такие детали как поставщик
+   и модель определенной части используемого оборудования.
   </para>
 
   <procedure>
    <step>
     <para>
-     Start &yast; and click <menuchoice> <guimenu>Hardware</guimenu>
-     <guimenu>Hardware Information</guimenu> </menuchoice>. Hardware probing
-     starts immediately and it will take some time until you see the
-     hardware information tree in a separate window.
+     Запустите &yast; и нажмите <menuchoice> <guimenu>Оборудование</guimenu>
+     <guimenu>Информация об оборудовании</guimenu> </menuchoice>. Сразу запустится
+     опрос обрудования – это займет некоторое время, по завершении которого будет
+     отображено окно с информацией об установелнных аппаратных средствах.
     </para>
    </step>
    <step>
