@@ -20,41 +20,17 @@
  <para>
   Спасибо всем кто принял участие в подготовке перевода данного руководства:
  </para>
- <variablelist>
-   <varlistentry>
-     <term>Павел Астахов</term>
-     <listitem>
-       <para>pastakhov@yandex.ru</para>
-     </listitem>
-   </varlistentry>
-   <varlistentry>
-     <term>Динар Валеев</term>
-     <listitem>
-       <para>k0da@opensuse.org</para>
-     </listitem>
-   </varlistentry>
-   <varlistentry>
-     <term>Борис Вассерман</term>
-     <listitem>
-       <para>natabor2004@gmail.com</para>
-     </listitem>
-   </varlistentry>
-   <varlistentry>
-     <term>Виктор Дубинюк</term>
-     <listitem>
-       <para>victor.dubiniuk@gmail.com</para>
-     </listitem>
-   </varlistentry>
-   <varlistentry>
-     <term>Андрей Карепин</term>
-     <listitem>
-       <para>egdfree@opensuse.org</para>
-     </listitem>
-   </varlistentry>
+ <variablelist>  
    <varlistentry>
      <term>Александр Наумов</term>
      <listitem>
        <para>alexander_naumov@opensuse.org</para>
+     </listitem>
+   </varlistentry>  
+   <varlistentry>
+     <term>Андрей Карепин</term>
+     <listitem>
+       <para>egdfree@opensuse.org</para>
      </listitem>
    </varlistentry>
    <varlistentry>
@@ -63,8 +39,31 @@
        <para>linux-oid@opensuse.org</para>
      </listitem>
    </varlistentry>
+   <varlistentry>
+     <term>Борис Вассерман</term>
+     <listitem>
+       <para>natabor2004@gmail.com</para>
+     </listitem>
+   </varlistentry>    
+   <varlistentry>
+     <term>Виктор Дубинюк</term>
+     <listitem>
+       <para>victor.dubiniuk@gmail.com</para>
+     </listitem>
+   </varlistentry>  
+   <varlistentry>
+     <term>Динар Валеев</term>
+     <listitem>
+       <para>k0da@opensuse.org</para>
+     </listitem>
+   </varlistentry>  
+   <varlistentry>
+     <term>Павел Астахов</term>
+     <listitem>
+       <para>pastakhov@yandex.ru</para>
+     </listitem>
+   </varlistentry>
  </variablelist>
- 
  <para>
   Have a lot of fun!
  </para>
