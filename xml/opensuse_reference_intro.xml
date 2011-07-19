@@ -6,13 +6,14 @@
   %entities;
 ]>
 <preface id="preface.reference">
- <title>About This Guide</title>
+ <title>Об этом руководстве</title>
  <para>
-  This manual gives you a general understanding of &productnamereg;. It is
-  intended mainly for system administrators and home users with basic system
-  administration knowledge. Check out the various parts of this manual for a
-  selection of applications needed in everyday life and in-depth
-  descriptions of advanced installation and configuration scenarios.
+  Данное руководство даст Вам общее педставление о &productnamereg;. Оно
+  предназначено главным образом для системных администраторов и домашних
+  пользователей владеющих базовыми навыками администрирования системы.
+  Изучите это руководство для ознакомления с приложениями, используемыми
+  в повседневной жизни и исчерпиывающих описанием расширенной установки
+  и сценариев конфигурации.
  </para>
  <variablelist>
   <varlistentry>
@@ -25,7 +26,7 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Managing and Updating Software</term>
+   <term>Установка и обновление программного обеспечения</term>
    <listitem>
     <para>
      Understand how to install or remove software with either &yast; or
@@ -35,7 +36,7 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Administration</term>
+   <term>Администрирование</term>
    <listitem>
     <para>
      Learn how to configure and upgrade &productname;, how to administrate
@@ -45,7 +46,7 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>System</term>
+   <term>Система</term>
    <listitem>
     <para>
      Get an introduction to the components of your Linux system and a deeper
@@ -54,11 +55,11 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Services</term>
+   <term>Службы</term>
    <listitem>
     <para>
-     Learn how to configure the various network and file services that come
-     with &productname;.
+     Узнайте, как настроить сетевые и файловые службы, которые поставляемых в
+     составе &productname;.
     </para>
    </listitem>
   </varlistentry>
