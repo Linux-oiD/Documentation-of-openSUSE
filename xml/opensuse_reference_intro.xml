@@ -17,11 +17,11 @@
  </para>
  <variablelist>
   <varlistentry>
-   <term>Advanced Deployment Scenarios</term>
+   <term>Расширенное применение сценариев</term>
    <listitem>
     <para>
-     Learn how to deploy &productname; from a remote location and become
-     acquainted with complex disk setup scenarios.
+     Узнайте, как развернуть &productname; удаленно, а также познакомитесь
+     со сложными сценариями установки с диска.
     </para>
    </listitem>
   </varlistentry>
@@ -29,9 +29,10 @@
    <term>Установка и обновление программного обеспечения</term>
    <listitem>
     <para>
-     Understand how to install or remove software with either &yast; or
-     using the command line<phrase os="osuse">, how to use the 1-Click
-     Install feature,</phrase> and how to keep your system up-to-date.
+     Узнайте, как установливаь и удаленять программное обеспечение с помощью
+     &yast; или с помощью командной строки<phrase os="osuse">, как
+     воспользоваться установкой в одно нажатие</phrase> и, как сохранить вашу
+     систему в актуальном состоянии.
     </para>
    </listitem>
   </varlistentry>
@@ -39,9 +40,9 @@
    <term>Администрирование</term>
    <listitem>
     <para>
-     Learn how to configure and upgrade &productname;, how to administrate
-     your system in text mode, and get to know some important utilities for
-     Linux administrators.
+     Прочтите, как настроить и обновить &productname;, как администрировать
+     систему в текстовом режиме и о некоторых важных утилитах для Linux
+     администраторов.
     </para>
    </listitem>
   </varlistentry>
@@ -49,8 +50,8 @@
    <term>Система</term>
    <listitem>
     <para>
-     Get an introduction to the components of your Linux system and a deeper
-     understanding of their interaction.
+     Получите представление о компонентах вашей Linux системы и более
+     глубокое понимание их взаимодействия.
     </para>
    </listitem>
   </varlistentry>
@@ -64,25 +65,26 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Mobility</term>
+   <term>Мобильность</term>
    <listitem>
     <para>
-     Get an introduction to mobile computing with &productname;, get to know
-     the various options for wireless computing and power management.
+     Получите начальные сведения об использовании &productname; на ноутбуке, а
+     также различные варианты настроек для беспроводных соединений и управления
+     питанием.
     </para>
    </listitem>
   </varlistentry>
  </variablelist>
  <para>
-  Many chapters in this manual contain links to additional documentation
-  resources. These include additional documentation that is available on the
-  system, as well as documentation available on the Internet.
+  Многие главы этого руководства содержат ссылки на дополнительные ресурсы с
+  документацией. К ним относится документация, доступная в системе, а также
+  документация доступная в Интернет.
  </para>
  <para>
-  For an overview of the documentation available for your product and the
-  latest documentation updates, refer to
-  <ulink url="http://www.novell.com/documentation/opensuse114"/> or to the
-  following section.
+  Описание документации, доступной для вашего продукта и ее последния обновления
+  доступны по ссылке
+  <ulink url="http://www.novell.com/documentation/opensuse114"/>  или в следующем
+  разделе.
  </para>
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
   href="common_intro_available_doc_i.xml"/>
