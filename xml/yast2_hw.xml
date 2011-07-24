@@ -12,16 +12,16 @@
    &yast; allows you to configure hardware items at installation time as
    well as on an already-installed system. Configure audio hardware,
    printers or scanner support or learn which hardware components are
-   connected to your computer by using the &yast; Hardware Information
-   module.
+   connected to your computer by using the модуль &yast; Информация об
+   оборудовании.
   </para>
  </abstract>
  <tip>
-  <title>Настройка видеокарты, монитора, мыши и клавиатуры</title>
+  <title>Настройка видео карты, монитора, мыши и клавиатуры</title>
   <para>
-   Graphics card, monitor, mouse and keyboard can be configured with either
-   KDE or GNOME tools. <phrase os="sled;ossue">For KDE, see
-   <xref linkend="sec.kde.cust.hw"/>, for GNOME see
+   Видео карта, монитор, мышь и клавиатура могут быть сконфигурированы с
+   помощью инструментов KDE или GNOME. <phrase os="sled;ossue">Для KDE
+   обратитесь к <xref linkend="sec.kde.cust.hw"/>, для GNOME – 
    <xref  linkend="sec.gnome.settings.hardware"/>.</phrase>
   </para>
  </tip>
@@ -39,8 +39,8 @@
     <para>
      Запустите &yast; и нажмите <menuchoice> <guimenu>Оборудование</guimenu>
      <guimenu>Информация об оборудовании</guimenu> </menuchoice>. Сразу запустится
-     опрос обрудования – это займет некоторое время, по завершении которого будет
-     отображено окно с информацией об установелнных аппаратных средствах.
+     опрос оборудования – это займет некоторое время, по завершении которого будет
+     отображено окно с информацией об установленных аппаратных средствах.
     </para>
    </step>
    <step>
@@ -49,19 +49,19 @@
           entry, while in gtk, you can also click the text. At least, on
           11.3 M6.
      -->
-     In the hardware information tree recursively click on the entries to
-     expand the information about a specific device.
+     В древовидной структуре сведений об оборудовании нажмите на элементе,
+     чтобы развернуть его и увидеть информацию о выбранном устройстве.
     </para>
    </step>
    <step>
     <para>
-     Click <guimenu>Save to File...</guimenu> to save the output to a file.
+     Нажмите <guimenu>Сохранить в файл...</guimenu>, чтобы сохранить полученную
+     информацию в файл.
     </para>
    </step>
    <step>
     <para>
-     Click <guimenu>Close</guimenu> to leave the hardware information
-     overview.
+     Нажмите <guimenu>Закрыть</guimenu>, чтобы закрыть это окно.
     </para>
    </step>
   </procedure>
