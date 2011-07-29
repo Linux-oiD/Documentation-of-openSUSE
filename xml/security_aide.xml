@@ -6,94 +6,92 @@
   %entities;
 ]>
 <chapter id="cha.aide">
- <title>Intrusion Detection with &aide;</title>
+ <title>Обнаружение вторжений при помощи &aide;</title>
  <abstract>
   <para>
-   Securing your systems is a mandatory task for any mission-critical system
-   administrator. Because it is impossible to always guarantee that the
-   system is not compromised,it is very important to do extra checks
-   regularly (for example with cron) to ensure that the system is still
-   under your control. This is where &aide;, the <emphasis>Advanced
-   Intrusion Detection Environment</emphasis>, comes into play.
+   Защита системы - обязательная задача для любого ответственного системного 
+   администратора. Поскольку невозможно гарантировать, что система не подвергнется 
+   взлому, очень важно производить дополнительные проверки регулярно 
+   (например по крону), чтобы убедиться в том, что система до сих пор под Вашим 
+   контролем. Для этого удобно использовать &aide; <emphasis>Advanced
+   Intrusion Detection Environment - усовершенствованную среду обнаружения вторжений</emphasis>.
   </para>
  </abstract>
  <sect1 id="sec.aide.why">
-  <title>Why Using &aide;?</title>
+  <title>Для чего нужна &aide;?</title>
 
   <para>
-   An easy check that often can reveal unwanted changes can be done by means
-   of RPM. The package manager has a built-in verify function that checks
-   all the managed files in the system for changes. To verify of all files,
-   run the command <command>rpm -Va</command>. However, this command will
-   also display changes in configuration files and you will have to do some
-   filtering to detect important changes.
+   Простая проверка, которая часто помогает обнаружить нежелательные изменения, 
+   может быть произведена с помощью RPM. В пакетном менеджере есть встроенная
+   функция проверки изменений в файлах системы. Для проверки всех файлов,
+   выполните команду <command>rpm -Va</command>. Однако эта команда также 
+   отобразит изменения в файлах конфигурации и Вам придется произвести
+   фильтрацию, чтобы определить только важные изменения.
   </para>
 
   <para>
-   An additional problem to the method with RPM is that an intelligent
-   attacker will modify <command>rpm</command> itself to hide any changes
-   that might have been done by some kind of rootkit which allows the
-   attacker to mask its intrusion and gain root privilege. To solve this,
-   you should implement a secondary check that can also be run completely
-   independent of the installed system.
+   Еще одна проблема с RPM заключается, в том, что умный взломщик может
+   подменить <command>rpm</command>, чтобы замаскировать все изменения.
+   Это может быть сделано при помощи руткита, который позволит взломщику
+   скрыть вторжение и получить привилегии суперпользователя.
+   Поэтому Вы должны реализовать еще одну проверку, которую можно производить 
+   независимо от установленной системы.
   </para>
  </sect1>
  <sect1 id="sec.aide.setup">
-  <title>Setting Up an &aide; Database</title>
+  <title>Установка базы данных &aide;</title>
 
   <important>
-   <title>Initialize &aide; Database After Installation</title>
+   <title>Инициализируйте базу данных &aide; после установки</title>
    <para>
-    Before you install your system, verify the checksum of your medium (see
-    <xref
-     linkend="sec.trouble.checkingMedia"/>) to make sure you do
-    not use a compromised source. After you have installed the system,
-    initialize the &aide; database. To be really sure that all went well
-    during and after the installation, do an installation directly on the
-    console, without any network attached to the computer. Do not leave the
-    computer unattended or connected to any network before &aide; creates
-    its database.
+    Перед тем, как вы установите систему проверьте контрольную сумму 
+    носителя
+    (<xref linkend="sec.trouble.checkingMedia"/>), чтобы убедиться
+    в его подлинности. После установки системы,
+    инициализируйте базу данных &aide;. Чтобы удостовериться, что все прошло успешно
+    во время и после инсталляции, произведите инсталляцию прямо из консоли, 
+    на компьютер не подключенный к сети. Не оставляйте компьютер без присмотра и
+    не подключайте его к сети пока до того, до создания базы данных &aide;.
    </para>
   </important>
 
   <para>
-   AIDE is not installed by default on &productname;. To install it, either
-   use <menuchoice><guimenu>Computer</guimenu> <guimenu>Install
-   Software</guimenu></menuchoice>, or enter <literal>zypper install
-   aide</literal> on the command line as &rootuser;.
+   AIDE по умолчанию не установлена на &productname;. Для установки
+   используйте <menuchoice><guimenu>Компьютер</guimenu> <guimenu>Установка
+   программ</guimenu></menuchoice>, или введите <literal>zypper install
+   aide</literal> в командной строке от &rootuser;.
   </para>
 
   <para>
-   To tell &aide; which attributes of which files should be checked, use the
-   <filename>/etc/aide.conf</filename> configuration file. It must be
-   modified to become the actual configuration. The first section handles
-   general parameters like the location of the &aide; database file. More
-   relevant for local configurations are the <systemitem>Custom
-   Rules</systemitem> and the <systemitem>Directories and Files</systemitem>
-   sections. A typical rule looks like the following:
+   Чтобы указать &aide; какие атрибуты каких файлов должны проверяться,
+   используйте конфигурационный файл<filename>/etc/aide.conf</filename>. Он должен
+   быть изменен, чтобы вступить в силу. Первая секция управляет общими параметрами,
+   такими как размещение файла базы данных &aide;. К локальным настройкам
+   относятся секции <systemitem>Custom Rules</systemitem> и <systemitem>Directories and Files</systemitem>.
+   Типичное правило выглядит следующим образом:
   </para>
 
 <screen>Binlib     = p+i+n+u+g+s+b+m+c+md5+sha1</screen>
 
   <para>
-   After defining the variable <literal>Binlib</literal>, the respective
-   checking options are used in the files section. Important options include
-   the following:
+   После определения переменной <literal>Binlib</literal>, соответствующие опции проверки
+   используются в секции файлов.
+   Важными настройками являются следующие:
   </para>
 
   <table id="tab.aide.options">
-   <title>Important &aide; Checking Options</title>
+   <title>Важные настройки проверок &aide;</title>
    <tgroup cols="2">
     <thead>
      <row>
       <entry>
        <para>
-        Option
+        Опция
        </para>
       </entry>
       <entry>
        <para>
-        Description
+        Описание
        </para>
       </entry>
      </row>
@@ -107,7 +105,7 @@
       </entry>
       <entry>
        <para>
-        Check for the file permissions of the selected files or directories.
+        Проверяет пермиссии выбранных файлов и директорий.
        </para>
       </entry>
      </row>
@@ -119,8 +117,8 @@
       </entry>
       <entry>
        <para>
-        Check for the inode number. Every filename has a unique inode number
-        that should not change.
+        Проверяет номер файлового дескриптора (inode). 
+        Каждому имени файла соответствует уникальный номер дескриптора, который не должен изменяться.
        </para>
       </entry>
      </row>
@@ -132,7 +130,7 @@
       </entry>
       <entry>
        <para>
-        Check for the number of links pointing to the relevant file.
+        Проверяет число ссылок на соответствующий файл.
        </para>
       </entry>
      </row>
@@ -144,7 +142,7 @@
       </entry>
       <entry>
        <para>
-        Check if the owner of the file has changed.
+        Проверяет, изменился ли владелец файла.
        </para>
       </entry>
      </row>
@@ -156,7 +154,7 @@
       </entry>
       <entry>
        <para>
-        Check if the group of the file has changed.
+        Проверяет, изменилась ли группа файла.
        </para>
       </entry>
      </row>
@@ -168,7 +166,7 @@
       </entry>
       <entry>
        <para>
-        Check if the file size has changed.
+        Проверяет, изменился ли размер файла.
        </para>
       </entry>
      </row>
@@ -180,7 +178,7 @@
       </entry>
       <entry>
        <para>
-        Check if the block count used by the file has changed.
+        Проверяет, изменилось ли число используемых файлом блоков.
        </para>
       </entry>
      </row>
@@ -192,7 +190,7 @@
       </entry>
       <entry>
        <para>
-        Check if the modification time of the file has changed.
+        Проверяет, изменилось ли время модификации файла.
        </para>
       </entry>
      </row>
@@ -204,7 +202,7 @@
       </entry>
       <entry>
        <para>
-        Check if the files access time has changed.
+        Проверяет, изменилось ли время последнего доступа к файлу.
        </para>
       </entry>
      </row>
@@ -216,7 +214,7 @@
       </entry>
       <entry>
        <para>
-        Check if the md5 checksum of the file has changed.
+        Проверяет, изменилась ли у файла контрольная сумма md5.
        </para>
       </entry>
      </row>
@@ -228,7 +226,7 @@
       </entry>
       <entry>
        <para>
-        Check if the sha1 (160 Bit) checksum of the file has changed.
+        Проверяет, изменилась ли у файла контрольная сумма sha1 (160 бит).
        </para>
       </entry>
      </row>
@@ -237,42 +235,42 @@
   </table>
 
   <para>
-   This is a configuration that checks for all files in
-   <filename>/sbin</filename> with the options defined in
-   <literal>Binlib</literal> but omits the
-   <filename>/sbin/conf.d/</filename> directory:
+   Вот конфигурация, проверяющая все файлы в директории
+   <filename>/sbin</filename> с опциями заданными в 
+   <literal>Binlib</literal> за исключением директории
+   <filename>/sbin/conf.d/</filename>:
   </para>
 
 <screen>/sbin  Binlib
 !/sbin/conf.d</screen>
 
   <para>
-   To create the &aide; database, proceed as follows:
+   Для создания базы данных &aide; выполните следующие действия:
   </para>
 
   <procedure id="pro.aide.setup.db">
    <step>
     <para>
-     Open <filename>/etc/aide.conf</filename>.
+     Откройте <filename>/etc/aide.conf</filename>.
     </para>
    </step>
    <step>
     <para>
-     Define which files should be checked with which checking options. For a
-     complete list of available checking options, see
-     <filename>/usr/share/doc/packages/aide/manual.html</filename>. The
-     definition of the file selection needs some knowledge about regular
-     expressions. Save your modifications.
+     Укажите файлы, которые необходимо проверять и настройки проверки.
+     За подробным списком настроек обратитесь к 
+     <filename>/usr/share/doc/packages/aide/manual.html</filename>. 
+     Определение файлов требует некоторых знаний о регулярных выражениях.
+     Сохраните Ваши изменения.
     </para>
    </step>
    <step>
     <para>
-     To check whether the configuration file is valid, run:
+     Чтобы проверить правильность конфигурационного файла, выполните:
     </para>
 <screen>aide --config-check</screen>
     <para>
-     Any output of this command is a hint that the configuration is not
-     valid. For example, if you get the following output:
+     Любой вывод, произведенный этой командой, является подсказкой
+     об ошибках в конфигурации. Например вы можете увидеть следующее:
     </para>
 <screen>aide --config-check
 35:syntax error:!
@@ -280,66 +278,67 @@
 Configuration error</screen>
     <para>
      The error is to be expected in line 36 of
-     <filename>/etc/aide.conf</filename>. Note that the error message
-     contains the last successfully read line of the configuration file.
+     <filename>/etc/aide.conf</filename>. Обратите внимание, что сообщение об ошибке
+     содержит последнюю успешно считанную строку конфигурационного файла.
     </para>
    </step>
    <step>
     <para>
-     Initialize the &aide; database. Run the command:
+     Инициализируйте базу данных &aide;. Выполните команду:
     </para>
 <screen>aide -i</screen>
    </step>
    <step>
     <para>
-     Copy the generated database to a save location like a CD-R or DVD-R, a
-     remote server or a USB disk for later use.
+     Скопируйте созданную базу в безопасное место, например CD-R или DVD-R,
+     удаленный сервер или USB диск для последующего использования.
     </para>
     <important>
      <title/>
      <para>
-      This step is essential as it avoids compromising your database. It is
-      recommended to use a medium which can be written only once to prevent
-      the database being modified. <emphasis>Never</emphasis> leave the
-      database on the computer which you want to monitor.
+      Этот шаг важен, поскольку помогает избежать подделки базы данных.
+      Чтобы предотвратить изменение базы данных, рекомендуется использовать
+      носитель, который может быть записан только один раз.
+      <emphasis>Никогда</emphasis> не оставляйте ее на компьютере,
+      за которым Вы хотите наблюдать.
      </para>
     </important>
    </step>
   </procedure>
  </sect1>
  <sect1 id="sec.aide.check">
-  <title>Local &aide; Checks</title>
+  <title>Локальные проверки &aide;</title>
 
   <para>
-   To perform a filesystem check, proceed as follows:
+   Чтобы проверить файловую систему, выполните следующие шаги:
   </para>
 
   <procedure>
    <step>
     <para>
-     Rename the database:
+     Переименуйте базу данных:
     </para>
 <screen>mv /var/lib/aide/aide.db.new /var/lib/aide/aide.db</screen>
    </step>
    <step>
     <para>
-     After any configuration change, you always have to reinitialize the
-     &aide; database and subsequently move the newly generated database. It
-     is also a good idea to make a backup of this database. See
-     <xref linkend="sec.aide.setup"/> for more information.
+     После любых изменений конфигурации вы всегда должны переинициализировать
+     базу данных &aide; перенести вновь созданную базу данных.
+     Создание резервной копии базы также хорошая идея.
+     Подробнее об этом рассказывает <xref linkend="sec.aide.setup"/>.
     </para>
    </step>
    <step>
     <para>
-     Perform the check with the following command:
+     Выполните проверку при помощи следующей команды:
     </para>
 <screen>aide --check</screen>
    </step>
   </procedure>
 
   <para>
-   If the output is empty, everything is fine. If &aide; found changes, it
-   displays a summary of changes, for example:
+   Если вывод пуст - все хорошо. Если &aide; найдет изменения,
+   будет отображает сводный отчет изменений, например:
   </para>
 
 <screen>aide --check
@@ -352,9 +351,9 @@ Summary:
   Changed files:                1 </screen>
 
   <para>
-   To learn about the actual changes, increase the verbose level of the
-   check with the parameter <literal>-V</literal>. For the previous example,
-   this could look like the following:
+   Чтобы подробнее узнать об изменениях, смените уровень детализации
+   проверки с помощью параметра <literal>-V</literal>. Для предыдущего примера,
+   результат может выглядеть следующим образом:
   </para>
 
 <screen>aide --check -V
@@ -384,113 +383,111 @@ File: /etc/passwd
   Ctime    : 2009-02-18 15:11:02              , 2009-02-18 15:11:47</screen>
 
   <para>
-   In this example, the file <filename>/etc/passwd</filename> was touched to
-   demonstrate the effect.
+  В этом примере мы обработали файл <filename>/etc/passwd</filename> командой <command>touch</command>.
+
   </para>
  </sect1>
  <sect1 id="sec.aide.independent">
-  <title>System Independent Checking</title>
+  <title>Проверка из независимой системы</title>
 
   <para>
-   For the risk-averse administrator (and of course this is all about
-   risk-aversion) it is advisable to also run the &aide; binary from a
-   trusted source. This excludes the risk that some attacker also modified
-   the aide binary to hide his traces.
+   Для ответственных администраторов (которыми мы все являемся) рекомендуется
+   запуск бинарного файла &aide; из доверенного источника.
+   Это исключает возможность модификации файла &aide; взломщиком
+   для скрытия следов проникновения в систему.
   </para>
 
   <para>
-   To accomplish this task, &aide; must be run from a rescue system that is
-   independent of the installed system. With &productname; it is relatively
-   easy to extend the rescue system with arbitrary programs, and thus add
-   the needed functionality.
+   Для этого &aide; должен быть запущен в системе, независимой от установленной системы.
+   При помощи &productname; относительно легко добавить в Систему восстановления
+   произвольные программы для достижения требуемого функционала.
   </para>
 
   <para>
-   Before you can start using the rescue system, you need to provide two
-   packages to the system. These are included with the same syntax as you
-   would add a driver update disk to the system. For a detailed description
-   about the possibilities of linuxrc that are used for this purpose, see
-   <ulink url="http://en.opensuse.org/SDB:Linuxrc"/>. In the following, one
-   possible way to accomplish this task is discussed.
+   Перед началом использования Системы восстановления Вы должны предоставить
+   системе два пакета. Они включаются в нее точно также, как 
+   диск обновления драйверов. За подробным описанием возможностей
+   linuxrc используемых для этих целей обратитесь к
+   <ulink url="http://en.opensuse.org/SDB:Linuxrc"/>. Далее будет
+   описан один из возможных способов.
   </para>
 
   <procedure>
-   <title>Starting a Rescue System with &aide;</title>
+   <title>Запуск Системы восстановления с &aide;</title>
    <step>
     <para>
-     Provide an FTP server as a second machine.
+     Укажите FTP сервер в качестве второго компьютера.
     </para>
    </step>
    <step>
     <para>
-     Copy the packages <systemitem>aide</systemitem> and
-     <systemitem>mhash</systemitem> to the FTP server directory, in our case
-     <filename>/srv/ftp/</filename>. Replace the placeholders
-     <replaceable>ARCH</replaceable> and <replaceable>VERSION</replaceable>
-     with the corresponding values:
+     Скопируйте пакеты <systemitem>aide</systemitem> и
+     <systemitem>mhash</systemitem> в директорию FTP сервера, в нашем случае
+     <filename>/srv/ftp/</filename>. Замените
+     <replaceable>ARCH</replaceable> и <replaceable>VERSION</replaceable>
+     на Ваши значения:
     </para>
 <screen>cp DVD1/suse/<replaceable>ARCH</replaceable>/aide<replaceable>VERSION</replaceable>.<replaceable>ARCH</replaceable>.rpm /srv/ftp
 cp DVD1/suse/<replaceable>ARCH</replaceable>/mhash<replaceable>VERSION</replaceable>.<replaceable>ARCH</replaceable>.rpm /srv/ftp</screen>
    </step>
    <step>
     <para>
-     Create an info file <filename>/srv/ftp/info.txt</filename> that
-     provides the needed boot parameters for the rescue system:
+     Создайте файл <filename>/srv/ftp/info.txt</filename>, содержащий
+     параметры загрузки Системы восстановления:
     </para>
 <screen>dud:ftp://&ftpname;/aide<replaceable>VERSION</replaceable>.<replaceable>ARCH</replaceable>.rpm
 dud:ftp://&ftpname;/mhash<replaceable>VERSION</replaceable>.<replaceable>ARCH</replaceable>.rpm</screen>
     <para>
-     Replace your FTP domain name, <replaceable>VERSION</replaceable> and
-     <replaceable>ARCH</replaceable> with the values used on your system.
+     Замените имя домена FTP, <replaceable>VERSION</replaceable> и
+     <replaceable>ARCH</replaceable> значениями, используемыми на Вашей системе.
     </para>
    </step>
    <step>
     <para>
-     Restart the server that needs to go through an &aide; check with the
-     Rescue system from your DVD. Add the following string to the boot
-     parameters:
+     Перезапустите сервер, который необходимо проверить при помощи &aide; используя
+     Восстановление системы Вашего DVD. Добавьте следующую строку в параметры загрузки:
     </para>
 <screen>info=ftp://&ftpname;/info.txt</screen>
     <para>
-     This parameter tells linuxrc to also read in all information from the
-     <filename>info.txt</filename> file.
+     Этот параметр указывает linuxrc считать всю информацию из файла 
+     <filename>info.txt</filename>.
     </para>
    </step>
   </procedure>
 
   <para>
-   After the rescue system has booted, the &aide; program is ready for use.
+   После загрузки Системы восстановления программа &aide; готова к использованию.
   </para>
  </sect1>
  <sect1 id="sec.aide.more">
-  <title>For More Information</title>
+  <title>Для дальнейшей информации</title>
 
   <para>
-   Information about &aide; is available at the following places:
+   Информация об &aide; доступна:
   </para>
 
   <itemizedlist>
    <listitem>
     <para>
-     The homepage of &aide; <ulink url="http://aide.sourceforge.net"/>.
+     Домашняя страница &aide; <ulink url="http://aide.sourceforge.net"/>.
     </para>
    </listitem>
    <listitem>
     <para>
-     In the documented template configuration
+     В документированном образце конфигурации
      <filename>/etc/aide.conf</filename>.
     </para>
    </listitem>
    <listitem>
     <para>
-     In several files below
-     <filename>/usr/share/doc/packages/aide</filename> after installing the
-     <systemitem>aide</systemitem> package.
+     В нескольких файлах, перечисленных ниже
+     <filename>/usr/share/doc/packages/aide</filename> после установки пакета
+     <systemitem>aide</systemitem>.
     </para>
    </listitem>
    <listitem>
     <para>
-     On the &aide; user mailing list at
+     В рассылке новостей &aide;
      <ulink
       url="https://mailman.cs.tut.fi/mailman/listinfo/aide"/>.
     </para>
