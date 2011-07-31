@@ -6,7 +6,7 @@
   %entities;
 ]>
 <sect1 id="cha.adminhelp">
- <title>Help and Documentation</title><indexterm>
+ <title>Справка и документация</title><indexterm>
 
  <primary>help</primary></indexterm><indexterm>
 
@@ -15,49 +15,51 @@
  <see>help</see></indexterm>
 
  <para>
-  &productnamereg; comes with various sources of information and
-  documentation, many of which are already integrated into your installed
-  system.
+  &productnamereg; сопровождается различными источниками информации и
+  документации, многие из которых уже интегрированы в установленную
+  систему.
  </para>
 
  <variablelist>
   <varlistentry>
-   <term>Documentation in <filename>/usr/share/doc</filename>
+   <term>Документация в <filename>/usr/share/doc</filename>
    </term>
    <listitem>
     <para>
-     This traditional help directory holds various documentation files and
-     release notes for your system. It contains also information of
-     installed packages in the subdirectory <filename>packages</filename>.
-     Find more detailed information in
-     <xref linkend="sec.help.onboard.docdir"/>.
+     Этот традиционный каталог в котором размещаются различные файлы
+     документации и информация о версии Вашей системы. Здесь также
+     содержится информация из установленных пакетов в подкаталоге
+     <filename>packages</filename>. За дополнительной информацией
+     обратитесь к <xref linkend="sec.help.onboard.docdir"/>.
     </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Man Pages and Info Pages for Shell Commands</term>
+   <term>Электронное руководства (man) и info-страницы для команд оболочки</term>
    <listitem>
     <para>
-     When working with the shell, you do not need to know the options of the
-     commands by heart. Traditionally, the shell provides integrated help by
-     means of man pages and info pages. Read more in
-     <xref linkend="sec.help.onboard.manpages"/> and
+     При работе в командной строке Вам не нужно помнить все опции командах.
+     Традиционно, оболочка предоставляет пользователю доступ к интегрированной
+     справке посредством man- и info-страниц. За дополнительной информацией
+     обратитесь к <xref linkend="sec.help.onboard.manpages"/> и
      <xref linkend="sec.help.onboard.infopages"/>.
     </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Desktop Help Centers<indexterm>
+   <term>Центр справки рабочего стола<indexterm>
     <primary>help</primary>
     <secondary>help center</secondary></indexterm>
    </term>
    <listitem>
     <para>
-     The help centers of both the KDE desktop (&khc;) and the GNOME desktop
-     (&yelp;) provide central access to the most important documentation
-     resources on your system in searchable form. These resources include
-     online help for installed applications, man pages, info pages, and the
-     Novell/&suse; manuals delivered with your product.
+     Центр справки обоих рабочих столов – KDE (&khc;) и GNOME (&yelp;) –
+     предоставляет централизованный доступ к большинству важных ресурсов
+     документации в Вашей системе в доступной для поиска форме. Эти ресурсы
+     включают справку доступную в сети для установленных приложений,
+     электронное руководства, info-страницы и руководства поставляемые
+     вместе с продуктом Novell/&suse;.
+
 <!--Learn more about your desktop's help center in <xref
        linkend="sec.help.onboard.khc"/> and
       <xref linkend="sec.help.onboard.yelp"/>-->
@@ -65,66 +67,68 @@
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term>Separate Help Packages for Some Applications</term>
+   <term>Отдельные пакеты со справочными материалами для некоторых приложений</term>
    <listitem>
     <para>
-     When installing new software with &yast;, the software documentation is
-     installed automatically (in most cases) and usually appears in the help
-     center of your desktop. However, some applications, such as GIMP, may
-     have different online help packages that can be installed separately
-     with &yast; and do not integrate into the help centers.
+     При установке нового программного обеспечения с помощью &yast;,
+     документация поставляемая вместе с этими программами устанавливается
+     автоматически (в большинстве случаев) и обычно появляется в центре
+     справки Вашего рабочего стола. Однако, для некоторых приложений, таких
+     как GIMP, также могут быть доступны дополнительные пакеты со справкой
+     из сети, которая не интегрируется в центр справки; Вы можете установить
+     их отдельно с помощью &yast;.
     </para>
    </listitem>
   </varlistentry>
  </variablelist>
 
  <sect2 id="sec.help.onboard.docdir">
-  <title>Documentation Directory</title>
+  <title>Каталог документации</title>
   <para>
    <indexterm>
    <primary>help</primary>
    <secondary>/usr/share/doc</secondary>
-   </indexterm> The traditional directory to find documentation on your
-   installed Linux system is <filename>/usr/share/doc</filename>. Usually,
-   the directory contains information about the packages installed on your
-   system, plus release notes, manuals, and more.
+   </indexterm> Традиционным каталогом для размещения различных файлов
+   документации в Linux системах является <filename>/usr/share/doc</filename>.
+   Обычно, в нем содержится информацию о пакетах установленных на Вашей
+   системе, а также информация о версии системы, руководства, и другие
+   справочные материалы.
+
   </para>
   <note>
-   <title>Contents Depends on Installed Packages</title>
+   <title>Содержимое зависит от установленных пакетов</title>
    <para>
-    In the Linux world, many manuals and other kinds of documentation are
-    available in the form of packages, just like software. How much and
-    which information you find in <filename>/usr/share/docs</filename> also
-    depends on the (documentation) packages installed. If you cannot find
-    the subdirectories mentioned here, check if the respective packages are
-    installed on your system and add them with &yast;, if needed.
+    В мире Linux многие руководства и другие виды документации доступны в
+    форме пакетов, точно так же как программы. Сколько и какую информацию
+    Вы найдете в <filename>/usr/share/docs</filename>, также зависит от
+    установленных пакетов. Если Вы не можете найти подкаталоги упомянутые
+    здесь – проверьте: установлены ли соответствующие пакеты в Вашей системе
+    с помощью &yast; и установите их, если требуется.
    </para>
   </note>
   <sect3 id="sec.help.onboard.docdir.manual">
-   <title>Novell/&suse; Manuals</title>
+   <title>Руководства Novell/&suse;</title>
    <para>
     <indexterm>
     <primary>help</primary>
     <secondary>Novell/&suse; manuals</secondary>
     </indexterm> <indexterm>
     <primary>Novell/&suse; manuals</primary>
-    </indexterm> We provide HTML and PDF versions of our books in different
-    languages. In the <filename>manual</filename> subdirectory, find HTML
-    versions of most of the Novell/&suse; manuals available for your
-    product. For an overview of all documentation available for your product
-    refer to the preface of the manuals.
+    </indexterm> Мы предоставляем HTML- и PDF-версии наших книги на различных
+    языках. В подкаталоге <filename>manual</filename> Вы можете найти
+    HTML-версии большинства руководств Novell/&suse; доступных для Вашего
+    продукта. Краткий обзор всей документации, доступной для Вашего продукта,
+    находится в вступительной части данного руководства.
    </para>
    <para>
-    If more than one language is installed,
-    <filename>/usr/share/doc/manual</filename> may contain different
-    language versions of the manuals. The HTML versions of the Novell/&suse;
-    manuals are also available in the help center of both desktops. For
-    information on where to find the PDF and HTML versions of the books on
-    your installation media, refer to the &productname; Release Notes. They
-    are available on your installed system under
-    <filename>/usr/share/doc/release-notes/</filename> or online at your
-    product-specific Web page at
-    <ulink url="http://www.novell.com/documentation/"/>.
+    Еслиустановлено больше одного языка, то в каталоге
+    <filename>/usr/share/doc/manual</filename> могут находиться руководства на
+    разных языках. HTML-версия руководств Novell/&suse; также доступна в центре
+    справки обоих рабочих столов. Для получения информации о том, где найти PDF-
+    и HTML-версии книг на установочном носителе, обратитесь к примечанию к выпуску
+    &productname;. Они доступны в установленной системе в каталоге
+    <filename>/usr/share/doc/release-notes/</filename> или в сети, на веб-странице
+    относящейся к Вашему продукту <ulink url="http://www.novell.com/documentation/"/>.
    </para>
 <!--The PDF files are available on the DVD in the directory
      <filename>docu</filename>. For HTML, install the packages
@@ -132,33 +136,34 @@
      <replaceable>LANG</replaceable> with your preferred language.)-->
   </sect3>
   <sect3 id="sec.help.onboard.docdir.howto">
-   <title>HOWTOs</title>
+   <title>Пошаговые руководства</title>
    <para>
     <indexterm>
     <primary>help</primary>
     <secondary>HOWTOs</secondary>
-    </indexterm> If the <systemitem class="resource">howto</systemitem>
-    package is installed on your system, <filename>/usr/share/doc</filename>
-    also holds the <filename>howto</filename> subdirectory, where you find
-    additional documentation for many tasks relating to the setup and
-    operation of Linux software.
+    </indexterm> Если пакеты <systemitem class="resource">howto</systemitem>
+    установлены, то в директории <filename>/usr/share/doc</filename>
+    будет находится подкаталог <filename>howto</filename>, в котором Вы
+    найдете дополнительную документацию по выполнению многих задач, касающихся
+    установки и работы с программным обеспечением Linux.
    </para>
   </sect3>
   <sect3 id="sec.help.onboard.docdir.pkg">
-   <title>Package Documentation</title>
+   <title>Документация пакетов</title>
    <para>
     <indexterm>
     <primary>help</primary>
     <secondary>package documentation</secondary>
-    </indexterm> Under <filename>packages</filename>, find the documentation
-    that is included in the software packages installed on your system. For
-    every package, a subdirectory
-    <filename>/usr/share/doc/packages/<replaceable>packagename</replaceable></filename>
-    is created. It often contains README files for the package and sometimes
-    examples, configuration files, or additional scripts. The following list
-    introduces typical files to be found under
-    <filename>/usr/share/doc/packages</filename>. None of these entries are
-    mandatory and many packages might just include a few of them.
+    </indexterm> Внутри каталога <filename>packages</filename> можно найти
+    документацию которая была включена в состав пакетов программного обеспечения,
+    установленного в Вашей системе. Для каждого пакета создается подкаталог
+    <filename>/usr/share/doc/packages/<replaceable>имя_пакета</replaceable></filename>.
+    Здесь находятся файлы README и, иногда, примеры конфигурационных файлов или
+    дополнительных сценариев. Следующий ниже список даст представление о типичных
+    файлах, которые могут быть найдены в каталоге
+    <filename>/usr/share/doc/packages</filename>. Ни один из этих пунктов не
+    обязательны; многие пакеты могут содержать только некоторые из перечисленных
+    файлов.
    </para>
    <variablelist>
     <varlistentry>
@@ -166,7 +171,7 @@
      </term>
      <listitem>
       <para>
-       List of the main developers.
+       Список главных разработчиков.
       </para>
      </listitem>
     </varlistentry>
@@ -175,8 +180,9 @@
      </term>
      <listitem>
       <para>
-       Known bugs or malfunctions. Might also contain a link to a Bugzilla
-       Web page where you can search all bugs.
+       Известные ошибки или неправильная работа некоторых функций. Также может
+       содержать ссылку на страницу Bugzilla, где Вы можете найти все сообщения
+       об ошибках.
       </para>
      </listitem>
     </varlistentry>
@@ -187,8 +193,9 @@
      </term>
      <listitem>
       <para>
-       Summary of changes from version to version. Usually interesting for
-       developers, because it is very detailed.
+       Список внесенных изменений между двумя последними версиями. Обычно
+       интересен для разработчиков, так как это информация представлена очень
+       подробно.
       </para>
      </listitem>
     </varlistentry>
@@ -199,7 +206,7 @@
      </term>
      <listitem>
       <para>
-       Licensing information.
+       Лицензионная информация.
       </para>
      </listitem>
     </varlistentry>
@@ -208,7 +215,8 @@
      </term>
      <listitem>
       <para>
-       Question and answers collected from mailing lists or newsgroups.
+       Сборник часто задаваемых вопросов и ответов на них из списков рассылок
+       или новостных групп.
       </para>
      </listitem>
     </varlistentry>
@@ -217,9 +225,9 @@
      </term>
      <listitem>
       <para>
-       How to install this package on your system. As the package is already
-       installed by the time you get to read this file, you can safely
-       ignore the contents of this file.
+       Описывает как установить этот пакет на Вашей системе. Поскольку пакет
+       уже будет установлен к тому моменту, когда Вы сможете просчитать этот
+       файл, Вы можете смело проигнорировать его содержание.
       </para>
      </listitem>
     </varlistentry>
@@ -228,8 +236,8 @@
      </term>
      <listitem>
       <para>
-       General information on the software. For example, for what purpose
-       and how to use it.
+       Главная информация о программном обеспечении. Например, для чего
+       предназначено и как его использовать.
       </para>
      </listitem>
     </varlistentry>
@@ -238,8 +246,7 @@
      </term>
      <listitem>
       <para>
-       Things that are not implemented yet, but probably will be in the
-       future.
+       Вещи, которые еще не реализованы, но вероятно будут воплощены в будущем.
       </para>
      </listitem>
     </varlistentry>
@@ -248,7 +255,7 @@
      </term>
      <listitem>
       <para>
-       List of files with a brief summary.
+       Список файлов с краткой сводкой.
       </para>
      </listitem>
     </varlistentry>
@@ -257,7 +264,7 @@
      </term>
      <listitem>
       <para>
-       Description of what is new in this version.
+       Описание нововведений реализованных в этой версии.
       </para>
      </listitem>
     </varlistentry>
