@@ -6,7 +6,7 @@
   %entities;
   ]>
 <sect1 id="sec.y2.hw.scan">
- <title>Setting Up a Scanner</title><indexterm>
+ <title>Установка сканера</title><indexterm>
 
  <primary>scanning</primary>
 
@@ -21,15 +21,15 @@
  <secondary>scanner</secondary></indexterm>
 
  <para>
-  You can configure a USB or SCSI scanner with &yast;. The
-  <systemitem
-  class="resource">sane-backends</systemitem> package contains
-  hardware drivers and other essentials needed to use a scanner. Scanners
-  connected to a parallel port cannot be configured with &yast;. If you own
-  a HP All-In-One device, see
+  Вы можете настроить USB или SCSI сканер с помощью &yast;.
+  Пакет <systemitem class="resource">sane-backends</systemitem>
+  содержит драйверы оборудования и другие программы необходимые
+  для использования сканера. Сканеры использующие параллельный порт
+  не поддерживаются в &yast;. Если Вы являетесь обладателем МФУ HP,
+  то обратитесь к
   <xref
-  linkend="sec.y2.hw.scan.hp_allinone"/>, instructions on how to
-  configure a network scanner are available at
+  linkend="sec.y2.hw.scan.hp_allinone"/>; инструкции по
+  настройке сетевого сканера можно найти в
   <xref
   linkend="sec.y2.hw.scan.network_client"/>.
  </para>
