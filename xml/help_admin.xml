@@ -437,55 +437,54 @@
  </sect2>
 
  <sect2 id="sec.help.onboard.infopages">
-  <title>Info Pages</title><indexterm>
+  <title>Info-страницы</title><indexterm>
   <primary>help</primary>
   <secondary>info pages</secondary></indexterm>
   <para>
-   Info pages are another important source of information on your system.
-   Usually, they are more detailed than man pages. To view the info page for
-   a certain command, enter <command>info</command> followed by the name of
-   the command, for example, <command>info ls</command>. You can browse an
-   info page with a viewer directly in the shell and display the different
-   sections, called <quote>nodes</quote>. Use <keycap function="space"/> to
-   move forward and <keycap function="backspace"/> to move backwards. Within
-   a node, you can also browse with <keycap function="pageup"/> and
-   <keycap function="pagedown"/> but only <keycap function="space" /> and
-   <keycap function="backspace"/> will take you also to the previous or
-   subsequent node. Press <keycap>Q</keycap> to end the viewing mode. Not
-   every man page comes with an info page and vice versa.
+   Info-страницы являются еще одним важным источником информации о вашей системе.
+   Как правило, они являются более подробными, чем руководства man. Для просмотра
+   info-страниц существует специальная команда: введите <command>info</command>
+   затем имя команды, например, <command>info ls</command>. Вы можете просматривать
+   info-страницу прямо в оболочке выбирая различные разделы, называемые
+   <quote>узлами</quote>. Используйте <keycap function="space"/> для перемещения
+   вперед и <keycap function="backspace"/> для перемещения назад. В узлах, можно
+   перемещаться с помощью <keycap function="pageup"/> и <keycap function="pagedown"/>,
+   но только <keycap function="space" /> и <keycap function="backspace"/> переключит
+   узел на предыдущий или следующий. Нажмите <keycap>Q</keycap>, чтобы выйти из режима
+   просмотра. Не для всех руководств man также доступны info-страницы, и наоборот.
   </para>
  </sect2>
 
  <sect2 id="sec.help.online">
 <!--  <sect1 id="sec.help.furtherdoc"> -->
-  <title>Online Resources</title>
+  <title>Интернет-ресурсы</title>
   <para>
    <indexterm>
    <primary>help</primary>
    <secondary>online documentation</secondary>
-   </indexterm> In addition to the online versions of the
+   </indexterm> В дополнение к онлайн-версии 
    <phrase
     os="sles;sled">Novell</phrase><phrase os="osuse">&opensuse;</phrase>
-   manuals installed under <filename>/usr/share/doc</filename>, you can also
-   access the product-specific manuals and documentation on the Web. For an
-   overview of all documentation available for &productname; check out your
-   product-specific documentation Web page at
+   руководств установленных в <filename>/usr/share/doc</filename>, также
+   в Интернет доступны руководства и документацию для конкретного продукта.
+   Вся доступная документация для &productname; для вашего продукта находится 
+   на странице
    <ulink os="sles;sled" url="http://www.novell.com/documentation/"/><ulink os="osuse" url="http://doc.opensuse.org"/>.
   </para>
   <para>
-   If you are searching for additional product-related information, you can
-   also refer to the following Web sites:
+   Если вы ищите дополнительную информация о своей системе, то обратитесь к
+   следующим веб-сайтам:
   </para>
   <variablelist>
    <varlistentry os="osuse">
     <term>&opensuse; Wiki</term>
     <listitem>
      <para>
-      Detailed information about lots of different aspects of the &opensuse;
-      system can be found in our Wiki at
+      Подробную информацию о большом количестве различных аспектов системы
+      &opensuse; можно найти в нашей Вики по адресу
       <ulink
-       url="http://ru.opensuse.org"/>. You may also contribute
-      to each Wiki page and change or add new pages.
+       url="http://ru.opensuse.org"/>. Мы приветствуем любую помощь по
+       улучшению существующих материалов и добавлению новых.
      </para>
     </listitem>
    </varlistentry>
@@ -506,11 +505,11 @@
     <term>&novell; Technical Support Knowledgebase</term>
     <listitem>
      <para>
-      The &novell; Technical Support Knowledgebase can be found at
+      &novell; Technical Support Knowledgebase доступна по адресу
       <ulink
-       url="http://www.novell.com/support/"></ulink>. It
-      features articles written as solutions for technical problems with
-      &productname;.
+       url="http://www.novell.com/support/"></ulink>. Здесь размещены статьи
+       описывающие решения многих технических проблем, которые могут возникнуть
+       при использовании &productname;.
      </para>
     </listitem>
    </varlistentry>
@@ -518,11 +517,10 @@
     <term>Форумы &opensuse;</term>
     <listitem>
      <para>
-      There are several &opensuse; forums where you can dive in on
-      discussions about &opensuse;, or get support. See
+      Есть несколько форумов &opensuse;, где можно поучаствовать в обсуждениях
+      &opensuse; или получить помощь. Список форумов доступен по адресу:
       <ulink
-       url="http://ru.opensuse.org/openSUSE:Список_форумов"/> for
-      a list.
+       url="http://ru.opensuse.org/openSUSE:Список_форумов"/>.
      </para>
     </listitem>
    </varlistentry>
@@ -530,9 +528,9 @@
     <term>Форум &novell;</term>
     <listitem>
      <para>
-      There are several forums where you can dive in on discussions about
-      &novell; products. See <ulink url="http://forums.novell.com/"/> for a
-      list.
+      Есть несколько форумов, где можно поучаствовать в обсуждениях продуктов
+      &novell;. Список форумов доступен по адресу:
+      <ulink url="http://forums.novell.com/"/>.
      </para>
     </listitem>
    </varlistentry>
@@ -540,8 +538,8 @@
     <term>Cool Solutions</term>
     <listitem>
      <para>
-      An online community, which offers articles, tips, Q and A, and free
-      tools to download:
+      Интернет-сообщество, которое предлагает статьи, советы, вопросы и ответы,
+      а также свободный инструмент для загрузки:
       <ulink
        url="http://www.novell.com/communities/coolsolutions"/>
      </para>
@@ -566,31 +564,29 @@
     </listitem>
    </varlistentry>
    <varlistentry>
-    <term>The Linux Documentation Project</term>
+    <term>Проект документации Linux</term>
     <listitem>
      <para>
-      The Linux Documentation Project (TLDP) is run by a team of volunteers
-      who write Linux-related documentation (see
-      <ulink
-       url="http://www.tldp.org"/>). It's probably the most
-      comprehensive documentation resource for Linux. The set of documents
-      contains tutorials for beginners, but is mainly focused on experienced
-      users and professional system administrators. TLDP publishes HOWTOs,
-      FAQs, and guides (handbooks) under a free license. Parts of the
-      documentation from TLDP is also available on &productname;
+      Проект документации Linux (TLDP, The Linux Documentation Project) находится
+      в ведении команды добровольцев, которые пишут Linux документацию 
+      (<ulink url="http://www.tldp.org"/>). Это, наверное, самый полный ресурс
+      документации для Linux. Среди предлагаемых материалов содержатся и учебники
+      для начинающих, но, в основном, он рассчитан на опытных пользователей и
+      профессиональных системных администраторов. TLDP публикует пошаговые
+      руководства, ответы на часто задаваемые вопросы и руководства (справочники)
+      под свободной лицензией. Часть документации из TLDP доступна в &productname;
      </para>
     </listitem>
    </varlistentry>
   </variablelist>
   <para>
-   You might also want to try general-purpose search engines. For example,
-   you might try the search terms <literal>Linux CD-RW help</literal> or
-   <literal>OpenOffice file conversion problem</literal> if you were having
-   trouble with the CD burning or with OpenOffice.org file conversion.
-   Google&trade; also has a Linux-specific search engine at
-   <ulink
-    url="http://www.google.com/linux"/> that you might find
-   useful.
+   Также можно попробовать воспользоваться поисковыми системами общего назначения.
+   Например, вы могли бы выполнить поиск для фразы <literal>помощь Linux CD-RW</literal>
+   или <literal>OpenOffice проблемы при конвертировании файлов</literal>, если у вас
+   возникли трудности с записью компакт-дисков или при конвертировании файлов в
+   OpenOffice.org. В Google&trade; также есть поисковая система специализирующаяся на
+   информации относящейся к Linux – <ulink url="http://www.google.com/linux"/>, которая
+   может оказаться полезной.
   </para>
  </sect2>
 
