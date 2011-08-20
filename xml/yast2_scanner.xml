@@ -35,52 +35,52 @@
  </para>
 
  <procedure id="proc.y2.hw.scan.usb">
-  <title>Configuring a USB or SCSI Scanner</title>
+  <title>Настройка USB или SCSI сканера</title>
   <step>
    <para>
-    Connect your USB or SCSI scanner to your computer and turn it on.
+    Подключите USB или SCSI сканер к компьютеру и оставьте его включенным.
    </para>
   </step>
   <step>
    <para>
-    Start &yast; and select <menuchoice> <guimenu>Hardware</guimenu>
-    <guimenu>Scanner</guimenu> </menuchoice>. &yast; builds the scanner
-    database and tries to detect your scanner model automatically.
+    Запустите &yast; и выберите <menuchoice> <guimenu>Оборудование</guimenu>
+    <guimenu>Сканер</guimenu> </menuchoice>. &yast; создаст базу данных
+    сканеров и попробует определить модель вашего сканера автоматически.
    </para>
    <para>
-    If a USB or SCSI scanner is not properly detected, try <menuchoice>
-    <guimenu>Other</guimenu><guimenu>Restart
-    Detection</guimenu></menuchoice>.
-   </para>
-  </step>
-  <step>
-   <para>
-    To activate the scanner select it from the list of detected scanners and
-    click <guimenu>Edit</guimenu>.
+    Если USB или SCSI сканер не был определен, то попробуйте выполнить
+    <menuchoice><guimenu>Другое</guimenu><guimenu>Повторное
+    обнаружение</guimenu></menuchoice>.
    </para>
   </step>
   <step>
    <para>
-    Choose your model form the list and click <guimenu>Next</guimenu> and
-    <guimenu>Finish</guimenu>.
+    Для активирования сканера выберите его из списка обнаруженных и
+    нажмите <guimenu>Редактировать</guimenu>.
    </para>
   </step>
   <step>
    <para>
-    Use
-    <menuchoice><guimenu>Other</guimenu><guimenu>Test</guimenu></menuchoice>
-    to make sure you have chosen the correct driver.
+    Выберите модель из списка и нажмите <guimenu>Далее</guimenu> и
+    <guimenu>Завершить</guimenu>.
    </para>
   </step>
   <step>
    <para>
-    Leave the configuration screen with <guimenu>OK</guimenu>.
+    Используйте
+    <menuchoice><guimenu>Другое</guimenu><guimenu>Тест</guimenu></menuchoice>
+    для проверки правельности выбранного драйвера.
+   </para>
+  </step>
+  <step>
+   <para>
+    Закройте окно настройки нажатием на <guimenu>OK</guimenu>.
    </para>
   </step>
  </procedure>
 
  <sect2 id="sec.y2.hw.scan.hp_allinone">
-  <title>Configuring an HP All-In-One Device</title><indexterm>
+  <title>Конфигурирование МФУ устройств HP</title><indexterm>
   <primary>scanning</primary>
   <secondary>configuring</secondary>
   <tertiary>HP All-In-One</tertiary></indexterm><indexterm>
@@ -91,51 +91,53 @@
   <secondary>scanner</secondary>
   <tertiary>HP All-In-One</tertiary></indexterm>
   <para>
-   An HP All-In-One device can be configured with &yast; even if it is
-   connected to the parallel port or is made available via the network. If
-   you own a USB HP All-In-One device, start configuring as described in
+   МФУ устройство HP может быть настроено с помощью &yast; даже, если
+   оно подключено к параллельному порту или являетсяс сетевым. Если
+   МФУ подключен через USB интерфей, то выполните его настройку как
+   описано в
    <xref
-    linkend="proc.y2.hw.scan.usb"/>. If it is detected properly and
-   the <guimenu>Test</guimenu> succeeds, it is ready to use.
+    linkend="proc.y2.hw.scan.usb"/>. Если устройство определилось
+   правильно и <guimenu>Тест</guimenu> успешно выполнился, то оно
+   готово к работе.
   </para>
   <para>
-   If your USB device is not properly detected, or your HP All-In-One device
-   is connected to the parallel port or the network, run the HP Device
-   Manager:
+   Если USB устройство не определилось автоматически или МФУ подключено
+   через параллельный порт или по сети, то запустите HP Device Manager:
   </para>
   <procedure>
    <step>
     <para>
-     Start &yast; and select <menuchoice> <guimenu>Hardware</guimenu>
-     <guimenu>Scanner</guimenu> </menuchoice>. &yast; loads the scanner
-     database.
+     Запустите &yast; и выберите <menuchoice>
+     <guimenu>Оборудование</guimenu> <guimenu>Сканер</guimenu> </menuchoice>.
+     &yast; загрузит базу данных известных моделей сканеров.
     </para>
    </step>
    <step>
     <para>
-     Start the HP Device Manager with <menuchoice> <guimenu>Other</guimenu>
-     <guimenu>Run hp-setup</guimenu> </menuchoice> and follow the on-screen
-     instructions. After having finished the HP Device Manager, the &yast;
-     scanner module automatically restarts the auto detection.
+     Запустите HP Device Manager с помощью меню
+     <menuchoice> <guimenu>Другое</guimenu>
+     <guimenu>Запустить hp-setup</guimenu> </menuchoice> и следуйте инструкциям.
+     После завершения работы HP Device Manager &yast; автоматически запустит
+     обнаружение подключенных устройств.
     </para>
    </step>
    <step>
     <para>
-     Test it by choosing
-     <menuchoice><guimenu>Other</guimenu><guimenu>Test</guimenu>
+     Запустите тест выбрав
+     <menuchoice><guimenu>Другое</guimenu><guimenu>Тест</guimenu>
      </menuchoice>.
     </para>
    </step>
    <step>
     <para>
-     Leave the configuration screen with <guimenu>OK</guimenu>.
+     Закройте окно настройки нажатием на <guimenu>OK</guimenu>.
     </para>
    </step>
   </procedure>
  </sect2>
 
  <sect2 id="sec.y2.hw.scan.network_server">
-  <title>Sharing a Scanner over the Network</title><indexterm>
+  <title>Предоставление общего доступа к сканеру по сети</title><indexterm>
   <primary>scanning</primary>
   <secondary>configuring</secondary>
   <tertiary>network</tertiary></indexterm><indexterm>
@@ -146,35 +148,34 @@
   <secondary>scanner</secondary>
   <tertiary>network</tertiary></indexterm>
   <para>
-   &productname; allows the sharing of a scanner over the network. To do so,
-   configure your scanner as follows:
+   &productname; позволяет совмесно использовать сканер по сети. Чтобы
+   сделать это, настройте сканер следующим образом:
   </para>
   <procedure>
    <step>
     <para>
-     Configure the scanner as described in <xref linkend="sec.y2.hw.scan"/>.
+     Настройте сканер как описано в <xref linkend="sec.y2.hw.scan"/>.
     </para>
    </step>
    <step>
     <para>
-     Choose <menuchoice> <guimenu>Other</guimenu> <guimenu>Scanning via
-     Network</guimenu> </menuchoice>.
+     Выберите <menuchoice> <guimenu>Другое</guimenu> <guimenu>Сканирование
+     по сети...</guimenu> </menuchoice>.
     </para>
    </step>
    <step>
     <para>
-     Enter the hostnames of the clients (separated by a comma) that should
-     be allowed to use the scanner under <menuchoice> <guimenu>Server
-     Settings</guimenu> <guimenu>Permitted Clients for saned</guimenu>
-     </menuchoice> and leave the configuration dialog with
-     <guimenu>OK</guimenu>.
+     Введите имена компьютеров клиентов (разделяя запятой) которым быдет
+     разрешено использование сканера в поле <menuchoice> <guimenu>Настройки
+     Сервера</guimenu> <guimenu>Разрешенные клиенты для saned</guimenu>
+     </menuchoice> и закройте это окно нажав на <guimenu>OK</guimenu>.
     </para>
    </step>
   </procedure>
  </sect2>
 
  <sect2 id="sec.y2.hw.scan.network_client">
-  <title>Scanning over the Network</title><indexterm>
+  <title>Сканирование по сети</title><indexterm>
   <primary>scanning</primary>
   <secondary>configuring</secondary>
   <tertiary>network</tertiary></indexterm><indexterm>
@@ -185,33 +186,33 @@
   <secondary>scanner</secondary>
   <tertiary>network</tertiary></indexterm>
   <para>
-   To use a scanner that is shared over the network, proceed as follows:
+   Для использования сканера доступного через сети проделайте следующее:
   </para>
   <procedure>
    <step>
     <para>
-     Start &yast; and select <menuchoice> <guimenu>Hardware</guimenu>
-     <guimenu>Scanner</guimenu> </menuchoice>.
+     Запустите &yast; и выберите <menuchoice> <guimenu>Оборудование</guimenu>
+     <guimenu>Сканер</guimenu> </menuchoice>.
     </para>
    </step>
    <step>
     <para>
-     Open the network scanner configuration menu by <menuchoice>
-     <guimenu>Other</guimenu> <guimenu>Scanning via Network</guimenu>
+     Откройте меню настройки сетевых сканеров <menuchoice>
+     <guimenu>Другие</guimenu> <guimenu>Сканирование по сети...</guimenu>
      </menuchoice>.
     </para>
    </step>
    <step>
     <para>
-     Enter the hostname of the machine the scanner is connected to under
-     <menuchoice> <guimenu>Client Settings</guimenu> <guimenu>Servers Used
-     for the net Metadriver</guimenu></menuchoice>
+     Введите имя компьютера к которому подключен сканер в поле
+     <menuchoice> <guimenu>Настройки клиента</guimenu> <guimenu>Сервера,
+     используемые для метадрайвера net</guimenu></menuchoice>
     </para>
    </step>
    <step>
     <para>
-     Leave with <guimenu>OK</guimenu>. The network scanner is now listed in
-     the Scanner Configuration window and is ready to use.
+     Нажмите <guimenu>OK</guimenu>. Сетевой сканер появится в списке
+     окна настройки и будет готов к использованию.
     </para>
    </step>
   </procedure>
