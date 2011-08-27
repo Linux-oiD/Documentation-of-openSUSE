@@ -9,11 +9,10 @@
  <title>Setting Up Hardware Components with &yast;</title>
  <abstract>
   <para>
-   &yast; allows you to configure hardware items at installation time as
-   well as on an already-installed system. Configure audio hardware,
-   printers or scanner support or learn which hardware components are
-   connected to your computer by using the модуль &yast; Информация об
-   оборудовании.
+   &yast; позволяет настраивать оборудование во время установки, а также в
+   уже установленной системе. Настройка аудиокарты, поддерживаемые принтеры
+   и сканеры или узнать, какое оборудование установлено можно с помощью
+   модулей &yast; Информация об оборудовании.
   </para>
  </abstract>
  <tip>
