@@ -34,11 +34,11 @@
  </para>
 
  <para>
-  To start the sound module, start &yast; and click <menuchoice>
-  <guimenu>Hardware</guimenu> <guimenu>Sound</guimenu> </menuchoice>.
-  Alternatively, start the <guimenu>Sound Configuration</guimenu> dialog
-  directly by running <command>yast2 sound &amp;</command> as user
-  &rootuser; from a command line.
+  Чтобы запустить модуль для работы со звуковыми картами откройте &yast; и
+  выберите <menuchoice> <guimenu>Оборудование</guimenu>
+  <guimenu>Звук</guimenu> </menuchoice>. Также, окно <guimenu>Настройка звука</guimenu>
+  можно открыть вручную запустив в командой строке команду
+  <command>yast2 sound &amp;</command> от имени пользователя &rootuser;.
  </para>
 
  <informalfigure>
@@ -55,7 +55,7 @@
  </informalfigure>
 
  <para>
-  The dialog shows all sound cards that are already configured.
+  Здесь выводится список всех, уже настроенных, звуковых карт.
  </para>
 
 <!--taroth 2010-01-18: removed information about probing for old sound chips as
@@ -63,49 +63,48 @@
  according to lslezak, no need to mention this any longer-->
 
  <para>
-  If &yast; cannot detect your sound card automatically, configure it
-  manually as described in <xref linkend="pro.yast2.sound.add"/>. For this,
-  you need to know your sound card vendor and model. If in doubt, refer to
-  your sound card documentation for the required information. During
-  configuration, you can choose between various setup options:
+  Если &yast; не смог автоматически определить звуковую карту – настройте ее
+  вручную как описано в <xref linkend="pro.yast2.sound.add"/>. Для этого,
+  вам нужно знать имя производителя и модель карты. При необходимости обратитесь
+  к документации поставляемой вместе с звуковой картой. Во время настройки можно
+  указать следующие параметры:
  </para>
 
  <variablelist>
   <varlistentry>
-   <term><guimenu>Quick Automatic Setup</guimenu>
+   <term><guimenu>Быстрая автоматическая установка</guimenu>
    </term>
    <listitem>
     <para>
-     You are not required to go through any of the further configuration
-     steps&mdash;the sound card is configured automatically. You can set the
-     volume or any options you want to change later.
+     Вам не обязательно проделывать любые другие шаги настройки&mdash;звуковая
+     карта будет настроена автоматически. Вы можете установить уровень
+     громкости и любые другие параметры позже.
     </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><guimenu>Normal Setup</guimenu>
+   <term><guimenu>Обычная установка</guimenu>
    </term>
    <listitem>
     <para>
-     Allows you to adjust the output volume and play a test sound during the
-     configuration.
+     Позволяет выставить уровень громкости звука и проиграть тестовый звук во
+     время настройки.
     </para>
    </listitem>
   </varlistentry>
   <varlistentry>
-   <term><guimenu>Advanced setup with possibility to change options</guimenu>
+   <term><guimenu>Дополнительная настройка с возможностью изменения параметров</guimenu>
    </term>
    <listitem>
     <para>
-     For experts only. Allows you to customize all parameters of the sound
-     card.
+     Только для специалистов. Позволяет настраивать все параметры звуковой карты.
     </para>
     <important>
-     <title>Advanced Configuration</title>
+     <title>Расширенная настройка</title>
      <para>
-      Only use this option if you know exactly what your are doing.
-      Otherwise leave the parameters untouched and use the normal or the
-      automatic setup options.
+      Используйте эту опцию, только если вы точно знаете, что делаете.
+      В противном случае не изменяйте параметры и используйте обычный или
+      автоматический режим.
      </para>
     </important>
    </listitem>
@@ -115,28 +114,28 @@
 <?dbfo-need height="20em"?>
 
  <procedure id="pro.yast2.sound.add">
-  <title>Configuring a New Sound Card</title>
+  <title>Настройка новой звуковой карты</title>
   <step>
    <para>
-    In the &yast; <guimenu>Sound Configuration</guimenu> dialog, click
-    <guimenu>Add</guimenu>.
+    В окне &yast; <guimenu>Настройка звука</guimenu> нажмите
+    <guimenu>Добавить</guimenu>.
    </para>
   </step>
   <step>
    <para>
-    Select your sound card vendor and model and click
-    <guimenu>Next</guimenu>.
+    Выберите производителя и модель вашей звуковой карты и нажмите
+    <guimenu>Далее</guimenu>.
    </para>
    <para>
-    For a reference list of sound cards supported by ALSA with their
-    corresponding sound modules, see
+    Для получения списка поддерживаемых ALSA звуковых карт с
+    соответствующими именами модулей, обратитесь к 
     <ulink
      url="http://www.alsa-project.org/main/index.php/Matrix:Main"/>.
    </para>
   </step>
   <step>
    <para>
-    Choose one of the setup options and click <guimenu>Next</guimenu>.
+    Выберите одну из опций и нажмите <guimenu>Далее</guimenu>.
    </para>
   </step>
   <step>
