@@ -6,7 +6,7 @@
   %entities;
 ]>
 <chapter id="cha.y2.hw">
- <title>Setting Up Hardware Components with &yast;</title>
+ <title>Настройка устройств с помощью &yast;</title>
  <abstract>
   <para>
    &yast; позволяет настраивать оборудование во время установки, а также в

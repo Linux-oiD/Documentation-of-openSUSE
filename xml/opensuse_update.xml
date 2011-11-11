@@ -6,7 +6,7 @@
   %entities;
 ]>
 <chapter id="cha.update">
- <title>Upgrading the System and System Changes</title><indexterm>
+ <title>Обновление системы и системных настроек</title><indexterm>
  <primary>system</primary>
  <secondary>upgrading</secondary></indexterm><indexterm>
  <primary>upgrading</primary></indexterm>
@@ -14,56 +14,54 @@
   <para>
    <indexterm>
    <primary>updating</primary>
-   </indexterm> You can upgrade an existing system without completely
-   reinstalling it. There are two types of renewing the system or parts of
-   it: <emphasis>updating individual software packages</emphasis> and
-   <emphasis>upgrading the entire system</emphasis>. Updating individual
-   packages is covered in <xref linkend="cha.y2.sw"/> and
-   <xref linkend="cha.onlineupdate.you"/>. Two ways to upgrade the system
-   are discussed in the following sections&mdash; see
+   </indexterm> Вы можете обновлять свою систему, и для этого не нужно её переустанавливать.
+   Существует два типа обновления системы и её компонентов: 
+   <emphasis>update - обновление отдельных компонентов или программ</emphasis> and
+   <emphasis>upgrade - обновление всей системы целиком</emphasis>. Обновление отдельных пакетов описано в разделах
+   <xref linkend="cha.y2.sw"/> и
+   <xref linkend="cha.onlineupdate.you"/>. Два способа обновления всей системы описаны в следующих
+   разделах&mdash; смотрите
    <xref
-    linkend="sec.upgrade.yast"/> and
+    linkend="sec.upgrade.yast"/> и
    <xref linkend="sec.update.zypper"/>.
   </para>
  </abstract>
  <sect1 id="sec.update.suselinux">
-  <title>Upgrading the System</title>
+  <title>Обновление системы</title>
 
   <para>
-   Software tends to <quote>grow</quote> from version to version. Therefore,
-   take a look at the available partition space with <command>df</command>
-   before updating. If you suspect you are running short of disk space,
-   secure your data before you update and repartition your system. There is
-   no general rule regarding how much space each partition should have.
-   Space requirements depend on your particular partitioning profile, the
-   software selected, and the version numbers of the system.
+   Программное обеспечение имеет тенденцию <quote>расти</quote> от версии к версии. Поэтому, 
+   следует проверить наличие свободного пространства на системном разделе, для этого выполните <command>df</command>
+   перед обновлением. При недостатке свободного пространства на разделе, сохраните всю важную информацию
+   перед обновленим или изменением размера системного раздела. Здесь нет конкретных указаний, определяющих 
+   размер каждого раздела. Вы можете распределить свободное место так, как вам будет удобно.
+   Требования к свободному пространству зависят от количества выбранных программных пакетов и 
+   версии установленной системы.
   </para>
 
   <sect2 id="sec.update.prep">
-   <title>Preparations</title>
+   <title>Подготовка к обновлению</title>
    <para>
-    Before upgrading, copy the old configuration files to a separate medium
-    (such as removable hard disk or USB flash drive) to secure the data.
-    This primarily applies to files stored in <filename>/etc</filename> as
-    well as some of the directories and files in <filename>/var</filename>.
-    You may also want to write the user data in <filename>/home</filename>
-    (the <envar>HOME</envar> directories) to a backup medium. Back up this
-    data as <systemitem class="username">root</systemitem>. Only
-    <systemitem class="username"
-     >root</systemitem> has read permission
-    for all local files.
+    Прежде чем выполнять обновление, скопируйте старые конфигурацтонные файлы на отдельный носитель
+    (например, внешний жесткий диск или USB флеш накопитель) на случай нештатных ситуаций.
+    Большинство таких файлов хранится в каталоге <filename>/etc</filename>, а также
+    некоторые файлы и каталоги хранятся в <filename>/var</filename>.
+    Желательно сохранить пользовательские данные из каталога <filename>/home</filename>
+    (это <envar>Домашние</envar> каталоги пользователей). Копировать эти данные нужно с правами
+    <systemitem class="username">root</systemitem>. Только пользователь <systemitem class="username"
+     >root</systemitem> имеет разрешения для доступа ко всем локальным файлам и каталогам.
    </para>
    <para>
-    Before starting your update, make note of the root partition. The
-    command <command>df&nbsp;/</command> lists the device name of the root
-    partition. In <xref
-     linkend="aus.update.df"/>, the root partition
-    to write down is <filename>/dev/sda3</filename> (mounted as
+    Прежде чем начинать обновление, Узнайте имя устройства, на котором расположен корневой раздел.
+    Команда <command>df&nbsp;/</command> выведет имя устройства которому назначен корневой раздел. 
+	К примеру, здесь  <xref
+     linkend="aus.update.df"/>, корневой раздел
+    расположен на устройстве <filename>/dev/sda3</filename> (смонтирован как
     <filename>/</filename>).
    </para>
    <example id="aus.update.df">
-    <title>List with <command>df -h</command></title>
-<screen>Filesystem     Size  Used Avail Use% Mounted on
+    <title>Список по команде <command>df -h</command></title>
+<screen>Устройство Размер Занято Доступно % Смонтирован как
 /dev/sda3       74G   22G   53G  29% /
 udev           252M  124K  252M   1% /dev
 /dev/sda5      116G  5.8G  111G   5% /home
@@ -73,18 +71,17 @@ udev           252M  124K  252M   1% /dev
   </sect2>
 
   <sect2>
-   <title>Possible Problems</title><indexterm>
+   <title>Возможные проблемы</title><indexterm>
    <primary>upgrading</primary>
    <secondary>problems</secondary></indexterm>
    <para>
-    If you upgrade a default system from the previous version to this
-    version, &yast; works out the necessary changes and performs them.
-    Depending on your customizations, some steps (or the entire upgrade
-    procedure) may fail and you must resort to copying back your backup
-    data. Check the following issues before starting the system update.
+    Если вы обновляете стандартную систему с прежней версии до текущей, &yast; выполнит необходимые действия и
+	запишет изменения. В зависимости от сделаных вами изменений настроек системы, некоторые шаги (или вся
+    процедура обновления) может завершиться с ошибкой, и вам придется восстанавливать данные из резервных
+	копий. Проверьте следующие, потенциально проблемные, моменты.
    </para>
    <sect3>
-    <title>Checking passwd and group in /etc</title><indexterm>
+    <title>Безошибочность пароля и группы в /etc</title><indexterm>
     <primary>updating</primary>
     <secondary>passwd and group</secondary></indexterm><indexterm>
     <primary>configuration files</primary>
@@ -92,13 +89,11 @@ udev           252M  124K  252M   1% /dev
     <primary>configuration files</primary>
     <secondary>group</secondary></indexterm>
     <para>
-     Before upgrading the system, make sure that
-     <filename>/etc/passwd</filename> and <filename>/etc/group</filename> do
-     not contain any syntax errors. For this purpose, start the verification
-     utilities <command>pwck</command> and <command>grpck</command> as
-     <systemitem
-      class="username">root</systemitem> to eliminate any
-     reported errors.
+     Убедитесь, что данные в
+     <filename>/etc/passwd</filename> и <filename>/etc/group</filename> не содержат
+     любых синтаксических ошибок. Для этого запустите утилиты <command>pwck</command> и
+	 <command>grpck</command> с правами <systemitem
+      class="username">root</systemitem> для устранения обнаруженных проблем.
     </para>
    </sect3>
    <sect3>
@@ -106,17 +101,16 @@ udev           252M  124K  252M   1% /dev
     <primary>PostgreSQL</primary>
     <secondary>updating</secondary></indexterm>
     <para>
-     Before updating <productname>PostgreSQL</productname>
+     Перед обновлением <productname>PostgreSQL</productname>
      (<systemitem class="resource"
-      >postgres</systemitem>), dump the
-     databases. See the manual page of <command>pg_dump</command>. This is
-     only necessary if you actually used PostgreSQL prior to your update.
+      >postgres</systemitem>), сохрaните базы данных. Смотрите справочную страницу для
+	  <command>pg_dump</command>. Это имеет смысл, если вы уже использоавали PostgreSQL до обновления.
     </para>
    </sect3>
   </sect2>
 
   <sect2 id="sec.upgrade.yast">
-   <title>Upgrading with YaST</title><indexterm>
+   <title>Обновление с помощью YaST</title><indexterm>
    <primary>YaST</primary>
    <secondary>upgrading</secondary></indexterm><indexterm>
    <primary>updating</primary>
@@ -124,83 +118,81 @@ udev           252M  124K  252M   1% /dev
    <primary>upgrading</primary>
    <secondary>YaST</secondary></indexterm>
    <para>
-    Following the preparation procedure outlined in
-    <xref linkend="sec.update.prep"/>, you can now upgrade your system:
+    Следуйте инструкция по подготовке, описанным в разделе
+    <xref linkend="sec.update.prep"/>, теперь можете приступать к обновлению:
    </para>
    <procedure>
     <step os="sles;sled">
      <para>
-      Optionally, prepare an installation server. For background
-      information, see
+      Если есть возможнось, подготовте сервер установки. Для получения
+      дополнительной информации, смотите
       <xref
        linkend="sec.deployment.remoteinst.instserver.sles9"/>.
      </para>
     </step>
     <step>
      <para>
-      Boot the system as for the installation, described in
+      Загрузите систему в режиме установки, это описано здесь
       <xref linkend="sec.i.yast2.start"
-      />. In &yast;, choose a
-      language and select <guimenu>Update</guimenu> in the
-      <guimenu>Installation Mode</guimenu> dialog. Do not select
-      <guimenu>New Installation</guimenu>. Also add repositories to make
-      sure to get all available software updated whenever possible. Find
-      more information about installation repositories in
+      />. В &yast;, укажите желаемый
+      язык и выберите пункт <guimenu>Update</guimenu> в разделе
+      <guimenu>Режим установки</guimenu>. Не выбирайте пункт
+      <guimenu>Новая установка</guimenu>. Добавьте репозитории, чтобы получить все возможные
+      обновления для вашей системы. Более подробно добавление репозиториев рассмотрено в
       <xref
        linkend="sec.i.yast2.inst_mode.addon"/>.
      </para>
     </step>
     <step>
      <para>
-      &yast; determines if there are multiple root partitions. If there is
-      only one, continue with the next step. If there are several, select
-      the right partition and confirm with <guimenu>Next</guimenu>
-      (<filename>/dev/sda3</filename> was selected in the example in
+      &yast; автоматически обнаруживает наличие нескольких корневых каталогов. Если у вас он
+      только один, переходите к следующему шагу. Если несколько, выберите нужный
+      раздел и подтвердите выбор, нажав <guimenu>Next</guimenu>
+      (<filename>/dev/sda3</filename> был выбран, как пример, в разделе
       <xref
-       linkend="sec.update.prep"/>). &yast; reads the old
-      <filename>fstab</filename> on this partition to analyze and mount the
-      file systems listed there.
+       linkend="sec.update.prep"/>). &yast; прочитает содержимое файла
+      <filename>fstab</filename> на этом разделе, проанализирует и смонтирует
+      файловые системы, указанные в нем.
      </para>
      <warning>
-      <title>Persistent Device Names</title>
+      <title>Постоянные имена устройств</title>
       <para>
-       All entries in <filename>/etc/fstab</filename> that specify
-       partitions to be mounted using the kernel-device name must be changed
-       to any of the other supported methods prior to performing an update.
-       Kernel-device names are not persistent and are therefore unreliable
-       for use during the update process. This can be done using the &yast;
-       System Partitioner by changing the method used in the fstab options
-       settings.
+       Все записи <filename>/etc/fstab</filename>, которые указывают на разделы
+       монтируемые методом присвоения kernel-device имен должны быть изменены
+       на любые другие, поддерживаемые методы, перед началом обновления.
+       Имена назначаемые kernel-device не постоянны и их невозможно использовать
+       в процессе обновления. Это можно сделать через &yast;
+       Разметка дисков, изменив используемый метод на вкладке настройки параметров fstab.
       </para>
      </warning>
     </step>
     <step>
      <para>
-      Check the previously used repositories, if there are any. Enable all
-      the repositories you still want to use and from where you want to
-      update third-party software. Click the <guimenu>Toggle
-      Status</guimenu> for every list item, if appropriate.
+      Проверте список настроенных репозиториев, если необходимо. Включите все репозитории,
+      которые вы хотите использовать и откуда хотите получать обновления для
+      стороннего програмного обеспечения. Проставьте отметки в поле <guimenu>Включен</guimenu>
+	  для каждого из тех, которые хотите использовать.
      </para>
     </step>
     <step>
      <para>
-      If you added repositories during the upgrade procedure as recommended
-      above, you now can activate those you are actually interested in.
+      Если вы настроили репозитории, так как было рекомендовано выше
+      теперь вы сможете выбрать те из них, которые вас интересуют.
      </para>
     </step>
     <step>
      <para>
-      In the <guimenu>Installation Settings</guimenu> dialog, adjust the
-      settings according to your requirements. Normally, you can leave the
-      default settings untouched. If you intend to enhance your system,
-      however, check the packages and patterns offered in the
-      <guimenu>Packages</guimenu> and <guimenu>Update Options</guimenu>
-      submenus, or add support for additional languages.
+      В окне <guimenu>Настройка установки</guimenu> выставьте настройки
+      в соответствии с вашими требованиями. Обычно, вы можете ничего не менять
+      оставив настройки по умолчанию. Однако, если вы хотите настроить систему под себя,
+      или добавить поддержку дополнительных языков,
+	  обратите внимание на выбранные пакеты и зависимости в подменю
+      <guimenu>Пакеты</guimenu> и <guimenu>Настройка обновлений</guimenu>
      </para>
      <para>
-      You also have the possibility to make backups of various system
-      components. Selecting backups slows down the upgrade process. Use this
-      option if you do not have a recent system backup.
+      У вас будет возможность сделать резервные копии различных компонентов
+      системы. Учитывайте, что это замедляет процесс обновления. Используйте
+      эту опцию, только если у вас нет свежей резервной копии.
      </para>
     </step>
 <!-- this option obviously is gone; you now must get your repos right -->
@@ -237,23 +229,23 @@ udev           252M  124K  252M   1% /dev
 -->
     <step>
      <para>
-      Confirm the upgrade by clicking <guimenu>Start Update</guimenu>.
+      Подтвердите выполнение обновления, нажав <guimenu>Начать обновление</guimenu>.
      </para>
     </step>
    </procedure>
    <para>
-    Once the basic upgrade installation is finished, &yast; reboots the
-    system.
+    После завершения основных операций по обновлению, &yast; перезагрузит
+    систему.
 <!-- test the Internet connection as offered by the &yast;
     dialog. -->
-    Finally, &yast; updates the remaining software, if
-    any<phrase os="sles:sled;">, offers the &ncc; Configuration,</phrase>
-    and displays the release notes, if wanted.
+    В завершение, &yast; обновит второстепенные программы, если
+    имеются <phrase os="sles:sled;">, предложит &ncc; Конфигурация,</phrase>
+    и отобразит список особенностей выпуска, если нужно.
 <!-- Click
     <guimenu>Finish</guimenu> to write the &yast; configuration. -->
    </para>
    <para os="sles:sled;">
-    For more information about the &ncc;, see
+    Больше информации об &ncc; смотрите
     <xref linkend="sec.i.yast2.conf.manual.cc"/>.
    </para>
   </sect2>
@@ -261,54 +253,54 @@ udev           252M  124K  252M   1% /dev
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="zypper_upgrade.xml"/>
 
   <sect2 id="sec.update.packages" os="osuse">
-   <title>Updating Individual Packages</title>
+   <title>Обновление отдельных пакетов</title>
    <para>
-    Regardless of your overall updated environment, you can always update
-    individual packages. From this point on, however, it is your
-    responsibility to ensure that your system remains consistent.
+    Независимо от обновления всей системы, вы всегда можете обновить
+    отдельные пакеты. Однако, с этого момента, вы должны понимать,
+    что общее состояние вашей системы останется без изменений.
    </para>
    <para>
-    Use the &yast; software management tool to update packages as described
-    in <xref linkend="cha.y2.sw"/>. Select components from the &yast;
-    package selection list according to your needs. If a newer version of a
-    package exists, the version numbers of the installed and the available
-    versions are listed in blue color in the <guimenu>Installed
-    (Available)</guimenu> column. If you select a package essential for the
-    overall operation of the system, &yast; issues a warning. Such packages
-    should be updated only in the update mode. For example, many packages
-    contain <emphasis>shared libraries</emphasis>. Updating these programs
-    and applications in the running system may lead to system instability.
+    Используйте &yast; инструмент управления програмным обеспечением, чтобы обновить пакеты, как описано
+    в <xref linkend="cha.y2.sw"/>. Выберите нужные компоненты из &yast;
+    списка пакетов, в соответствии с вашими потребностями. Если доступна новая
+    версия пакета, номер версии в списке устанновленных и доступных
+    версий будет выделен голубым цветом <guimenu>Установлено
+    (Доступно)</guimenu> column. If you select a package essential for the
+    overall operation of the system, &yast; issues a warning. Такие пакеты
+    следует обновлять только в режиме обновления. К примеру, несколько пакетов
+    имеющих <emphasis>общие библиотеки</emphasis>. Обновление таких программ
+    во время работы системы может привести к нестабильной работе.
    </para>
   </sect2>
  </sect1>
  <sect1 id="sec.update.version">
-  <title>Software Changes</title>
+  <title>Изменения в программах</title>
 
   <para>
-   The individual modifications from version to version are outlined in the
-   following in detail. This summary indicates, for example, whether basic
-   settings have been completely reconfigured, configuration files have been
-   moved to other places, or common applications have been significantly
-   changed. Significant modifications that affect the daily use of the
-   system at either the user level or the administrator level are mentioned
-   here.
+   Изменения от версии к версии детально описываются в документации, и прилагаются
+   к приложению. Такие измения, к примеру, это когда в программе
+   изменены настройки по умолчанию, конфигурационные файлы перенесены
+   в другое место, или сделаны существенные изменения в работе приложения.
+   Существенные изменения, влияющие на повседневную работу приложения или
+   системы с правами пользователя или администратора также описываются
+   там.
   </para>
 
   <para os="osuse">
-   Problems and special issues of the various versions are published online
-   as they are identified. See the links listed below. Important updates of
-   individual packages can be accessed using the &yast; Online Update. For
-   more information, see <xref linkend="cha.onlineupdate.you"/>.
+   Проблемы и особенности разных выпусков описаны в статьях вики, структурированных
+   по их версиям. Смотрите ссылки ниже. Важные обновления для
+   отдельных пакетов модно получить через &yast; Сетевое обновление. За
+   подробностями оратитесь к <xref linkend="cha.onlineupdate.you"/>.
   </para>
 
   <para os="osuse">
-   Refer to the <literal>Product highlights</literal>
+   Изучите статьи <literal>список нововведений</literal>
    (<ulink
-    url="http://en.opensuse.org/Product_highlights"/> and the
-   <literal>Bugs</literal> article in the &opensuse; wiki at
+    url="http://ru.opensuse.org/Обзор_нововведений"/> и
+   <literal>ошибки</literal> в &opensuse; вики
    <ulink
-    url="http://en.opensuse.org/openSUSE:Most_annoying_bugs"/> for
-   information about recent changes and issues.
+    url="http://en.opensuse.org/openSUSE:Most_annoying_bugs"/> чтобы быть
+   в курсе последних изменений.
   </para>
  </sect1>
 </chapter>

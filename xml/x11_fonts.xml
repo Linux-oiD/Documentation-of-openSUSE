@@ -6,7 +6,7 @@
   %entities;
 ]>
 <chapter id="cha.fontconfig">
- <title>Installing and Configuring Fonts for the Graphical User Interface</title><indexterm>
+ <title>Установка и настройка шрифтов для графической оболочки пользователя</title><indexterm>
  <primary>X</primary>
  <secondary>TrueType fonts</secondary></indexterm><indexterm>
  <primary>fonts</primary>
@@ -18,29 +18,28 @@
  <primary>X</primary>
  <secondary>character sets</secondary></indexterm>
  <para>
-  The installation of additional fonts in &productnamereg; is very easy.
-  Simply copy the fonts to any directory located in the X11 font path
+  Установить дополнительные шрифты в &productnamereg; очень просто.
+  Просто скопируйте шрифты в любую папку, обозначенную в конфигурации X11 как путь к шрифтам
 <!-- (see
   <xref linkend="sec.fontconfig.x11core"/>) -->
-  . To the enable use of the fonts, the installation directory should be a
-  subdirectory of the directories configured in
+  . Чтобы система смогла использовать новые шрифты, каталог со шрифтами должен быть
+  подкаталогом любого каталого, указанного в файле
   <filename>/etc/fonts/fonts.conf</filename>
 <!-- (see
   <xref linkend="sec.fontconfig.xft"/>) -->
-  or included into this file with
+  или быть указанным в списке каталогов
   <filename>/etc/fonts/suse-font-dirs.conf</filename>.
  </para>
  <para>
-  The following is an excerpt from
-  <filename>/etc/fonts/fonts.conf</filename>. This file is the standard
-  configuration file that should be appropriate for most configurations. It
-  also defines the included directory
-  <filename>/etc/fonts/conf.d</filename>. In this directory, all files or
-  symbolic links starting with a two digit number are loaded by fontconfig.
-  For a more detailed explanation of this functionality, have a look at
+  Ниже приведен фрагмент файла
+  <filename>/etc/fonts/fonts.conf</filename>. Содержимое этого файла стандартно и применяется
+  для большинства ситем. Он также задает каталог
+  <filename>/etc/fonts/conf.d</filename>. В этом каталоге все файлы и символические ссылки начинаются
+  с двухзначного числа и загружаются конфигуратором шрифтов.
+  Для более полной информации о том, как это работает, обратитесь к
   <filename>/etc/fonts/conf.d/README</filename>.
  </para>
-<screen>&lt;!-- Font directory list --&gt;
+<screen>&lt;!-- Список каталогов со шрифтами --&gt;
 &lt;dir>/usr/share/fonts&lt;/dir>
 &lt;dir>/usr/X11R6/lib/X11/fonts&lt;/dir> 
 &lt;dir>/opt/kde3/share/fonts&lt;/dir>
@@ -48,37 +47,36 @@
 &lt;dir>~/.fonts&lt;/dir>
 </screen>
  <para>
-  <filename>/etc/fonts/suse-font-dirs.conf</filename> is automatically
-  generated to pull in fonts that ship with (mostly third party)
-  applications like OpenOffice.org, Java or Adobe Acrobat Reader. A typical
-  entry would look like the following:
+  <filename>/etc/fonts/suse-font-dirs.conf</filename> Автоматически создается для шрифтов, поставляемых
+  в комплекте(в основном, со сторонним ПО) с приложениями типа OpenOffice.org, Java или Adobe Acrobat Reader.
+  Обычно записи в этом файле выглядят следующим образом:
  </para>
 <screen>&lt;dir>/usr/lib/Adobe/Reader9/Resource/Font&lt;/dir>
 &lt;dir>/usr/lib/Adobe/Reader9/Resource/Font/PFM&lt;/dir>
  </screen>
  <sect1 id="sec.fontconfig.add">
-  <title>Adding Fonts</title>
+  <title>Добавление шрифтов</title>
 
   <para>
-   To install additional fonts systemwide, manually copy the font files to a
-   suitable directory (as <systemitem class="username">root</systemitem>),
-   such as <filename>/usr/share/fonts/truetype</filename>. Alternatively,
-   the task can be performed with the KDE font installer in the KDE Personal
-   Settings. The result is the same.
+   Для установки дополнительных шрифтов в систему, скопируйте файлы шрифтов в любой подходящий каталог
+   (с правами <systemitem class="username">root</systemitem>),
+   например <filename>/usr/share/fonts/truetype</filename>. Кроме того,
+   установка может быть выполнена в графической среде KDE, через установщик шрифтов в разделе
+   Личные настройки KDE. Результат будет одинаковым.
   </para>
 
   <para>
-   Instead of copying the actual fonts, you can also create symbolic links.
-   For example, you may want to do this if you have licensed fonts on a
-   mounted Windows partition and want to use them. Subsequently, run
+   Вместо копирования существующих шрифтов, вы можете создавать символические ссылки.
+   К примеру, это может понадобиться, если у вас лицензированные шрифты на примонтированном
+   разделе с ОС Windows и вы хотите использовать их. Для этого вам понадобиться выполнить
    <command>SuSEconfig <option>&#x2d;&#x2d;module fonts</option></command>.
   </para>
 
   <para>
-   <command>SuSEconfig <option>--module fonts</option></command> executes
-   the script <filename>/usr/sbin/fonts-config</filename>, which handles the
-   font configuration. For more information on this script, refer to its
-   manual page (<command>man <option>fonts-config</option></command>).
+   <command>SuSEconfig <option>--module fonts</option></command> эта команда выполнит
+   скрипт <filename>/usr/sbin/fonts-config</filename>, который управляет конфигурацией шрифтов.
+   За подробной информацией о работе с этим скриптом обратитесь к странице
+   справки (<command>man <option>fonts-config</option></command>).
   </para><indexterm>
 
   <primary>commands</primary>
@@ -86,9 +84,9 @@
   <secondary>fonts-config</secondary></indexterm>
 
   <para>
-   The procedure is the same for bitmap fonts, TrueType and OpenType fonts,
-   and Type&nbsp;1 (PostScript) fonts. All these font types can be installed
-   into any directory known to <literal>fonts-config</literal>.
+   Процедура установки одинакова для растровых шрифтов, TrueType и OpenType шрифтов,
+   а также для Type&nbsp;1 (PostScript) щрифта. Все эти типы шрифтов могут быть установлены
+   в любой каталог, известный для <literal>fonts-config</literal>.
   </para>
  </sect1>
 <!-- fs 2011-02-15: 
