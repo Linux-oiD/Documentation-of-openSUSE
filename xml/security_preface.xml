@@ -12,7 +12,7 @@
   Одной из главных характеристик UNIX/Linux систем является возможность обслуживать
   несколько пользователей (многопользовательские системы), а так же предоставлять
   им возможность выполнять несколько задач одновременно (многозадачность).
-  Более того, опреационная система прозрачна для сети. Пользователи часто даже не
+  Более того, операционная система прозрачна для сети. Пользователи часто даже не
   знают находятся ли данные или программы, которые они используют,
   локально или доступны через сеть.
  </para>
@@ -37,60 +37,59 @@
   <title>Локальная и сетевая безопасность</title>
 
   <para>
-   There are several ways of accessing data:
+   Возможны несколько способов доступа к данным:
   </para>
 
   <itemizedlist>
    <listitem>
     <para>
-     personal communication with people who have the desired information or
-     access to the data on a computer
+     личное общение с людьми, имеющим нужную информацию или доступ к данным на компьютере
     </para>
    </listitem>
    <listitem>
     <para>
-     directly through physical access from the console of a computer
+     напрямую, путем физического доступа к терминалу
     </para>
    </listitem>
    <listitem>
     <para>
-     over a serial line
+     через последовательный интерфейс
     </para>
    </listitem>
    <listitem>
     <para>
-     using a network link
+     используя сетевое соединение
     </para>
    </listitem>
   </itemizedlist>
 
   <para>
-   In all these cases, a user should be authenticated before accessing the
-   resources or data in question. A Web server might be less restrictive in
-   this respect, but you still would not want it to disclose your personal
-   data to an anonymous user.
+   В каждом из этих способов пользователь должен пройти проверку подлинности 
+   перед тем, как получит доступ к ресурсам или данным, о которых идет речь.
+   При этом веб сервер может накладывать меньше ограничений, но в любом случае
+   вы вряд ли захотите давать анонимному пользователю доступ к своим личным данным. 
   </para><indexterm>
 
-  <primary>security</primary>
+  <primary>безопасность</primary>
 
-  <secondary>engineering</secondary></indexterm>
+  <secondary>инженерия</secondary></indexterm>
 
   <para>
-   In the list above, the first case is the one where the highest amount of
-   human interaction is involved (such as when you are contacting a bank
-   employee and are required to prove that you are the person owning that
-   bank account). Then, you are asked to provide a signature, a PIN, or a
-   password to prove that you are the person you claim to be. In some cases,
-   it might be possible to elicit some intelligence from an informed person
-   just by mentioning known bits and pieces to win the confidence of that
-   person. The victim could be led to reveal gradually more information,
-   maybe without even being aware of it. Among hackers, this is called
-   <emphasis>social engineering</emphasis>. You can only guard against this
-   by educating people and by dealing with language and information in a
-   conscious way. Before breaking into computer systems, attackers often try
-   to target receptionists, service people working with the company, or even
-   family members. In many cases, such an attack based on social engineering
-   is only discovered at a much later time.
+   В приведенном выше списке самый первый способ использует наибольшее 
+   количество межличностного взаимодействия (например, когда Вы связываетесь с
+   сотрудником банка, Вам требуется подтвердить, что Вы являетесь владельцем счета).
+   Для этого Вас просят предоставить подпись, ПИН-код или пароль, чтобы 
+   удостовериться, что Вы тот, за кого себя выдаете. В некоторых случаях простого
+   упоминания уже известных Вам фрагментов и кусочков информации достаточно, чтобы 
+   расположить к себе осведомленного человека и выведать ее полностью.
+   Ничего не подозревающую жертву можно подвести постепенному раскрытию все больших
+   объемов информации. Среди хакеров это называется <emphasis>социальной инженерией</emphasis>.
+   Единственной защитой от этого является подготовка людей и осознанное распределение 
+   информации.
+   Перед взломом компьютерной системы атакующие часто пытаются использовать секретарей,
+   обслуживающий персонал компании или даже членов семей ее сотрудников.
+   Во многих случаях о такой основанной на социальной инженерии атаке становится известно 
+   гораздо позже.
   </para><indexterm>
 
   <primary>security</primary>
