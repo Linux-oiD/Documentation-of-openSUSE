@@ -92,109 +92,109 @@
    гораздо позже.
   </para><indexterm>
 
-  <primary>security</primary>
+  <primary>безопасность</primary>
 
-  <secondary>booting</secondary></indexterm><indexterm>
+  <secondary>загрузка</secondary></indexterm><indexterm>
 
-  <primary>security</primary>
+  <primary>безопасность</primary>
 
-  <secondary>serial terminals</secondary></indexterm>
+  <secondary>устройства последовательного доступа</secondary></indexterm>
 
   <para>
-   A person wanting to obtain unauthorized access to your data could also
-   use the traditional way and try to get at your hardware directly.
-   Therefore, the machine should be protected against any tampering so that
-   no one can remove, replace, or cripple its components. This also applies
-   to backups and even any network cables or power cords. Also secure the
-   boot procedure, because there are some well-known key combinations that
-   might provoke unusual behavior. Protect yourself against this by setting
-   passwords for the BIOS and the boot loader. <indexterm>
-   <primary>security</primary>
-   <secondary>booting</secondary>
+   Человек, желающий получить несанкционированный доступ к Вашим данным, может 
+   также попытаться использовать традиционный способ прямого доступа к Вашему 
+   компьютеру. Из этого следует, что система должна быть защищена от любых манипуляций, 
+   и никто не мог удалить, изменить или повредить ее компоненты. Это относится и к 
+   резервным копиям, и даже к сетевым кабелям и кабелям питания. Также необходимо 
+   обезопасить этап загрузки, поскольку существует несколько широко распространенных
+   клавиатурных комбинаций, способных вызвать нестандарное поведение. Защитите себя от этого,
+   установив пароли на BIOS и системный загрузчик.
+   <indexterm>
+   <primary>безопасность</primary>
+   <secondary>загрузка</secondary>
    </indexterm>
   </para>
 
   <para>
    <indexterm>
-   <primary>security</primary>
-   <secondary>serial terminals</secondary>
-   </indexterm> Serial terminals connected to serial ports are still used in
-   many places. Unlike network interfaces, they do not rely on network
-   protocols to communicate with the host. A simple cable or an infrared
-   port is used to send plain characters back and forth between the devices.
-   The cable itself is the weakest point of such a system: with an older
-   printer connected to it, it is easy to record any data being transferred
-   thusly. What can be achieved with a printer can also be accomplished in
-   other ways, depending on the effort that goes into the attack.
+   <primary>безопасность</primary>
+   <secondary>устройства последовательного доступа</secondary>
+   </indexterm> 
+   Устройства, подключаемые к последовательным портам повсеместно используются 
+   до сих пор. В отличие от сетевых интерфейсов, они не используют сетевых протоколов для 
+   взаимодействия с системой, к которой подключены. Для обмена данными
+   между устройствами используется обычный кабель или инфракрасный порт, по 
+   которому в обе стороны передаются обычные символы. 
+   Кабель является самым слабым звеном такой системы: передаваемые по нему данные
+   могут быть перехвачены путем подключения к этому кабелю обычного старого принтера. 
+   Кроме принтера для перехвата можно использовать все что угодно, в зависимости от
+   технической оснащённости атакующего.
   </para>
 
   <para>
-   Reading a file locally on a host requires additional access rules than
-   opening a network connection with a server on a different host. There is
-   a distinction between local security and network security. The line is
-   drawn where data must be put into packets to be sent somewhere else.
+   Чтение локального файла требует дополнительных правил доступа в сравнении с 
+   открытием сетевого подключения к другому компьютеру. Существует четкое разграничение
+   между локальной и сетевой безопасностью и черта проходит там, где данные
+   инкапсулируются в пакеты для отправки куда-либо.
   </para>
 
   <sect2 id="sec.security.general.overview.local">
-   <title>Local Security</title><indexterm id="idx.security_local" class="startofrange">
-   <primary>security</primary>
-   <secondary>local</secondary></indexterm>
+   <title>Локальная безопасность</title><indexterm id="idx.security_local" class="startofrange">
+   <primary>безопасность</primary>
+   <secondary>локальная</secondary></indexterm>
    <para>
-    Local security starts with the physical environment at the location in
-    which computer is running. Set up your machine in a place where security
-    is in line with your expectations and needs. The main goal of local
-    security is to keep users separate from each other, so no user can
-    assume the permissions or the identity of another. This is a general
-    rule to be observed, but it is especially true for the user
-    <systemitem class="username">root</systemitem>, who holds system
-    administration privileges.
-    <systemitem class="username">root</systemitem> can take on the identity
-    of any other local user and read any locally-stored file without being
-    prompted for the password.
+    Локальная безопасность начинается с физического окружения того места, где
+    установлен Ваш компьютер. Устанавливайте свою машину в  месте, безопасность
+    которого соответствует Вашим потребностям и ожиданиям. Главная задача локальной
+    безопасности - разделение пользователей таким образом, чтобы ни один из них не 
+    смог использовать привилегии или идентификационные данные другого. Это
+    наиболее общее правило, которое необходимо соблюдать, и оно особенно 
+    касается пользователя <systemitem class="username">root</systemitem>, 
+    обладающего привилегиями системного администратора.
+    <systemitem class="username">root</systemitem>  может работать от имени
+    любого другого локального пользователя не вводя его пароля и читать любые локальные файлы.
    </para>
    <sect3 id="sec.security.general.overview.local.passwords">
-    <title>Passwords</title><indexterm id="idx.security_passwords" class="startofrange">
-    <primary>security</primary>
-    <secondary>passwords</secondary></indexterm>
+    <title>Пароли</title><indexterm id="idx.security_passwords" class="startofrange">
+    <primary>безопасность</primary>
+    <secondary>пароли</secondary></indexterm>
     <para>
-     On a Linux system, passwords are not stored as plain text and the
-     entered text string is not simply matched with the saved pattern. If
-     this were the case, all accounts on your system would be compromised as
-     soon as someone got access to the corresponding file. Instead, the
-     stored password is encrypted and, each time it is entered, is encrypted
-     again and the two encrypted strings are compared. This only provides
-     more security if the encrypted password cannot be reverse-computed into
-     the original text string.
+     Linux-система не хранит пароли в текстовом виде, используя для их валидации
+     простое сравнение введенного текста с сохраненным образцом.
+     Если бы это было так, то все аккаунты системы были бы под угрозой при получении
+     кем-либо доступа к соответствующему файлу. Именно поэтому все сохраненные 
+     пароли зашифрованы, перед сравнением введенный текст также шифруется, после 
+     чего сравниваются две зашифрованных строки. Этот метод будет более безопасным
+     только в том случае, если зашифрованный пароль не может быть восстановлен 
+     в оригинальную текстовую строку.
     </para>
     <para>
-     This is actually achieved by a special kind of algorithm, also called
-     <emphasis>trapdoor algorithm</emphasis>, because it only works in one
-     direction. An attacker who has obtained the encrypted string is not
-     able to get your password by simply applying the same algorithm again.
-     Instead, it would be necessary to test all the possible character
-     combinations until a combination is found that looks like your password
-     when encrypted. With passwords eight characters long, there are quite a
-     number of possible combinations to calculate.
+     Это достигается при помощи алгоритма особого рода, так же называемого
+     <emphasis>алгоритмом с потайным ходом</emphasis>, поскольку он работает 
+     только в одном направлении. Злоумышленник, заполучив Ваш пароль в зашифрованном виде,
+     не сможет восстановить его используя этот алгоритм повторно.
+     Вместо этого ему придется перебирать все возможные комбинации символов до тех
+     пор, пока он не получит комбинацию, которая после шифрования совпадет с 
+     зашифрованным паролем. При длине пароля в восемь символов ему прийдется 
+     перебрать значительное количество таких комбинаций.
     </para>
     <para>
-     In the seventies, it was argued that this method would be more secure
-     than others due to the relative slowness of the algorithm used, which
-     took a few seconds to encrypt just one password. In the meantime,
-     however, PCs have become powerful enough to do several hundred thousand
-     or even millions of encryptions per second. Because of this, encrypted
-     passwords should not be visible to regular users
-     (<filename>/etc/shadow</filename> cannot be read by normal users). It
-     is even more important that passwords are not easy to guess, in case
-     the password file becomes visible due to some error. Consequently, it
-     is not really useful to <quote>translate</quote> a password like
-     <quote>tantalize</quote> into <quote>t@nt@1lz3</quote>.
+     В семидесятых годах прошлого века утверждалось, что данный метод безопаснее
+     других, поскольку алгоритм работал довольно медленно и на шифрование одного 
+     пароля требовалось несколько секунд. Однако в настоящее время компьютеры стали
+     достаточно мощными для шифрования сотен тысяч или даже миллионов паролей 
+     в секунду. Поэтому даже зашифрованные пароли не должны быть доступны обычному
+     пользователю (обычные пользователи не должны иметь доступа к файлу 
+     <filename>/etc/shadow</filename>). Еще более важным является невозможность
+     угадать пароль в случае, если файл паролей доступен по ошибке.
+     Следовательно, <quote>перевод</quote> пароля вида <quote>tantalize</quote> в 
+     <quote>t@nt@1lz3</quote> не повышает уровеня безопасности.
     </para>
     <para>
-     Replacing some letters of a word with similar looking numbers (like
-     writing the password <quote>tantalize</quote> as
-     <quote>t@nt@1lz3</quote> ) is not sufficient. Password cracking
-     programs that use dictionaries to guess words also play with
-     substitutions like that. A better way is to make up a word with no
+     Замены нескольких букв в слове похожими на них цифрами (наподобие
+     записи <quote>tantalize</quote> как <quote>t@nt@1lz3</quote>) недостаточно.
+     Программы, использующие словари для взлома паролей, также могут производить
+     такие замены. A better way is to make up a word with no
      common meaning, something that only makes sense to you personally, like
      the first letters of the words of a sentence or the title of a book,
      such as <quote>The Name of the Rose</quote> by Umberto Eco. This would
