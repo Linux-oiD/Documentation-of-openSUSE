@@ -13,7 +13,7 @@
   fingerprint issue, therefore no changes needed (11.0 version still
   valid)</remark>
  <para>
-  Если у Вам есть сканер отпечатков пальцев, Вы можете
+  Если у Вас есть сканер отпечатков пальцев, Вы можете
   использовать биометрическую аутентификацию в дополнение к стандартной
   (по средствам логина и пароля). После регистрации своих отпечатков
   пальцев, пользователь может войти в систему, проведя пальцем по сканеру,
@@ -24,14 +24,14 @@
  </para>
  <para>
   Если &productnamereg; находит сканер отпечатков пальцев, который интегрирован с
-  ноутбуком (или просто подключенного к вашей системе), пакеты
+  ноутбуком (или просто подключен к вашей системе), пакеты
   <systemitem
    class="resource">libfprint</systemitem>,
   <systemitem class="resource"
     >pam_fp</systemitem>, и
     <systemitem class="resource"
     >yast2-fingerprint-reader</systemitem>
-  будут автоматически установленны.
+  будут установлены автоматически.
  </para>
  <para>
   В настоящее время может быть зарегистрирован только один отпечаток пальца для
@@ -60,7 +60,7 @@
    </listitem>
    <listitem>
     <para>
-     Запуск &yast; и &yast; модулей
+     Запуск &yast; и модулей &yast;
     </para>
    </listitem>
    <listitem>
@@ -108,7 +108,7 @@
    </para>
    <step>
     <para>
-     Запустите &yast; и выберете <menuchoice> <guimenu>Оборудование</guimenu>
+     Запустите &yast; и выберите <menuchoice> <guimenu>Оборудование</guimenu>
      <guimenu>Распознавание отпечатков пальцев</guimenu> </menuchoice>.
     </para>
 <!--<informalfigure>
@@ -151,13 +151,13 @@
    </step>
    <step>
     <para>
-     Выберете пользователя, для которого Вы хотите зарегистрировать отпечаток пальца и нажмите
+     Выберите пользователя, для которого Вы хотите зарегистрировать отпечаток пальца и нажмите
      <guimenu>Редактировать</guimenu>.
     </para>
    </step>
    <step>
     <para>
-     Во вкладке <guimenu>Plug-Ins</guimenu>, выберете the fingerprint entry
+     Во вкладке <guimenu>Plug-Ins</guimenu>, выберите the fingerprint entry
      и нажмите <guimenu>Launch</guimenu> для открытия окна <guimenu>Конфигурация отпечатков
      пальцев</guimenu>.
     </para>
@@ -196,7 +196,7 @@
     <para>
      Чтобы сделать это, установите фильтр <guimenu>System Users</guimenu> в окне
      <guimenu>User and Group Administration</guimenu>, и выберете пользователя
-     &rootuser;, а так же оставте 3 четких отпечатка пальца, как описанно выше.
+     &rootuser;, а так же оставьте 3 четких отпечатка пальца, как описано выше.
     </para>
    </step>
    <step>
