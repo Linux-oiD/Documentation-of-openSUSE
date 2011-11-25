@@ -319,37 +319,37 @@
     <primary>безопасность</primary>
     <secondary>вирусы</secondary></indexterm>
     <para>
-     Contrary to popular opinion, there are viruses that run on Linux.
-     However, the viruses that are known were released by their authors as a
-     <emphasis>proof of concept</emphasis> that the technique works as
-     intended. None of these viruses have been spotted <emphasis>in the
-     wild</emphasis> so far.
+     Вопреки распространенному мнению, существуют вирусы работающие под Linux.
+     Однако, известные вирусы были написаны своими авторами в качестве
+     <emphasis>доказательства концепции</emphasis>, что техника работает 
+     по назначению. До настоящего времени ни один из этих вирусов не был обнаружен
+     в <emphasis>дикой природе</emphasis>.
     </para>
     <para>
-     Viruses cannot survive and spread without a host on which to live. In
-     this case, the host would be a program or an important storage area of
-     the system, such as the master boot record, which needs to be writable
-     for the program code of the virus. Owing to its multiuser capability,
-     Linux can restrict write access to certain files (this is especially
-     important with system files). Therefore, if you did your normal work
-     with <systemitem
-     class="username">root</systemitem> permissions,
-     you would increase the chance of the system being infected by a virus.
-     In contrast, if you follow the principle of using the lowest possible
-     privileges as mentioned above, chances of getting a virus are slim.
+     Вирусы не могут существовать и распространяться без своего хозяина.
+     Хозяином может быть программа или важное хранилище системы, такое как
+     основная загрузочная запись, для записи в которую код вируса должен 
+     иметь соответствующие привилегии. Благодаря своим многопользовательским 
+     возможностям, Linux позволяет ограничить доступ на запись к пределенным файлам 
+     (это особенно важно для файлов системы). таким образом, если Вы имеете привычку
+     работать с привилегиями <systemitem class="username">root</systemitem>,
+     вы увеличиваете шансы системы быть зараженной вирусом. И напротив, 
+     следование упомянутому выше принципу наименьших возможных привилегий, 
+     значительно снижает такую возможность.
     </para>
     <para>
-     Apart from that, you should never rush into executing a program from
-     some Internet site that you do not really know. &productname;'s RPM
-     packages carry a cryptographic signature, as a digital label that the
-     necessary care was taken to build them. Viruses are a typical sign that
-     the administrator or the user lacks the required security awareness,
-     putting at risk even a system that should be highly secure by its very
-     design.
+     Кроме того, никогда не торопитесь запускать программу, скачанную с 
+     первого попавшегося интернет сайта. RPM пакеты &productname;
+     содержать криптографическую подпись, как знак того, что они были собраны с
+     должным вниманием. Наличие вирусов является типичным признаком того,
+     что администратор или пользователь не обладают достаточными знаниями о безопасности,
+     поскольку им удалось подвергнуть риску систему, спроектированную с высоким 
+     уровнем безопасности.
     </para>
     <para>
-     Viruses should not be confused with worms, which belong entirely to the
-     world of networks. Worms do not need a host to spread.
+     Не следует путать вирусы с червями, принадлежащими исключительно к миру
+     сетей. Отличие состоит в том, что червю для распространения не нужен
+     хозяин.
     </para><indexterm class="endofrange" startref="idx.security_local"/>
    </sect3>
   </sect2>
