@@ -272,7 +272,7 @@
     </para><indexterm class="endofrange" startref="idx.security_permissions"/>
    </sect3>
    <sect3 id="sec.security.general.overview.local.bugs">
-    <title>Баги переполнения буффера и строки формата</title><indexterm>
+    <title>Баги переполнения буфера и строки формата</title><indexterm>
     <primary>безопасность</primary>
     <secondary>баги</secondary></indexterm>
     <para>
@@ -285,11 +285,11 @@
      последовательным образом, используя определенные для этих целей интерфейсы.
     </para>
     <para>
-     <emphasis>Переполнение буффера</emphasis> может произойти, если реальный размер буффера
-     памяти не учитывается при записи в буффер. Возможна ситуация, когда эти данные
+     <emphasis>Переполнение буфера</emphasis> может произойти, если реальный размер буфера
+     памяти не учитывается при записи в буфер. Возможна ситуация, когда эти данные
      (созданные пользователем) используют требуют больше памяти, чем ее доступно в
-     буффере. В результате при некоторых обстоятельствах вместо обычной обработки 
-     введенных пользователем данных их часть, записанная за пределы буффера,
+     буфере. В результате при некоторых обстоятельствах вместо обычной обработки 
+     введенных пользователем данных их часть, записанная за пределы буфера,
      может быть выполнена. Это мжет быть использовано для выполнения кода заданного
      пользователем, а не программистом. Подобный баг может иметь очень серьезные последствия, 
      особенно при выполнении программ с особыми правами доступа (см
@@ -306,11 +306,11 @@
      <xref linkend="sec.security.general.overview.local.permissions"/>).
     </para>
     <para>
-     Поскольку баги переполнения буффера и строки формата относятся к 
+     Поскольку баги переполнения буфера и строки формата относятся к 
      обработке пользовательских данных, они могут быть использованы не только 
      пользователем, имеющим локальный доступ. Множество известных багов можно было
      воспроизвести как локально, так и по сети (например, используя особым образом 
-     сформированную ссылку). Соответственно, баги строки формата и переполнения буффера
+     сформированную ссылку). Соответственно, баги строки формата и переполнения буфера
      следует классифицировать как относящиеся и к локальной и к сетевой безопасности.
     </para>
    </sect3>
@@ -426,93 +426,89 @@
     </warning>
    </sect3>
    <sect3 id="sec.security.general.overview.network.bugs">
-    <title>Buffer Overflows and Format String Bugs</title><indexterm>
-    <primary>security</primary>
-    <secondary>bugs and</secondary></indexterm>
+    <title>Баги переполнения буфера и строки формата</title><indexterm>
+    <primary>безопасность</primary>
+    <secondary>баги</secondary></indexterm>
     <para>
-     As discussed in
-     <xref linkend="sec.security.general.overview.local.bugs"/>, buffer
-     overflows and format string bugs should be classified as issues
-     applying to both local and network security. As with the local variants
-     of such bugs, buffer overflows in network programs, when successfully
-     exploited, are mostly used to obtain
-     <systemitem class="username">root</systemitem> permissions. Even if
-     that is not the case, an attacker could use the bug to gain access to
-     an unprivileged local account to exploit other vulnerabilities that
-     might exist on the system.
+     Как обсуждалось в 
+     <xref linkend="sec.security.general.overview.local.bugs"/>, баги переполнения
+     буфера и строки формата должны классифицироваться, как имеющие отношение 
+     и к локальной, и к сетевой безопасности. Подобно локальному варианту,
+     переполнение буфера в сетевых программах преимущественно может быть использовано
+     злоумышленником для получения привилегий <systemitem class="username">root</systemitem>.
+     Даже если эта попытка не будет успешна, атакующий может использовать баг
+     для получения доступа к непривилегированному локальному аккаунту и дальнейшего
+     поиска других уязвимостей, которые возможно присутствуют в системе.
     </para>
     <para>
-     Buffer overflows and format string bugs exploitable over a network link
-     are certainly the most frequent form of remote attacks, in general.
-     Exploits for these&mdash;programs to exploit these newly-found security
-     holes&mdash;are often posted on security mailing lists. They can be
-     used to target the vulnerability without knowing the details of the
-     code. Over the years, experience has shown that the availability of
-     exploit codes has contributed to more secure operating systems,
-     obviously due to the fact that operating system makers were forced to
-     fix the problems in their software. With free software, anyone has
-     access to the source code (&productname; comes with all available
-     source codes) and anyone who finds a vulnerability and its exploit code
-     can submit a patch to fix the corresponding bug.
+     Использование багов переполнения буфера и строки формата по сети &mdash;
+     наиболее часто встречающаяся разновидность удаленных атак. Эксплоиты &mdash;
+     программы, использующие вновь найденные уязвимости &mdash; часто публикуются в
+     почтовых рассылках посвященных безопасности. Они могут быть использованы 
+     для попытки проникновения в систему без знания подробностей конкретной 
+     уязвимости. Опыт многих лет доказал, что доступность кода эксплоитов
+     помогла операционным системам стать более безопасными, очевидно благодаря
+     тому, что именно они принуждают создателей операционных систем исправлять
+     проблемы в своих программах. В свободном программном обеспечении каждый,
+     кто имеет доступ к исходным кодам (&productname; поставляется со всеми
+     доступными исходными кодами) и каждый, кто найдет уязвимость и код, ее 
+     эксплуатирующий, могут предложить патчи для исправления соответствующего бага.
     </para>
    </sect3>
    <sect3 id="sec.security.general.overview.network.dos">
-    <title>Denial of Service</title><indexterm id="idx.security_attacks" class="startofrange">
-    <primary>security</primary>
-    <secondary>attacks</secondary></indexterm>
+    <title>Отказ в обслуживании</title><indexterm id="idx.security_attacks" class="startofrange">
+    <primary>безопасность</primary>
+    <secondary>атаки</secondary></indexterm>
     <para>
-     The purpose of a denial of service (DoS) attack is to block a server
-     program or even an entire system, something that could be achieved by
-     various means: overloading the server, keeping it busy with garbage
-     packets, or exploiting a remote buffer overflow. Often, a DoS attack is
-     made with the sole purpose of making the service disappear. However,
-     once a given service has become unavailable, communications could
-     become vulnerable to <emphasis>man-in-the-middle attacks</emphasis>
-     (sniffing, TCP connection hijacking, spoofing) and DNS poisoning.
+     Целью атаки типа отказ в обслуживании (DoS) является блокирование
+     программы-сервера или всей системы, что может быть достигнуто разными
+     путями: повышенной нагрузкой на сервер, удержанием его в состоянии 
+     занятости путем отправки пакетов с мусором или использованием переполнения
+     его буфера. Чаще всего единственной целью DoS атаки является исчезновение 
+     обслуживания сервером. Тем не менее, поскольку сервер становится недоступным, 
+     появляется возможность также использовать другие виды атак: 
+     <emphasis><quote>человек посередине</quote></emphasis>
+     (прослушивание, перехват TCP соединения, спуфинг) и подмена DNS.
     </para>
    </sect3>
    <sect3 id="sec.security.general.overview.network.mitm">
-    <title>Man in the Middle: Sniffing, Hijacking, Spoofing</title>
+    <title><quote>Человек посередине</quote></title>
     <para>
-     In general, any remote attack performed by an attacker who puts himself
-     between the communicating hosts is called a <emphasis>man-in-the-middle
-     attack</emphasis>. What almost all types of man-in-the-middle attacks
-     have in common is that the victim is usually not aware that there is
-     something happening. There are many possible variants. For example, the
-     attacker could pick up a connection request and forward that to the
-     target machine. Now the victim has unwittingly established a connection
-     with the wrong host, because the other end is posing as the legitimate
-     destination machine.
+     Любая сетевая атака, при которой атакующий находится между взаимодействующими
+     устройствами, называется атакой типа <emphasis><quote>человек посередине</quote></emphasis> 
+     (a man-in-the-middle). Общим между ними является то, что жертва атаки обычно
+     ничего не подозревает. Существует много вариантов - например, атакующий может
+     принять запрос на соединение и затем перенаправить его адресату. В результате
+     жертва непреднамеренно устанавливает соединение не с тем компьютером,
+     поскольку другая сторона ведет себя как компьютер с которым изначально 
+     предполагалось соединение.
     </para>
     <para>
-     The simplest form of a man-in-the-middle attack is called
-     <emphasis>sniffer</emphasis> (the attacker is <quote>just</quote>
-     listening to the network traffic passing by). As a more complex attack,
-     the <quote>man in the middle</quote> could try to take over an already
-     established connection (hijacking). To do so, the attacker would need
-     to analyze the packets for some time to be able to predict the TCP
-     sequence numbers belonging to the connection. When the attacker finally
-     seizes the role of the target host, the victims notice this, because
-     they get an error message saying the connection was terminated due to a
-     failure. The fact that there are protocols not secured against
-     hijacking through encryption (which only perform a simple
-     authentication procedure upon establishing the connection) makes it
-     easier for attackers.
+     Простейшая форма атаки <quote>человек посередине</quote> называется  
+     <emphasis>сниффер</emphasis> (атакующий <quote>просто</quote>
+     прослушивает проходящий сетевой траффик). В качестве более сложного вида,
+     атаки <quote>человек посередине</quote> может попробовать перехватить
+     уже установленное соединение (это называется hijacking). Для этого
+     атакующему необходимо некоторое время анализировать пакеты некоторое время,
+     чтобы ему удалось предсказать последовательность чисел TCP
+     принадлежащих соединению. Когда атакующий окончательно берет на себя роль 
+     целевой машины, жертвы узнают это, поскольку они получают сообщение
+     говорящее о прекращении соединения из-за ошибки. Факт существования 
+     не защищенных от перехвата путем шифрования протоколов (производящих 
+     только обычную процедуру авторизации при установлении соединения) только 
+     упрощает задачу злоумышленника. 
     </para>
     <para>
-     <emphasis>Spoofing</emphasis> is an attack where packets are modified
-     to contain counterfeit source data, usually the IP address. Most active
-     forms of attack rely on sending out such fake packets (something that,
-     on a Linux machine, can only be done by the superuser
-     (<systemitem
-     class="username">root</systemitem>)).
+     <emphasis>Спуфинг</emphasis> (spoofing) это атака при которой в пакетах 
+     подменяются первоначальные данные, обычно IP адрес. Наиболее активные формы атаки полагаются на
+     рассылку таких поддельных пакетов (на Linux-машине, это может быть сделано только
+     суперпользователем (<systemitem class="username">root</systemitem>)).
     </para>
     <para>
-     Many of the attacks mentioned are carried out in combination with a
-     DoS. If an attacker sees an opportunity to bring down a certain host
-     abruptly, even if only for a short time, it makes it easier for him to
-     push the active attack, because the host will not be able to interfere
-     with the attack for some time.
+     Многие из упомянутых атак используются в сочетании с DoS. Если атакующий видит
+     возможность внезапно положить определенный хост, даже на короткий промежуток
+     времени, это может помочь ему в проведении активной атаки, т.к. хост не 
+     будет вмешиваться в трафик некоторое время.
     </para>
    </sect3>
    <sect3 id="sec.security.general.overview.network.dns">
