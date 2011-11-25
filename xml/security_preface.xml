@@ -348,84 +348,80 @@
     </para>
     <para>
      Не следует путать вирусы с червями, принадлежащими исключительно к миру
-     сетей. Отличие состоит в том, что червю для распространения не нужен
-     хозяин.
+     сетей. Отличие состоит в том, что червю не нужен хозяин для распространения.
     </para><indexterm class="endofrange" startref="idx.security_local"/>
    </sect3>
   </sect2>
 
   <sect2 id="sec.security.general.overview.network">
-   <title>Network Security</title><indexterm id="idx.security_network" class="startofrange">
-   <primary>security</primary>
-   <secondary>network</secondary></indexterm>
+   <title>Сетевая безопасность</title><indexterm id="idx.security_network" class="startofrange">
+   <primary>безопасность</primary>
+   <secondary>сеть</secondary></indexterm>
    <para>
-    Network security is important for protecting from an attack that is
-    started outside the network. The typical login procedure requiring a
-    username and a password for user authentication is still a local
-    security issue. In the particular case of logging in over a network,
-    differentiate between the two security aspects. What happens until the
-    actual authentication is network security and anything that happens
-    afterwards is local security.
+    Сетевая безопасность важна для защиты от атак, источник которых
+    находится за пределами сети. Типичная процедура входа в систему, требующая 
+    для авторизации имени пользователя и пароля, все так же является объектом
+    локальной безопасности. В частном случае удаленного входа в систему
+    следует отмечать два аспекта безопасности. Все, что происходит до входа в систему,
+    относится к сетевой безопасности, а все, что происходит после - к локальной.
    </para>
    <sect3 id="sec.security.general.overview.network.x11">
-    <title>X Window System and X Authentication</title><indexterm>
-    <primary>security</primary>
-    <secondary>X and</secondary></indexterm><indexterm>
+    <title>Система X Window и авторизация в X</title><indexterm>
+    <primary>безопасность</primary>
+    <secondary>X</secondary></indexterm><indexterm>
     <primary>X</primary>
-    <secondary>security</secondary></indexterm>
+    <secondary>безопасность</secondary></indexterm>
     <para>
-     As mentioned at the beginning, network transparency is one of the
-     central characteristics of a UNIX system. X, the windowing system of
-     UNIX operating systems, can make use of this feature in an impressive
-     way. With X, it is basically no problem to log in at a remote host and
-     start a graphical program that is then sent over the network to be
-     displayed on your computer.
+     Как упоминалось в самом начале, сетевая прозрачность - одна из центральных 
+     характеристик систем семейства UNIX. X, оконная система UNIX систем,
+     пользуется этой собенностью для достижения довольно внушительного эффекта.
+     С помощью X абсолютно несложно подключиться к удаленному компьютеру и 
+     запустить программу с графическим интерфейсом, которая затем будет отправлена
+     по сети и отображена на Вашем компьютере.
     </para>
     <para>
-     When an X client needs to be displayed remotely using an X server, the
-     latter should protect the resource managed by it (the display) from
-     unauthorized access. In more concrete terms, certain permissions must
-     be given to the client program. With the X Window System, there are two
-     ways to do this, called host-based access control and cookie-based
-     access control. The former relies on the IP address of the host where
-     the client should run. The program to control this is xhost. xhost
-     enters the IP address of a legitimate client into a database belonging
-     to the X server. However, relying on IP addresses for authentication is
-     not very secure. For example, if there were a second user working on
-     the host sending the client program, that user would have access to the
-     X server as well&mdash;just like someone stealing the IP address.
-     Because of these shortcomings, this authentication method is not
-     described in more detail here, but you can learn about it with
-     <command>man</command>&nbsp;<option>xhost</option>.
+     Когда клиент X требуется отобразить удаленно используя X сервер, 
+     последний должен защищать свои ресурсы (экран) от несанкционированного
+     доступа. Точнее,клиентская программа должна обладать строго заданными
+     правами доступа. С помощью системы X Window это может быть реализовано 
+     двумя способами: доступ, основанный на хосте или доступ, основанный на 
+     cookie. Первый полагается на IP адрес хоста, где запущена клиентская программа.
+     Для управления им используется программа xhost. xhost
+     сохраняет IP адреса имеющих доступ клиентов,  в базу данных X сервера.
+     Однако полагаться на IP адреса для авторизаации не слишком безопасно.
+     К примеру, если на клиентском компьютере работает еще один пользователь,
+     то он также получит доступ к X серверу &mdash; точно также, как любой, кто присвоит
+     себе IP этого компьютера. Вследствие изложенных выше недостатков этот метод не
+     будет детально описан в данном руководстве, однако Вы можете воспользоваться
+     <command>man</command>&nbsp;<option>xhost</option> для получения более подробной 
+     информации.
     </para>
     <para>
-     In the case of cookie-based access control, a character string is
-     generated that is only known to the X server and to the legitimate
-     user, just like an ID card of some kind. This cookie is stored on login
-     in the file <filename>.Xauthority</filename> in the user's home
-     directory and is available to any X client wanting to use the X server
-     to display a window. The file <filename>.Xauthority</filename> can be
-     examined by the user with the tool <command>xauth</command>. If you
-     rename <filename>.Xauthority</filename>, or if you delete the file from
-     your home directory by accident, you would not be able to open any new
-     windows or X clients.
+     В случае управления доступом при помощи cookie, генерируется строка символов, 
+     известная только X серверу и авторизованному пользователю, подобно любой
+     идентификационной карте. Эта cookie сохраняется после логина в файле
+     <filename>.Xauthority</filename> в домашнем каталоге пользователя и 
+     доступна любому X клиенту, желающему воспользоваться X сервером
+     для отображения окна. Файл <filename>.Xauthority</filename> может быть
+     исследован пользователем при помощи утилиты <command>xauth</command>. Если Вы
+     переименуете <filename>.Xauthority</filename>, или удалите этот файл из Вашей
+     домашней директории, то больше не сможете открыть новых окон или X клиентов.
     </para>
     <para>
-     SSH (secure shell) can be used to encrypt a network connection
-     completely and forward it to an X server transparently, without the
-     encryption mechanism being perceived by the user. This is also called X
-     forwarding. X forwarding is achieved by simulating an X server on the
-     server side and setting a DISPLAY variable for the shell on the remote
-     host. Further details about SSH can be found in
-     <xref linkend="cha.ssh"/>.
+     SSH (безопасная оболочка) может быть использована для полного шифрования 
+     сетевого соединения и прозрачной переадресации его X серверу, 
+     без вмешательства пользователя в механизм шифрования.
+     Также это называется X forwarding. X forwarding достигается имитацией X сервера на 
+     серверной стороне и установкой переменной DISPLAY для оболочки на удаленном компьютере.
+     Больше информации о SSH можно найти в главе <xref linkend="cha.ssh"/>.
     </para>
     <warning>
      <para>
-      If you do not consider the host where you log in to be a secure host,
-      do not use X forwarding. With X forwarding enabled, an attacker could
-      authenticate via your SSH connection to intrude on your X server and
-      perpetrate various actions (reading, or sniffing, your keyboard input,
-      for instance).
+      Если Вы не считаете безопасным удаленный компьютер, к которому подключены,
+      не используйте X forwarding. Будучи включенным, он позволяет авторизоваться 
+      используя Ваше SSH соединения для проникновения на Ваш X сервер и 
+      произвести различные манипуляции (чтение, сниффинг, например того, что Вы печатаете на 
+      клавиатуре).
      </para>
     </warning>
    </sect3>
