@@ -512,42 +512,39 @@
     </para>
    </sect3>
    <sect3 id="sec.security.general.overview.network.dns">
-    <title>DNS Poisoning</title><indexterm>
+    <title>Подмена DNS</title><indexterm>
     <primary>DNS</primary>
-    <secondary>security and</secondary></indexterm><indexterm>
-    <primary>security</primary>
+    <secondary>безопасность</secondary></indexterm><indexterm>
+    <primary>безопасность</primary>
     <secondary>DNS</secondary></indexterm>
     <para>
-     DNS poisoning means that the attacker corrupts the cache of a DNS
-     server by replying to it with spoofed DNS reply packets, trying to get
-     the server to send certain data to a victim who is requesting
-     information from that server. Many servers maintain a trust
-     relationship with other hosts, based on IP addresses or hostnames. The
-     attacker needs a good understanding of the actual structure of the
-     trust relationships among hosts to disguise itself as one of the
-     trusted hosts. Usually, the attacker analyzes some packets received
-     from the server to get the necessary information. The attacker often
-     needs to target a well-timed DoS attack at the name server as well.
-     Protect yourself by using encrypted connections that are able to verify
-     the identity of the hosts to which to connect.
+     Подмена DNS (также называемая атакой Каминского) производится путем повреждения 
+     целостности данных в кеше DNS сервера. Отвечая на запросы DNS сервера
+     подмененными пакетами можно заставить его послать определенные данные жертве,
+     которая запрашивает информацию с этого сервера. Многие из серверов 
+     доверяют другим хостам, основываясь на именах или IP адресах. 
+     Атакующему необходимы знания о структуре доверительных отношений 
+     между хостами, для того, чтобы замаскироваться под авторитетный хост.
+     Обычно для получения этой информации анализируются некоторые пакеты, полученные
+     от сервера. Помимо этого, атакующему часто необходима хорошо спланированная по
+     времени DoS атака на сервер имен. Для защиты используйте зашифрованные соединения
+     с проверкой подлинности хоста, к которому происходит подключение.
     </para>
    </sect3>
    <sect3 id="sec.security.general.overview.network.worms">
-    <title>Worms</title><indexterm>
-    <primary>security</primary>
-    <secondary>worms</secondary></indexterm>
+    <title>Черви</title><indexterm>
+    <primary>безопасность</primary>
+    <secondary>черви</secondary></indexterm>
     <para>
-     Worms are often confused with viruses, but there is a clear difference
-     between the two. Unlike viruses, worms do not need to infect a host
-     program to live. Instead, they are specialized to spread as quickly as
-     possible on network structures. The worms that appeared in the past,
-     such as Ramen, Lion, or Adore, make use of well-known security holes in
-     server programs like bind8 or lprNG. Protection against worms is
-     relatively easy. Given that some time elapses between the discovery of
-     a security hole and the moment the worm hits your server, there is a
-     good chance that an updated version of the affected program is
-     available on time. That is only useful if the administrator actually
-     installs the security updates on the systems in question.
+     Несмотря на очевидную разницу, червей часто путают с вирусами. В отличие
+     от вируса, червю не требуется заражение программы хоста. Они специализируются
+     на максимально быстром распространении в сетевых структурах. Черви прошлого, 
+     такие как Ramen, Lion и Adore использовали известные дыры безопасности серверных
+     программ, таких как bind8 и lprNG. Защититься от червей относительно легко.
+     При условии что между обнаружением проблемы в безопасности и моментом,
+     когда червь достигнет Вашего сервера, должно пройти некоторое время, шансы
+     получить обновленную версию программы до этого момента весьма высоки. Поэтому важно 
+     регулярно устанавливать обновления безопасности.
      <indexterm class="endofrange" startref="idx.security_attacks"/>
      <indexterm class="endofrange" startref="idx.security_network"/>
     </para>
@@ -555,241 +552,235 @@
   </sect2>
  </sect1>
  <sect1 id="sec.security.general.tips">
-  <title>Some General Security Tips and Tricks</title><indexterm>
+  <title>Общие советы и хитрости безопасности</title><indexterm>
 
-  <primary>security</primary>
+  <primary>безопасность</primary>
 
-  <secondary>tips and tricks</secondary></indexterm>
+  <secondary>советы и хитрости</secondary></indexterm>
 
   <remark condition="clarity"> 2007-07-27 - jjaeger: please use profiling for mailinglists and
    websites if they change from SLE to opensuse, next time. </remark>
 
   <para>
-   To handle security competently, it is important to observe some
-   recommendations. You may find the following list of rules useful in
-   dealing with basic security concerns:
+   Для соблюдения безопасности важно соблюдать определенные правила.
+   Следующий список правил может быть взят за основу:
   </para>
 
   <itemizedlist>
    <listitem>
     <para>
-     Get and install the updated packages recommended by security
-     announcements as quickly as possible.
+     Принимайте и устанавливайте пакеты, содержащие обновления безопасности   
+     максимально быстро.
     </para>
    </listitem>
    <listitem>
     <para>
-     Stay informed about the latest security issues:
+     Следите за последними проблемами безопасности:
     </para>
     <itemizedlist>
      <listitem>
       <para>
-       <ulink url="opensuse-security-announce@opensuse.org"/> is the &suse;
-       mailinglist for security announcements. It is a first-hand source of
-       information regarding updated packages and includes members of
-       &suse;'s security team among its active contributors. You can
-       subscribe to this list on page
-       <ulink
+       <ulink url="opensuse-security-announce@opensuse.org"/> это почтовая
+       рассылка &suse; посвященная новостям безопасности. Этот источник предлагает из первых рук
+       информацию об обновлениях пакетов и новых участниках команды безопасности из
+       числа ее активных котрибьюторов. Вы можете подписаться на эту рассылку на 
+       странице <ulink
       url="http://en.opensuse.org/Communicate/Mailinglists"/>.
       </para>
      </listitem>
      <listitem>
       <para>
-       Find &suse; security advisories as a news feed at
+       Бюллютень безопасности &suse; доступен в виде новостной ленты по адресу
        <ulink
         url="http://www.novell.com/linux/security/suse_security.xml"/>.
       </para>
      </listitem>
      <listitem>
       <para>
-       <ulink url="bugtraq@securityfocus.com"/> is one of the best-known
-       security mailing lists worldwide. Reading this list, which receives
-       between 15 and 20 postings per day, is recommended. More information
-       can be found at <ulink url="http://www.securityfocus.com"/>.
+       <ulink url="bugtraq@securityfocus.com"/> одна из самых известных
+       рассылок посвященных безопасности. Рекомендуется следить за этой рассылкой, 
+       в которую приходит от 15 до 20 сообщений в день. Подробнее о ней можно 
+       узнать здесь <ulink url="http://www.securityfocus.com"/>.
       </para>
      </listitem>
     </itemizedlist>
    </listitem>
    <listitem>
     <para>
-     Discuss any security issues of interest on our mailinglist
-     <ulink url="opensuse-security@opensuse.org"/>.
+     Обсуждайте любые интересующие Вас проблемы безопасности в нашей
+     рассылке <ulink url="opensuse-security@opensuse.org"/>.
     </para>
    </listitem>
    <listitem>
     <para>
-     According to the rule of using the most restrictive set of permissions
-     possible for every job, avoid doing your regular jobs as
-     <systemitem class="username">root</systemitem>. This reduces the risk
-     of getting a cuckoo egg or a virus and protects you from your own
-     mistakes.
+     Согласно правилу использования наименьших прав доступа, необходимых 
+     для работы, избегайте выполнения своих ежедневных задач от пользователя 
+     <systemitem class="username">root</systemitem>. Это уменьшает риск
+     получения <quote>кукушкиного яйца</quote> или вируса и защищает Вас от
+     Ваших собственных ошибок.
     </para>
    </listitem>
    <listitem>
     <para>
-     If possible, always try to use encrypted connections to work on a
-     remote machine. Using <command>ssh</command> (secure shell) to replace
-     <command>telnet</command>, <command>ftp</command>,
-     <command>rsh</command>, and <command>rlogin</command> should be
-     standard practice.
+     Если возможно, всегда используйте зашифрованное соединение для 
+     работы на удаленной машине. Использование <command>ssh</command> 
+     (secure shell) в качестве замены <command>telnet</command>, <command>ftp</command>,
+     <command>rsh</command>, и <command>rlogin</command> должно стать
+     повседневной практикой.
     </para>
    </listitem>
    <listitem>
     <para>
-     Avoid using authentication methods based solely on IP addresses.
+     Избегайте методов аутентификации основанных исключительно на IP адресах.
     </para>
    </listitem>
    <listitem>
     <para>
-     Try to keep the most important network-related packages up-to-date and
-     subscribe to the corresponding mailing lists to receive announcements
-     on new versions of such programs (bind, postfix, ssh, etc.). The same
-     should apply to software relevant to local security.
+     Пытайтесь содержать в актуальном состоянии самые важные пакеты системы, 
+     относящиеся к сети и подпишитесь на соответствующие рассылки безопасности,
+     чтобы получать уведомления о новых версиях этих программ (bind, postfix, 
+     ssh, etc.) Это же касается программ, относящихся к локальной безопасности.
     </para>
    </listitem>
    <listitem><indexterm>
-    <primary>configuration files</primary>
-    <secondary>permissions</secondary></indexterm>
+    <primary>файлы конфигурации</primary>
+    <secondary>права доступа</secondary></indexterm>
     <para>
-     Change the <filename>/etc/permissions</filename> file to optimize the
-     permissions of files crucial to your system's security. If you remove
-     the setuid bit from a program, it might well be that it cannot do its
-     job anymore in the intended way. On the other hand, consider that, in
-     most cases, the program will also have ceased to be a potential
-     security risk. You might take a similar approach with world-writable
-     directories and files.
+     Измените файл <filename>/etc/permissions</filename>  для оптимизации
+     прав доступа к файлам, существенных для безопасности Вашей системы.
+     Если Вы удалите у программы бит setuid вполне может оказаться, что она 
+     не сможет работать так, как задумано. С другой стороны в большинстве случаев
+     такая программа должна считаться потенциальной проблемой для безопасности. 
+     Это правило также применимо к доступным для всех на запись директориям и файлам.
     </para>
    </listitem>
    <listitem>
     <para>
-     Disable any network services you do not absolutely require for your
-     server to work properly. This makes your system safer. Open ports, with
-     the socket state LISTEN, can be found with the program
-     <literal>netstat</literal>. As for the options, it is recommended to
-     use <command>netstat</command>&nbsp;<option>-ap</option> or
-     <command>netstat</command>&nbsp;<option>-anp</option>. The
-     <option>-p</option> option allows you to see which process is occupying
-     a port under which name.
+     Запретите абсолютно все сетевые сервисы, которые не являются необходимыми
+     для работы Вашего сервера. Это сделает Вашу систему менее уязвимой.
+     Открытые порты с сокетами в статусе LISTEN, можно обнаружить программой
+     <literal>netstat</literal>. Что касается опций, рекомендуется использовать
+     <command>netstat</command>&nbsp;<option>-ap</option> или
+     <command>netstat</command>&nbsp;<option>-anp</option>. Опция
+     <option>-p</option> позволяет узнать, какой процесс занимает порт под
+     каким именем.
     </para>
     <para>
-     Compare the <literal>netstat</literal> results with those of a thorough
-     port scan done from outside your host. An excellent program for this
-     job is <literal>nmap</literal>, which not only checks out the ports of
-     your machine, but also draws some conclusions as to which services are
-     waiting behind them. However, port scanning may be interpreted as an
-     aggressive act, so do not do this on a host without the explicit
-     approval of the administrator. Finally, remember that it is important
-     not only to scan TCP ports, but also UDP ports (options
-     <option>-sS</option> and <option>-sU</option>).
-    </para>
-   </listitem>
-   <listitem>
-    <para>
-     To monitor the integrity of the files of your system in a reliable way,
-     use the program <literal>AIDE</literal> (Advanced Intrusion Detection
-     Environment), available on &productname;. Encrypt the database created
-     by AIDE to prevent someone from tampering with it. Furthermore, keep a
-     backup of this database available outside your machine, stored on an
-     external data medium not connected to it by a network link.
+     Сравнивайте результаты <literal>netstat</literal> с результатами работы 
+     внешнего сканера портов. Для этого прекрасно подойдет <literal>nmap</literal>,
+     которая не только проверит порты Вашего компьютера, а также сделает 
+     некоторые заключения о службах, которые их используют. Однако 
+     сканирование портов может быть интерпретировано как акт агрессии, 
+     поэтому не производите его без ведома администратора системы.
+     И наконец помните, что важно сканировать не только 
+     TCP порты, но и  UDP порты (опции <option>-sS</option> и <option>-sU</option>).
     </para>
    </listitem>
    <listitem>
     <para>
-     Take proper care when installing any third-party software. There have
-     been cases where a hacker had built a trojan horse into the tar archive
-     of a security software package, which was fortunately discovered very
-     quickly. If you install a binary package, have no doubts about the site
-     from which you downloaded it.
+     Для надежного контроля целостности файлов Вашей системы используйте 
+     программу <literal>AIDE</literal> (Advanced Intrusion Detection
+     Environment), доступную в &productname;. Во избежание подделки 
+     зашифруйте созданную AIDE базу данных. Более того, храните резервную
+     копию этой базы данных подальше от своего компьютера, на внешнем недоступном 
+     по сети носителе.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
+     Будьте внимательны при установке стороннего программного обеспечения,
+     Известнен случай, когда хакер встроил троянского коня в архив пакета
+     с программой, к счастью это быстро обнаружили. Устанавливайте бинарные
+     пакеты только в случае если у Вас нет сомнений в сайте с которого Вы его 
+     скачали.
     </para><indexterm>
-    <primary>security</primary>
-    <secondary>RPM signatures</secondary></indexterm><indexterm>
+    <primary>безопасность</primary>
+    <secondary>подпись RPM</secondary></indexterm><indexterm>
     <primary>RPM</primary>
-    <secondary>security</secondary></indexterm>
+    <secondary>безопасность</secondary></indexterm>
     <para>
-     &suse;'s RPM packages are gpg-signed. The key used by &suse; for
-     signing is:
+     RPM пакеты &suse; подписаны gpg. Ключ, использованный &suse; для 
+     подписи:
     </para>
 <screen>ID:9C800ACA 2000-10-19 SUSE Package Signing Key &lt;build@suse.de&gt;
      Key fingerprint = 79C1 79B2 E1C8 20C1 890F 9994 A84E DAE8 9C80 0ACA</screen>
     <para>
-     The command <command>rpm</command>&nbsp;<option>--checksig
-     package.rpm</option> shows whether the checksum and the signature of an
-     uninstalled package are correct. Find the key on the first CD of the
-     distribution and on most key servers worldwide.
+     Команда <command>rpm</command>&nbsp;<option>--checksig
+     package.rpm</option> показывает верна ли контрольная сумма и подпись пакета, 
+     который Вы собираетесь установить. Вы можете найти ключ на первом CD 
+     дистрибутива и на большинстве серверов ключей по всему миру.
     </para>
    </listitem>
    <listitem>
     <para>
-     Check backups of user and system files regularly. Consider that if you
-     do not test whether the backup works, it might actually be worthless.
+     Регулярно проверяйте бекапы пользовательских и системных файлов. Учтите, что 
+     если Вы не проверите работоспособность произведенного бекапа, он может оказаться 
+     бесполезным в критической ситуации.
     </para>
    </listitem>
    <listitem>
     <para>
-     Check your log files. Whenever possible, write a small script to search
-     for suspicious entries. Admittedly, this is not exactly a trivial task.
-     In the end, only you can know which entries are unusual and which are
-     not.
+     Проверяйте логи. При возможности напишите небольшой скрипт для поиска подозрительных
+     записей. Возможно это не такая уж простая задача. В конце концов, только Вам
+     известно, какие записи подозрительны, а какие - нет.
     </para>
    </listitem>
    <listitem>
     <para>
-     Use <literal>tcp_wrapper</literal> to restrict access to the individual
-     services running on your machine, so you have explicit control over
-     which IP addresses can connect to a service. For further information
-     regarding <literal>tcp_wrapper</literal>, consult the manual pages of
-     tcpd and hosts_access (<command>man</command>&nbsp;<option>8
+     Используйте <literal>tcp_wrapper</literal> для ограничения доступа к определенным службам
+     Вашей машины и управления IP адресами, которым разрешено подключение к конкретным службам.
+     Для подробной информации о <literal>tcp_wrapper</literal> обратитесь к справочному 
+     руководству по tcpd и hosts_access (<command>man</command>&nbsp;<option>8
      tcpd</option>,
      <command>man</command>&nbsp;<option>hosts_access</option>).
     </para><indexterm>
-    <primary>security</primary>
+    <primary>безопасность</primary>
     <secondary>tcpd</secondary></indexterm>
    </listitem>
    <listitem>
     <para>
-     Use SuSEfirewall to enhance the security provided by
+     Используйте SuSEfirewall для усиления безопасности обеспечиваемой
      <literal>tcpd</literal> (<literal>tcp_wrapper</literal>).
     </para>
    </listitem>
    <listitem>
     <para>
-     Design your security measures to be redundant: a message seen twice is
-     much better than no message at all.
+     Создавайте свои меры безопасности так, чтобы они были избыточными:
+     сообщение, выводимое дважды, лучше, чем отсутствие сообщения вообще.
     </para>
    </listitem>
    <listitem>
     <para>
-     If you use suspend to disk, consider configuring the suspend image
-     encryption using the <command>configure-suspend-encryption.sh</command>
-     script. The program creates the key, copies it to
-     <filename>/etc/suspend.key</filename>, and modifies
-     <filename>/etc/suspend.conf</filename> to use encryption for suspend
-     images.
+     Если Вы используете гибернацию с сохранением на диск, рассмотрите возможность
+     шифрования файла гибернации с помощью скрипта 
+     <command>configure-suspend-encryption.sh</command>. Эта программа создает ключ, 
+     копирует его в <filename>/etc/suspend.key</filename> и изменяет
+     <filename>/etc/suspend.conf</filename> для шифрования файла гибернации.
     </para>
    </listitem>
   </itemizedlist>
  </sect1>
  <sect1 id="sec.security.general.report">
-  <title>Using the Central Security Reporting Address</title><indexterm>
+  <title>Использование Центрального адреса для сообщений о безопасности</title><indexterm>
 
-  <primary>security</primary>
+  <primary>безопасность</primary>
 
-  <secondary>reporting problems</secondary></indexterm>
+  <secondary>сообщение о проблемах</secondary></indexterm>
 
   <para>
-   If you discover a security-related problem (please check the available
-   update packages first), write an e-mail to
-   <ulink url="security@suse.de"/>. Please include a detailed description of
-   the problem and the version number of the package concerned. &suse; will
-   try to send a reply as soon as possible. You are encouraged to
-   pgp-encrypt your e-mail messages. &suse;'s pgp key is:
+   Если Вы обнаружите проблему связанную с безопасностью (пожалуйста, сначала
+   проверьте наличие обновлений для соответствующего пакета), напишите имейл 
+   <ulink url="security@suse.de"/>. Пожалуйста, включите подробное описание 
+   проблемы и номер версии соответствующего пакета. &suse; пришлет Вам ответ
+   настолько быстро, насколько это возможно. Мы рекомендуем шифровать 
+   сообщения при помощи pgp. Pgp ключ &suse;:
   </para>
 
 <screen>ID:3D25D3D9 1999-03-06 SUSE Security Team &lt;security@suse.de&gt;
 Key fingerprint = 73 5F 2E 99 DF DB 94 C4 8F 5A A3 AE AF 22 F2 D5</screen>
 
   <para>
-   This key is also available for download from
+   Этот ключ также доступен для загрузки по адресу
    <ulink
     url="http://www.novell.com/linux/security/securitysupport.html"/>.
   </para><indexterm class="endofrange" startref="idx.security"/>
