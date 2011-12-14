@@ -46,7 +46,7 @@
    <guimenu>Security and Users</guimenu> <guimenu>User and Group
    Management</guimenu> </menuchoice>. Alternatively, start the
    <guimenu>User and Group Administration</guimenu> dialog directly by
-   running <command>yast2 users</command> from a command line.
+   running <command>yast2 users &amp;</command> from a command line.
   </para>
 
   <figure id="fig.y2.userman.main">
@@ -219,7 +219,7 @@
     </para>
    </step>
 <!--Fate #302264-->
-   <step os="osuse">
+   <step os="osuse;sled">
     <para>
      Activate <guimenu>Receive System Mail</guimenu> if you want any kind of
      system notifications to be delivered to this user's mailbox. This
@@ -606,7 +606,7 @@
     <xref linkend="cha.security.fp"/>. For a list of supported devices,
     refer to
     <ulink
-     url="http://reactivated.net/fprint/wiki/Supported_devices"/>.
+    url="http://www.freedesktop.org/wiki/Software/fprint/libfprint"/>.
    </para>
   </sect2>
 
@@ -950,7 +950,7 @@
     <para>
      To add existing users to a new group select them from the list of
      possible <guimenu>Group Members</guimenu> by checking the corresponding
-     box. To remove them from the group just uncheck the box.
+     box. To remove them from the group uncheck the box.
     </para>
    </step>
    <step>

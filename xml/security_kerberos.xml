@@ -688,7 +688,7 @@
      <para>
       Install a minimal system first then check the list of installed
       packages and remove any unneeded packages. This includes servers, such
-      as inetd, portmap, and cups, as well as anything X-based. Even
+      as xinetd, postfix, and cups, as well as anything X-based. Even
       installing an SSH server should be considered a potential security
       risk.
      </para>
@@ -1169,10 +1169,11 @@ Verifying password: <co id="co.kerb.geeko.pass.repeat"/>
     </figure>
     <para>
      For more information about the configuration of <guimenu>Expert PAM
-     Settings</guimenu> and <guimenu>PAM Services</guimenu> tabs, see the
-     official documentation referenced in
-     <xref linkend="sec.security.kerberos.info"/> and the manual page
-     <command>man 5 krb5.conf</command>.
+     Settings</guimenu> and <guimenu>PAM Services</guimenu> tabs, see
+     the official documentation referenced in <xref
+     linkend="sec.security.kerberos.info"/> and the manual page
+     <command>man 5 krb5.conf</command>, which is part of the
+     <systemitem>krb5-doc</systemitem> package.
     </para>
    </sect3>
    <sect3 id="sec.security.kerberos.admin.client.man">
@@ -1436,7 +1437,7 @@ kadmin:</screen>
     information about the <command>kadmin</command> command and the options
     available, see the <systemitem>krb5-doc</systemitem> package, refer to
     <ulink
-     url="http://web.mit.edu/kerberos/www/krb5-1.8/krb5-1.8.3/doc/krb5-admin.html#Kadmin%20Options"/>
+     url="http://web.mit.edu/kerberos/www/krb5-1.8/krb5-1.8.3/doc/krb5-admin.html#Kadmin%20Options"/>,
     or the <command>man<option>8 kadmin</option></command> manual page.
    </para>
   </sect2>

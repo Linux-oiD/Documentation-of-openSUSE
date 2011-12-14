@@ -22,12 +22,48 @@
  </bookinfo>
  <xi:include href="opensuse_startup_intro.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <!-- ============================================================= -->
-<!--	Quickstarts                                                -->
+<!-- Part: Installation and Basics                                 -->
 <!-- ============================================================= -->
+ <part id="part.basics">
+  <title>Installation and Basics</title>
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="art_opensuse_install_quick.xml"/>
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="art_kde_quick.xml"/>
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="art_gnome_quick.xml"/>
- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="art_ooffice_quick.xml"/>
+ <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="art_libreoffice_quick.xml"/>
+  </part>
+<!-- ===================================================================== -->
+<!-- Part: Managing and Updating Software                                  -->
+<!-- ===================================================================== -->
+ <part id="part.reference.software">
+  <title>Managing and Updating Software</title>
+  <xi:include href="yast2_sw.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="yast2_you.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="inst_pkg_internet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="yast2_sw_addon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="sw_managing_commandline.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ </part>
+<!-- ===================================================================== -->
+<!-- Part: Administration                                                  -->
+<!-- ===================================================================== -->
+ <part id="part.reference.administration">
+  <title>Administration</title>
+  <xi:include href="yast2_userman.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="yast2_lang.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="yast2_ncurses.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<!-- fs 2010-12-27: Added from Start-Up -->
+  <xi:include href="yast2_hw.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="printing.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="x11_fonts.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="opensuse_update.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ </part>
+<!-- ===================================================================== -->
+<!-- Part: The Bash Shell                                                  -->
+<!-- ===================================================================== -->
+ <part id="part.bash">
+  <title>The Bash Shell</title>
+  <xi:include href="newbie_bash.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+  <xi:include href="adm_shell.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+ </part>
 <!-- ===================================================================== -->
 <!-- Appendices                                                            -->
 <!-- ===================================================================== -->

@@ -273,6 +273,12 @@ udev           252M  124K  252M   1% /dev
    </para>
   </sect2>
  </sect1>
+<!-- fs 2011-10-20: 
+     
+ Commenting, since the following does not deal with software changes at all,
+ nor does it deliver any of the details promised in the para
+ Heading the rest of the section with "For More Information"
+ 
  <sect1 id="sec.update.version">
   <title>Изменения в программах</title>
 
@@ -303,4 +309,5 @@ udev           252M  124K  252M   1% /dev
    в курсе последних изменений.
   </para>
  </sect1>
+
 </chapter>

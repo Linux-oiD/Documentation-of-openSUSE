@@ -43,7 +43,7 @@
   <para>
    The general syntax of Zypper is:
   </para>
-<screen>zypper <option>[global-options]</option> <replaceable>command</replaceable> <option>[command-options]</option> <option>[arguments]</option> ...</screen>
+<screen>zypper <option>[global-options]</option><replaceable>command</replaceable><option>[command-options]</option><option>[arguments]</option> ...</screen>
   <para>
    The components enclosed in brackets are not required. The simplest way to
    execute Zypper is to type its name, followed by a command. For example,
@@ -134,7 +134,7 @@ zypper remove <replaceable>package_name</replaceable></screen>
       starting with <quote>Moz</quote>. Use with care, especially when
       removing packages.
      </para>
-<screen>zypper install Moz*</screen>
+<screen>zypper install 'Moz*'</screen>
     </listitem>
    </varlistentry>
    <varlistentry>
@@ -237,8 +237,7 @@ zypper remove emacs +vim         # same as above</screen>
     </indexterm> If you want to install the corresponding source package of
     a package, use:
    </para>
-<screen>zypper source-install <replaceable>package_name</replaceable>
-   </screen>
+<screen>zypper source-install <replaceable>package_name</replaceable></screen>
    <para>
     That command will also install the build dependencies of the specified
     package. If you do not want this, add the switch <literal>-D</literal>.
@@ -393,7 +392,7 @@ Updates for openSUSE 11.3 11.3-1.82 | lxsession | 2776    | security | needed
    <para>
     or
    </para>
-<screen>zypper patch --cve=<replaceable>number</replaceable> </screen>
+<screen>zypper patch --cve=<replaceable>number</replaceable></screen>
    <para>
     For example, to install a security patch with the CVE number
     <literal>CVE-2010-2713</literal>, execute:
@@ -425,18 +424,18 @@ zypper install <replaceable>package_name</replaceable></screen>
    <itemizedlist>
     <listitem>
      <para>
-      has the same vendor like the already installed package
+      has the same vendor like the already installed package,
      </para>
     </listitem>
     <listitem>
      <para>
       is provided by repositories with at least the same priority than the
-      already installed package
+      already installed package,
      </para>
     </listitem>
     <listitem>
      <para>
-      is installable (all dependencies are satisfied)
+      is installable (all dependencies are satisfied).
      </para>
     </listitem>
    </itemizedlist>
@@ -537,8 +536,8 @@ zypper install <replaceable>package_name</replaceable></screen>
    change by itself.
   </para>
   <para>
-   By default, details as the URI or the priority of the repository are not
-   displayed. Use the following command to list all details:
+   By default, details such as the URI or the priority of the repository are
+   not displayed. Use the following command to list all details:
   </para>
 <screen>zypper repos -d</screen>
   <sect3 id="sec.zypper.instrepo.add">
@@ -546,7 +545,7 @@ zypper install <replaceable>package_name</replaceable></screen>
    <para>
     To add a repository, run
    </para>
-<screen>zypper addrepo <replaceable>URI</replaceable> <replaceable>alias</replaceable></screen>
+<screen>zypper addrepo <replaceable>URI</replaceable><replaceable>alias</replaceable></screen>
    <para>
     <replaceable>URI</replaceable> can either be an Internet repository, a
     network resource, a directory or a CD or DVD (see
@@ -680,6 +679,24 @@ zypper search -u firefox    # only display packages not already installed</scree
   <para>
    This forces a complete refresh and rebuild of the database, including a
    forced download of raw metadata.
+  </para>
+ </sect2>
+
+ <sect2>
+  <title>Zypper Rollback Feature on btrfs File System</title>
+  <para>
+   If the btrfs file system is used on the root partition and
+   <command>snapper</command> is installed, zypper automatically
+   calls <command>snapper</command> (via script installed by
+   <command>snapper</command>) when committing changes to the file
+   system to create appropriate file system snapshots. These snapshots
+   can be used for reverting any changes made by zypper. For more
+   information about <command>snapper</command>, see <command>man snapper</command>.
+  </para>
+  <para>
+   Zypper (and &yast;) currently only make snapshots of the root
+   filesystem. Other subvolumes cannot be configured. This feature
+   is not supported on the default file system.
   </para>
  </sect2>
 

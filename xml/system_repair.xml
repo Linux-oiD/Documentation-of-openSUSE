@@ -463,6 +463,11 @@
    </listitem>
    <listitem>
     <para>
+     Recover from a badly installed device driver or unusable kernel.
+    </para>
+   </listitem>
+   <listitem>
+    <para>
      Resize partitions using the parted command. Find more information about
      this tool at the GNU Parted website
      <ulink url="http://www.gnu.org/software/parted/parted.html"/>.
@@ -628,18 +633,19 @@
     However, if you need to do a manual file system check or repair, boot
     the rescue system.</phrase><phrase os="osuse">The rescue system provides
     all tools needed for a manual file system check or repair.</phrase> It
-    contains the utilities to check and repair the <literal>ext2</literal>,
-    <literal>ext3</literal>, <literal>ext4</literal>,
-    <literal>reiserfs</literal>, <literal>xfs</literal>,
-    <literal>dosfs</literal>, and <literal>vfat</literal> file systems.
+    contains the utilities to check and repair the <literal>btrfs</literal>,
+    <literal>ext2</literal>, <literal>ext3</literal>,
+    <literal>ext4</literal>, <literal>reiserfs</literal>,
+    <literal>xfs</literal>, <literal>dosfs</literal>, and
+    <literal>vfat</literal> file systems.
    </para>
   </sect4>
   <sect4 id="sec.trouble.data.recover.rescue.access">
    <title>Accessing the Installed System</title>
    <para>
-    If you need to access the installed system from the rescue system to,
-    you need to do this in a <emphasis>change root</emphasis> environment.
-    For example, to modify the boot loader configuration, or to execute a
+    If you need to access the installed system from the rescue system, you
+    need to do this in a <emphasis>change root</emphasis> environment. For
+    example, to modify the boot loader configuration, or to execute a
     hardware configuration utility.
    </para>
    <para>
@@ -691,9 +697,15 @@ mount /sys</screen>
      running is the one that was booted with the rescue system, not with the
      change root environment. It only supports essential hardware and it is
      not possible to add kernel modules from the installed system unless the
-     kernel versions are exactly the same (which is unlikely). So you cannot
-     access a sound card, for example. It is also not possible to start a
-     graphical user interface.
+     kernel versions are exactly the same. Always check the version of the
+     currently running (rescue) kernel with <command>uname -r</command> and
+     then find out if a matching subdirectory exists in the
+     <filename>/lib/modules</filename> directory in the change root
+     environment. If yes, you can use the installed modules, otherwise you
+     need to supply their correct versions on other media, such as a USB
+     stick. Most often the rescue kernel version differs from the installed
+     one &mdash; then you cannot simply access a sound card, for example. It
+     is also not possible to start a graphical user interface.
     </para>
     <para>
      Also note that you leave the <quote>change root</quote> environment
@@ -765,6 +777,137 @@ mount /sys</screen>
 <screen>umount -a
 exit
 reboot</screen>
+    </step>
+   </procedure>
+  </sect4>
+  <sect4 id="sec.trouble.data.recover.rescue.dud">
+   <title>Fixing Kernel Installation</title>
+   <para>
+    A kernel update may introduce a new bug which can impact the operation
+    of your system. For example a driver for a piece of hardware in your
+    system may be faulty, which prevents you from accessing and using it. In
+    this case, revert to the last working kernel (if available on the
+    system) or install the original kernel from the installation media.
+   </para>
+   <tip>
+    <title>How to Keep Last Kernels after Update</title>
+    <para>
+     To prevent failures to boot after a faulty kernel update, use the
+     kernel multiversion feature and tell <systemitem>libzypp</systemitem>
+     which kernels you want to keep after the update.
+    </para>
+    <para>
+     For example to always keep the last two kernels and the currently
+     running one, add
+    </para>
+<screen>multiversion.kernels = latest,latest-1,running</screen>
+    <para>
+     to the <filename>/etc/zypp/zypp.conf</filename> file.
+    </para>
+   </tip>
+   <para>
+    A similar case is when you need to reinstall or update a broken driver
+    for a device not supported by &productname;. For example when a hardware
+    vendor uses a specific device, such as a hardware RAID controller, which
+    needs a binary driver to be recognized by the operating system. The
+    vendor typically releases a Driver Update Disk with the fixed or updated
+    version of the required driver.
+   </para>
+   <para>
+    In both cases you need to access the installed system in the rescue mode
+    and fix the kernel related problem, otherwise the system may fail to
+    boot correctly:
+   </para>
+   <procedure>
+    <step>
+     <para>
+      Boot from the &productname; installation media.
+     </para>
+    </step>
+    <step>
+     <para>
+      If you are recovering after a faulty kernel update, skip this step. If
+      you need to use a driver update disk (DUD), press <keycap>F6</keycap>
+      to load the driver update after the boot menu appears, and choose the
+      path or URL to the driver update and confirm with
+      <guimenu>Yes</guimenu>.
+     </para>
+    </step>
+    <step>
+     <para>
+      Choose <guimenu>Rescue System</guimenu> from the boot menu and press
+      <keycap>Enter</keycap>. If you chose to use DUD, you will be asked to
+      specify where the driver update is stored.
+     </para>
+    </step>
+    <step>
+     <para>
+      Enter <literal>root</literal> at the <literal>Rescue:</literal>
+      prompt. A password is not required.
+     </para>
+    </step>
+    <step>
+     <para>
+      Manually mount the target system and <quote>change root</quote> into
+      the new environment. For more information, see
+      <xref
+     linkend="sec.trouble.data.recover.rescue.access"/>.
+     </para>
+    </step>
+    <step>
+     <para>
+      If using DUD, install/reinstall/update the faulty device driver
+      package. Always make sure the installed kernel version exactly matches
+      the version of the driver you are installing.
+     </para>
+     <para>
+      If fixing faulty kernel update installation, you can install the
+      original kernel from the installation media with the following
+      procedure.
+     </para>
+     <substeps>
+      <step>
+       <para>
+        Identify your DVD device with <command>hwinfo --cdrom</command> and
+        mount it with <command>mount /dev/sr0 /mnt</command>.
+       </para>
+      </step>
+      <step>
+       <para>
+        Navigate to the directory where your kernel files are stored on the
+        DVD, for example <command>cd /mnt/suse/x86_64/</command>.
+       </para>
+      </step>
+      <step>
+       <para>
+        Install required <systemitem>kernel-*</systemitem>,
+        <systemitem>kernel-*-base</systemitem>, and
+        <systemitem>kernel-*-extra</systemitem> packages of your flavor with
+        the <command>rpm -i</command> command.
+       </para>
+      </step>
+      <step>
+       <para>
+        After the installation finishes, check that a new menu entry
+        relevant for the newly installed kernel was added to the boot loader
+        configuration file (<filename>/boot/grub/menu.lst</filename> for
+        <systemitem>grub</systemitem>).
+       </para>
+      </step>
+     </substeps>
+    </step>
+    <step>
+     <para>
+      Update configuration files and reinitialize the boot loader if needed.
+      For more information, see
+      <xref
+     linkend="sec.trouble.data.recover.rescue.grub"/>
+     </para>
+    </step>
+    <step>
+     <para>
+      Remove any bootable media from the system drive and reboot.
+     </para>
     </step>
    </procedure>
   </sect4>

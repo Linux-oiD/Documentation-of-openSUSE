@@ -67,8 +67,7 @@
   <xi:include href="suse_linux.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
   <xi:include href="udev.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <!-- fs 2010-12-27: Added from Start-Up -->
-  <xi:include href="newbie_bash.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-  <xi:include href="adm_shell.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+
  </part>
 <!-- ===================================================================== -->
 <!-- Part: Services                                                          -->

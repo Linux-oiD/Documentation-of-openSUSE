@@ -44,7 +44,7 @@
  <informalfigure>
   <mediaobject>
    <imageobject role="fo">
-    <imagedata fileref="yast2_sound_configuration.png" width="90%" format="PNG"
+    <imagedata fileref="yast2_sound_configuration.png" width="85%" format="PNG"
     />
    </imageobject>
    <imageobject role="html">
@@ -191,6 +191,18 @@
     Configuration</guimenu> dialog and click <guimenu>Other</guimenu>.
     Select the respective menu item.
    </para>
+   <note>
+    <title>&yast; Mixer</title>
+    <para>
+     The &yast; mixer settings provide only basic options. They are intended
+     for troubleshooting (for example, if the test sound is not audible).
+     Access the &yast; mixer settings from <menuchoice>
+     <guimenu>Other</guimenu> <guimenu>Volume</guimenu> </menuchoice>. For
+     everyday use and fine-tuning of sound options, use the mixer applet
+     provided by your desktop or the <command>alsasound</command> command
+     line tool.
+    </para>
+   </note>
   </step>
   <step>
    <para>
@@ -241,11 +253,13 @@
   <step>
 <!-- fate#304936 -->
    <para>
-    To enable or disable the PulseAudio sound system, click <menuchoice>
-    <guimenu>Other</guimenu> <guimenu>PulseAudio Configuration</guimenu>
-    </menuchoice>. If enabled, PulseAudio daemon is used to play sounds.
-    Disable <guimenu>PulseAudio Support</guimenu> in case you want to use
-    something else system-wide.
+    Per default, &productname; uses the PulseAudio sound system. It is an
+    abstraction layer that helps to mix multiple audio streams, bypassing
+    any restrictions the hardware may have. To enable or disable the
+    PulseAudio sound system, click <menuchoice> <guimenu>Other</guimenu>
+    <guimenu>PulseAudio Configuration</guimenu> </menuchoice>. If enabled,
+    PulseAudio daemon is used to play sounds. Disable <guimenu>PulseAudio
+    Support</guimenu> in case you want to use something else system-wide.
    </para>
   </step>
  </procedure>
@@ -253,15 +267,15 @@
  <para>
   The volume and configuration of all sound cards are saved when you click
   <guimenu>OK</guimenu> and leave the &yast; sound module. The mixer
-  settings are saved to the file <filename>/etc/asound.conf</filename> and
-  the ALSA configuration data <indexterm>
+  settings are saved to the file <filename>/etc/asound.state</filename>. The
+  ALSA configuration data is appended to the end of the file
+  <filename>/etc/modprobe.d/sound</filename> and written to
+  <filename>/etc/sysconfig/sound</filename>.<indexterm>
   <primary>configuration files</primary>
-  <secondary>asound.conf</secondary>
+  <secondary>asound.state</secondary>
   </indexterm> <indexterm>
   <primary>configuration files</primary>
   <secondary>modprobe.d/sound</secondary>
-  </indexterm> is appended to the end of the files
-  <filename>/etc/modprobe.d/sound</filename> and
-  <filename>/etc/sysconfig/hardware</filename>.
+  </indexterm>
  </para>
 </sect1>

@@ -2,16 +2,17 @@
 <?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl"
                  type="text/xml" 
                  title="Profiling step"?>
-<!DOCTYPE article PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
                       "novdocx.dtd"
 [
   <!ENTITY % NOVDOC.DEACTIVATE.IDREF "IGNORE">
   <!ENTITY % entities SYSTEM "entity-decl.ent">
   %entities;
 ]>
+<!-- fs 2011-10-18
+     12.1 Startup has parts, cannot deal with articles
 <?provo dirname="gnomequick/"?>
 <article lang="en" id="art.gnomequick">
-<!-- color needs to be "novell" for all non-openSUSE products -->
 <?suse-quickstart color="suse"?>
  <title>&gnomequick;</title>
  <subtitle><productname os="sled">&productname; &productnumber;</productname><productname os="osuse">&productname; &productnumber;</productname>
@@ -32,6 +33,22 @@
    can use the same data across different computing platforms.
   </para>
  </abstract>
+ -->
+<chapter id="art.gnomequick">
+ <title>&gnomequick;</title>
+ <abstract>
+  <para>
+   &productnamereg; provides the tools that Linux* users require in their
+   daily activities. It comes with an easy-to-use graphical environment, the
+   GNOME* desktop, that communicates with the underlying Linux system, to
+   let you access and manage files, folders, and programs. &productname;
+   provides an integrated suite of applications for a wide range of office,
+   multimedia, and Internet activities. The &libo; suite, which allows you
+   to edit and save files in a number of formats, is also included. The
+   office suite is available for several operating systems. Therefore, you
+   can use the same data across different computing platforms.
+  </para>
+ </abstract> 
  <sect1 id="sec.gnomequick.start">
   <title>Getting Started</title>
 
@@ -1529,5 +1546,4 @@
    <ulink url="http://www.gnome.org/"/>.
   </para>
  </sect1>
- <xi:include os="sles; sled" xmlns:xi="http://www.w3.org/2001/XInclude" href="common_copyright_quick.xml"/>
-</article>
+</chapter>

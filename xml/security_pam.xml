@@ -71,7 +71,7 @@
   <itemizedlist>
    <listitem>
     <para>
-     <emphasis>PAM modules</emphasis> which are a set of shared libraries
+     <emphasis>PAM modules</emphasis>, which are a set of shared libraries
      for a specific authentication mechanism.
     </para>
    </listitem>
@@ -91,13 +91,13 @@
    </listitem>
    <listitem>
     <para>
-     <emphasis>module arguments</emphasis> with which the execution of a
+     <emphasis>Module arguments</emphasis>, with which the execution of a
      single PAM module can be influenced.
     </para>
    </listitem>
    <listitem>
     <para>
-     a mechanism evaluating each <emphasis>result</emphasis> of a single PAM
+     A mechanism evaluating each <emphasis>result</emphasis> of a single PAM
      module execution. A positive value executes the next PAM module. The
      way a negative value is dealt with, depends on the configuration&mdash;
      <quote>no influence, proceed</quote> up to <quote>terminate
@@ -354,7 +354,7 @@
    <para>
     When using a 64-bit operating system, it is possible to also include a
     runtime environment for 32-bit applications. In this case, make sure
-    that you install both versions of the pam modules.
+    that you install both versions of the PAM modules.
    </para>
   </note>
  </sect1>
@@ -367,8 +367,10 @@
 
   <example id="dat.pam.sshd">
    <title>PAM Configuration for sshd (<filename>/etc/pam.d/sshd</filename>)</title>
-<screen>#%PAM-1.0                       <co id="co.security.pam.sshd.pam-line"/>
-auth     required       pam_nologin.so  <co id="co.security.pam.sshd.pam_nologin"/>
+<!-- FIXME: On 11.4, this file contains more entries -->
+<screen
+>#%PAM-1.0                               <co id="co.security.pam.sshd.pam-line"/>
+auth     requisite      pam_nologin.so  <co id="co.security.pam.sshd.pam_nologin"/>
 auth     include        common-auth     <co id="co.security.pam.sshd.common-auth"/>
 account  include        common-account  <xref xrefstyle="select:nopage" linkend="co.security.pam.sshd.common-auth"/>
 password include        common-password <xref linkend="co.security.pam.sshd.common-auth" xrefstyle="select:nopage"/>
@@ -408,13 +410,14 @@ session  include        common-session  <xref linkend="co.security.pam.sshd.comm
   </example>
 
   <para>
-   By including them instead of adding each module separately to the
-   respective PAM configuration, you automatically get an updated PAM
-   configuration when an administrator changes the defaults. Formerly, you
-   had to adjust all configuration files manually for all applications when
-   changes to PAM occurred or a new application was installed. Now the PAM
-   configuration is made with central configuration files and all changes
-   are automatically inherited by the PAM configuration of each service.
+   By including the configuration files instead of adding each module
+   separately to the respective PAM configuration, you automatically get
+   an updated PAM configuration when an administrator changes the
+   defaults. Formerly, you had to adjust all configuration files
+   manually for all applications when changes to PAM occurred or a new
+   application was installed. Now the PAM configuration is made with
+   central configuration files and all changes are automatically
+   inherited by the PAM configuration of each service.
   </para>
 
   <para>
@@ -432,33 +435,48 @@ session  include        common-session  <xref linkend="co.security.pam.sshd.comm
   </para>
 
   <example id="dat.pam.common-auth">
-   <title>Default Configuration for the <literal>auth</literal> Section</title>
-<screen>auth    required        pam_env.so
-auth    optional        pam_gnome_keyring.so
-auth    required        pam_unix2.so</screen>
+   <title>Default Configuration for the <literal>auth</literal> Section
+   (<filename>common-auth</filename>)</title>
+<screen
+>auth    required        pam_env.so           <co id="co.security.pam.sshd.pam_env"/>
+auth    optional        pam_gnome_keyring.so <co id="co.security.pam.sshd.pam_gnome_key"/>
+auth    required        pam_unix2.so         <co id="co.security.pam.sshd.pam_unix2"/></screen>
   </example>
 
-  <para>
-   The first one, <systemitem class="library">pam_env.so</systemitem>, loads
-   <filename>/etc/security/pam_env.conf</filename> to set the environment
-   variables as specified in this file. It can be used to set the
-   <envar>DISPLAY</envar> variable to the correct value, because the
-   <systemitem class="library">pam_env</systemitem> module knows about the
-   location from which the login is taking place. The second one
-   automatically unlocks the GNOME keyring when necessary. The last one,
-   <systemitem class="library">pam_unix2</systemitem>, checks the user's
+   <calloutlist>
+    <callout arearefs="co.security.pam.sshd.pam_env">
+     <para>
+      <systemitem class="library">pam_env.so</systemitem> loads
+      <filename>/etc/security/pam_env.conf</filename> to set the
+      environment variables as specified in this file. It can be used to
+      set the <envar>DISPLAY</envar> variable to the correct value,
+      because the <systemitem class="library">pam_env</systemitem>
+      module knows about the location from which the login is taking
+      place.
+     </para>
+     </callout>
+    <callout arearefs="co.security.pam.sshd.pam_gnome_key">
+     <para>
+      This one automatically unlocks the GNOME keyring when necessary.
+     </para>
+    </callout>
+    <callout arearefs="co.security.pam.sshd.pam_unix2">
+     <para>
+      <systemitem class="library">pam_unix2</systemitem> checks the user's
    login and password against <filename>/etc/passwd</filename> and
    <filename>/etc/shadow</filename>.
   </para>
+    </callout>
+   </calloutlist>
 
   <para>
-   The whole stack of <literal>auth</literal> modules is processed before
-   sshd gets any feedback about whether the login has succeeded. Given that
-   all modules of the stack have the <literal>required</literal> control
-   flag, they must all be processed successfully before sshd receives a
+   The whole stack of <literal>auth</literal> modules is processed
+   before sshd gets any feedback about whether the login has succeeded.
+   All modules of the stack having the <literal>required</literal>
+   control flag must be processed successfully before sshd receives a
    message about the positive result. If one of the modules is not
-   successful, the entire module stack is still processed and only then is
-   sshd notified about the negative result.
+   successful, the entire module stack is still processed and only then
+   is sshd notified about the negative result.
   </para>
 
   <para>
@@ -474,21 +492,23 @@ auth    required        pam_unix2.so</screen>
   </para>
 
   <example id="dat.pam.common-account">
-   <title>Default Configuration for the <literal>account</literal> Section</title>
+   <title>Default Configuration for the <literal>account</literal> Section (<filename>common-account</filename>)</title>
 <screen>account required        pam_unix2.so</screen>
   </example>
 
   <example id="dat.pam.common-password">
-   <title>Default Configuration for the <literal>password</literal> Section</title>
-<screen>password        requisite       pam_pwcheck.so  nullok cracklib
+   <title>Default Configuration for the <literal>password</literal> Section (<filename>common-password</filename>)</title>
+<screen
+>password        requisite       pam_pwcheck.so  nullok cracklib
 password        optional        pam_gnome_keyring.so    use_authtok
 password        required        pam_unix2.so    use_authtok nullok</screen>
   </example>
 
-  <remark>bg: now, this is a bit problematic. When sticking with the ssh example, pam_pwcheck will
-   never be used, because this (according to the man page) provides only functionality for the
-   password changing management group. The following is not nice, but I hope it is slightly
-   improved... </remark>
+  <remark>bg: now, this is a bit problematic. When sticking with the ssh
+  example, pam_pwcheck will never be used, because this (according to
+  the man page) provides only functionality for the password changing
+  management group. The following is not nice, but I hope it is slightly
+  improved... </remark>
 
   <para>
    Again, the PAM configuration of sshd involves just an include statement
@@ -513,7 +533,7 @@ password        required        pam_unix2.so    use_authtok nullok</screen>
   </para>
 
   <example id="dat.pam.common-session">
-   <title>Default Configuration for the <literal>session</literal> Section</title>
+   <title>Default Configuration for the <literal>session</literal> Section (<filename>common-session</filename>)</title>
 <screen>session required        pam_limits.so
 session required        pam_unix2.so
 session optional        pam_apparmor.so
@@ -818,8 +838,9 @@ DISPLAY        DEFAULT=${REMOTEHOST}:0.0 OVERRIDE=${DISPLAY}
   <title>For More Information</title>
 
   <para>
-   In the <filename>/usr/share/doc/packages/pam</filename> directory of the
-   installed system, find the following additional documentation:
+   In the <filename>/usr/share/doc/packages/pam</filename> directory
+   after installing the <systemitem>pam-doc</systemitem> package, find
+   the following additional documentation:
   </para>
 
   <variablelist>
@@ -827,9 +848,9 @@ DISPLAY        DEFAULT=${REMOTEHOST}:0.0 OVERRIDE=${DISPLAY}
     <term>READMEs</term>
     <listitem>
      <para>
-      In the top level of this directory, there is the general README file.
-      The <filename>modules</filename> subdirectory holds README files about
-      the available PAM modules.
+      In the top level of this directory, there is the
+      <filename>modules</filename> subdirectory holding README files
+      about the available PAM modules.
      </para>
     </listitem>
    </varlistentry>
@@ -866,19 +887,14 @@ DISPLAY        DEFAULT=${REMOTEHOST}:0.0 OVERRIDE=${DISPLAY}
     <listitem>
      <para>
       PAM in general as well as the individual modules come with manual
-      pages that provide a good overview of the functionality provided by
-      the respective component.
+      pages that provide a good overview of the functionality of all the
+      components.
      </para>
     </listitem>
    </varlistentry>
   </variablelist>
 
-  <para>
-   Thorsten Kukuk has developed a number of PAM modules. Find the
-   documentation of these modules at
-   <ulink
-   url="http://www.suse.de/~kukuk/pam/"/>.
-  </para><indexterm
+  <indexterm
    class="endofrange" startref="idx.PAM"/><indexterm class="endofrange"
    startref="idx.Authentifizierung_PAM"/>
  </sect1>

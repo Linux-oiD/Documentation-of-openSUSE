@@ -528,8 +528,8 @@
    </term>
    <listitem>
     <para>
-     Contains system daemons and programs reserved for the system
-     administrator that are not essential for booting the system.
+     Contains programs reserved for the system administrator, such as repair
+     functions.
     </para>
    </listitem>
   </varlistentry>

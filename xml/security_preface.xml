@@ -565,6 +565,9 @@
    Для соблюдения безопасности важно придерживаться определенных правил.
    Следующий список правил может быть взят за основу:
   </para>
+  <remark>2011-03-17 jw: Most users are surprised to find plain text copies of a password in their home.
+  Should we explain when that happens, and how to avoid it? E.g. .netrc, .subversion/auth/*, .oscrc, et al.
+  </remark>
 
   <itemizedlist>
    <listitem>

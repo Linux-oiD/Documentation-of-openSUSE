@@ -75,9 +75,9 @@
    </step>
    <step>
     <para>
-     Depending on the repository you have added, you might be asked if you
-     want to import the GPG key with which is signed or asked to agree to a
-     license.
+     Depending on the repository you have added, you may be asked if you
+     want to import the GPG key with which it is signed or asked to agree to
+     a license.
     </para>
     <para>
      After confirming these messages, &yast; will download and parse the
@@ -153,8 +153,8 @@
   <para>
    For detailed information, refer to
    <ulink
-    url="http://developer.novell.com/wiki/index.php/SUSE_LINUX_SDK"/>.
-   Use the &yast; add-on installer and package manager to install &sdk; 11.
+    url="http://www.novell.com/developer/sle_sdk.html"/>. Use the
+   &yast; add-on installer and package manager to install &sdk; 11.
   </para>
  </sect1>
 </chapter>

@@ -25,7 +25,7 @@
  <xi:include os="sles" xmlns:xi="http://www.w3.org/2001/XInclude"  href="art_sles_install_quick.xml"/>
  <xi:include os="sled;sles;osuse" xmlns:xi="http://www.w3.org/2001/XInclude" href="art_apparmor_quick.xml"/>
  <xi:include os="sled;sles" xmlns:xi="http://www.w3.org/2001/XInclude"  href="art_audit_quick.xml"/>
- <xi:include os="sled" xmlns:xi="http://www.w3.org/2001/XInclude" href="art_ooffice_quick.xml"/>
+ <xi:include os="sled" xmlns:xi="http://www.w3.org/2001/XInclude" href="art_libreoffice_quick.xml"/>
 <article>
   <title>Правовая информация</title>
  <!--<xi:include os="osuse" xmlns:xi="http://www.w3.org/2001/XInclude" href="common_copyright_quick.xml"/>-->

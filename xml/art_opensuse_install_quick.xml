@@ -2,13 +2,15 @@
 <?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl"
                  type="text/xml" 
                  title="Profiling step"?>
-<!DOCTYPE article PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
                       "novdocx.dtd"
 [
   <!ENTITY % NOVDOC.DEACTIVATE.IDREF "IGNORE">
   <!ENTITY % entities SYSTEM "entity-decl.ent">
   %entities;
 ]>
+<!-- fs 2011-10-18
+     12.1 Startup has parts, cannot deal with articles
 <?provo dirname="installquick/"?>
 <article id="art.osuse.installquick" lang="ru">
 <?suse-quickstart color="suse"?>
@@ -25,6 +27,16 @@
    &productname;.
   </para>
  </abstract>
+-->
+<chapter id="art.osuse.installquick">
+ <title>&instquick;</title>
+ <abstract>
+  <para>
+   Use the following procedures to install a new version of &productnamereg;
+   &productnumber;. This document gives a quick overview on how to run
+   through a default installation of &productname;.
+  </para>
+ </abstract> 
  <sect1 id="sec.osuse.installquick">
   <title>Добро пожаловать в &productname;</title>
 
@@ -344,5 +356,4 @@
    </procedure>
   </sect2>
  </sect1>
- <xi:include os="sles;sled" xmlns:xi="http://www.w3.org/2001/XInclude" href="common_copyright_quick.xml"/>
-</article>
+</chapter>

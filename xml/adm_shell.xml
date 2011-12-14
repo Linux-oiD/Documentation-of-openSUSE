@@ -59,7 +59,7 @@
     </listitem>
     <listitem>
      <para>
-      non-interactive shell. This is used when invoking a shell script in
+      non-interactive shell. This is used when invoking a shell script at
       the commandline.
      </para>
     </listitem>
@@ -289,16 +289,17 @@ echo "Hello World" <co id="co.adm.shell.echo"/></screen>
    <listitem>
     <para>
      Every script should contain a Shebang line (this is already the case
-     with our example above). If a script does not have this line, you have
+     with our example above.) If a script does not have this line, you have
      to call the interpreter manually.
     </para>
    </listitem>
    <listitem>
     <para>
-     Save the script to a directory where the shell can find it. The search
-     path in a shell is determined by the environment variable
+     You can save the script wherever you want. However, it is a good idea
+     to save it in a directory where the shell can find it. The search path
+     in a shell is determined by the environment variable
      <envar>PATH</envar>. Usually a normal user does not have write access
-     to <filename>/usr/bin</filename>. Therefore, it is recommended to save
+     to <filename>/usr/bin</filename>. Therefore it is recommended to save
      your scripts in the users' directory <filename>~/bin/</filename>. The
      above example gets the name <filename>hello.sh</filename>.
     </para>
@@ -313,8 +314,8 @@ echo "Hello World" <co id="co.adm.shell.echo"/></screen>
   </orderedlist>
 
   <para>
-   If you have fulfilled all of the above prerequisites, you can execute the
-   script in the following ways:
+   If you have fullfilled all of the above prerequisites, you can execute
+   the script in the following ways:
   </para>
 
   <orderedlist>
@@ -410,8 +411,8 @@ echo "Hello World" <co id="co.adm.shell.echo"/></screen>
     <listitem>
      <para>
       Reads the file as input for the given command. For example, the
-      <command>read</command> command reads in the content of the file to
-      the variable <literal>a</literal>:
+      <command>read</command> command reads in the content of the file into
+      the variable:
      </para>
 <screen>read a &lt; foo</screen>
     </listitem>
@@ -439,7 +440,7 @@ echo "Hello World" <co id="co.adm.shell.echo"/></screen>
    or <literal>&gt;</literal> character. For example, the following line
    searches for a file starting with <filename>foo</filename>, but
    suppresses its errors by redirecting it to
-   <filename>/dev/null</filename>, the garbage bin:
+   <filename>/dev/null</filename>:
   </para>
 
 <screen>find / -name "foo*" 2>/dev/null</screen>
@@ -450,9 +451,8 @@ echo "Hello World" <co id="co.adm.shell.echo"/></screen>
   <primary>aliases</primary></indexterm>
 
   <para>
-   An alias is a shortcut definition of one or more commands. This is useful
-   if you have commands which are hard to remember or with lots of options.
-   The syntax for an alias is:
+   An alias is a shortcut definition of one or more commands. The syntax for
+   an alias is:
   </para>
 
 <screen>alias <replaceable>NAME</replaceable>=<replaceable>DEFINITION</replaceable></screen>
@@ -468,7 +468,7 @@ echo "Hello World" <co id="co.adm.shell.echo"/></screen>
 
   <para>
    To view all alias definitions, use <command>alias</command>. Remove your
-   alias with <command>unalias</command>.
+   alias with <command>unalias</command> and the corresponding alias name.
   </para>
  </sect1>
  <sect1 id="sec.adm.variables">
@@ -482,8 +482,8 @@ echo "Hello World" <co id="co.adm.shell.echo"/></screen>
 
   <para>
    To view all environment variables, use the <command>printenv</command>
-   command. To see the value of a variable, insert the name of your variable
-   as an argument:
+   command. If you need to know the value of a variable, insert the name of
+   your variable as an argument:
   </para>
 
 <screen>printenv PATH</screen>
@@ -544,7 +544,7 @@ echo "Hello World" <co id="co.adm.shell.echo"/></screen>
       </entry>
       <entry>
        <para>
-        the current hostname
+        the current host name
        </para>
       </entry>
      </row>
@@ -642,7 +642,7 @@ echo "Hello World" <co id="co.adm.shell.echo"/></screen>
 <screen>foo.sh "Tux Penguin" 2000 </screen>
    <para>
     To access all the arguments which are passed to your script, you need
-    positional parameters. These is <envar>$1</envar> for the first
+    positional parameters. These are <envar>$1</envar> for the first
     argument, <envar>$2</envar> for the second, and so on. You can have up
     to nine parameters. To get the script name, use <envar>$0</envar>.
    </para>
@@ -823,8 +823,8 @@ echo ${file/tux/wilber}
   <para>
    Shells allow you to concatenate and group commands for conditional
    execution. Each command returns an exit code which determines the success
-   or failure of its operation. If it is 0 (zero), the command was
-   successful. Everything else marks an error which is specific to the
+   or failure of its operation. If it is 0 (zero) the command was
+   successful, everything else marks an error which is specific to the
    command.
   </para>
 
@@ -890,7 +890,7 @@ echo ${file/tux/wilber}
      </para>
 <screen>hello() { echo "Hello $1"; }</screen>
      <para>
-      Call this function like this:
+      You can call this function like this:
      </para>
 <screen>hello Tux</screen>
      <para>
@@ -913,12 +913,12 @@ echo ${file/tux/wilber}
 <!-- toms: Explaining test expressions? -->
 
   <sect2 id="sec.adm.shell.if">
-   <title>The <command>if</command> Control Command</title>
+   <title>The if Control Command</title>
    <para>
     The <command>if</command> command is used to check expressions. For
     example, the following code tests whether the current user is Tux:
    </para>
-<screen>if test $USER = "tux" ; then
+<screen>if test $USER = "tux"; then
   echo "Hello Tux."
 else
   echo "You are not Tux."
@@ -939,7 +939,8 @@ fi</screen>
 fi</screen>
    <para>
     Find more useful expressions at
-    <ulink url="http://bash.cyberciti.biz/guide/If..else..fi"/>.
+    <ulink 
+        url="http://www.cyberciti.biz/nixcraft/linux/docs/uniqlinuxfeatures/lsst/ch03sec02.html"/>.
    </para>
   </sect2>
 
@@ -952,8 +953,8 @@ fi</screen>
    </para>
 <screen>for i in *.png;
  do
-  ls -l $i
- done</screen>
+ ls -l $i
+done</screen>
   </sect2>
  </sect1>
  <sect1 id="sec.adm.shell.moreinfo">
@@ -968,13 +969,15 @@ fi</screen>
   <itemizedlist>
    <listitem>
     <para>
-     <ulink url="http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html"/>&mdash;Bash
+     <ulink
+        url="http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html"/>&mdash;Bash
      Guide for Beginners
     </para>
    </listitem>
    <listitem>
     <para>
-     <ulink url="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html"/>&mdash;BASH
+     <ulink
+        url="http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html"/>&mdash;BASH
      Programming - Introduction HOW-TO
     </para>
    </listitem>

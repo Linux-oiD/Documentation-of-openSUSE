@@ -135,8 +135,8 @@
     To access the &yast; language module, start &yast; and click
     <menuchoice> <guimenu>System</guimenu> <guimenu>Language</guimenu>
     </menuchoice>. Alternatively, start the <guimenu>Languages</guimenu>
-    dialog directly by running <command>yast2 language</command> as user
-    &rootuser; from a command line.
+    dialog directly by running <command>yast2 language &amp;</command> as
+    user &rootuser; from a command line.
    </para>
    <informalfigure>
     <mediaobject>
@@ -298,7 +298,7 @@
        Start the application from the command line by using the following
        command:
       </para>
-<screen>LANG=<replaceable>language</replaceable> <replaceable>application</replaceable></screen>
+<screen>LANG=<replaceable>language</replaceable><replaceable>application</replaceable></screen>
       <para>
        For example, to start f-spot in German, run
        <command>LANG=de_DE&nbsp;f-spot</command>. For other languages, use
@@ -315,7 +315,7 @@
        Start the application from the command line by using the following
        command:
       </para>
-<screen>KDE_LANG=<replaceable>language</replaceable> <replaceable>application</replaceable></screen>
+<screen>KDE_LANG=<replaceable>language</replaceable><replaceable>application</replaceable></screen>
       <para>
        For example, to start &digikam; in German, run
        <command>KDE_LANG=de&nbsp;digikam</command>. For other languages, use
@@ -372,7 +372,7 @@
    <listitem>
     <para>
      If you only run Linux on your machine, set the hardware clock to UTC
-     and have the switch form standard time to daylight saving time
+     and have the switch from standard time to daylight saving time
      performed automatically.
     </para>
    </listitem>

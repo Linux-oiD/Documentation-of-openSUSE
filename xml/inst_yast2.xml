@@ -1148,8 +1148,8 @@
    If the media check turns out positive, click <guimenu>Next</guimenu> to
    continue the installation.
   </para>
-
-  <figure id="fig.yast2.inst_checkmedia" os="slprof">
+<!--
+  <figure id="fig.yast2.inst_checkmedia" os="osuse">
    <title>Media Check</title>
    <mediaobject>
     <imageobject role="fo">
@@ -1160,6 +1160,7 @@
     </imageobject>
    </mediaobject>
   </figure>
+-->  
  </sect1>
  <sect1 id="sec.i.yast2.inst_mode">
   <title>Installation Mode</title><indexterm>

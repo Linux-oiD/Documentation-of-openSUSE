@@ -350,8 +350,7 @@ pine = 4.44-188</screen>
 <screen><![CDATA[prepdeltarpm -s seq -i info old.rpm > old.cpio
 prepdeltarpm -f new.rpm > new.cpio
 xdelta delta -0 old.cpio new.cpio delta
-writedeltarpm new.rpm delta info new.delta.rpm]]>
-</screen>
+writedeltarpm new.rpm delta info new.delta.rpm]]></screen>
   <para>
    Finally, remove the temporary working files
    <filename>old.cpio</filename>, <filename>new.cpio</filename>, and

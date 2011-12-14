@@ -95,6 +95,7 @@
    справочные материалы.
 
   </para>
+
   <note>
    <title>Содержимое зависит от установленных пакетов</title>
    <para>
@@ -270,7 +271,7 @@
     </varlistentry>
    </variablelist>
   </sect3>
- </sect2>
+  </sect2>
 
  <sect2 id="sec.help.onboard.manpages">
   <title>Руководства man</title><indexterm>
@@ -283,6 +284,7 @@
    <command>man</command> после которой указывается имя интересубщей
    команды, например, <command>man&nbsp;ls</command>.
   </para>
+
   <para>
    Руководства man отображаются прямо в оболочке. Для перемещения вверх
    и вниз по тексту используйте клавиши <keycap function="pageup"/> и
@@ -294,7 +296,9 @@
    <xref linkend="tab.help.mancategory"/> (взято из руководства
    команды man).
   </para>
+
 <?dbfo-need height="20em"?>
+
   <table id="tab.help.mancategory">
 <?dbsuse-latex tablehead="lp{.75\linewidth}"?>
    <title>Руководства man&mdash;категории и описания</title>
@@ -475,6 +479,7 @@
    Если вы ищите дополнительную информация о своей системе, то обратитесь к
    следующим веб-сайтам:
   </para>
+
   <variablelist>
    <varlistentry os="osuse">
     <term>&opensuse; Wiki</term>

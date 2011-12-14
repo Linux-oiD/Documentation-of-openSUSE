@@ -162,7 +162,7 @@
     os="osuse">For more information about the printer connection,
    read the article <emphasis>CUPS in a Nutshell</emphasis> in the Support
    Database at
-   <ulink url="http://old-en.opensuse.org/SDB:CUPS_in_a_Nutshell"/>.</phrase>
+   <ulink url="http://en.opensuse.org/SDB:CUPS_in_a_Nutshell"/>.</phrase>
   </para>
 
   <para arch="zseries" os="sles">
@@ -462,9 +462,9 @@ Resolution/Output Resolution: 150dpi 300dpi *600dpi</screen>
    <title>CUPS and Firewall</title>
    <para>
     After having performed a default installation of &productname;,
-    SuSEfirewall2 is active and the network interfaces are configured to be
+    &susefirewall; is active and the network interfaces are configured to be
     in the <literal>External Zone</literal> which blocks incoming traffic.
-    More information about the SUSEfirewall2 configuration is available in
+    More information about the &susefirewall; configuration is available in
     <xref
      linkend="sec.security.firewall.SuSE"/> and at
     <ulink

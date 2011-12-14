@@ -11,6 +11,7 @@
  <para>
   This chapter describes a range of potential problems and their solutions.
   Even if your situation is not precisely listed here, there may be one
+  Even if your situation is not precisely listed here, there may be one
   similar enough to offer hints to the solution of your problem.
  </para>
 
@@ -20,9 +21,9 @@
    Linux reports things in a very detailed way. There are several places to
    look when you encounter problems with your system, most of which are
    standard to Linux systems in general, and some of which are relevant to
-   &productname; systems. The two most important system logs are
-   <filename>/var/log/boot.msg</filename> and
-   <filename>/var/log/messages</filename>.
+   &productname; systems. Most log files can be viewed with &yast;
+   (<menuchoice> <guimenu>Miscellaneous</guimenu> <guimenu>Start-Up
+   Log</guimenu> </menuchoice>).
   </para>
 <!-- fs 2010-05-21:
     Weird location for this paragraph - completely out of context (support).
@@ -34,19 +35,20 @@
    <indexterm>
    <primary>YaST</primary>
    <secondary>support query</secondary>
-   </indexterm> <indexterm>
    <primary>support query</primary>
    </indexterm> &yast; offers the possibility to collect all system
    information needed by the support team. Use <menuchoice>
-   <guimenu>Miscellaneous</guimenu> <guimenu>Support Query</guimenu>
-   </menuchoice> and select the problem category. When all information is
-   gathered, attach it to your support request.
+<!-- TODO check this vvvvvv -->
+   <guimenu>Other</guimenu> <guimenu>Support</guimenu> </menuchoice> and
+   select the problem category. When all information is gathered, attach it
+   to your support request.
   </para>
   <para>
    A list of the most frequently checked log files follows with the
    description of their typical purpose. Paths containing
    <filename>~</filename> refer to the current user's home directory.
   </para>
+
   <table id="tab.trouble.info">
    <title>Log Files</title>
    <tgroup cols="2">
@@ -245,11 +247,13 @@
     </tbody>
    </tgroup>
   </table>
+
   <para>
    Apart from log files, your machine also supplies you with information
    about the running system. See
    <xref linkend="tab.trouble.system" xrefstyle="select:label title nopage"/>
   </para>
+
   <table id="tab.trouble.system">
    <title>System Information With the <filename>/proc</filename> File System</title>
    <tgroup cols="2">
@@ -393,6 +397,7 @@
     </tbody>
    </tgroup>
   </table>
+
   <para>
    Apart from the <filename>/proc</filename> file system, the Linux kernel
    exports information with the <literal>sysfs</literal> module, an
@@ -404,6 +409,7 @@
    contains an overview of the most common directories under
    <filename>/sys</filename>.
   </para>
+
   <table id="tab.trouble.sysfs">
    <title>System Information With the <filename>/sys</filename> File System</title>
    <tgroup cols="2">
@@ -513,17 +519,17 @@
     yourself. Burning the media at a low speed (4x) helps avoiding problems.
    </para>
 <!--
-    <figure id="fig.yast2.mediacheck">
+   <figure id="fig.yast2.mediacheck">
     <title>Checking Media</title>
     <mediaobject>
-    <imageobject role="fo">
+     <imageobject role="fo">
     <imagedata fileref="yast2-mediacheck.png" width="75%" format="PNG"/>
-    </imageobject>
-    <imageobject role="html">
+     </imageobject>
+     <imageobject role="html">
     <imagedata fileref="yast2-mediacheck.png" width="75%" format="PNG"/>
-    </imageobject>
+     </imageobject>
     </mediaobject>
-    </figure>
+   </figure>
    -->
   </sect3>
   <sect3 id="sec.trouble.hardinfo">
@@ -536,9 +542,9 @@
    <para>
     Display detected hardware and technical data using <menuchoice>
     <guimenu>Hardware</guimenu> <guimenu>Hardware Information</guimenu>
-    </menuchoice> in &yast;. Click any node of the tree for more information
-    about a device. This module is especially useful, when submitting a
-    support request for which you need information about your hardware.
+    </menuchoice>. Click any node of the tree for more information about a
+    device. This module is especially useful, when submitting a support
+    request for which you need information about your hardware.
    </para>
    <para>
     Save the displayed hardware information to a file by clicking
@@ -546,17 +552,17 @@
     filename then click <guimenu>Save</guimenu> to create the file.
    </para>
 <!--
-    <figure id="fig.yast2.hardinfo">
+   <figure id="fig.yast2.hardinfo">
     <title>Displaying Hardware Information</title>
     <mediaobject>
-    <imageobject role="fo">
+     <imageobject role="fo">
     <imagedata fileref="yast2_hardwareinfo.png" width="75%" format="PNG"/>
-    </imageobject>
-    <imageobject role="html">
+     </imageobject>
+     <imageobject role="html">
     <imagedata fileref="yast2_hardwareinfo.png" width="75%" format="PNG"/>
-    </imageobject>
+     </imageobject>
     </mediaobject>
-    </figure>
+   </figure>
    -->
   </sect3>
   <sect3 id="sec.trouble.install.cdrom">
@@ -680,7 +686,7 @@
      instructions.
     </para>
    </sect4>
-  </sect3>
+   </sect3>
   <sect3 id="sec.trouble.install.BIOS">
    <title>Booting from Installation Media Fails</title><indexterm>
    <primary>DVDs</primary>
@@ -1152,7 +1158,7 @@
     </varlistentry>
    </variablelist>
   </sect3>
- </sect2>
+  </sect2>
 
  <sect2 id="sec.trouble.boot">
   <title>Boot Problems</title>
@@ -1170,7 +1176,7 @@
     and follow the instructions at
     <xref
      linkend="sec.trouble.data.recover.rescue.grub"/>.
-   </para>
+     </para>
    <para>
     Other reasons for the machine not booting may be BIOS-related:
    </para>
@@ -1302,7 +1308,7 @@ id:5:initdefault:</screen>
     </para>
    </tip>
   </sect3>
- </sect2>
+  </sect2>
 
  <sect2 id="sec.trouble.login">
   <title>Login Problems</title>
@@ -1856,7 +1862,7 @@ mv .skel .skel-ORIG-RECOVER<replaceable/></screen>
     </step>
    </procedure>
   </sect3>
- </sect2>
+  </sect2>
 
 <!-- fs: 2010-05-21:
      Commenting for now (11.3) - this chapter needs to be rewritten
@@ -1876,6 +1882,7 @@ mv .skel .skel-ORIG-RECOVER<replaceable/></screen>
    section introduces a simple check list you can apply to identify the
    cause of any network problem encountered.
   </para>
+
   <procedure id="proc.trouble.config.net">
    <title>How to Identify Network Problems</title>
    <para>
@@ -2009,8 +2016,6 @@ mv .skel .skel-ORIG-RECOVER<replaceable/></screen>
       subnet without the need for additional routing.
      </para>
     </important>
-    <remark role="generic"> 2006-01-13 - jjaeger: the internal routing work needs to be revisited
-     for SLES10 or NLD. Never leave troubleshooting to the very end ... </remark>
     <substeps>
      <step>
       <para>
@@ -2021,17 +2026,8 @@ mv .skel .skel-ORIG-RECOVER<replaceable/></screen>
        network. If this command is successful, it tells you that the host
        you were looking for is up and running and that the name service for
        your network is configured correctly.
-       <remark role="clarity">rwalter: wouldn't it be better to use
-        the IP addresses instead of hostnames? If you use the hostnames and rely on a DNS server for
-        name res and DNS is down or inaccessible, you can't tell what the problem is. Also remember
-        that DNS could rely on a server beyond some sort of gateway. Any routing issues interfering
-        with DNS would seem like it is down. Maybe I am getting too complicated, but I've been
-        having LOTS of network problems lately that are either config errors in DNS or routing
-        errors (i have intermittent name res).</remark>
       </para>
       <para>
-       <remark role="clarity">rwalter: again, wouldn't it be better to use an IP? Name res
-        could cause problems again.</remark>
        If ping fails with <literal>destination host unreachable</literal>,
        either your system or the desired server is not properly configured
        or down. Check whether your system is reachable by running
@@ -2109,12 +2105,14 @@ networks: files dns
          <para>
           If all the relevant entries on the host are correct, let your
           system administrator check the DNS server configuration for the
-          correct zone information. <phrase os="sles;osuse">For detailed
-          information about DNS, refer to
-          <xref linkend="cha.dns" />.</phrase> If you have made sure that
-          the DNS configuration of your host and the DNS server are correct,
-          proceed with checking the configuration of your network and
-          network device.
+          correct zone information. <phrase
+           os="sles;osuse">For
+          detailed information about DNS, refer to
+          <xref linkend="cha.dns"
+           />.</phrase> If you have made
+          sure that the DNS configuration of your host and the DNS server
+          are correct, proceed with checking the configuration of your
+          network and network device.
          </para>
         </listitem>
        </varlistentry>
@@ -2154,6 +2152,7 @@ networks: files dns
     </substeps>
    </step>
   </procedure>
+
   <para>
    Once you have identified the cause of your network trouble, you can
    resolve it yourself (if the problem is located on your machine) or let
@@ -2165,9 +2164,10 @@ networks: files dns
    <remark>This is a bit small, needs more text.</remark>
    <para>
     If you have a problem with network connectivity, narrow it down as
-    described in <xref linkend="proc.trouble.config.net"/>. If &nm; seems to
-    be the culprit, proceed as follows to get logs providing hints on why
-    &nm; fails:
+    described in <xref
+     linkend="proc.trouble.config.net"/>. If &nm;
+    seems to be the culprit, proceed as follows to get logs providing hints
+    on why &nm; fails:
    </para>
    <procedure>
     <step>
@@ -2200,7 +2200,7 @@ networks: files dns
     <xref linkend="cha.nm"/>.
    </para>
   </sect3>
- </sect2>
+  </sect2>
 
  <sect2 id="sec.trouble.data">
   <title>Data Problems</title>
@@ -2218,7 +2218,7 @@ networks: files dns
    <para>
     Sometimes you need to perform a backup from an entire partition or even
     hard disk. Linux comes with the <command>dd</command> tool which can
-    create an exact copy of your disk. Combined with <command>gzip</command>
+    create a exact copy of your disc. Combined with <command>gzip</command>
     you save some space.
    </para>
    <procedure>
@@ -2240,7 +2240,7 @@ networks: files dns
       Decide where you want to store your image (labeled as
       <replaceable>BACKUP_PATH</replaceable>). It must be different from
       your source device. In other words: if you make a backup from
-      <filename>/dev/sda</filename>, your image file must not be stored
+      <filename>/dev/sda</filename>, your image file must not to be stored
       under <filename>/dev/sda</filename>.
      </para>
     </step>
@@ -2456,9 +2456,9 @@ networks: files dns
     </step>
    </procedure>
   </sect3>
- </sect2>
+  </sect2>
 
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="system_repair.xml"/>
 
  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" os="sles" arch="zseries" href="zseries_rescue_initrd.xml"/>
-</sect1>
+ </sect1>

@@ -100,8 +100,8 @@
    <step>
     <para>
      Depending on the repository you have added, you might be asked if you
-     want to import the GPG key with which is signed or asked to agree to a
-     license.
+     want to import the GPG key with which it is signed or asked to agree to
+     a license.
     </para>
     <para>
      After confirming these messages, &yast; will download and parse the
@@ -208,10 +208,10 @@
       versions, etc.) is downloaded to a local cache that is used by &yast;.
       It is sufficient to do this once for static repositories such as CDs
       or DVDs, whereas repositories whose content changes often should be
-      refreshed frequently. Enable The easiest way to keep a repository's
-      cache up-to-date is to choose <guimenu>Automatically
-      Refresh</guimenu>. To do a manual refresh click
-      <guimenu>Refresh</guimenu> and select one of the options.
+      refreshed frequently. The easiest way to keep a repository's cache
+      up-to-date is to choose <guimenu>Automatically Refresh</guimenu>. To
+      do a manual refresh click <guimenu>Refresh</guimenu> and select one of
+      the options.
      </para>
     </listitem>
    </varlistentry>

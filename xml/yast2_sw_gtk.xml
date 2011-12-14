@@ -241,22 +241,22 @@
   <itemizedlist>
    <listitem>
     <para>
-     priorities of the repositories that provide the package
+     priorities of the repositories that provide the package,
     </para>
    </listitem>
    <listitem>
     <para>
-     architecture of the package (for example, x86_64, i686, i586)
+     architecture of the package (for example, x86_64, i686, i586),
     </para>
    </listitem>
    <listitem>
     <para>
-     version number of the package
+     version number of the package,
     </para>
    </listitem>
    <listitem>
     <para>
-     package vendor
+     package vendor.
     </para>
    </listitem>
   </itemizedlist>

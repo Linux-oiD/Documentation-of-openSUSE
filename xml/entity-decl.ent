@@ -2,10 +2,10 @@
 <!-- General Entities                                                       -->
 <!-- ...................................................................... -->
 
-
 <!ENTITY exampleuser    "tux">
 <!ENTITY exampleuserII  "wilber">
 <!ENTITY examplegroup   "users">
+
 
 <!-- #######################################################################-->
 <!--             Obsolete entities. Do not use.                             -->

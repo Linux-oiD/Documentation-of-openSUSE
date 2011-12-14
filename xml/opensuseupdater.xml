@@ -51,11 +51,12 @@
    gearwheel with a green arrow. To start &kupdater; manually, choose
    <menuchoice> <guimenu>System Settings</guimenu>
    <guimenu>SoftwareManagement</guimenu> <guimenu>Software Updates</guimenu>
-   </menuchoice> from the main menu. Alternatively, press &altf2; and enter
+   </menuchoice> from the main menu. Alternatively, <keycombo>
+   <keycap function="alt"/> <keycap>F2</keycap> </keycombo> and enter
    <command>kpk_update</command>.
   </para>
   <note>
-   <title>Icon visibility</title>
+   <title>Icon Visibility</title>
    <para>
     The &kupdater; icon is only visible in the system tray, if patches are
     available. Hover over the icon to see the number of patches available.
@@ -265,9 +266,10 @@
     settings</guimenu> choose <menuchoice> <guimenu>System
     Settings</guimenu> <guimenu>Software Management</guimenu>
     <guimenu>Settings</guimenu> </menuchoice> from the main menu.
-    Alternatively, press &altf2; and enter <command>kpk_settings</command>.
-    The settings for &kupdater; are available in the <guimenu>Update
-    Settings</guimenu> section.
+    Alternatively, press <keycombo> <keycap function="alt"/>
+    <keycap>F2</keycap> </keycombo> and enter
+    <command>kpk_settings</command>. The settings for &kupdater; are
+    available in the <guimenu>Update Settings</guimenu> section.
    </para>
    <important>
     <title>Patch Origin</title>
@@ -310,8 +312,8 @@
     <term>Open box with a globe</term>
     <listitem>
      <para>
-      The update is busy (for example checking for updates or installing
-      software).
+      The update applet is busy (for example checking for updates or
+      installing software).
      </para>
     </listitem>
    </varlistentry>

@@ -283,7 +283,7 @@
     </varlistentry>
    </variablelist>
    <tip>
-    <title>Finding Packages Not Belonging to an Active Repository</title>
+    <title>Finding Packages not Belonging to an Active Repository</title>
     <para>
      To list all packages that do not belong to an active repository, choose
      <menuchoice> <guimenu>View</guimenu> <guimenu>Repositories</guimenu>
@@ -419,22 +419,22 @@ covered in the Start-Up cha.software (software.xml) -->
    <itemizedlist>
     <listitem>
      <para>
-      priorities of the repositories that provide the package
+      priorities of the repositories that provide the package,
      </para>
     </listitem>
     <listitem>
      <para>
-      architecture of the package (for example, x86_64, i686, i586)
+      architecture of the package (for example, x86_64, i686, i586),
      </para>
     </listitem>
     <listitem>
      <para>
-      version number of the package
+      version number of the package,
      </para>
     </listitem>
     <listitem>
      <para>
-      package vendor
+      package vendor.
      </para>
     </listitem>
    </itemizedlist>

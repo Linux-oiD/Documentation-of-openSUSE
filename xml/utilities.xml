@@ -180,17 +180,6 @@ procs -----------memory----------- ---swap-- -----io---- -system-- -----cpu-----
      </listitem>
     </varlistentry>
     <varlistentry>
-     <term><guimenu>cache</guimenu>
-     </term>
-     <listitem>
-      <para>
-       Page cache (KB) in RAM. This column is not visible when calling
-       <command>vmstat</command> with the parameter <option>-a</option>
-       (recommended).
-      </para>
-     </listitem>
-    </varlistentry>
-    <varlistentry>
      <term><guimenu>si</guimenu>
      </term>
      <listitem>

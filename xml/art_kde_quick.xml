@@ -2,7 +2,7 @@
 <?xml-stylesheet href="urn:x-suse:xslt:profiling:novdoc-profile.xsl"
                  type="text/xml" 
                  title="Profiling step"?>
-<!DOCTYPE article PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
+<!DOCTYPE chapter PUBLIC "-//Novell//DTD NovDoc XML V1.0//EN"
                       "novdocx.dtd"
 [
   <!ENTITY % NOVDOC.DEACTIVATE.IDREF "IGNORE">
@@ -38,6 +38,25 @@
    который позволяет редактировать и сохранить файлы во многих форматах.
    Поскольку этот набор офисных приложений доступен для нескольких операционных систем,
    то можно использовать одни и те же данные на различных компьютерных платформах.
+  </para>
+ </abstract>
+-->
+<chapter id="art.kdequick">
+ <title>&kdequick;</title>
+  <abstract>
+  <para>
+   &productnamereg; provides the tools that Linux* users require in their
+   daily activities. It comes with an easy-to-use graphical environment, the
+   KDE* desktop, that communicates with the underlying Linux system to
+   access and manage files, folders, and programs.
+   <phrase os="sled;sles" >&productname; provides an integrated suite of
+   applications that meet all professional requirements to perform tasks in
+   a business environment.</phrase> <phrase os="osuse">&productname;
+   provides an integrated suite of applications for a wide range of purposes
+   (office, multimedia, Internet).</phrase> The &libo; suite is also
+   included, which allows you to edit and save files in a number of formats.
+   Because the office suite is available for several operating systems, you
+   can use the same data across different computing platforms.
   </para>
  </abstract>
  <sect1 id="sec.kdequick.start">
@@ -104,8 +123,18 @@
    </para>
   </formalpara>
 
-<?dbfo-need height="20em"?>
+  <formalpara>
+   <title>Main Menu</title>
+   <para>
+    Click on the left side of the bottom panel to open the main menu. The
+    <guimenu>Main Menu</guimenu> consists of the following elements: a
+    search function at the top and several tabs at the bottom, providing
+    quick access to the key functions of the menu. Additionally, the menu
+    displays your login name and the hostname of your computer.
+   </para>
+  </formalpara>
  </sect1>
+<?dbfo-need height="20em"?>
  <sect1 id="sec.kdequick.startprogr">
   <title>Запуск программ</title>
 
@@ -1087,8 +1116,7 @@
         <imagedata fileref="dolphin_hiddenfiles.png" width="50%"/>
        </imageobject>
       </mediaobject>
-     </informalfigure>
-    -->
+     </informalfigure>-->
     </step>
     <step>
      <para>
@@ -1241,8 +1269,7 @@
     браузера (или диалоге <guimenu>Выполнить команду</guimenu>) и нажмите
     <keycap function="enter"/>.
    </para>
-<!--
-   <informalfigure>
+<!--   <informalfigure>
     <mediaobject>
      <imageobject role="fo">
       <imagedata fileref="konqui_webshortcuts.png" width="80%"/>
@@ -1251,8 +1278,7 @@
       <imagedata fileref="konqui_webshortcuts.png" width="75%"/>
      </imageobject>
     </mediaobject>
-   </informalfigure>
--->
+   </informalfigure>-->
    <para>
     можно задать собственные сокращения в Konqueror и Firefox как
     описано в <xref linkend="sec.kdequick.browser.conf"/>.
@@ -1521,9 +1547,10 @@
 <!--taroth 2010-08-06: as Kopete has a wizard-like setup again, commenting the
  detailed procedure below for space reasons-->
 
-<!--<procedure>
+<!--  <procedure>
    <step>
-    <para>To add an account, select <menuchoice> <guimenu>Settings</guimenu>
+    <para>
+     To add an account, select <menuchoice> <guimenu>Settings</guimenu>
      <guimenu>Configure</guimenu> </menuchoice>.
     </para>
    </step>
@@ -1797,10 +1824,10 @@
       найденную папку, просто нажмите на нее. По нажатию правой кнопки
       мыши можно выбрать одну из функций контекстного меню.
      </para>
-<!--   <informalfigure>
+<!--  <informalfigure>
       <mediaobject>
        <imageobject role="fo">
-        <imagedata fileref="kfind_simple.png" width="90%"/>
+        <imagedata fileref="kfind_simple.png" width="85%"/>
        </imageobject>
        <imageobject role="html">
         <imagedata fileref="kfind_simple.png" width="85%"/>
@@ -2147,5 +2174,4 @@
    <ulink url="http://www.kde-apps.org/"/>.
   </para>
  </sect1>
- <xi:include os="sles; sled" xmlns:xi="http://www.w3.org/2001/XInclude" href="common_copyright_quick.xml"/>
-</article>
+</chapter>
